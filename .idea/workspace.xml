@@ -1,34 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79d6f45c-28ca-4506-a783-4c9ac7c784b7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ep-udf/src/main/java/com/ebay/hadoop/udf/ep/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ep-udf/src/main/java/com/ebay/hadoop/udf/ep/GetDimensionId.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ep-udf/src/main/java/com/ebay/hadoop/udf/ep/GetDimensionValue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ep-udf/src/main/java/com/ebay/hadoop/udf/ep/GetDimensionValueById.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ep-udf/src/main/java/com/ebay/hadoop/udf/ep/GetExptId.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ep-udf/src/main/java/com/ebay/hadoop/udf/ep/GetInherentDimensionValue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ep-udf/src/main/java/com/ebay/hadoop/udf/ep/GetMetricValueById.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ep-udf/src/main/java/com/ebay/hadoop/udf/ep/GetTreatedType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ep-udf/src/main/java/com/ebay/hadoop/udf/ep/GetTreatmentId.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ep-udf/src/main/java/com/ebay/hadoop/udf/ep/GetTreatmentType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ep-udf/src/main/java/com/ebay/hadoop/udf/ep/GetTreatmentVersion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ep-udf/src/main/java/com/ebay/hadoop/udf/ep/IsMod.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ep-udf/src/main/java/com/ebay/hadoop/udf/ep/IsNQT.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ep-udf/src/main/java/com/ebay/hadoop/udf/ep/IsTreated.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ep-udf/src/main/java/com/ebay/hadoop/udf/ep/codec/DimensionCodec.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ep-udf/src/main/java/com/ebay/hadoop/udf/ep/codec/TreatmentInfoCodec.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ep-udf/src/main/java/com/ebay/hadoop/udf/ep/codec/TrtmtCombinationCodec.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ep-udf/src/main/java/com/ebay/hadoop/udf/ep/meta/QualificationType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ep-udf/src/main/java/com/ebay/hadoop/udf/ep/meta/TreatedType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ep-udf/src/main/java/com/ebay/hadoop/udf/ep/meta/TreatmentId.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ep-udf/src/main/java/com/ebay/hadoop/udf/ep/meta/TreatmentType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ep-udf/src/main/resources/avro/Core.avdl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ep-udf/src/test/java/com/ebay/hadoop/udf/ep/EPUdfTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ep-udf/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ep-udf/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ep-udf/src/main/java/com/ebay/hadoop/udf/ep/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ep-udf/src/test/java/com/ebay/hadoop/udf/ep/AppTest.java" beforeDir="false" />
-    </list>
+    <list default="true" id="79d6f45c-28ca-4506-a783-4c9ac7c784b7" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/soj-udf/target/" />
     <ignored path="$PROJECT_DIR$/ep-udf/target/" />
@@ -40,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ep-udf/src/test/java/com/ebay/hadoop/udf/ep/EPUdfTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="705">
-              <caret line="73" column="51" selection-start-line="73" selection-start-column="38" selection-end-line="73" selection-end-column="51" />
+            <state relative-caret-position="212">
+              <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3446#3447#0" expanded="true" />
@@ -68,6 +41,11 @@
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -550,7 +528,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1576574897073" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1576577181018" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -706,16 +684,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="853" y="-1057" width="1920" height="1057" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Image Layers" />
       <window_info id="Designer" />
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973376" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973376" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="CheckStyle" visible="true" weight="0.12020726" />
+      <window_info anchor="bottom" id="CheckStyle" visible="true" weight="0.12020726" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
@@ -1172,8 +1149,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ep-udf/src/test/java/com/ebay/hadoop/udf/ep/EPUdfTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="73" column="51" selection-start-line="73" selection-start-column="38" selection-end-line="73" selection-end-column="51" />
+        <state relative-caret-position="212">
+          <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3446#3447#0" expanded="true" />
