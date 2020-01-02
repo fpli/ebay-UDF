@@ -9,5 +9,6 @@
   <modules>
     <module>ep-udf</module>
     <module>soj-udf</module>
+    <module>common-udf</module>
   </modules>
 </project>
