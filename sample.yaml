@@ -1,0 +1,12 @@
+- from_avro:
+  name: default.from_avro
+  owner:
+  platform:
+   - hermesrno
+   - apollorno
+  className: com.ebay.cmd.udf.FromAvro
+  description: Parse the column with avro data with avro schema path in HDFS
+  paramters:
+   - column name
+   - path
+  example: from_avro(rule_exe_info, '/user/b_tns/avsc/amlauditlog.avsc')
