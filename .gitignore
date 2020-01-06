@@ -46,8 +46,8 @@ target
 # projects
 
 # IntelliJ #
-############
-.idea/
+
+**.idea/**
 *.iml
 
 # Eclipse #
