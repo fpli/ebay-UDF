@@ -84,7 +84,7 @@
     <repositories>
         <repository>
             <id>ebay-data-releases</id>
-            <url>http://nxrepository.corp.ebay.com/nexus/content/repositories/ebay.data.releases</url>
+            <url>http://nxrepository.corp.ebay.com/nexus/content/repositories/ebay.data.snapshots</url>
         </repository>
     </repositories>
 
