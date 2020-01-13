@@ -388,18 +388,6 @@
     paramters:
     example: sojlib.soj_list_last_element('abc,defc,hef',',')
 
-- soj_list_last_element:
-    name: sojlib.soj_list_last_element
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.SojListLastElement
-    description:
-    paramters:
-    example: sojlib.soj_list_last_element('abc,defc,hef',',')
-
 - soj_md5_hash:
     name: sojlib.soj_md5_hash
     owner:
@@ -449,19 +437,7 @@
     example: sojlib.soj_replace_char('ab?cdef?(junk_)','?()_','')
 
 - soj_replace_rchar:
-    name: sojlib.soj_replace_rchar
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.SojReplaceRChar
-    description:
-    paramters:
-    example: sojlib.soj_replace_rchar('ab?cdef?(junk_)','?()_','')
-
-- soj_replace_rchar:
-    name: sojlib.soj_replace_rchar
+    name: sojlib.soj_replace_rcharß
     owner:
     platform:
       - hermesrno
