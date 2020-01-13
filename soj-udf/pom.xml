@@ -83,8 +83,14 @@
     </dependencies>
     <repositories>
         <repository>
-            <id>ebay-data-releases</id>
-            <url>http://nxrepository.corp.ebay.com/nexus/content/repositories/ebay.data.snapshots</url>
+            <id>ebay-hadoop-snapshots</id>
+            <url>http://nxrepository.corp.ebay.com/nexus/content/repositories/hadoop.snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
         </repository>
     </repositories>
 
