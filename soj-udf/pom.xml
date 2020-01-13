@@ -83,14 +83,8 @@
     </dependencies>
     <repositories>
         <repository>
-            <id>central</id>
-            <url>http://ebaycentral/content/repositories/central/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
+            <id>ebay-data-releases</id>
+            <url>http://nxrepository.corp.ebay.com/nexus/content/repositories/ebay.data.releases</url>
         </repository>
     </repositories>
 
