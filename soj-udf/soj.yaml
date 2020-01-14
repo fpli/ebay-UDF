@@ -61,488 +61,488 @@
   example: sojlib.soj_get_page_type( '290499010052', 'QhAZMKAAAABAAAIANwg*', 0, 4340, 0, 0)
 
 - soj_get_url_domain:
-    name: sojlib.soj_get_url_domain
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.GetURLDomain
-    description: Computes the page type for pageid using pagetype lookup and event flags
-    paramters:
-    example: sojlib.soj_get_url_domain('http://wwww.ebay.com:80')
+  name: sojlib.soj_get_url_domain
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.GetURLDomain
+  description: Computes the page type for pageid using pagetype lookup and event flags
+  paramters:
+  example: sojlib.soj_get_url_domain('http://wwww.ebay.com:80')
 
 - soj_get_url_params:
-    name: sojlib.soj_get_url_params
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.GetUrlParams
-    description: Computes the page type for pageid using pagetype lookup and event flags
-    paramters:
-    example: sojlib.soj_get_url_params('http://shop.ebay.com/xyz/abc?_nkw=ebay+uk&l1=2&sacat=456')
+  name: sojlib.soj_get_url_params
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.GetUrlParams
+  description: Computes the page type for pageid using pagetype lookup and event flags
+  paramters:
+  example: sojlib.soj_get_url_params('http://shop.ebay.com/xyz/abc?_nkw=ebay+uk&l1=2&sacat=456')
 
 - soj_get_url_path:
-    name: sojlib.soj_get_url_path
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.GetURLPath
-    description: Computes the page type for pageid using pagetype lookup and event flags
-    paramters:
-    example: sojlib.soj_get_url_path('http://shop.ebay.com/xyz/abc?_nkw=ebay+uk&l1=2&sacat=456')
+  name: sojlib.soj_get_url_path
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.GetURLPath
+  description: Computes the page type for pageid using pagetype lookup and event flags
+  paramters:
+  example: sojlib.soj_get_url_path('http://shop.ebay.com/xyz/abc?_nkw=ebay+uk&l1=2&sacat=456')
 
 - soj_guid_ts:
-    name: sojlib.soj_guid_ts
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.GUID2DateHive
-    description: Every GUID has two elements encoded in it,the IP address of the app server that created it, and the creation timestamp. This function returns the creation timestamp, given a GUID input.
-    paramters:
-      - guid
-    example: sojlib.soj_guid_ts('bb78f16f13a0a0aa17865356ff92ee92')
+  name: sojlib.soj_guid_ts
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.GUID2DateHive
+  description: Every GUID has two elements encoded in it,the IP address of the app server that created it, and the creation timestamp. This function returns the creation timestamp, given a GUID input.
+  paramters:
+    - guid
+  example: sojlib.soj_guid_ts('bb78f16f13a0a0aa17865356ff92ee92')
 
 - soj_guid_ip:
-    name: sojlib.soj_guid_ip
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.GUID2IPHive
-    description: Every GUID has two elements encoded in it, the IP address of the app server that created it, and the creation timestamp. This function returns the app server IP address, given a GUID input.
-    paramters:
-      - guid
-    example: sojlib.soj_guid_ip('bb78f16f13a0a0aa17865356ff92ee92')
+  name: sojlib.soj_guid_ip
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.GUID2IPHive
+  description: Every GUID has two elements encoded in it, the IP address of the app server that created it, and the creation timestamp. This function returns the app server IP address, given a GUID input.
+  paramters:
+    - guid
+  example: sojlib.soj_guid_ip('bb78f16f13a0a0aa17865356ff92ee92')
 
 - soj_guid_sampling:
-    name: sojlib.soj_guid_sampling
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.GuidSampling
-    description:
-    paramters:
-      - guid
-      - pct
-    example: sojlib.soj_guid_sampling('bb78f16f13a0a0aa17865356ff92ee92',0.1)
+  name: sojlib.soj_guid_sampling
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.GuidSampling
+  description:
+  paramters:
+    - guid
+    - pct
+  example: sojlib.soj_guid_sampling('bb78f16f13a0a0aa17865356ff92ee92',0.1)
 
 - soj_isBitInteger:
-    name: sojlib.soj_isBitInteger
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.IsBigInteger
-    description:
-    paramters:
-      - guid
-      - pct
-    example: sojlib.soj_isBitInteger('1232')
+  name: sojlib.soj_isBitInteger
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.IsBigInteger
+  description:
+  paramters:
+    - guid
+    - pct
+  example: sojlib.soj_isBitInteger('1232')
 
 - soj_isBitSet:
-    name: sojlib.soj_isBitSet
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.isBitSet
-    description:
-    paramters:
-      - content
-      - position
-    example: sojlib.soj_isBitSet('1232',2)
+  name: sojlib.soj_isBitSet
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.isBitSet
+  description:
+  paramters:
+    - content
+    - position
+  example: sojlib.soj_isBitSet('1232',2)
 
 - soj_isDecimal:
-    name: sojlib.soj_isDecimal
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.IsDecimal
-    description:
-    paramters:
-      - input
-      - digitLimit
-    example: sojlib.soj_isDecimal('1232.22',18)
+  name: sojlib.soj_isDecimal
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.IsDecimal
+  description:
+  paramters:
+    - input
+    - digitLimit
+  example: sojlib.soj_isDecimal('1232.22',18)
 
 - soj_isInteger:
-    name: sojlib.soj_isInteger
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.IsInteger
-    description:
-    paramters:
-      - input
-      - digitLimit
-    example: sojlib.soj_isInteger('1232')
+  name: sojlib.soj_isInteger
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.IsInteger
+  description:
+  paramters:
+    - input
+    - digitLimit
+  example: sojlib.soj_isInteger('1232')
 
 - is_validIPv4:
-    name: sojlib.is_validIPv4
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.IsValidIPv4
-    description:
-    paramters:
-      - input
-      - digitLimit
-    example: sojlib.is_validIPv4('127.0.0.1')
+  name: sojlib.is_validIPv4
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.IsValidIPv4
+  description:
+  paramters:
+    - input
+    - digitLimit
+  example: sojlib.is_validIPv4('127.0.0.1')
 
 - is_validPrivateIPv4:
-    name: sojlib.is_validPrivateIPv4
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.IsValidPrivateIPv4Hive
-    description:
-    paramters:
-      - input
-      - digitLimit
-    example: sojlib.is_validPrivateIPv4('127.0.0.1')
+  name: sojlib.is_validPrivateIPv4
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.IsValidPrivateIPv4Hive
+  description:
+  paramters:
+    - input
+    - digitLimit
+  example: sojlib.is_validPrivateIPv4('127.0.0.1')
 
 - soj_sample_hash:
-    name: sojlib.soj_sample_hash
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.SampleHash
-    description:
-    paramters:
-    example: sojlib.soj_sample_hash('5e525f491310a5a9631335c3ff79ba26', 100)
+  name: sojlib.soj_sample_hash
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.SampleHash
+  description:
+  paramters:
+  example: sojlib.soj_sample_hash('5e525f491310a5a9631335c3ff79ba26', 100)
 
 - soj_base64tobigint:
-    name: sojlib.soj_base64tobigint
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.SOJBase64ToLongHive
-    description:
-    paramters:
-    example: sojlib.soj_base64tobigint('iIDWAAE*')
+  name: sojlib.soj_base64tobigint
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.SOJBase64ToLongHive
+  description:
+  paramters:
+  example: sojlib.soj_base64tobigint('iIDWAAE*')
 
 - soj_collapse_whitespace:
-    name: sojlib.soj_collapse_whitespace
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.SOJCollapseWhiteSpaceHive
-    description:
-    paramters:
-    example: sojlib.soj_collapse_whitespace('ipad    white   16gb')
+  name: sojlib.soj_collapse_whitespace
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.SOJCollapseWhiteSpaceHive
+  description:
+  paramters:
+  example: sojlib.soj_collapse_whitespace('ipad    white   16gb')
 
 - soj_extract_nvp:
-    name: sojlib.soj_extract_nvp
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.SojExtractNVP
-    description:
-    paramters:
-    example: sojlib.soj_extract_nvp('h8:d3|h4:d9|', 'h4', ':', '|')
+  name: sojlib.soj_extract_nvp
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.SojExtractNVP
+  description:
+  paramters:
+  example: sojlib.soj_extract_nvp('h8:d3|h4:d9|', 'h4', ':', '|')
 
 - soj_get_base64encoded_bits_set:
-    name: sojlib.soj_get_base64encoded_bits_set
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.SojGetBase64EncodedBitsSet
-    description:
-    paramters:
-    example: sojlib.soj_get_base64encoded_bits_set('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAACEMAggAAAIoGEElQAzgBKACIAXBEAIIiBQAAAAABEIAgAACIABAAAAKACBAEQAIAAQAIABAAAAEEAAAAEIAAIBSJAAwARARAgiA')
+  name: sojlib.soj_get_base64encoded_bits_set
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.SojGetBase64EncodedBitsSet
+  description:
+  paramters:
+  example: sojlib.soj_get_base64encoded_bits_set('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAACEMAggAAAIoGEElQAzgBKACIAXBEAIIiBQAAAAABEIAgAACIABAAAAKACBAEQAIAAQAIABAAAAEEAAAAEIAAIBSJAAwARARAgiA')
 
 - soj_get_browser_type:
-    name: sojlib.soj_get_browser_type
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.SojGetBrowserType
-    description:
-    paramters
-    example: sojlib.soj_get_browser_type( 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 2.0.50727)' )
+  name: sojlib.soj_get_browser_type
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.SojGetBrowserType
+  description:
+  paramters
+  example: sojlib.soj_get_browser_type( 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 2.0.50727)' )
 
 - soj_get_browser_version:
-    name: sojlib.soj_get_browser_version
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.SojGetBrowserVersion
-    description:
-    paramters
-    example: sojlib.soj_get_browser_version( 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 2.0.50727)' )
+  name: sojlib.soj_get_browser_version
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.SojGetBrowserVersion
+  description:
+  paramters
+  example: sojlib.soj_get_browser_version( 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 2.0.50727)' )
 
 - soj_get_OS:
-    name: sojlib.soj_get_OS
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.SojGetOs
-    description:
-    paramters:
-    example: sojlib.soj_get_OS('Opera/9.52 (Windows NT 5.1; U; en)')
+  name: sojlib.soj_get_OS
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.SojGetOs
+  description:
+  paramters:
+  example: sojlib.soj_get_OS('Opera/9.52 (Windows NT 5.1; U; en)')
 
 - soj_java_hash:
-    name: sojlib.soj_java_hash
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.SojJavaHash
-    description:
-    paramters
-    example: sojlib.soj_java_hash('0000007e12a0a0e20196e7f6fe84b8e5',NULL,'4000',100)
+  name: sojlib.soj_java_hash
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.SojJavaHash
+  description:
+  paramters
+  example: sojlib.soj_java_hash('0000007e12a0a0e20196e7f6fe84b8e5',NULL,'4000',100)
 
 - soj_json_parse:
-    name: sojlib.soj_json_parse
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.SojJsonParse
-    description:
-    paramters:
-    example:
+  name: sojlib.soj_json_parse
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.SojJsonParse
+  description:
+  paramters:
+  example:
 
 - soj_list_element_count:
-    name: sojlib.soj_list_element_count
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.SojListElementCount
-    description:
-    paramters:
-    example: sojlib.soj_list_element_count('abc,defc,hef,,,',',')
+  name: sojlib.soj_list_element_count
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.SojListElementCount
+  description:
+  paramters:
+  example: sojlib.soj_list_element_count('abc,defc,hef,,,',',')
 
 - soj_list_get_range_by_idx:
-    name: sojlib.soj_list_get_range_by_idx
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.SojListGetRangeByIndex
-    description:
-    paramters:
-    example: sojlib.soj_list_get_range_by_idx('abc,defc,hef',',',2,3)
+  name: sojlib.soj_list_get_range_by_idx
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.SojListGetRangeByIndex
+  description:
+  paramters:
+  example: sojlib.soj_list_get_range_by_idx('abc,defc,hef',',',2,3)
 
 - soj_list_get_val_by_idx:
-    name: sojlib.soj_list_get_val_by_idx
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.SojListGetValByIdx
-    description:
-    paramters:
-    example: sojlib.soj_list_get_val_by_idx('abc,defc,hef',',',2)
+  name: sojlib.soj_list_get_val_by_idx
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.SojListGetValByIdx
+  description:
+  paramters:
+  example: sojlib.soj_list_get_val_by_idx('abc,defc,hef',',',2)
 
 - soj_list_last_element:
-    name: sojlib.soj_list_last_element
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.SojListLastElement
-    description:
-    paramters:
-    example: sojlib.soj_list_last_element('abc,defc,hef',',')
+  name: sojlib.soj_list_last_element
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.SojListLastElement
+  description:
+  paramters:
+  example: sojlib.soj_list_last_element('abc,defc,hef',',')
 
 - soj_md5_hash:
-    name: sojlib.soj_md5_hash
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.SojMd5Hash
-    description:
-    paramters:
-    example: sojlib.soj_md5_hash('0000007e12a0a0e20196e7f6fe84b8e5',NULL,NULL,100)
+  name: sojlib.soj_md5_hash
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.SojMd5Hash
+  description:
+  paramters:
+  example: sojlib.soj_md5_hash('0000007e12a0a0e20196e7f6fe84b8e5',NULL,NULL,100)
 
 - soj_md5_hash_32:
-    name: sojlib.soj_md5_hash_32
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.SojMd5Hash32
-    description:
-    paramters:
-    example: sojlib.soj_md5_hash_32('0000007e12a0a0e20196e7f6fe84b8e5',NULL,NULL,100)
+  name: sojlib.soj_md5_hash_32
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.SojMd5Hash32
+  description:
+  paramters:
+  example: sojlib.soj_md5_hash_32('0000007e12a0a0e20196e7f6fe84b8e5',NULL,NULL,100)
 
 - soj_md5_hash_128:
-    name: sojlib.soj_md5_hash_128
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.SojMd5Hash128
-    description:
-    paramters:
-    example: sojlib.soj_md5_hash_128('0000007e12a0a0e20196e7f6fe84b8e5',NULL,'4000',100)
+  name: sojlib.soj_md5_hash_128
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.SojMd5Hash128
+  description:
+  paramters:
+  example: sojlib.soj_md5_hash_128('0000007e12a0a0e20196e7f6fe84b8e5',NULL,'4000',100)
 
 - soj_replace_char:
-    name: sojlib.soj_replace_char
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.SojReplaceChar
-    description:
-    paramters:
-    example: sojlib.soj_replace_char('ab?cdef?(junk_)','?()_','')
+  name: sojlib.soj_replace_char
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.SojReplaceChar
+  description:
+  paramters:
+  example: sojlib.soj_replace_char('ab?cdef?(junk_)','?()_','')
 
 - soj_replace_rchar:
-    name: sojlib.soj_replace_rcharß
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.SojReplaceRChar
-    description:
-    paramters:
-    example: sojlib.soj_replace_rchar('ab?cdef?(junk_)','?()_','')
+  name: sojlib.soj_replace_rcharß
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.SojReplaceRChar
+  description:
+  paramters:
+  example: sojlib.soj_replace_rchar('ab?cdef?(junk_)','?()_','')
 
 - soj_str2date:
-    name: sojlib.soj_str2date
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.SojStr2Date
-    description:
-    paramters:
-    example:
+  name: sojlib.soj_str2date
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.SojStr2Date
+  description:
+  paramters:
+  example:
 
 - soj_str2Timestamp:
-    name: sojlib.soj_str2Timestamp
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.SojStr2DateTimeStamp
-    description:
-    paramters:
-    example:
+  name: sojlib.soj_str2Timestamp
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.SojStr2DateTimeStamp
+  description:
+  paramters:
+  example:
 
 - soj_nvl:
-    name: sojlib.soj_nvl
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.SojTagFetcher
-    description:
-    paramters:
-    example: sojlib.soj_nvl('abc=123','abc')
+  name: sojlib.soj_nvl
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.SojTagFetcher
+  description:
+  paramters:
+  example: sojlib.soj_nvl('abc=123','abc')
 
 - soj_timestamp2Date:
-    name: sojlib.soj_timestamp2Date
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.SojTimestampToDateWithMilliSecond
-    description:
-    paramters:
-    example:
+  name: sojlib.soj_timestamp2Date
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.SojTimestampToDateWithMilliSecond
+  description:
+  paramters:
+  example:
 
 - soj_url_decode_escapes:
-    name: sojlib.soj_url_decode_escapes
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.SOJURLDecodeEscapeHive
-    description:
-    paramters:
-    example: sojlib.soj_url_decode_escapes('BRAND%3ACalvin%2BKlein+Gucci+Polo%2BRalph%2BLauren+Prada+Ralph%2BLauren+Tommy%2BHilfiger%3BCONDITION%3ANew%3B', '%')
+  name: sojlib.soj_url_decode_escapes
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.SOJURLDecodeEscapeHive
+  description:
+  paramters:
+  example: sojlib.soj_url_decode_escapes('BRAND%3ACalvin%2BKlein+Gucci+Polo%2BRalph%2BLauren+Prada+Ralph%2BLauren+Tommy%2BHilfiger%3BCONDITION%3ANew%3B', '%')
 
 - soj_url_extract_nvp:
-    name: sojlib.soj_url_extract_nvp
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.SojUrlExtractNvp
-    description:
-    paramters:
-    example: sojlib.soj_url_extract_nvp( '/ebaymotors/Nissan-Rogue-Rear-View-Mirror-Built-Monitor-Oem-_W0QQcmdZViewItemQQhashZitem3a5ecdbcbcQQitemZ250698644668QQptZCarQ5fAudioQ5fVideo', 'hash', 1 )
+  name: sojlib.soj_url_extract_nvp
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.SojUrlExtractNvp
+  description:
+  paramters:
+  example: sojlib.soj_url_extract_nvp( '/ebaymotors/Nissan-Rogue-Rear-View-Mirror-Built-Monitor-Oem-_W0QQcmdZViewItemQQhashZitem3a5ecdbcbcQQitemZ250698644668QQptZCarQ5fAudioQ5fVideo', 'hash', 1 )
 
 - soj_value_in_list:
-    name: sojlib.soj_value_in_list
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.SojValueInList
-    description:
-    paramters:
-    example: sojlib.soj_value_in_list('abc,defc,hef',',','defc')
+  name: sojlib.soj_value_in_list
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.SojValueInList
+  description:
+  paramters:
+  example: sojlib.soj_value_in_list('abc,defc,hef',',','defc')
 
 - soj_str_between_endlist:
-    name: sojlib.soj_str_between_endlist
-    owner:
-    platform:
-      - hermesrno
-      - apollorno
-      - hercules
-    className: com.ebay.hadoop.udf.soj.StrBetweenEndList
-    description:
-    paramters:
-    example: sojlib.soj_str_between_endlist( 'Opera/9.80 (Windows NT 5.1; U; en) Presto/2.2.15 Version/10.10','(',')')
+  name: sojlib.soj_str_between_endlist
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.StrBetweenEndList
+  description:
+  paramters:
+  example: sojlib.soj_str_between_endlist( 'Opera/9.80 (Windows NT 5.1; U; en) Presto/2.2.15 Version/10.10','(',')')
 
 
 
