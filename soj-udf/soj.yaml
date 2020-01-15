@@ -46,7 +46,8 @@
   className: com.ebay.hadoop.udf.soj.ExtractFlag
   description: Extract treatment type from an encoded combination id
   parameters:
-  example: soj_extract_flag('11111',1);
+  example: sojlib.soj_extract_flag('11111',1);
+
 
 - soj_get_page_type:
   name: sojlib.soj_get_page_type
@@ -136,8 +137,8 @@
     - pct
   example: sojlib.soj_guid_sampling('bb78f16f13a0a0aa17865356ff92ee92',0.1)
 
-- soj_isBitInteger:
-  name: sojlib.soj_isBitInteger
+- is_BigInteger:
+  name: sojlib.is_BigInteger
   owner:
   platform:
     - hermesrno
@@ -148,10 +149,10 @@
   parameters:
     - guid
     - pct
-  example: sojlib.soj_isBitInteger('1232')
+  example: sojlib.is_BigInteger('1232')
 
-- soj_isBitSet:
-  name: sojlib.soj_isBitSet
+- is_bitSet:
+  name: sojlib.is_bitSet
   owner:
   platform:
     - hermesrno
@@ -162,10 +163,10 @@
   parameters:
     - content
     - position
-  example: sojlib.soj_isBitSet('1232',2)
+  example: sojlib.is_bitSet('1232',2)
 
-- soj_isDecimal:
-  name: sojlib.soj_isDecimal
+- is_decimal:
+  name: sojlib.is_decimal
   owner:
   platform:
     - hermesrno
@@ -176,10 +177,10 @@
   parameters:
     - input
     - digitLimit
-  example: sojlib.soj_isDecimal('1232.22',18)
+  example: sojlib.is_decimal('1232.22',18)
 
-- soj_isInteger:
-  name: sojlib.soj_isInteger
+- is_integer:
+  name: sojlib.is_integer
   owner:
   platform:
     - hermesrno
@@ -190,7 +191,7 @@
   parameters:
     - input
     - digitLimit
-  example: sojlib.soj_isInteger('1232')
+  example: sojlib.is_integer('1232')
 
 - is_validIPv4:
   name: sojlib.is_validIPv4
