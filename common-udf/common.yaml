@@ -1,0 +1,229 @@
+- base64_decode:
+  name: base64_decode
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: com.ebay.hadoop.udf.common.Base64Decode
+  description:
+  parameters:
+  example:
+
+- base64_decode:
+  name: base64_encode
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: com.ebay.hadoop.udf.common.Base64Encode
+  description:
+  parameters:
+  example:
+
+- base64_decode:
+  name: current_user
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: com.ebay.hadoop.udf.common.CurrentUser
+  description:
+  parameters:
+  example:
+
+- base64_decode:
+  name: date2ms
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: com.ebay.hadoop.udf.common.StringToEpochDate
+  description:
+  parameters:
+  example:
+
+- base64_decode:
+  name: decodeappflag
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: com.ebay.hadoop.udf.common.DecodeAppFlags
+  description:
+  parameters:
+  example:
+
+- base64_decode:
+  name: decrypt
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: com.ebay.hadoop.udf.common.Aes2Text
+  description:
+  parameters:
+  example:
+
+- base64_decode:
+  name: encrypt
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: com.ebay.hadoop.udf.common.Text2Aes
+  description:
+  parameters:
+  example:
+
+- base64_decode:
+  name: firstnameof
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: com.ebay.hadoop.udf.common.FirstnameOf
+  description:
+  parameters:
+  example:
+
+- base64_decode:
+  name: is_ascii
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: com.ebay.hadoop.udf.common.IsAscii
+  description:
+  parameters:
+  example:
+
+- base64_decode:
+  name: is_decimal
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: com.ebay.hadoop.udf.common.IsDecimal
+  description:
+  parameters:
+  example:
+
+- base64_decode:
+  name: lastnameof
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: com.ebay.hadoop.udf.common.LastnameOf
+  description:
+  parameters:
+  example:
+
+- base64_decode:
+  name: ms2date
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: com.ebay.hadoop.udf.common.EpochDateToString
+  description:
+  parameters:
+  example:
+
+
+- base64_decode:
+  name: ms2ts
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: com.ebay.hadoop.udf.common.EpochTimestampToString
+  description:
+  parameters:
+  example:
+
+
+- base64_decode:
+  name: ts2ms
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: com.ebay.hadoop.udf.common.StringToEpochDate
+  description:
+  parameters:
+  example:
+
+- base64_decode:
+  name: udf_d8_id_obscure
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: com.ebay.hadoop.udf.common.D8IdObscure
+  description:
+  parameters:
+  example:
+
+- base64_decode:
+  name: url_hex_encode
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: com.ebay.hadoop.udf.common.UrlHexEncode
+  description:
+  parameters:
+  example:
+
+- base64_decode:
+  name: utf8_to_ascii
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: com.ebay.hadoop.udf.common.Utf8ToAscii
+  description:
+  parameters:
+  example:
+
+- base64_decode:
+  name: json_split
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: com.ebay.hadoop.udf.common.JsonSplitUDF
+  description:
+  parameters:
+  example:
+
+- base64_decode:
+  name: json_map
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: com.ebay.hadoop.udf.common.JsonMapUDF
+  description:
+  parameters:
+  example:

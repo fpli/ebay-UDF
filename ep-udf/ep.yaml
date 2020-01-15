@@ -6,7 +6,7 @@
     - apollorno
   className: com.ebay.hadoop.udf.ep.GetExptId
   description: Extract experiment id from an encoded combination id
-  paramters:
+  parameters:
     - combination id
   example: get_expt_id(-9221453629538576364)
 
@@ -18,7 +18,7 @@
     - apollorno
   className: com.ebay.hadoop.udf.ep.GetTreatmentId
   description: Extract treatment id from an encoded combination id
-  paramters:
+  parameters:
     - combination id
   example: get_treatment_id(-9221453629538576364)
 
@@ -30,7 +30,7 @@
     - apollorno
   className: com.ebay.hadoop.udf.ep.GetTreatmentVersion
   description: Extract treatment version from an encoded combination id
-  paramters:
+  parameters:
     - combination id
   example: get_treatment_ver(-9221453629538576364)
 
@@ -42,7 +42,7 @@
     - apollorno
   className: com.ebay.hadoop.udf.ep.GetTreatmentType
   description: Extract treatment type from an encoded combination id
-  paramters:
+  parameters:
     - combination id
   example: get_treatment_type(-9221453629538576364)
 
@@ -54,7 +54,7 @@
     - apollorno
   className: com.ebay.hadoop.udf.ep.GetDimensionId
   description: Extract dimension id from an encoded dimension id value
-  paramters:
+  parameters:
     - dimension id value
   example: get_dimension_id(-12884901887)
 
@@ -66,7 +66,7 @@
     - apollorno
   className: com.ebay.hadoop.udf.ep.GetDimensionValue
   description: Extract dimension value from an encoded dimension id value
-  paramters:
+  parameters:
     - dimension id value
   example: get_dimension_value(-12884901887)
 
@@ -78,7 +78,7 @@
     - apollorno
   className: com.ebay.hadoop.udf.ep.GetDimensionValueById
   description: Extract dimension value from a list of encoded dimension id values
-  paramters:
+  parameters:
     - dimensions
     - dimension id
   example: get_dimension_value_by_id([-12884901887], -3)
@@ -91,7 +91,7 @@
     - apollorno
   className: com.ebay.hadoop.udf.ep.GetInherentDimensionValue
   description: Extract inherent dimension value from an encoded dimension id value
-  paramters:
+  parameters:
     - encoded value
     - index
   example: get_inherent_dimension_value(16777216, 0)
@@ -104,7 +104,7 @@
     - apollorno
   className: com.ebay.hadoop.udf.ep.GetMetricValueById
   description: Extract metric value from a list of metric id values
-  paramters:
+  parameters:
     - metrics
     - metric id
   example: get_metric_value_by_id(metrics, -1)
@@ -117,7 +117,7 @@
     - apollorno
   className: com.ebay.hadoop.udf.ep.GetTreatedType
   description: Extract treated type from an encoded treatment info
-  paramters:
+  parameters:
     - treatment info
   example: get_treated_type(8589934594)
 
@@ -129,7 +129,7 @@
     - apollorno
   className: com.ebay.hadoop.udf.ep.IsTreated
   description: Find if treated or not from an encoded treatment info
-  paramters:
+  parameters:
     - treatment info
   example: is_treated(8589934594)
 
@@ -141,7 +141,7 @@
     - apollorno
   className: com.ebay.hadoop.udf.ep.IsMod
   description: Find if mod qualified or not from an encoded treatment info
-  paramters:
+  parameters:
     - treatment info
   example: is_mod(8589934594)
 
@@ -153,6 +153,6 @@
     - apollorno
   className: com.ebay.hadoop.udf.ep.IsNQT
   description: Find if nqt qualified or not from an encoded treatment info
-  paramters:
+  parameters:
     - treatment info
   example: is_nqt(8589934594)

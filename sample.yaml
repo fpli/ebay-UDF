@@ -6,7 +6,7 @@
    - apollorno
   className: com.ebay.cmd.udf.FromAvro
   description: Parse the column with avro data with avro schema path in HDFS
-  paramters:
+  parameters:
    - column name
    - path
   example: from_avro(rule_exe_info, '/user/b_tns/avsc/amlauditlog.avsc')
