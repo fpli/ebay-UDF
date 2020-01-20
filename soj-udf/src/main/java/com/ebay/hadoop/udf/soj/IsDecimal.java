@@ -1,6 +1,10 @@
 package com.ebay.hadoop.udf.soj;
 
 import org.apache.hadoop.hive.ql.exec.UDF;
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.Text;
+
+import java.math.BigDecimal;
 
 import static java.lang.Character.isDigit;
 
@@ -24,42 +28,27 @@ import static java.lang.Character.isDigit;
 
 public class IsDecimal extends UDF {
 
-    public boolean evaluate(String input, int digitLimit) {
-
-        // TD return false in case of null input.
-        if (input == null) return false;
-
-        input = input.trim();
-
-        int length = input.length();
-
-        if (length == 0) return false;
-
-        int dpCnt = 0; // decimal points counter
-        int chCnt = 0; // char pointer counter
-
-        // one leading +|- sign is ok
-        if (input.charAt(chCnt) == '+' || input.charAt(chCnt) == '-') {
-            chCnt++;
+    public IntWritable evaluate( Text instr, int p, int s) {
+        if (instr == null || p < 0 || s < 0) {
+            return new IntWritable(0);
         }
 
-        while (true) {
-            if (chCnt == length) {
-                break;
-            }
-            if (input.charAt(chCnt) == '.') {
-                dpCnt++; // count the number of decimalpoints in the input
-            }
-            else if (!isDigit(input.charAt(chCnt))) {
-                return false;
-            }
-            chCnt++;
+        String num = instr.toString();
+        if (!num.matches("[+-]?\\d*[\\.]?\\d*")) {
+            return new IntWritable(0);
         }
-        return chCnt <= digitLimit && dpCnt <= 1;
-    }
+        try {
+            BigDecimal decimal = new BigDecimal(num);
+            int scale = decimal.scale();
+            int precision = decimal.precision();
+            if ((p - s) >= (precision - scale)){
+                return new IntWritable(1);
+            }else{
+                return new IntWritable(0);
+            }
 
-    // Overloads the above method with a defalut digitLimit == 18, which is verified in TD by Daniel.
-    public boolean evaluate(String input) {
-        return evaluate(input, 18);
+        } catch (NumberFormatException e) {
+            return new IntWritable(0);
+        }
     }
 }
