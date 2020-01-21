@@ -534,7 +534,7 @@
   parameters:
   example: sojlib.soj_str_between_endlist( 'Opera/9.80 (Windows NT 5.1; U; en) Presto/2.2.15 Version/10.10','(',')')
 
-soj_str_between_str:
+- soj_str_between_str:
   name: sojlib.soj_str_between_str
   owner:
   platform:
