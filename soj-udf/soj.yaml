@@ -137,8 +137,8 @@
     - pct
   example: sojlib.soj_guid_sampling('bb78f16f13a0a0aa17865356ff92ee92',0.1)
 
-- is_BigInteger:
-  name: sojlib.is_BigInteger
+- is_bigint:
+  name: sojlib.is_bigint
   owner:
   platform:
     - hermesrno
@@ -438,7 +438,7 @@
   example: sojlib.soj_replace_char('ab?cdef?(junk_)','?()_','')
 
 - soj_replace_rchar:
-  name: sojlib.soj_replace_rcharß
+  name: sojlib.soj_replace_rchar
   owner:
   platform:
     - hermesrno
@@ -461,8 +461,8 @@
   parameters:
   example:
 
-- soj_str2Timestamp:
-  name: sojlib.soj_str2Timestamp
+- soj_ts_to_td:
+  name: sojlib.soj_ts_to_td
   owner:
   platform:
     - hermesrno
