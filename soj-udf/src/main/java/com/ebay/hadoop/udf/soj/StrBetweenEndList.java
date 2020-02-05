@@ -4,7 +4,7 @@ import jodd.util.StringUtil;
 import org.apache.hadoop.hive.ql.exec.UDF;
 
 public class StrBetweenEndList extends UDF {
-    public String evaluate(String url, String start, String end) {
+    public String evaluate( String url, String start, String end ) {
         if (StringUtil.isBlank(url))
             return null;
         int startPos;
