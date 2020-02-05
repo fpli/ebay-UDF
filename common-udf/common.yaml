@@ -163,7 +163,7 @@
     - hermesrno
     - apollorno
     - herculeslvs
-  className: com.ebay.hadoop.udf.common.StringToEpochDate
+  className: com.ebay.hadoop.udf.common.StringToEpochTimestamp
   description:
   parameters:
   example:
