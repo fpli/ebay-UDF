@@ -137,8 +137,8 @@
     - pct
   example: sojlib.soj_guid_sampling('bb78f16f13a0a0aa17865356ff92ee92',0.1)
 
-- is_BigInteger:
-  name: sojlib.is_BigInteger
+- is_bigint:
+  name: sojlib.is_bigint
   owner:
   platform:
     - hermesrno
@@ -450,8 +450,8 @@
   parameters:
   example:
 
-- soj_str2Timestamp:
-  name: sojlib.soj_str2Timestamp
+- soj_ts_to_td:
+  name: sojlib.soj_ts_to_td
   owner:
   platform:
     - hermesrno
@@ -545,6 +545,18 @@
   description:
   parameters:
   example: sojlib.soj_str_between_str( 'Opera/9.80 (Windows NT 5.1; U; en) Presto/2.2.15 Version/10.10','(',')')
+
+- soj_str_reverse:
+  name: sojlib.soj_str_reverse
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.SojStrReverse
+  description:
+  parameters:
+  example: sojlib.soj_str_reverse('test')
 
 
 
