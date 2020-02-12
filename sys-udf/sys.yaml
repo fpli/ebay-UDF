@@ -1,0 +1,12 @@
+- udf_sha256_latin:
+  name: syslib.udf_sha256_latin
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.carmel.udf.syslib.Sha256Latin
+  description: convert the input latin string to UTF8 and then proceeded with sha256
+  parameters:
+    - latin
+  example: syslib.udf_sha256_latin('abcdeßàèÀ')

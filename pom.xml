@@ -11,6 +11,7 @@
     <module>soj-udf</module>
     <module>common-udf</module>
     <module>deploy</module>
+    <module>sys-udf</module>
   </modules>
 
   <properties>
