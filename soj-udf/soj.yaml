@@ -389,17 +389,6 @@
   parameters:
   example: sojlib.soj_list_last_element('abc,defc,hef',',')
 
-- soj_md5_hash:
-  name: sojlib.soj_md5_hash
-  owner:
-  platform:
-    - hermesrno
-    - apollorno
-    - hercules
-  className: com.ebay.hadoop.udf.soj.SojMd5Hash
-  description:
-  parameters:
-  example: sojlib.soj_md5_hash('0000007e12a0a0e20196e7f6fe84b8e5',NULL,NULL,100)
 
 - soj_md5_hash_32:
   name: sojlib.soj_md5_hash_32

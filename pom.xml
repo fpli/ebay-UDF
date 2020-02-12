@@ -10,6 +10,7 @@
     <module>ep-udf</module>
     <module>soj-udf</module>
     <module>common-udf</module>
+    <module>deploy</module>
   </modules>
 
   <properties>
@@ -21,7 +22,8 @@
     <junit.version>4.11</junit.version>
   </properties>
 
-  <dependencies>
+    <dependencyManagement>
+    <dependencies>
     <dependency>
       <groupId>org.apache.hadoop</groupId>
       <artifactId>hadoop-common</artifactId>
@@ -41,6 +43,6 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
+    </dependencyManagement>
 
 </project>
