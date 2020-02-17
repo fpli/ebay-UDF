@@ -10,3 +10,148 @@
   parameters:
     - latin
   example: syslib.udf_sha256_latin('abcdeßàèÀ')
+
+- oreplace1:
+  name: syslib.oreplace1
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.carmel.udf.syslib.Oreplace1
+  description:
+  parameters:
+  example: syslib.oreplace1('JACK and JUE','J')
+
+- oreplace:
+  name: syslib.oreplace
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.carmel.udf.syslib.Oreplace2
+  description:
+  parameters:
+  example: syslib.oreplace('JACK and JUE','J','BL')
+
+- udf_d8_id_obscure:
+  name: syslib.udf_d8_id_obscure
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.carmel.udf.syslib.D8IdObscure
+  description:
+  parameters:
+  example: syslib.udf_d8_id_obscure(123345)
+
+- udf_DecimalBitValue:
+  name: syslib.udf_DecimalBitValue
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.carmel.udf.syslib.DecimalBitValue
+  description:
+  parameters:
+  example: syslib.udf_DecimalBitValue(15725685147225l,29)
+
+- udf_IntegerBitValue:
+  name: syslib.udf_IntegerBitValue
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.carmel.udf.syslib.IntegerBitValue
+  description:
+  parameters:
+  example: syslib.udf_IntegerBitValue(1222,20)
+
+- udf_IsDecimal:
+  name: syslib.udf_IsDecimal
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.carmel.udf.syslib.IsDecimal
+  description:
+  parameters:
+  example: syslib.udf_IsDecimal('     123456789012345678.  ', 20)
+
+- udf_IsInteger:
+  name: syslib.udf_IsInteger
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.carmel.udf.syslib.IsInteger
+  description:
+  parameters:
+  example: syslib.udf_IsInteger('     1234567890.  ')
+
+- udf_IsNumeric:
+  name: syslib.udf_IsNumeric
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.carmel.udf.syslib.IsNumber
+  description:
+  parameters:
+  example: syslib.udf_IsNumeric('     +12345678901234567890123456780 ')
+
+- OTRANSLATE:
+  name: syslib.OTRANSLATE
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.carmel.udf.syslib.Otranslate
+  description:
+  parameters:
+  example: syslib.OTRANSLATE('2KRW229',
+    '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ', '9999999999XXXXXXXXXXXXXXXXXXXXXXXXXX')
+
+- url_hex_encode:
+  name: syslib.url_hex_encode
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.carmel.udf.syslib.UrlHexEncode
+  description:
+  parameters:
+  example: syslib.url_hex_encode('http://abc.com/<abc>/%$%^^&^&/')
+
+- utc_strfmt:
+  name: syslib.utc_strfmt
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.carmel.udf.syslib.UTCStrFormat
+  description:
+  parameters:
+  example: syslib.utc_strfmt(10)
+
+- ebay_replace_char:
+  name: syslib.ebay_replace_char
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.carmel.udf.syslib.EbayReplaceChar
+  description:
+  parameters:
+  example: syslib.ebay_replace_char('ab?cdef?(junk_)','?()_','')
