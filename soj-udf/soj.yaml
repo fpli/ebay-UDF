@@ -558,7 +558,6 @@
   parameters:
   example: sojlib.soj_str_reverse('test')
 
-<<<<<<< HEAD
 - cstr_strchr:
   name: sojlib.cstr_strchr
   owner:
