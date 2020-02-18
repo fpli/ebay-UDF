@@ -3,7 +3,7 @@ package com.ebay.carmel.udf.syslib;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
-public class Sha256LationTest {
+public class Sha256LationTest implements TestBase{
 
     @Test
     public void testUdf() throws Exception {
