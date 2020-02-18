@@ -558,5 +558,88 @@
   parameters:
   example: sojlib.soj_str_reverse('test')
 
+- cstr_strchr:
+  name: sojlib.cstr_strchr
+  owner:
+  platform:
+  - hermesrno
+  - apollorno
+  - hercules
+  className: com.ebay.hadoop.udf.soj.CstrStrchr
+  description:
+  parameters:
+  example: sojlib.cstr_strchr('www.ebay.com
+
+- is_timestamp:
+  name: sojlib.is_timestamp
+  owner:
+  platform:
+  - hermesrno
+  - apollorno
+  - hercules
+  className: com.ebay.hadoop.udf.soj.IsTimestamp
+  description:
+  parameters:
+  example: sojlib.is_timestamp('2009-01-01 10:00:02.123',0
+
+- soj_get_top_domain:
+  name: sojlib.soj_get_top_domain
+  owner:
+  platform:
+  - hermesrno
+  - apollorno
+  - hercules
+  className: com.ebay.hadoop.udf.soj.SojGetTopDomain
+  description:
+  parameters:
+  example: sojlib.soj_get_top_domain('www.ebay.com')
+
+- soj_get_ua_version:
+  name: sojlib.soj_get_ua_version
+  owner:
+  platform:
+  - hermesrno
+  - apollorno
+  - hercules
+  className: com.ebay.hadoop.udf.soj.SojGetUaVersion
+  description:
+  parameters:
+  example: sojlib.soj_get_ua_version('Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 4.0; KHTE B459418859A38001T821751 )', 1)
+
+- soj_str_between:
+  name: sojlib.soj_str_between
+  owner:
+  platform:
+  - hermesrno
+  - apollorno
+  - hercules
+  className: com.ebay.hadoop.udf.soj.StrBetween
+  description:
+  parameters:
+  example: sojlib.soj_str_between( 'Opera/9.80 (Windows NT 5.1; U; en) Presto/2.2.15 Version/10.10','(',')')
+
+- soj_str_between_list:
+  name: sojlib.soj_str_between_list
+  owner:
+  platform:
+  - hermesrno
+  - apollorno
+  - hercules
+  className: com.ebay.hadoop.udf.soj.StrBetweenList
+  description:
+  parameters:
+  example: sojlib.soj_str_between_list( 'Opera/9.80 (Windows NT 5.1; U; en) Presto/2.2.15 Version/10.10','(',')')
+
+- udf_soj_get_b64_bit_postns:
+  name: sojlib.udf_soj_get_b64_bit_postns
+  owner:
+  platform:
+  - hermesrno
+  - apollorno
+  - hercules
+  className: com.ebay.hadoop.udf.soj.UdfSojGetB64BitPostns
+  description:
+  parameters:
+  example: sojlib.udf_soj_get_b64_bit_postns('BA**',0)
 
 
