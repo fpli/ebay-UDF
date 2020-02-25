@@ -12,8 +12,5 @@ public class SojMd5Hash32Test {
         assertEquals(Integer.valueOf(72), new SojMd5Hash32().evaluate("0000007e12a0a0e20196e7f6fe84b8e5", "EXPT", (String)null, 100));
         assertEquals(Integer.valueOf(90), new SojMd5Hash32().evaluate("0000007e12a0a0e20196e7f6fe84b8e5", (String)null, "4000", 100));
         assertEquals(Integer.valueOf(26), new SojMd5Hash32().evaluate("0000007e12a0a0e20196e7f6fe84b8e5", "13", "4000", 100));
-        assertEquals(null, new SojMd5Hash128().evaluate("0000007e12a0a0e20196e7f6fe84b8e5", "13", "4000", null));
-        assertEquals(null, new SojMd5Hash128().evaluate("0000007e12a0a0e20196e7f6fe84b8e5", "13", "4000", -1));
-        assertEquals(null, new SojMd5Hash128().evaluate(null, "13", "4000", 100));
     }
 }

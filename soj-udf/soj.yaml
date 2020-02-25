@@ -642,4 +642,26 @@
   parameters:
   example: sojlib.udf_soj_get_b64_bit_postns('BA**',0)
 
+- efirst:
+  name: sojlib.efirst
+  owner:
+  platform:
+  - hermesrno
+  - apollorno
+  - hercules
+  className: com.ebay.hadoop.udf.soj.EFirst
+  description:
+  parameters:
+  example: sojlib.efirst(l_value,seqnum)
 
+- elast:
+  name: sojlib.elast
+  owner:
+  platform:
+  - hermesrno
+  - apollorno
+  - hercules
+  className: com.ebay.hadoop.udf.soj.ELast
+  description:
+  parameters:
+  example: sojlib.elast(l_value,seqnum)
