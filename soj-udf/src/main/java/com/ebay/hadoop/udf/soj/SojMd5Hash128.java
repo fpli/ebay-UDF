@@ -1,6 +1,7 @@
 package com.ebay.hadoop.udf.soj;
 
 import org.apache.hadoop.hive.ql.exec.UDF;
+import org.apache.hadoop.hive.serde2.io.HiveDecimalWritable;
 
 import java.math.BigInteger;
 import java.nio.charset.Charset;
@@ -21,9 +22,22 @@ public class SojMd5Hash128 extends UDF {
     }
 
     public Integer evaluate(String guid, String constant_id, String experiment_id, Integer mod_value) {
-        if (guid == null ||  mod_value == null || mod_value <= 0)
+        if (guid == null || mod_value == null || mod_value <= 0)
             return null;
 
+        return sojMd5Hash128Varchar(guid, constant_id, experiment_id, mod_value);
+    }
+
+    public Integer evaluate(HiveDecimalWritable writable, String constant_id, String experiment_id, Integer mod_value) {
+        if (writable == null || mod_value == null || mod_value <= 0)
+            return null;
+
+        String value = String.valueOf(writable.getHiveDecimal().bigDecimalValue().longValue());
+
+        return sojMd5Hash128Varchar(value, constant_id, experiment_id, mod_value);
+    }
+
+    public Integer sojMd5Hash128Varchar(String guid, String constant_id, String experiment_id, Integer mod_value) {
         int hash = 0;
         BigInteger[] bigValue = new BigInteger[4];
         StringBuilder sb = new StringBuilder();
@@ -58,31 +72,31 @@ public class SojMd5Hash128 extends UDF {
         byte[] preserved4 = new byte[4];
 
         int i;
-        for(i = 0; i < 4; ++i) {
-            preserved1[i] = (byte)(result[i] & -1);
+        for (i = 0; i < 4; ++i) {
+            preserved1[i] = (byte) (result[i] & -1);
         }
 
         bigValue[0] = new BigInteger(1, preserved1);
 
-        for(i = 0; i < 4; ++i) {
-            preserved2[i] = (byte)(result[4 + i] & -1);
+        for (i = 0; i < 4; ++i) {
+            preserved2[i] = (byte) (result[4 + i] & -1);
         }
 
         bigValue[1] = new BigInteger(1, preserved2);
 
-        for(i = 0; i < 4; ++i) {
-            preserved3[i] = (byte)(result[8 + i] & -1);
+        for (i = 0; i < 4; ++i) {
+            preserved3[i] = (byte) (result[8 + i] & -1);
         }
 
         bigValue[2] = new BigInteger(1, preserved3);
 
-        for(i = 0; i < 4; ++i) {
-            preserved4[i] = (byte)(result[12 + i] & -1);
+        for (i = 0; i < 4; ++i) {
+            preserved4[i] = (byte) (result[12 + i] & -1);
         }
 
         bigValue[3] = new BigInteger(1, preserved4);
 
-        for(i = 0; i < 4; ++i) {
+        for (i = 0; i < 4; ++i) {
             hash = 31 * hash + (bigValue[i].intValue() & -1);
         }
 
@@ -90,6 +104,6 @@ public class SojMd5Hash128 extends UDF {
             hash *= -1;
         }
 
-        return BigInteger.valueOf((long)hash).mod(BigInteger.valueOf((long)mod_value)).intValue();
+        return BigInteger.valueOf((long) hash).mod(BigInteger.valueOf((long) mod_value)).intValue();
     }
 }
