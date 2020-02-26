@@ -7,11 +7,12 @@ public class SojGetTopDomain extends UDF {
     public String evaluate(String url_domain) {
 
         char dot = '.';
-        int len = url_domain.length();
 
         if (StringUtils.isEmpty(url_domain)) {
             return null;
         }
+
+        int len = url_domain.length();
 
         int numDot = 0;
         for (int i = 0; i < len; i++) {

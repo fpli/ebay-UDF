@@ -3,6 +3,7 @@ package com.ebay.hadoop.udf.soj;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 public class SojGetTopDomainTest {
     @Test
@@ -26,6 +27,8 @@ public class SojGetTopDomainTest {
         assertEquals("ebay",new SojGetTopDomain().evaluate("www.ebay.com"));
         assertEquals("www.ebay.abc",new SojGetTopDomain().evaluate("www.ebay.abc"));
         assertEquals("ebay",new SojGetTopDomain().evaluate("www.ebay.com.ab"));
+
+        assertNull(new SojGetTopDomain().evaluate(null));
     }
 
 
