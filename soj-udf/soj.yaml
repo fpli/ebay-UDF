@@ -665,3 +665,15 @@
   description:
   parameters:
   example: sojlib.elast(l_value,seqnum)
+
+- decodeSRPItmcardSig:
+  name: sojlib.decodeSRPItmcardSig
+  owner:
+  platform:
+  - hermesrno
+  - apollorno
+  - hercules
+  className: com.ebay.hadoop.udf.soj.DecodeSRPItmcardSig
+  description:
+  parameters:
+  example: sojlib.decodeSRPItmcardSig(itmlt48sig,item_index,smallint)
