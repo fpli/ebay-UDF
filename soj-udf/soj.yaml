@@ -177,7 +177,7 @@
   parameters:
     - input
     - digitLimit
-  example: sojlib.is_decimal('1232.22',18)
+  example: sojlib.is_decimal('1232.22',18,2)
 
 - is_integer:
   name: sojlib.is_integer
