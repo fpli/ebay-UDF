@@ -568,7 +568,7 @@
   className: com.ebay.hadoop.udf.soj.CstrStrchr
   description:
   parameters:
-  example: sojlib.cstr_strchr('www.ebay.com
+  example: sojlib.cstr_strchr('www.ebay.com','.')
 
 - is_timestamp:
   name: sojlib.is_timestamp
