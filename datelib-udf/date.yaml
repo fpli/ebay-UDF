@@ -1,0 +1,87 @@
+- week_start_dt:
+  name: datelib.week_start_dt
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+  className: com.ebay.carmel.udf.datelib.WeekStartDate
+  description:
+  parameters:
+  example:
+
+- week_end_dt:
+  name: datelib.week_end_dt
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+  className: com.ebay.carmel.udf.datelib.WeekEndDate
+  description:
+  parameters:
+  example:
+
+- epochtodate:
+  name: datelib.epochtodate
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+  className: com.ebay.carmel.udf.datelib.Epoch2Date
+  description:
+  parameters:
+  example:
+
+- datetoepoch:
+  name: datelib.datetoepoch
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+  className: com.ebay.carmel.udf.datelib.Date2Epoch
+  description:
+  parameters:
+  example:
+
+- epochmstotimestamp:
+  name: datelib.epochmstotimestamp
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+  className: com.ebay.carmel.udf.datelib.Epochms2Timestamp
+  description:
+  parameters:
+  example:
+
+- timestamptoepochms:
+  name: datelib.timestamptoepochms
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+  className: com.ebay.carmel.udf.datelib.Timestamp2Epochms
+  description:
+  parameters:
+  example:
+
+- epochtotimestamp:
+  name: datelib.epochtotimestamp
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+  className: com.ebay.carmel.udf.datelib.Epoch2Timestamp
+  description:
+  parameters:
+  example:
+
+- timestamptoepoch:
+  name: datelib.timestamptoepoch
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+  className: com.ebay.carmel.udf.datelib.Timestamp2Epoch
+  description:
+  parameters:
+  example:
