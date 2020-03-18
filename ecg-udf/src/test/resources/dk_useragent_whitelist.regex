@@ -1,0 +1,8 @@
+dba.*iPhone.*iPhone.*=true,true,false,iOs,Unknown,Unknwon,Unknown,Unknown
+dba.*iPad.*iPad.*=true,false,true,iOs,Unknown,Unknwon,Unknown,Unknown
+dba.*iPod.*iPod.*=true,false,false,iOs,Unknown,Unknwon,Unknown,Unknown
+dba.*iPhone.*Simulator*=false,false,false,Unknown,Unknwon,Unknown,Unknown
+dba.*iPad.*Simulator*=false,false,false,Unknown,Unknwon,Unknown,Unknown
+dba.*wp.*=true,true,false,Unknown,Unknown,Unknown,Unknown
+okhttp.*=true,true,false,Unknown,Unknown,Unknown,Unknown
+dk.releaze.android.bilbasen.*=true,true,false,Unknown,Unknown,Unknown,Unknown

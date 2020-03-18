@@ -1,0 +1,131 @@
+- ParseUserAgent:
+  name: ParseUserAgent
+  owner: dwh
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: com.ebay.hadoop.udf.clsfd.UDTFParseUserAgent
+  description: using odin request.userAgent and other attachments to paring device info like isMobile, isSmartPhone, isTablet, os, osversion, browserName, browserVersion, browserVendor
+  parameters: request.userAgent,51Degrees-PremiumV3_2.dat,dk
+  example: /dw/etl/home/prod/sql/dw_clsfd/dw_clsfd.stt_odin_reply_dk_all_w.spark.sql
+
+- FromUnixtime:
+  name: FromUnixtime
+  owner: dwh
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: com.ebay.hadoop.udf.clsfd.FromUnixtime
+  description: parsing time
+  parameters: timestamp,timezone
+  example:
+
+- ga_array_struct_to_map:
+  name: ga_array_struct_to_map
+  owner: dwh
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: com.ebay.hadoop.udf.clsfd.GAArrayStructToMapUDF
+  description: Creates a map of index/value pairs from an array of structs
+  parameters: array
+  example:
+
+- str_to_map2:
+  name: str_to_map2
+  owner: dwh
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: com.ebay.hadoop.udf.clsfd.GenericUDFStringToMap2
+  description: Creates a map by parsing text
+  parameters: text
+  example:
+
+- UDFMd5:
+  name: UDFMd5
+  owner: dwh
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: com.ebay.hadoop.udf.clsfd.UDFMd5
+  description: Calculates an MD5 128-bit checksum for the string or binary.
+  parameters: text
+  example:
+
+- PBEDecode:
+  name: PBEDecode
+  owner: dwh
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: com.ebay.hadoop.udf.clsfd.UDFPBEDecode
+  description: decode from the input encoded string
+  parameters: text
+  example:
+
+- UserIDDecryptAES:
+  name: UserIDDecryptAES
+  owner: dwh
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: com.ebay.hadoop.udf.clsfd.UserIDDecryptAES
+  description: decrypt from the input encrypt string
+  parameters: text
+  example:
+
+- UTF8ToLatin:
+  name: UTF8ToLatin
+  owner: dwh
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: com.ebay.hadoop.udf.clsfd.UTF8ToLatin
+  description: transform coding
+  parameters: text
+  example:
+
+- collect_distinct:
+  name: collect_distinct
+  owner: dwh
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: brickhouse.udf.collect.CollectDistinctUDAF
+  description: Returns an array of distinct the elements in the aggregation group
+  parameters: text
+  example:
+
+- collect:
+  name: collect
+  owner: dwh
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: brickhouse.udf.collect.CollectUDAF
+  description: Returns an array of all the elements in the aggregation group
+  parameters: text
+  example:
+
+- combine:
+  name: combine
+  owner: dwh
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: brickhouse.udf.collect.CombineUDF
+  description: Returns a combined list of two lists, or a combined map of two maps
+  parameters: text
+  example:
