@@ -177,7 +177,7 @@
   parameters:
     - input
     - digitLimit
-  example: sojlib.is_decimal('1232.22',18)
+  example: sojlib.is_decimal('1232.22',18,2)
 
 - is_integer:
   name: sojlib.is_integer
@@ -568,7 +568,7 @@
   className: com.ebay.hadoop.udf.soj.CstrStrchr
   description:
   parameters:
-  example: sojlib.cstr_strchr('www.ebay.com
+  example: sojlib.cstr_strchr('www.ebay.com','.')
 
 - is_timestamp:
   name: sojlib.is_timestamp
@@ -677,3 +677,27 @@
   description:
   parameters:
   example: sojlib.decodeSRPItmcardSig(itmlt48sig,item_index,smallint)
+
+- soj_parser:
+  name: sojlib.soj_parser
+  owner:
+  platform:
+  - hermesrno
+  - apollorno
+  - hercules
+  className: com.ebay.hadoop.udf.soj.SojFunctionOneDecode
+  description:
+  parameters:
+  example: sojlib.soj_parser('dpi=332.509x331.755&mppid=26','abc_id,mtId=mtid|mt_id,mppid')
+
+- soj_parser_no_decode:
+  name: sojlib.soj_parser_no_decode
+  owner:
+  platform:
+  - hermesrno
+  - apollorno
+  - hercules
+  className: com.ebay.hadoop.udf.soj.SojFunctionNoDecode
+  description:
+  parameters:
+  example: sojlib.soj_parser_no_decode('dpi=332.509x331.755&mppid=26','abc_id,mtId=mtid|mt_id,mppid')
