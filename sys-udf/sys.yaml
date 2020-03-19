@@ -142,3 +142,14 @@
   description:
   parameters:
   example: syslib.ebay_replace_char('ab?cdef?(junk_)','?()_','')
+
+- json_check:
+  name: syslib.json_check
+  owner:
+    platform:
+      - hermesrno
+      - apollorno
+    className: com.ebay.carmel.udf.syslib.JsonCheck
+    description: check the given string is json format or not
+    parameters:
+    example: syslib.json_check('{"name":"Cameron"}')

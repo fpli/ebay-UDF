@@ -25,7 +25,7 @@
         <dependency>
             <groupId>com.ebay.hadoop.udf.soj</groupId>
             <artifactId>soj-udf</artifactId>
-            <version>1.1-SNAPSHOT</version>
+            <version>1.6-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.yaml</groupId>
@@ -35,6 +35,12 @@
         <dependency>
             <groupId>org.apache.hive</groupId>
             <artifactId>hive-exec</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.pentaho</groupId>
+                    <artifactId>pentaho-aggdesigner-algorithm</artifactId>
+                </exclusion>
+            </exclusions>
             <version>${hive.version}</version>
             <scope>compile</scope>
         </dependency>
