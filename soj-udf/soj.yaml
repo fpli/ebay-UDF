@@ -701,3 +701,28 @@
   description:
   parameters:
   example: sojlib.soj_parser_no_decode('dpi=332.509x331.755&mppid=26','abc_id,mtId=mtid|mt_id,mppid')
+
+- soj_str_to_map:
+  name: sojlib.soj_str_to_map
+  owner:
+  platform:
+  - hermesrno
+  - apollorno
+  - hercules
+  className: com.ebay.hadoop.udf.soj.SojStringToMap
+  description:
+  parameters:
+  example: sojlib.soj_str_to_map('1,2,3,4,5,',',')
+
+- soj_nvl2:
+  name: sojlib.soj_nvl2
+  owner:
+  platform:
+  - hermesrno
+  - apollorno
+  - hercules
+  className: com.ebay.hadoop.udf.soj.SojTagFetcher2
+  description:
+  parameters:
+  example: sojlib.soj_nvl2('abc=123','abc')
+
