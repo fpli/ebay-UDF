@@ -39,7 +39,7 @@ public class UserIDDecryptAES extends UDF {
 			DecryptString=decrypt(cipher_bytes, encryptionKey);
 		}catch(Exception e){
 			//e.printStackTrace();
-            logger.error(null,new Exception(e));
+            logger.warn(null,new Exception(e));
 		}
 		return DecryptString;
   }

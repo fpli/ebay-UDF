@@ -143,14 +143,14 @@ public class UDTFParseUserAgent extends GenericUDTF
                     score = match.getDifference();
                 } catch (IOException e) {
                     //e.printStackTrace();
-                    logger.error("parsing by 51Degree err",new IOException(e));
+                    logger.warn("parsing by 51Degree err",new IOException(e));
                 }
                 if (match != null) {
                     i = 0;
                     for (String column : this.columnMap.keySet()) try {
                         this.forwardObjs[(i++)] = new Text(match.getValues(column).toString());
                     } catch (IOException localIOException1) {
-                        logger.error("get value after by parsing 51Degree err",new IOException(localIOException1));
+                        logger.warn("get value after by parsing 51Degree err",new IOException(localIOException1));
                     }
                     parsed = true;
                 }

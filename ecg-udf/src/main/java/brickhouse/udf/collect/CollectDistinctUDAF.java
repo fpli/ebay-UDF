@@ -12,7 +12,6 @@ import org.apache.hadoop.hive.serde2.objectinspector.ObjectInspectorUtils;
 import org.apache.hadoop.hive.serde2.objectinspector.StandardListObjectInspector;
 import org.apache.hadoop.hive.serde2.typeinfo.TypeInfo;
 import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
@@ -32,7 +31,7 @@ public class CollectDistinctUDAF extends AbstractGenericUDAFResolver
     public GenericUDAFEvaluator getEvaluator(TypeInfo[] parameters)
             throws SemanticException
     {
-        logger.setLevel(Level.INFO);
+        //logger.setLevel(Level.INFO);
         //logger.addAppender(org.apache.log4j.ConsoleAppender);
         BasicConfigurator.configure();
 

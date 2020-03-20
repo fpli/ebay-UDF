@@ -4,7 +4,6 @@ package com.ebay.hadoop.udf.clsfd;
 import org.apache.hadoop.hive.ql.exec.Description;
 import org.apache.hadoop.hive.ql.exec.UDF;
 import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.jasypt.encryption.BigIntegerEncryptor;
 import org.jasypt.encryption.StringEncryptor;
@@ -76,7 +75,7 @@ public class UDFPBEDecode extends UDF
         return hashedString;
     }
     public String evaluate(String hashedString) {
-        logger.setLevel(Level.INFO);
+        //logger.setLevel(Level.INFO);
         //logger.addAppender(org.apache.log4j.ConsoleAppender);
         BasicConfigurator.configure();
         if (hashedString == null) return null;

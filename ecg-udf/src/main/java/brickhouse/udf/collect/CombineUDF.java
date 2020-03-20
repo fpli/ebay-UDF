@@ -6,7 +6,6 @@ import org.apache.hadoop.hive.ql.metadata.HiveException;
 import org.apache.hadoop.hive.ql.udf.generic.GenericUDF;
 import org.apache.hadoop.hive.serde2.objectinspector.*;
 import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
 import java.util.List;
@@ -85,7 +84,7 @@ public class CombineUDF extends GenericUDF
 
     public ObjectInspector initialize(ObjectInspector[] args) throws UDFArgumentException
     {
-        logger.setLevel(Level.INFO);
+        //logger.setLevel(Level.INFO);
         //logger.addAppender(org.apache.log4j.ConsoleAppender);
         BasicConfigurator.configure();
         if (args.length < 2) {

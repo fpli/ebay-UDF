@@ -12,7 +12,6 @@ import org.apache.hadoop.hive.serde2.objectinspector.primitive.IntObjectInspecto
 import org.apache.hadoop.hive.serde2.objectinspector.primitive.JavaStringObjectInspector;
 import org.apache.hadoop.hive.serde2.objectinspector.primitive.PrimitiveObjectInspectorFactory;
 import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
 import java.util.LinkedHashMap;
@@ -29,7 +28,7 @@ public class GAArrayStructToMapUDF extends GenericUDF
 
     public ObjectInspector initialize(ObjectInspector[] arguments) throws UDFArgumentException
     {
-        logger.setLevel(Level.INFO);
+        //logger.setLevel(Level.INFO);
         //logger.addAppender(org.apache.log4j.ConsoleAppender);
         BasicConfigurator.configure();
         if (arguments.length != 1) {
@@ -93,12 +92,12 @@ public class GAArrayStructToMapUDF extends GenericUDF
         this.ret.clear();
 
         if (arguments.length != 1) {
-            logger.error("input arguments length not equals 1");
+            logger.warn("input arguments length not equals 1");
             return null;
         }
 
         if (arguments[0].get() == null) {
-            logger.error("input arguments value is null");
+            logger.warn("input arguments value is null");
             return null;
         }
 

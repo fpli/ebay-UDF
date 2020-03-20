@@ -19,7 +19,7 @@ public class UTF8ToLatin extends UDF
         }
         catch (UnsupportedEncodingException e) {
             //e.printStackTrace();
-            logger.error("Unsupported Encoding Err",new Exception(e) );
+            logger.warn("Unsupported Encoding Err",new Exception(e) );
         }
         return latinString;
     }

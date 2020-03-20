@@ -12,7 +12,6 @@ import org.apache.hadoop.hive.serde2.objectinspector.PrimitiveObjectInspector;
 import org.apache.hadoop.hive.serde2.objectinspector.primitive.PrimitiveObjectInspectorFactory;
 import org.apache.hadoop.hive.serde2.objectinspector.primitive.PrimitiveObjectInspectorUtils;
 import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
 import java.util.LinkedHashMap;
@@ -30,7 +29,7 @@ public class GenericUDFStringToMap2 extends GenericUDF
 
     public ObjectInspector initialize(ObjectInspector[] arguments) throws UDFArgumentException
     {
-        logger.setLevel(Level.INFO);
+        //logger.setLevel(Level.INFO);
         //logger.addAppender(org.apache.log4j.ConsoleAppender);
         BasicConfigurator.configure();
         for (int idx = 0; idx < Math.min(arguments.length, 3); idx++) {
