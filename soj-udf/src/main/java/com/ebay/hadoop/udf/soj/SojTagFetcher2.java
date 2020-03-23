@@ -3,24 +3,25 @@ package com.ebay.hadoop.udf.soj;
 import org.apache.hadoop.hive.ql.exec.UDF;
 import org.apache.hadoop.io.Text;
 
-import com.google.re2j.Matcher;
-import com.google.re2j.Pattern;
-import org.apache.commons.lang.StringUtils;
-
 public class SojTagFetcher2 extends UDF {
+
+    private ISojNvl sojNvl;
+
+    public SojTagFetcher2() {
+        sojNvl = new FastSojNvlImpl();
+    }
+
     public Text evaluate(final Text payloadText, String key) {
         if (payloadText == null || key == null) {
             return null;
         }
 
         String payload = payloadText.toString();
-        String tagValue =null;
+        String tagValue = null;
         try {
-            tagValue= getTagValue(payload, key);
-        }
-        catch(Exception e)
-        {
-            tagValue="-99999";
+            tagValue = sojNvl.getTagValue(payload, key);
+        } catch (Exception e) {
+            tagValue = "-99999";
         }
         if (tagValue == null) {
             return null;
@@ -29,49 +30,103 @@ public class SojTagFetcher2 extends UDF {
         }
     }
 
-    public static final String[] KV_DELIMITER = new String[]{"&", "&_", "&!"};
-    public static final String BLANK_STRING = "";
 
-    public String getTagValue(String value, String key) {
-        if (!StringUtils.isBlank(value) && !StringUtils.isBlank(key)) {
-            value = "&" + value;
-            String kvSet = "";
-            String keySet = "";
+    public interface ISojNvl {
+        public String getTagValue(String value, String key);
 
-            int startpos;
-            for(startpos = 0; startpos < KV_DELIMITER.length; ++startpos) {
-                keySet = keySet + KV_DELIMITER[startpos] + key + "=|";
-                kvSet = kvSet + KV_DELIMITER[startpos] + "|";
-            }
+        public String ToString();
+    }
 
-            keySet = keySet.substring(0, keySet.length() - 1);
-            kvSet = kvSet.substring(0, kvSet.length() - 1);
-            Pattern p1 = Pattern.compile(keySet);
-            Pattern p2 = Pattern.compile(kvSet);
-            Matcher m1 = p1.matcher(value);
-            Matcher m2 = p2.matcher(value);
-            if (m1.find()) {
-                startpos = m1.start();
-                int tmppos = m1.end();
-                int endpos;
-                if (m2.find(tmppos)) {
-                    endpos = m2.start();
-                } else {
-                    endpos = value.length();
-                }
+    public class FastSojNvlImpl implements ISojNvl {
+        private long _startWithMatched = 0;
+        private long _indexOfMatched = 0;
 
-                if (endpos < 0) {
-                    endpos = value.length() - 1;
-                }
+        public long startWithMatched() {
+            return _startWithMatched;
+        }
 
-                String[] kvPair = value.substring(startpos, endpos).split("=", 2);
-                return "".equals(kvPair[1]) ? null : kvPair[1];
-            } else {
+        public long indexOfMatched() {
+            return _indexOfMatched;
+        }
+
+        @Override
+        public String getTagValue(String querystring, String param) {
+            if (querystring == null || param == null || param.length() == 0) {
                 return null;
             }
-        } else {
-            return null;
+
+            String v = null;
+            int l = param.length();
+            if (querystring.startsWith(param) && querystring.length() > param.length() && querystring.charAt(l) == '=') {
+                int pos = querystring.indexOf('&');
+                if (pos > 0) {
+                    v = querystring.substring(l + 1, pos);
+                } else {
+                    v = querystring.substring(l + 1);
+                }
+                _startWithMatched++;
+            }
+
+            if (v == null) {
+                if ((querystring.startsWith("_" + param) || querystring.startsWith("!" + param)) && (querystring.length() > param.length() + 1) && querystring.charAt(l + 1) == '=') {
+                    int pos = querystring.indexOf('&');
+                    if (pos > 0) {
+                        v = querystring.substring(l + 2, pos);
+                    } else {
+                        v = querystring.substring(l + 2);
+                    }
+                    _startWithMatched++;
+                }
+            }
+
+            if (v == null) {
+                int begin = querystring.indexOf("&" + param + "=");
+                if (begin >= 0) {
+                    int begin2 = begin + l + 2;
+                    int pos = querystring.indexOf('&', begin2);
+                    if (pos > 0) {
+                        v = querystring.substring(begin2, pos);
+                    } else {
+                        v = querystring.substring(begin2);
+                    }
+                    _indexOfMatched++;
+                }
+            }
+
+            if (v == null) {
+                int begin_1 = querystring.indexOf("&_" + param + "=");
+                int begin_2 = querystring.indexOf("&!" + param + "=");
+
+                int begin = -1;
+                if (begin_1 >= 0) {
+                    begin = begin_1;
+                } else if (begin_2 >= 0) {
+                    begin = begin_2;
+                }
+
+                if (begin >= 0) {
+                    int begin2 = begin + l + 3;
+                    int pos = querystring.indexOf('&', begin2);
+                    if (pos > 0) {
+                        v = querystring.substring(begin2, pos);
+                    } else {
+                        v = querystring.substring(begin2);
+                    }
+                }
+                _indexOfMatched++;
+            }
+
+            if (v != null && v.length() == 0) {
+                return null;
+            }
+            return v;
+        }
+
+        @Override
+        public String ToString() {
+            return this.getClass().getName();
         }
     }
+
 
 }
