@@ -1,0 +1,7 @@
+#useragent patther=isMobile,isSmartphone,isTablet,os,os version, browser, browserName, vendor
+iphone-app-\d+\.?\d*\.?\d*=true,true,false,iOS,Unknown,Unknwon,Unknown,Unknown
+Marktplaats.*iPhone.*=true,true,false,iOS,Unknown,Unknwon,Unknown,Unknown
+Marktplaats.*iPad.*=true,false,true,iOS,Unknown,Unknwon,Unknown,Unknown
+okhttp.*=true,true,false,Android,Unknown,Unknwon,Unknown,Unknown
+Dalvik/1.6.0 (Linux; U; Android 4.2.1; Q5*=true,true,false,Android,4.2.1,Unknwon,Unknown,Unknown
+Apache-HttpClient/UNAVAILABLE (java 1.4)=true,true,false,Android,Unknown,Unknwon,Unknown,Unknown

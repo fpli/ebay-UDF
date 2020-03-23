@@ -1,0 +1,3 @@
+#useragent patther=isMobile,isSmartphone,isTablet,os,os version, browser, browserName, vendor
+.*iPhone.*iPhone.*=true,true,false,iOs,Unknown,Unknwon,Unknown,Unknown
+.*iPad.*iPad.*=true,false,true,iOs,Unknown,Unknwon,Unknown,Unknown
