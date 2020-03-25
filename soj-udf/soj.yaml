@@ -714,15 +714,16 @@
   parameters:
   example: sojlib.soj_str_to_map('1,2,3,4,5,',',')
 
-- soj_nvl2:
-  name: sojlib.soj_nvl2
+- ts_mils:
+  name: sojlib.ts_mils
   owner:
   platform:
   - hermesrno
   - apollorno
   - hercules
-  className: com.ebay.hadoop.udf.soj.SojTagFetcher2
+  className: com.ebay.hadoop.udf.soj.SojTimestampToDateWithMilliSecond
   description:
   parameters:
-  example: sojlib.soj_nvl2('abc=123','abc')
+  example: sojlib.ts_mils(3586117768123000)
+
 
