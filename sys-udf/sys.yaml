@@ -153,3 +153,36 @@
     description: check the given string is json format or not
     parameters:
     example: syslib.json_check('{"name":"Cameron"}')
+
+- udf_sha256_utf16:
+  name: syslib.udf_sha256_utf16
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+  className: com.ebay.carmel.udf.syslib.Sha256Utf16
+  description:
+  parameters:
+  example: syslib.udf_sha256_utf16('2878')
+
+- udf_utf8to16:
+  name: syslib.udf_utf8to16
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+  className: com.ebay.carmel.udf.syslib.UTF8ToUTF16
+  description:
+  parameters:
+  example: syslib.udf_utf8to16('burhandalyanlar@hotmail.com')
+
+- udf_sha256_utf16str:
+  name: syslib.udf_sha256_utf16str
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+  className: com.ebay.carmel.udf.syslib.Sha256Utf16Str
+  description:
+  parameters:
+  example: syslib.udf_sha256_utf16B('burhandalyanlar@hotmail.com')
