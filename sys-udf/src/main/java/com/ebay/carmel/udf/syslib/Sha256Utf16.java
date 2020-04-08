@@ -34,7 +34,6 @@ public class Sha256Utf16 extends GenericUDF {
     @Override
     public Object evaluate(DeferredObject[] arguments) throws HiveException {
         String strValue = this.input.getPrimitiveJavaObject(arguments[0].get());
-        logger.info(String.format("input value %s", strValue));
         if(null == strValue) return null;
         MessageDigest digest = null;
         try {
