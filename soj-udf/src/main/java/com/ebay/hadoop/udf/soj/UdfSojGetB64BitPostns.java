@@ -29,7 +29,11 @@ public class UdfSojGetB64BitPostns extends UDF {
         StringBuilder sb = new StringBuilder();
 
         if (ind != 0 && ind != 1) {
-            return null;
+            return "";
+        }
+
+        if (flags == null) {
+            return "";
         }
 
         for (int i = 0; i < flags.length(); i++) {

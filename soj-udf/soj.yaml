@@ -726,4 +726,16 @@
   parameters:
   example: sojlib.ts_mils(3586117768123000)
 
+- ts_date:
+  name: sojlib.ts_date
+  owner:
+  platform:
+  - hermesrno
+  - apollorno
+  - hercules
+  className: com.ebay.hadoop.udf.soj.SojTimestampToDate
+  description:
+  parameters:
+  example: sojlib.ts_date(3586117768123000)
+ 
 
