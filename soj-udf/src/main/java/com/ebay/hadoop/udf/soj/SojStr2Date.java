@@ -6,7 +6,7 @@ import org.apache.hadoop.io.Text;
 
 public class SojStr2Date extends UDF {
 
-    public Text evaluate( final Text sojTimestamp ) throws Exception {
-        return new Text(SojTimestamp.getDateToSojTimestamp(sojTimestamp.toString()));
-    }
+  public Text evaluate(final Text sojTimestamp) throws Exception {
+    return new Text(SojTimestamp.getDateToSojTimestamp(sojTimestamp.toString()));
+  }
 }

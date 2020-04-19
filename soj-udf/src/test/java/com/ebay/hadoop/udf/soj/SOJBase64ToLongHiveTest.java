@@ -12,6 +12,8 @@ public class SOJBase64ToLongHiveTest {
     public void test() {
     	SOJBase64ToLongHive test = new SOJBase64ToLongHive();
         LongWritable ip = test.evaluate(new Text("iIDWAAE*"));
+
+
         Assert.assertEquals(4309024904L,ip.get());
         ip = test.evaluate(new Text("9CuflM*"));
         Assert.assertEquals(null, ip);
