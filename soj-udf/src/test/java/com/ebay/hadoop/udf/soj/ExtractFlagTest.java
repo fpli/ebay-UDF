@@ -16,6 +16,8 @@ public class ExtractFlagTest {
         assertEquals(new IntWritable(0), obj.evaluate(new Text("AAAA"), 4));
         assertEquals(new IntWritable(1), obj.evaluate(new Text("aaaa"), 4));
         assertEquals(new IntWritable(0), obj.evaluate(null, 4));
+
+        System.out.println(obj.evaluate(new Text("Agg2YCAAIhQA"), 20));
     }
 
 }
