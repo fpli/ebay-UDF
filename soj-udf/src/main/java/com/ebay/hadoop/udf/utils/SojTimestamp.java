@@ -24,7 +24,7 @@ public class SojTimestamp {
     String res;
     //        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
     //        sdf.setTimeZone(TimeZone.getTimeZone("GMT-7"));
-    Date date = formatter2.parseDateTime(s.substring(0, 23)).toDate();
+    Date date = formatter.parseDateTime(s.substring(0, 23)).toDate();
     long ts = date.getTime();
     long sojTimestamp = (ts * MILLI2MICRO) + OFFSET;
     res = String.valueOf(sojTimestamp);
@@ -32,13 +32,25 @@ public class SojTimestamp {
   }
 
   public static String getDateToSojTimestamp(String s) {
+
     String res;
     //        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
     //        sdf.setTimeZone(TimeZone.getTimeZone("GMT-7"));
-    Date date = formatter2.parseDateTime(s.substring(0, 10)).toDate();
+    Date date = SojTimestamp.formatter2.parseDateTime(s.substring(0, 10)).toDate();
     long ts = date.getTime();
     long sojTimestamp = (ts * MILLI2MICRO) + OFFSET;
     res = String.valueOf(sojTimestamp);
     return res;
   }
+
+  public static void main(String[] args) {
+    String sojTimestamp = getSojTimestamp("2020-04-20 03:06:22.903");
+    System.out.println();
+    System.out.println();
+    System.out.println(getSojTimestamp("2020-04-20 03:06:22.903"));
+  }
+
+
+
+
 }
