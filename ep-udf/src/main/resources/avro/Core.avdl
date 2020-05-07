@@ -13,4 +13,18 @@ protocol TouchstoneCore {
 
         union {null, bytes} context = null;
     }
+
+    record TreatmentMetricSummary {
+        long combinationId;
+
+        double trafficPct;
+
+        double sum;
+
+        double sumOfSquare;
+
+        long sampleCount;
+
+        long metricCount;
+    }
 }
