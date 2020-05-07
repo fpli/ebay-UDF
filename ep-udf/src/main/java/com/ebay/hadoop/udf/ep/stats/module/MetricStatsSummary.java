@@ -3,7 +3,6 @@ package com.ebay.hadoop.udf.ep.stats.module;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
-import lombok.ToString;
 
 import java.util.Map;
 
@@ -11,7 +10,6 @@ import java.util.Map;
  *
  * @author bingqxu
  */
-@ToString
 public class MetricStatsSummary {
     @JsonSerialize(using = ToStringSerializer.class)
     @JsonDeserialize(as = Long.class)

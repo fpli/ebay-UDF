@@ -11,7 +11,6 @@ import com.ebay.hadoop.udf.ep.stats.util.MathUtil;
 import com.ebay.hadoop.udf.ep.stats.util.TSStatsUtil;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.math3.distribution.NormalDistribution;
 
 import java.util.List;
@@ -20,7 +19,6 @@ import java.util.List;
  *
  * @author bingqxu
  */
-@Slf4j
 public class TTestStatisticsService implements TSStatisticsService<Double> {
     private final ThreadLocal<TSStatsUtil> tlTsStatsUtil;
     private final ThreadLocal<NormalDistribution> tlNnormalDist;
@@ -128,9 +126,6 @@ public class TTestStatisticsService implements TSStatisticsService<Double> {
         } else if (noStatsRequired) {
             return noStatsRequired(t.getTreatmentId(), t.getTrafficPct(), metricId, treatment);
         } else {
-            log.debug("Stats calculation for {} with treatment {}, sample size {}, ctrl {}, sample size {}",
-                metricId, treatment, treatment.getSampleCount(), control, control.getSampleCount());
-
             TSStatsUtil tsStatsUtil = tlTsStatsUtil.get();
             NormalDistribution normalDist = tlNnormalDist.get();
             MetricStatsSummary stats = new MetricStatsSummary();
@@ -160,7 +155,6 @@ public class TTestStatisticsService implements TSStatisticsService<Double> {
                 zscore, extrapolatedCtrlMean, controlVar, control.getSampleCount());
             stats.setLowerCI(lift - halfCI);
             stats.setUpperCI(lift + halfCI);
-            log.debug("Stats Result is {}", stats);
             stats.setTimestamp(treatment.getTimestamp());
             stats.setTrafficPct(t.getTrafficPct());
             return stats;
