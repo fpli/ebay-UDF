@@ -138,7 +138,6 @@ public class GetTTestStatsValue extends GenericUDF {
             summaryStruct[6] = new DoubleWritable(metricStatsSummary.getUpperCI());
             summaryList[index.intValue()] = summaryStruct;
             index.increment();
-            System.out.println(summaryStruct);
         });
         return summaryList;
     }

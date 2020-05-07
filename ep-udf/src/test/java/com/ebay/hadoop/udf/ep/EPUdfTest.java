@@ -173,7 +173,7 @@ public class EPUdfTest {
         listTypeInfo.setListElementTypeInfo(structTypeInfo);
         ListObjectInspector listInspector = (ListObjectInspector) OrcStruct.createObjectInspector(listTypeInfo);
         inspectors[3] = listInspector;
-        StructObjectInspector structObjectInspector = new OrcStruct()
+        StructObjectInspector structObjectInspector = mock(StructObjectInspector.class);
         GetTTestStatsValue getTTestStatsValue = new GetTTestStatsValue() {
             @Override
             void structNameCheck() {
@@ -193,20 +193,27 @@ public class EPUdfTest {
                 3.9954327147976044E11, 42316275L, 18867644L);
         TreatmentMetricSummary b = new TreatmentMetricSummary(-9221452942343788538L, 0.5d, 5.608571462902747E8,
                 4.0402905210581995E11, 42313924L, 18858982L);
-        when(structObjectInspector.getStructFieldData(eq(a),any())).thenReturn(0);
-        args[3] = new GenericUDF.DeferredJavaObject(Lists.newArrayList(toStruct(a), toStruct(b)));
+        StructField comb = mock(StructField.class);
+        when(structObjectInspector.getStructFieldRef("combinationId")).thenReturn(comb);
+        when(structObjectInspector.getStructFieldData(eq(a),eq(comb))).thenReturn(1919060151248902L);
+        when(structObjectInspector.getStructFieldData(eq(b),eq(comb))).thenReturn(-9221452942343788538L);
+        StructField traf = mock(StructField.class);
+        when(structObjectInspector.getStructFieldRef("trafficPct")).thenReturn(traf);
+        when(structObjectInspector.getStructFieldData(any(),eq(traf))).thenReturn(0.5d);
+        StructField sum = mock(StructField.class);
+        when(structObjectInspector.getStructFieldRef("sum")).thenReturn(sum);
+        when(structObjectInspector.getStructFieldData(any(),eq(sum))).thenReturn(5.596848634340253E8);
+        StructField sumSquare = mock(StructField.class);
+        when(structObjectInspector.getStructFieldRef("sumofsquare")).thenReturn(sumSquare);
+        when(structObjectInspector.getStructFieldData(any(),eq(sumSquare))).thenReturn(3.9954327147976044E11);
+        StructField sampleCount = mock(StructField.class);
+        when(structObjectInspector.getStructFieldRef("sampleCount")).thenReturn(sampleCount);
+        when(structObjectInspector.getStructFieldData(any(),eq(sampleCount))).thenReturn(42316275L);
+        StructField metricCount = mock(StructField.class);
+        when(structObjectInspector.getStructFieldRef("metricCount")).thenReturn(metricCount);
+        when(structObjectInspector.getStructFieldData(any(),eq(metricCount))).thenReturn(18867644L);
+        args[3] = new GenericUDF.DeferredJavaObject(Lists.newArrayList(a, b));
         getTTestStatsValue.evaluate(args);
 
-    }
-
-    private Object[] toStruct(TreatmentMetricSummary metricSummary) {
-        Object[] res = new Object[6];
-        res[0] = new LongWritable(metricSummary.getCombinationId());
-        res[1] = new DoubleWritable(metricSummary.getTrafficPct());
-        res[2] = new DoubleWritable(metricSummary.getSum());
-        res[3] = new DoubleWritable(metricSummary.getSumOfSquare());
-        res[4] = new LongWritable(metricSummary.getSampleCount());
-        res[5] = new LongWritable(metricSummary.getMetricCount());
-        return res;
     }
 }
