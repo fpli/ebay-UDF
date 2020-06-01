@@ -66,37 +66,34 @@ public class UDTFParseUserAgent extends GenericUDTF
         } catch (IOException e) {
             //e.printStackTrace();
            logger.error("inadequate parameter to parse user agent: expecting regular expression whitelist file - useragent_whitelist.regex is not available",new Exception(e));
-            System.exit(1);
+           throw new RuntimeException(e);
+
         }
 
         if (this.regexProp == null) try {
             this.regexProp = new Properties(); this.regexProp.load(new FileInputStream(regexPropPath));
         } catch (IOException e) {
-            //e.printStackTrace();
             logger.error("inadequate parameter to parse user agent: expecting regular expression file -  useragent.regex is not available",new Exception(e));
-            System.exit(1);
+            throw new RuntimeException(e);
         }
 
         if(tenant != null && tenant != "" && this.regexPropWhiteListTenant ==null) try {
             this.regexPropWhiteListTenant = new Properties(); this.regexProp.load(new FileInputStream(tenant+"_"+regexPropWhiteListPath));
         } catch (IOException e) {
-            //e.printStackTrace();
             logger.warn("inadequate parameter to parse user agent: "+tenant+"_"+regexPropWhiteListPath+" not exit, so skip this",new Exception(e));
         }
 
         if(tenant != null && tenant != "" && this.regexPropTenant ==null) try {
             this.regexPropTenant = new Properties(); this.regexProp.load(new FileInputStream(tenant+"_"+regexPropPath));
         } catch (IOException e) {
-            //e.printStackTrace();
             logger.warn("inadequate parameter to parse user agent: "+tenant+"_"+regexPropPath+" not exit, so skip this",new Exception(e));
         }
 
         if (this.provider == null) try {
             this.provider = new Provider(MemoryFactory.create(providerPath));
         } catch (IOException e) {
-            e.printStackTrace();
             logger.error("inadequate parameter to parse user agent: 51degree premium file is not available",new Exception(e));
-            System.exit(1);
+            throw new RuntimeException(e);
         }
 
         boolean parsed = false;

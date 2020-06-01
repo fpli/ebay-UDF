@@ -129,3 +129,15 @@
   description: Returns a combined list of two lists, or a combined map of two maps
   parameters: text
   example:
+
+- assert_true_msg:
+  name: assert_true_msg
+  owner: dwh
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: com.ebay.hadoop.udf.clsfd.GenericUDFAssertTrueWithMsg
+  description: Throw an exception if condition is not true
+  parameters: condition
+  example:
