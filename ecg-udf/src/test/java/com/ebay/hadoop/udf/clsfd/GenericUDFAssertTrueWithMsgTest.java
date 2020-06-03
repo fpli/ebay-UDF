@@ -11,6 +11,7 @@ import org.junit.Test;
 
 import java.util.LinkedHashMap;
 
+import static org.junit.Assert.assertTrue;
 
 /**
  * create or replace temporary view dw_clsfd_user_dq as
