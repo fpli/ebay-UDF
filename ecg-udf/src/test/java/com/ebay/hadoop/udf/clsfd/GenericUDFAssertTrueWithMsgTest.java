@@ -90,7 +90,13 @@ public class GenericUDFAssertTrueWithMsgTest {
         };
         GenericUDFAssertTrueWithMsg genericUDFAssertTrueWithMsg=new GenericUDFAssertTrueWithMsg();
         genericUDFAssertTrueWithMsg.initialize(arguments);
-        genericUDFAssertTrueWithMsg.evaluate(args);
+        //genericUDFAssertTrueWithMsg.evaluate(args);
+        try {
+            genericUDFAssertTrueWithMsg.evaluate(args);
+            assertTrue(false);
+        } catch (RuntimeException e) {
+            assertTrue(true);
+        }
         System.out.println("happy ending ...");
     }
 }
