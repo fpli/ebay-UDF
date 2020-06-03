@@ -49,6 +49,9 @@ public class TSStatsUtil extends TTest {
     }
 
     public static double calculateExtrapolatedStddev(double sumOfSquares, double extrapolatedMean, long sampleCount) {
+        if (sampleCount <= 1) {
+            return 0d;
+        }
         double extrapolatedStddev = Math.sqrt((sumOfSquares - extrapolatedMean * extrapolatedMean * sampleCount) / (sampleCount - 1));
         return Double.isNaN(extrapolatedStddev) ? 0d : extrapolatedStddev;
     }
