@@ -45,10 +45,23 @@ public class SojTimestamp {
 
   public static void main(String[] args) {
     String sojTimestamp = getSojTimestamp("2020-04-20 03:06:22.903");
+    for (String arg : args) {
+
+    }
+
+
+
     System.out.println();
     System.out.println();
-    System.out.println(getSojTimestamp("2020-04-20 03:06:22.903"));
+    System.out.println("2020-04-27 04:32:03.201".equals("2020-04-27 04:32:03.201"));
+    System.out.println(getSojTimestamp("2020-04-27 04:32:03.201"));
+    System.out.println(getSojTimestamp("2020-04-27 04:32:03.201"));
   }
+
+
+
+
+
 
 
 
