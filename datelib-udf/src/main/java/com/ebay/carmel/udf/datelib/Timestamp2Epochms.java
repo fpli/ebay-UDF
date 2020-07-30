@@ -11,14 +11,12 @@ import java.util.TimeZone;
 public class Timestamp2Epochms extends UDF {
 
     private static final String RESULT_DATE_FORMAT = "yyyy-MM-dd HH:mm:ss.SSS";
-    private static SimpleDateFormat result_formatter = new SimpleDateFormat(RESULT_DATE_FORMAT);
 
-    static {
-        result_formatter.setTimeZone(TimeZone.getTimeZone("GMT"));
-    }
 
     public Long evaluate(Text date) throws ParseException {
         if(null == date) return null;
+        SimpleDateFormat result_formatter = new SimpleDateFormat(RESULT_DATE_FORMAT);
+        result_formatter.setTimeZone(TimeZone.getTimeZone("GMT"));
         String strDate = date.toString();
         Date d = result_formatter.parse(strDate);
         return  d.getTime();
