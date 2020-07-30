@@ -16,7 +16,6 @@ public class Timestamp2Epochms extends UDF {
     public Long evaluate(Text date) throws ParseException {
         if(null == date) return null;
         SimpleDateFormat result_formatter = new SimpleDateFormat(RESULT_DATE_FORMAT);
-        result_formatter.setTimeZone(TimeZone.getTimeZone("GMT"));
         String strDate = date.toString();
         Date d = result_formatter.parse(strDate);
         return  d.getTime();

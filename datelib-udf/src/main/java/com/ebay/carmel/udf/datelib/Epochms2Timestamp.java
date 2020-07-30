@@ -12,7 +12,6 @@ public class Epochms2Timestamp extends UDF {
 
     public Text evaluate(long millis) {
         SimpleDateFormat result_formatter = new SimpleDateFormat(RESULT_DATE_FORMAT);
-        result_formatter.setTimeZone(TimeZone.getTimeZone("GMT"));
         Date d = new Date(millis);
         return new Text(result_formatter.format(d));
     }

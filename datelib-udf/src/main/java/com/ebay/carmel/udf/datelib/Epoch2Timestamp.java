@@ -13,7 +13,6 @@ public class Epoch2Timestamp extends UDF {
 
     public Text evaluate(Long time) {
         SimpleDateFormat result_formatter = new SimpleDateFormat(RESULT_DATE_FORMAT);
-        result_formatter.setTimeZone(TimeZone.getTimeZone("GMT"));
         Date d = new Date(time * 1000);
         return new Text(result_formatter.format(d));
     }
