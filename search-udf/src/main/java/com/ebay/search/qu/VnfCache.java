@@ -19,6 +19,19 @@ public class VnfCache {
     }
 
 
+    private VnfCache(String f1, String f2) {
+        m_hs = buildHashSet(f1);
+        addToHashSet(m_hs, f2);
+    }
+
+
+    private VnfCache(String f1, String f2, String f3) {
+        m_hs = buildHashSet(f1);
+        addToHashSet(m_hs, f2);
+        addToHashSet(m_hs, f3);
+    }
+
+
     static void quietlyClose(InputStream is) 
     {
         try {
@@ -45,14 +58,11 @@ public class VnfCache {
     }
 
 
-    static HashSet<String> buildHashSet(String szFileName) 
+    static void addToHashSet(HashSet<String> hs, String szFileName) 
     {
         InputStream is = null;
         GZIPInputStream gis = null;
         BufferedReader br = null;
-
-        HashSet<String> hs = new HashSet<String>();
-
         try {
             is = accessFile(szFileName);
             gis = new GZIPInputStream(is);
@@ -75,7 +85,13 @@ public class VnfCache {
             quietlyClose(gis);
             quietlyClose(is);
         }
+    }
 
+
+    static HashSet<String> buildHashSet(String szFileName) 
+    {
+        HashSet<String> hs = new HashSet<String>();
+        addToHashSet(hs, szFileName);
         return hs;
     }
     
@@ -98,6 +114,9 @@ public class VnfCache {
     private static VnfCache ms_vcDE30 = null;
     private static VnfCache ms_vcDef  = null;
 
+    private static VnfCache ms_vcCat20 = null;
+    private static VnfCache ms_vcCat30 = null;
+
     static {
         ms_vcUS20 = new VnfCache("vnf20us.txt.gz");  ms_vcUS20.addMarker("ebay_marker:vnf20us");
         ms_vcUK20 = new VnfCache("vnf20uk.txt.gz");  ms_vcUK20.addMarker("ebay_marker:vnf20uk");
@@ -106,6 +125,10 @@ public class VnfCache {
         ms_vcDE30 = new VnfCache("vnf30de.txt.gz");  ms_vcDE30.addMarker("ebay_marker:vnf30de");
 
         ms_vcDef  = new VnfCache("vnfdummy.txt.gz"); ms_vcDef.addMarker("ebay_marker:vnfdummy");
+
+        ms_vcCat20 = new VnfCache("vnf_v2_cat_0.txt.gz", "vnf_v2_cat_3.txt.gz"); ms_vcDef.addMarker("ebay_marker:vnf20cat");
+        ms_vcCat30 = new VnfCache("vnf_v3_cat_0.txt.gz", "vnf_v3_cat_3.txt.gz","vnf_v3_cat_77.txt.gz"); ms_vcDef.addMarker("ebay_marker:vnf30cat");
+
     }
 
 
@@ -122,6 +145,8 @@ public class VnfCache {
         if ("30us".equalsIgnoreCase(tag)) { return ms_vcUS30; }
         if ("30uk".equalsIgnoreCase(tag)) { return ms_vcUK30; }
         if ("30de".equalsIgnoreCase(tag)) { return ms_vcDE30; }
+        if ("20cat".equalsIgnoreCase(tag)) { return ms_vcCat20; }
+        if ("30cat".equalsIgnoreCase(tag)) { return ms_vcCat30; }
 
         return ms_vcDef;
     }
@@ -173,6 +198,17 @@ public class VnfCache {
         }
 
         return "0";
+    }
+
+
+    /**
+     * Returns "1" if the entry is contained in the cache. 
+     * Returns "0" otherwise.
+     * @param decodeFirst if non zero, the input string will be URL decoded first before checking the cache.
+     */
+    public String contains(long site, long cat, String k, String v, int decodeFirst)
+    {
+        return contains(site + ":" + cat + ":" + k + ":" + v, decodeFirst);
     }
 
 
