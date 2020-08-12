@@ -32,6 +32,14 @@ public class VnfCache {
     }
 
 
+    private VnfCache(String f1, String f2, String f3, String f4) {
+        m_hs = buildHashSet(f1);
+        addToHashSet(m_hs, f2);
+        addToHashSet(m_hs, f3);
+        addToHashSet(m_hs, f4);
+    }
+
+
     static void quietlyClose(InputStream is) 
     {
         try {
@@ -126,9 +134,11 @@ public class VnfCache {
 
         ms_vcDef  = new VnfCache("vnfdummy.txt.gz"); ms_vcDef.addMarker("ebay_marker:vnfdummy");
 
-        ms_vcCat20 = new VnfCache("vnf_v2_cat_0.txt.gz", "vnf_v2_cat_3.txt.gz"); ms_vcDef.addMarker("ebay_marker:vnf20cat");
-        ms_vcCat30 = new VnfCache("vnf_v3_cat_0.txt.gz", "vnf_v3_cat_3.txt.gz","vnf_v3_cat_77.txt.gz"); ms_vcDef.addMarker("ebay_marker:vnf30cat");
+        ms_vcCat20 = new VnfCache("vnf_v2_cat_0.txt.gz", "vnf_v2_cat_3.txt.gz"); 
+        ms_vcCat20.addMarker("ebay_marker:vnf20cat");
 
+        ms_vcCat30 = new VnfCache("vnf_v3_cat_0.txt.gz", "vnf_v3_cat_3.txt.gz", "vnf_v3_cat_77.txt.gz", "vnf_v3_cat_15.txt.gz"); 
+        ms_vcCat30.addMarker("ebay_marker:vnf30cat");
     }
 
 
