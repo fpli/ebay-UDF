@@ -1,0 +1,31 @@
+- vnfCatCheck:
+name: search.vnfCatCheck
+owner:
+platform:
+- hermesrno
+- apollorno
+- hercules
+className: com.ebay.search.qu.VnfCatCheck
+description:
+parameters:
+- version
+- site_id
+- leaf_category_id
+- Aspect_name
+- Aspect_value
+- output_if_true
+example: search.vnfCatCheck('20cat',0, 12, 'Age', '2001', 1)
+
+- vnfNormalizer:
+name: search.vnfNormalizer
+owner:
+platform:
+- hermesrno
+- apollorno
+- hercules
+className: com.ebay.search.qu.VnfNormalizerUDF
+description:
+parameters:
+- Aspect_name
+- Aspect_value
+example: vnfNormalizer('colour','red 1/ 2',0,0)
