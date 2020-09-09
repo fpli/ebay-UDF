@@ -3,10 +3,10 @@ package com.ebay.hadoop.udf.soj;
 import org.apache.hadoop.hive.ql.exec.UDF;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
+import org.apache.commons.lang3.math.NumberUtils;
 
 import java.math.BigDecimal;
 
-import static java.lang.Character.isDigit;
 
 /**
  * Created by szang on 7/31/17.
@@ -32,9 +32,8 @@ public class IsDecimal extends UDF {
         if (instr == null || p < 0 || s < 0) {
             return new IntWritable(0);
         }
-
         String num = instr.toString();
-        if (!num.matches("[+-]?\\d*[\\.]?\\d*")) {
+        if (!NumberUtils.isNumber(num) || num.contains("e") || num.contains("E")) {
             return new IntWritable(0);
         }
         try {

@@ -11,7 +11,7 @@
     <groupId>com.ebay.hadoop.udf.soj</groupId>
     <artifactId>soj-udf</artifactId>
 
-    <version>1.11-SNAPSHOT</version>
+    <version>1.12-SNAPSHOT</version>
 
     <name>soj-udf</name>
     <!-- FIXME change it to the project's website -->
@@ -89,6 +89,12 @@
             <groupId>org.neosearch.stringsearcher</groupId>
             <artifactId>multiple-string-searcher</artifactId>
             <version>0.1.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.10</version>
         </dependency>
     </dependencies>
     <repositories>
