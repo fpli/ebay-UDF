@@ -13,13 +13,13 @@ public final class RiskNormalizeEmail extends UDF {
   private EmailNormalizer normalizer = new EmailNormalizer();
 
   public Text evaluate(final Text s) {
-    return evaluate(s, true);
+    return evaluate(s, true, false);
   }
 
   /**
    * @param s the email address
    */
-  public Text evaluate(final Text s, final boolean nullIfError) {
+  public Text evaluate(final Text s, final boolean nullIfInvalid, final boolean useApacheValidator) {
     if (s == null) {
       return null;
     }
@@ -28,15 +28,15 @@ public final class RiskNormalizeEmail extends UDF {
     try {
       result = normalizer.normalize(input);
     } catch (ClientException e) {
-      if (nullIfError) {
+      if (nullIfInvalid) {
         return null;
       } else {
         return s;
       }
     }
     EmailResult emailResult = (EmailResult) result.getResult();
-    if (!emailResult.isValidInput() && nullIfError) {
-      return null;
+    if (useApacheValidator && !emailResult.isValidInput()) {
+      return nullIfInvalid ? null : s;
     }
     return new Text(((EmailResult) result.getResult()).getNormalizedEmail());
   }

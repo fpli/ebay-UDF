@@ -16,7 +16,7 @@ public final class RiskNormalizePhone extends UDF {
     return evaluate(countryId, phoneNumber, true);
   }
 
-  public Text evaluate(Long countryId, Text phoneNumber, boolean nullIfError) {
+  public Text evaluate(Long countryId, Text phoneNumber, boolean nullIfInvalid) {
     if (countryId == null || phoneNumber == null) {
       return null;
     }
@@ -28,7 +28,7 @@ public final class RiskNormalizePhone extends UDF {
     try {
       result = normalizer.normalize(input);
     } catch (ClientException e) {
-      if (nullIfError) {
+      if (nullIfInvalid) {
         return null;
       } else {
         return phoneNumber;
