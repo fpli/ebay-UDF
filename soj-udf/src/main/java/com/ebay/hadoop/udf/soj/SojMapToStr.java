@@ -5,7 +5,7 @@ import org.apache.commons.collections.MapUtils;
 import org.apache.hadoop.hive.ql.exec.UDF;
 import org.apache.hadoop.io.Text;
 
-public class SojMaptoStr extends UDF {
+public class SojMapToStr extends UDF {
 
   private static final String FILED_DELIM = "=";
   private static final String COLUMN_DELIM = "&";

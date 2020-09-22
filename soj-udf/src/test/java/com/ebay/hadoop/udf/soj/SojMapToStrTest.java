@@ -15,7 +15,7 @@ public class SojMapToStrTest {
     sojMap.put("rdt","1");
     sojMap.put("Encoding","gzip, deflate");
 
-    assertEquals("rdt=1&Encoding=gzip, deflate", new SojMaptoStr().evaluate(
+    assertEquals("rdt=1&Encoding=gzip, deflate", new SojMapToStr().evaluate(
         sojMap  ).toString());
 
   }
@@ -25,7 +25,7 @@ public class SojMapToStrTest {
     sojMap.put("Encoding","gzip, deflate");
     sojMap.put("rdt","1");
 
-    assertNotEquals("rdt=1&Encoding=gzip, deflate", new SojMaptoStr().evaluate(
+    assertNotEquals("rdt=1&Encoding=gzip, deflate", new SojMapToStr().evaluate(
         sojMap  ).toString());
 
   }
