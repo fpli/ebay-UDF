@@ -15,6 +15,7 @@
     <module>datelib-udf</module>
     <module>ebaylib-udf</module>
     <module>risk-udf</module>
+    <module>dss-shpmt-udf</module>
   </modules>
 
   <properties>

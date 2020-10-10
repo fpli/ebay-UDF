@@ -1,0 +1,23 @@
+- GetUrl:
+  name: com.ebay.hadoop.udf.shpmt.GetUrl
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+  className: com.ebay.hadoop.udf.shpmt.GetUrl
+  description:Extracts the URL's or websites matching the pattern provided for the case of CPS-5 from seller-buyer msg
+  parameters:
+  emailMsg
+  example: shpmt.GetUrl(" www.ebay.com hbjbbjb yahoo gmail__com") or shpmt.GetUrl($string_column)
+
+- GetEmail:
+  name: com.ebay.hadoop.udf.shpmt.GetEmail
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+  className: com.ebay.hadoop.udf.shpmt.GetEmail
+  description: Extracts the emails matching the pattern provided for the case of CPS-5 from seller-buyer msg
+  parameters:
+    - emailMsg
+  example: shpmt.GetEmail(" www.ebay.com hbjbbjb yahoo abc@gmail.com") or shpmt.GetEmail($string_column)
