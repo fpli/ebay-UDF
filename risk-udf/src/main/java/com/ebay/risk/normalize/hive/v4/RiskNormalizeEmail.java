@@ -1,4 +1,4 @@
-package com.ebay.risk.normalize.udf;
+package com.ebay.risk.normalize.hive.v4;
 
 import com.ebay.risk.exceptions.ClientException;
 import com.ebay.risk.n11n.api.entity.NormalizationResult;
@@ -19,7 +19,7 @@ public final class RiskNormalizeEmail extends UDF {
   /**
    * @param s the email address
    */
-  public Text evaluate(final Text s, final boolean nullIfInvalid, final boolean useApacheValidator) {
+  public Text evaluate(final Text s, final boolean nullIfInvalid, boolean useApacheValidator) {
     if (s == null) {
       return null;
     }
@@ -35,9 +35,11 @@ public final class RiskNormalizeEmail extends UDF {
       }
     }
     EmailResult emailResult = (EmailResult) result.getResult();
-    if (useApacheValidator && !emailResult.isValidInput()) {
+
+    if (useApacheValidator && !emailResult.isValidEmail()) {
       return nullIfInvalid ? null : s;
     }
+
     return new Text(((EmailResult) result.getResult()).getNormalizedEmail());
   }
 }

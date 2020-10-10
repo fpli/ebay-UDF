@@ -11,73 +11,25 @@
 
   <artifactId>risk-udf</artifactId>
 
-
   <dependencies>
+    <dependency>
+      <groupId>com.ebay.risk.n11n</groupId>
+      <artifactId>n11n-library-light</artifactId>
+      <version>2.0.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.hive</groupId>
+      <artifactId>hive-exec</artifactId>
+      <scope>provided</scope>
+    </dependency>
     <dependency>
       <groupId>org.apache.hadoop</groupId>
       <artifactId>hadoop-common</artifactId>
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>org.apache.hive</groupId>
-      <artifactId>hive-exec</artifactId>
-      <exclusions>
-        <exclusion>
-          <groupId>org.pentaho</groupId>
-          <artifactId>pentaho-aggdesigner-algorithm</artifactId>
-        </exclusion>
-      </exclusions>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.ebay.risk.n11n</groupId>
-      <artifactId>n11n-api</artifactId>
-      <version>1.2.2-xID-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>com.googlecode.libphonenumber</groupId>
-      <artifactId>libphonenumber</artifactId>
-      <version>8.10.2</version>
-    </dependency>
-    <!-- only include basic types: CountryCodeEnum -->
-    <dependency>
-      <groupId>com.ebay.cos.type.v3</groupId>
-      <artifactId>Base</artifactId>
-      <version>10.0.0-RELEASE</version>
-      <exclusions>
-        <exclusion>
-          <groupId>com.ebay.v3project.v3core</groupId>
-          <artifactId>global-environment-siteenum</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>io.micrometer</groupId>
-      <artifactId>micrometer-core</artifactId>
-      <version>1.1.9</version>
-    </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>1.7.29</version>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/commons-validator/commons-validator -->
-    <dependency>
-      <groupId>commons-validator</groupId>
-      <artifactId>commons-validator</artifactId>
-      <version>1.7</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.powermock</groupId>
-      <artifactId>powermock-api-mockito2</artifactId>
-      <version>2.0.2</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.powermock</groupId>
-      <artifactId>powermock-module-junit4</artifactId>
-      <version>2.0.2</version>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
       <scope>test</scope>
     </dependency>
   </dependencies>

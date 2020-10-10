@@ -1,4 +1,4 @@
-package com.ebay.risk.normalize.udf;
+package com.ebay.risk.normalize.hive.v4;
 
 import com.ebay.risk.exceptions.ClientException;
 import com.ebay.risk.n11n.api.entity.NormalizationResult;
@@ -13,10 +13,10 @@ public final class RiskNormalizePhone extends UDF {
   private PhoneNormalizer normalizer = new PhoneNormalizer();
 
   public Text evaluate(Long countryId, Text phoneNumber) {
-    return evaluate(countryId, phoneNumber, true);
+    return evaluate(countryId, phoneNumber, true, -1);
   }
 
-  public Text evaluate(Long countryId, Text phoneNumber, boolean nullIfInvalid) {
+  public Text evaluate(Long countryId, Text phoneNumber, boolean nullIfInvalid, int minimumLength) {
     if (countryId == null || phoneNumber == null) {
       return null;
     }
@@ -32,6 +32,13 @@ public final class RiskNormalizePhone extends UDF {
         return null;
       } else {
         return phoneNumber;
+      }
+    }
+    PhoneResult phoneResult = (PhoneResult) result.getResult();
+    if (minimumLength > 0) {
+      int normalizedLength = phoneResult.getNationalNumber().length();
+      if (normalizedLength < minimumLength) {
+        return nullIfInvalid ? null : phoneNumber;
       }
     }
     return new Text(((PhoneResult) result.getResult()).getNationalNumber());
