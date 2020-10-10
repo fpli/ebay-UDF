@@ -1,0 +1,39 @@
+- RiskNormalizePhone:
+  name: com.ebay.risk.normalize.hive.v4.RiskNormalizePhone
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+  className: com.ebay.risk.normalize.hive.v4.RiskNormalizePhone
+  description: Normalize user's phone number and remove non-digit
+  parameters:
+    - countryId
+    - phoneNumber
+    - nullIfInvalid
+    - minimumLength
+  example:
+    RiskNormalizePhone(1, "(987) 987 - 9898") will return "9879879898"
+    RiskNormalizePhone(1, "aaaaa") will return null
+    RiskNormalizePhone(1, "aaaaa", false, 8) will return "aaaaa" (keep original input)
+
+- RiskNormalizeEmail:
+  name: com.ebay.risk.normalize.hive.v4.RiskNormalizeEmail
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+  className: com.ebay.risk.normalize.hive.v4.RiskNormalizeEmail
+  description: Normalize an email address and remove known vendor's alias
+  parameters:
+    - countryId
+    - phoneNumber
+    - nullIfInvalid
+    - minimumLength
+  example:
+    RiskNormalizeEmail("hello+123@gmail.COM") will return "hello@gmail.com"
+    RiskNormalizeEmail("aaaaa") will return null (bad format)
+    RiskNormalizeEmail("aaaaa", false) will return "aaaaa" (keep original input)
+
+
+
+
