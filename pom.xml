@@ -13,6 +13,8 @@
     <module>deploy</module>
     <module>sys-udf</module>
     <module>datelib-udf</module>
+    <module>ebaylib-udf</module>
+    <module>dss-shpmt-udf</module>
   </modules>
 
   <properties>

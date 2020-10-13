@@ -156,3 +156,18 @@
   parameters:
     - treatment info
   example: is_nqt(8589934594)
+
+- get_ttest_stats:
+  name: ep.get_ttest_stats
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+  className: com.ebay.hadoop.udf.ep.GetTTestStatsValue
+  description: Calculate ttest stats according to summary group
+  parameters:
+    - report id
+    - time key
+    - metric id
+    - treatment metric summary group
+  example:

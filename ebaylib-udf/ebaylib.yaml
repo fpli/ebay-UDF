@@ -1,0 +1,32 @@
+- hmac_sha256_latin:
+  name: ebaylib.hmac_sha256_latin
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+  className: com.ebay.carmel.udf.ebaylib.HmacSha256Generic
+  description:
+  parameters:
+  example: ebaylib.hmac_sha256_latin('abcdeßàèÀ','abc')
+
+- hmac_sha256_latin_str:
+  name: ebaylib.hmac_sha256_latin_str
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+  className: com.ebay.carmel.udf.ebaylib.HmacSha256Str
+  description:
+  parameters:
+  example: ebaylib.hmac_sha256_latin('abcdeßàèÀ','abc')
+
+- udf_EiasUserID_encode:
+  name: ebaylib.udf_EiasUserID_encode
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+  className: com.ebay.carmel.udf.ebaylib.EiasUserIDEncode
+  description:
+  parameters:
+  example: ebaylib.udf_EiasUserID_encode(123)
