@@ -10,7 +10,7 @@ public class ClientInfoParserTest {
   @Test
   public void test() throws Exception {
 
-    assertEquals(new Text(""), new ClientInfoParser().evaluate(new Text(
+    assertEquals(new Text("10.15.15.141&&&"), new ClientInfoParser().evaluate(new Text(
             "Script=/roverimp/0/0/9&a=b&Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:81.0) "
                 + "Gecko/20100101 Firefox/81.0&&&Server=rover.ebay.de&RemoteIP=84.181.53"
                 + ".104&Referer=https://www.ebay.de/itm/Lebensgroße-Figur/124360322508&TType=URL"
@@ -21,7 +21,7 @@ public class ClientInfoParserTest {
                 + ".39&TPool=r1rover&a=b&&TStatus=0&TDuration=6&ContentLength=-1&TName"
                 + "=roverimp_INTL"
                 + "&ForwardedFor=&&&&TMachine=10.15.15.141&&&"),
-        "ForwardedFor"));
+        "TMachine"));
     assertEquals(new Text("84.181.53.104"), new ClientInfoParser().evaluate(new Text(
             "Script=/roverimp/0/0/9&Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:81.0) "
                 + "Gecko/20100101 Firefox/81.0&Server=rover.ebay.de&RemoteIP=84.181.53"
