@@ -1,6 +1,6 @@
 package com.ebay.hadoop.udf.soj;
 
-import com.ebay.sojourner.common.sojlib.SOJParseClientInfo;
+import com.ebay.hadoop.udf.utils.SOJParseClientInfo;
 import org.apache.hadoop.hive.ql.exec.UDF;
 import org.apache.hadoop.io.Text;
 
