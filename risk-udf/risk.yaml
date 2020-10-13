@@ -25,10 +25,9 @@
   className: com.ebay.risk.normalize.hive.v4.RiskNormalizeEmail
   description: Normalize an email address and remove known vendor's alias
   parameters:
-    - countryId
-    - phoneNumber
+    - email
     - nullIfInvalid
-    - minimumLength
+    - useApacheValidator
   example:
     RiskNormalizeEmail("hello+123@gmail.COM") will return "hello@gmail.com"
     RiskNormalizeEmail("aaaaa") will return null (bad format)
