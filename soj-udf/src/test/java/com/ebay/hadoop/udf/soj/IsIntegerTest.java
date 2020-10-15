@@ -18,6 +18,9 @@ public class IsIntegerTest {
         assertEquals(new IntWritable(0), obj.evaluate(new Text("3.1415926")));
         assertEquals(new IntWritable(0), obj.evaluate(new Text("12345E2")));
         assertEquals(new IntWritable(0), obj.evaluate(new Text("12345e2")));
+        assertEquals(new IntWritable(0), obj.evaluate(new Text("")));
+        assertEquals(new IntWritable(0), obj.evaluate(new Text(" ")));
+        assertEquals(new IntWritable(0), obj.evaluate(null));
     }
 
 }
