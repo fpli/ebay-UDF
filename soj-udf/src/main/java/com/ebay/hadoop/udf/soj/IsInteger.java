@@ -1,6 +1,7 @@
 package com.ebay.hadoop.udf.soj;
 
 import com.google.common.primitives.Ints;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.hadoop.hive.ql.exec.UDF;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
@@ -9,7 +10,7 @@ public class IsInteger extends UDF {
 
     @SuppressWarnings("unused")
     public IntWritable evaluate( Text inst) {
-        if (inst == null) {
+        if (inst == null|| StringUtils.isEmpty(inst.toString())) {
             return new IntWritable(0);
         }
         // Never use JDK's Integer.valueOf which throws exception for invalid integer and hurts performance
