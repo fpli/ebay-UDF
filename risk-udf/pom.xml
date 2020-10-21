@@ -11,12 +11,12 @@
 
   <artifactId>risk-udf</artifactId>
 
+  <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+
   <dependencies>
-    <dependency>
-      <groupId>com.ebay.risk.n11n</groupId>
-      <artifactId>n11n-library-light</artifactId>
-      <version>2.0.0</version>
-    </dependency>
     <dependency>
       <groupId>org.apache.hive</groupId>
       <artifactId>hive-exec</artifactId>
@@ -31,6 +31,70 @@
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <scope>test</scope>
+    </dependency>
+
+    <!-- normalization library dependencies -->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.10</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.googlecode.libphonenumber</groupId>
+      <artifactId>libphonenumber</artifactId>
+      <version>8.10.2</version>
+    </dependency>
+    <!-- only include basic types: CountryCodeEnum -->
+    <dependency>
+      <groupId>com.ebay.cos.type.v3</groupId>
+      <artifactId>Base</artifactId>
+      <version>10.0.0-RELEASE</version>
+      <exclusions>
+        <exclusion>
+          <groupId>com.ebay.v3project.v3core</groupId>
+          <artifactId>global-environment-siteenum</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>io.micrometer</groupId>
+      <artifactId>micrometer-core</artifactId>
+      <version>1.1.9</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.7.29</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-validator</groupId>
+      <artifactId>commons-validator</artifactId>
+      <!-- align with xID-->
+      <version>1.2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.ebay.risk</groupId>
+      <artifactId>commons-exception</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-annotations</artifactId>
+      <version>2.9.10</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>2.9.10</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.9.10</version>
+      <scope>provided</scope>
     </dependency>
   </dependencies>
 
