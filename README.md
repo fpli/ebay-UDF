@@ -6,6 +6,6 @@ Several requirements
 3. Unit test
 
 Release process
-1. Create the PR and get approved
-2. Release in corresponding test db and ask user to test
-3. Release in production
+1. Create the PR and get initial approval
+2. Release in corresponding test db and hermes will do the integration test
+3. Merge the PR and release in production
