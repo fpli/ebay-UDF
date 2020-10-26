@@ -1,6 +1,5 @@
 package com.ebay.hadoop.udf.soj;
 
-import com.ebay.sojourner.common.sojlib.SojGetBase64EncodedBitsSets;
 import org.apache.hadoop.hive.ql.exec.UDF;
 import org.apache.hadoop.io.Text;
 
