@@ -751,3 +751,26 @@
   parameters:
   example:
 
+- string_ts_to_sojts:
+  name: sojlib.string_ts_to_sojts
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.StringTSToSojTS
+  description:
+  parameters:
+  example:
+
+- string_date_to_sojts:
+  name: sojlib.string_date_to_sojts
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.StringDateToSojTS
+  description:
+  parameters:
+  example:
