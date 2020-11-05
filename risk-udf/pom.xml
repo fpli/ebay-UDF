@@ -34,6 +34,7 @@
     </dependency>
 
     <!-- normalization library dependencies -->
+    <!-- required only in compile time, no need to provide this -->
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
@@ -45,38 +46,22 @@
       <artifactId>libphonenumber</artifactId>
       <version>8.10.2</version>
     </dependency>
-    <!-- only include basic types: CountryCodeEnum -->
-    <dependency>
-      <groupId>com.ebay.cos.type.v3</groupId>
-      <artifactId>Base</artifactId>
-      <version>10.0.0-RELEASE</version>
-      <exclusions>
-        <exclusion>
-          <groupId>com.ebay.v3project.v3core</groupId>
-          <artifactId>global-environment-siteenum</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
     <dependency>
       <groupId>io.micrometer</groupId>
       <artifactId>micrometer-core</artifactId>
       <version>1.1.9</version>
     </dependency>
+    <!-- read csv -->
     <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>1.7.29</version>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-csv</artifactId>
+      <version>1.5</version>
     </dependency>
     <dependency>
       <groupId>commons-validator</groupId>
       <artifactId>commons-validator</artifactId>
       <!-- align with xID-->
       <version>1.2.0</version>
-    </dependency>
-    <dependency>
-      <groupId>com.ebay.risk</groupId>
-      <artifactId>commons-exception</artifactId>
-      <version>1.0.0</version>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>

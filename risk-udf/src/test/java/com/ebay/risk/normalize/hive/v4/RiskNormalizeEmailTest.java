@@ -67,4 +67,11 @@ public class RiskNormalizeEmailTest {
       assertEquals(new Text(expected), result);
     }
   }
+
+  @Test
+  public void testValidatorVersion() {
+    // When commons-validator == 1.4.1, will return tapia5123@.com
+    // When commons-validator == 1.2, will return null
+    assertCase("tapia5123@.com", true, true, null);
+  }
 }

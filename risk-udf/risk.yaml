@@ -33,6 +33,25 @@
     RiskNormalizeEmail("aaaaa") will return null (bad format)
     RiskNormalizeEmail("aaaaa", false) will return "aaaaa" (keep original input)
 
+- RiskNormalizeCountry:
+  name: com.ebay.risk.normalize.hive.v4.RiskNormalizeCountry
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+  className: com.ebay.risk.normalize.hive.v4.RiskNormalizeCountry
+  description: Convert country id, country abbr., or PGW informal country names into formal country\
+    full name. If an unknown or invalid input is speicified, it will return null.
+  parameters:
+    - inputCntry
+  example:
+    RiskNormalizeCountry(1) returns "United States" (Get from countryId)
+    RiskNormalizeCountry("1") will return "United States" (Get from string countryId)
+    RiskNormalizeCountry("840") will return "United States" (Ebay's next gen countryId)
+    RiskNormalizeCountry("gb") will return "United Kingdom" (Get from ISO alpha2)
+    RiskNormalizeCountry("uk") will return "United Kingdom" (Some conventions)
+    RiskNormalizeCountry("great Britain") will return "United Kingdom" (Some conventions)
+
 
 
 
