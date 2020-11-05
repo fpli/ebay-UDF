@@ -1,5 +1,5 @@
-- RiskNormalizePhone:
-  name: com.ebay.risk.normalize.hive.v4.RiskNormalizePhone
+- normalize_phone:
+  name: risk.normalize_phone
   owner:
   platform:
     - hermesrno
@@ -12,12 +12,12 @@
     - nullIfInvalid
     - minimumLength
   example:
-    RiskNormalizePhone(1, "(987) 987 - 9898") will return "9879879898"
-    RiskNormalizePhone(1, "aaaaa") will return null
-    RiskNormalizePhone(1, "aaaaa", false, 8) will return "aaaaa" (keep original input)
+    normalize_phone(1, "(987) 987 - 9898") will return "9879879898"
+    normalize_phone(1, "aaaaa") will return null
+    normalize_phone(1, "aaaaa", false, 8) will return "aaaaa" (keep original input)
 
-- RiskNormalizeEmail:
-  name: com.ebay.risk.normalize.hive.v4.RiskNormalizeEmail
+- normalize_email:
+  name: risk.normalize_email
   owner:
   platform:
     - hermesrno
@@ -29,12 +29,12 @@
     - nullIfInvalid
     - useApacheValidator
   example:
-    RiskNormalizeEmail("hello+123@gmail.COM") will return "hello@gmail.com"
-    RiskNormalizeEmail("aaaaa") will return null (bad format)
-    RiskNormalizeEmail("aaaaa", false) will return "aaaaa" (keep original input)
+    normalize_email("hello+123@gmail.COM") will return "hello@gmail.com"
+    normalize_email("aaaaa") will return null (bad format)
+    normalize_email("aaaaa", false) will return "aaaaa" (keep original input)
 
-- RiskNormalizeCountry:
-  name: com.ebay.risk.normalize.hive.v4.RiskNormalizeCountry
+- normalize_country:
+  name: risk.normalize_country
   owner:
   platform:
     - hermesrno
@@ -45,12 +45,12 @@
   parameters:
     - inputCntry
   example:
-    RiskNormalizeCountry(1) returns "United States" (Get from countryId)
-    RiskNormalizeCountry("1") will return "United States" (Get from string countryId)
-    RiskNormalizeCountry("840") will return "United States" (Ebay's next gen countryId)
-    RiskNormalizeCountry("gb") will return "United Kingdom" (Get from ISO alpha2)
-    RiskNormalizeCountry("uk") will return "United Kingdom" (Some conventions)
-    RiskNormalizeCountry("great Britain") will return "United Kingdom" (Some conventions)
+    normalize_country(1) returns "United States" (Get from countryId)
+    normalize_country("1") will return "United States" (Get from string countryId)
+    normalize_country("840") will return "United States" (Ebay's next gen countryId)
+    normalize_country("gb") will return "United Kingdom" (Get from ISO alpha2)
+    normalize_country("uk") will return "United Kingdom" (Some conventions)
+    normalize_country("great Britain") will return "United Kingdom" (Some conventions)
 
 
 
