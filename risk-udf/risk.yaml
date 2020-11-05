@@ -41,7 +41,7 @@
     - apollorno
   className: com.ebay.risk.normalize.hive.v4.RiskNormalizeCountry
   description: Convert country id, country abbr., or PGW informal country names into formal country\
-    full name. If an unknown or invalid input is speicified, it will return null.
+    full name. If an unknown or invalid input is specified, it will return null.
   parameters:
     - inputCntry
   example:
