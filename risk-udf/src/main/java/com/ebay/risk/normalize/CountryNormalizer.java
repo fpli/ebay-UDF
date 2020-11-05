@@ -78,7 +78,7 @@ public class CountryNormalizer {
 
     private CountryNormalizer instance;
 
-    EnumFactory() {//枚举类的构造方法在类加载是被实例化
+    EnumFactory() {
       instance = new CountryNormalizer();
     }
 
