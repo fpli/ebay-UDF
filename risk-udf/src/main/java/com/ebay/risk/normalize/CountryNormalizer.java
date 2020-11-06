@@ -4,9 +4,7 @@ import com.ebay.cos.type.v3.base.CountryCodeEnum;
 import com.ebay.risk.normalize.enums.BuyerRiskCountryEnum;
 import com.ebay.risk.normalize.enums.PGWAddressCountryEnum;
 import java.io.IOException;
-import java.io.Reader;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 import lombok.extern.slf4j.Slf4j;
@@ -120,12 +118,10 @@ public class CountryNormalizer {
   }
 
   private Map<String, String> putFromDWCountriesCSV() throws IOException {
-    String readCsvFilePath = CountryNormalizer.class.getResource(DW_COUNTRIES_CSV).getPath();
-    Reader reader = null;
     Map<String, String> tmp = new HashMap<>();
 
-    reader = Files.newBufferedReader(Paths.get(readCsvFilePath));
-    CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT.withFirstRecordAsHeader());
+    CSVParser csvParser = CSVParser.parse(this.getClass().getResourceAsStream(DW_COUNTRIES_CSV),
+        StandardCharsets.UTF_8, CSVFormat.DEFAULT.withFirstRecordAsHeader());
 
     for (CSVRecord csvRecord : csvParser) {
       // preValue.getName() is fullCountry
@@ -141,12 +137,10 @@ public class CountryNormalizer {
   }
 
   private Map<String, String> putFromXIDCountriesCSV() throws IOException {
-    String readCsvFilePath = CountryNormalizer.class.getResource(XID_COUNTRY_MAPPING_CSV).getPath();
-    Reader reader = null;
     Map<String, String> tmp = new HashMap<>();
 
-    reader = Files.newBufferedReader(Paths.get(readCsvFilePath));
-    CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT.withFirstRecordAsHeader());
+    CSVParser csvParser = CSVParser.parse(this.getClass().getResource(XID_COUNTRY_MAPPING_CSV),
+        StandardCharsets.UTF_8, CSVFormat.DEFAULT.withFirstRecordAsHeader());
 
     for (CSVRecord csvRecord : csvParser) {
       if (BuyerRiskCountryEnum.getCountry(csvRecord.get(1)) != null) {
