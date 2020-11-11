@@ -9,7 +9,7 @@ import org.apache.hadoop.io.IntWritable;
 
 public class IsTimestamp extends UDF {
 
-  private static final String DEFAULT_DATE_FORMAT = "yyyy-MM-dd HH:mm:ss.SSS";
+  private static final String DEFAULT_DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
 
   private static ThreadLocal<SimpleDateFormat> simpleDateFormatThreadLocal = new ThreadLocal<SimpleDateFormat>() {
     @Override

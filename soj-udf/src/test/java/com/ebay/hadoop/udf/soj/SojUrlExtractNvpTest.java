@@ -14,5 +14,8 @@ public class SojUrlExtractNvpTest {
 
         //known bug in original code
         assertEquals(null, new SojUrlExtractNvp().evaluate("a=1&b=2&c=3","a",1));
+        assertEquals(null, new SojUrlExtractNvp().evaluate(
+            "/sch/Auto-Ersatz-Reparaturteile/9884/i.html?MModel=&_fosrp=&MMake=&_mcatda=&mvsub=",
+            "_nkw", 0));
     }
 }

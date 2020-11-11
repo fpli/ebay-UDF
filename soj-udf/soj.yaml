@@ -737,5 +737,40 @@
   description:
   parameters:
   example: sojlib.ts_date(3586117768123000)
- 
 
+
+- ts_date:
+  name: sojlib.soj_map_to_str
+  owner:
+  platform:
+  - hermesrno
+  - apollorno
+  - hercules
+  className: com.ebay.hadoop.udf.soj.SojMapToStr
+  description:
+  parameters:
+  example:
+
+- string_ts_to_sojts:
+  name: sojlib.string_ts_to_sojts
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.StringTSToSojTS
+  description:
+  parameters:
+  example:
+
+- string_date_to_sojts:
+  name: sojlib.string_date_to_sojts
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.StringDateToSojTS
+  description:
+  parameters:
+  example:
