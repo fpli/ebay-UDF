@@ -23,6 +23,10 @@ protocol TouchstoneCore {
 
         double sumOfSquare;
 
+        double sumOfCubes = -777;
+
+        double sumOfTheFourthPowers = -777;
+
         long sampleCount;
 
         long metricCount;

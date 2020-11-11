@@ -46,6 +46,16 @@ public class MetricStatsSummary {
     private double pvrDaily;
     private Map<Double, Integer> densityMap;
 
+    //for implied MDE
+    private double impliedMDE;
+
+    // for normality test
+    // coefficient of variation
+    private double cv;
+    private double skewness;
+    private double kurtosis;
+
+
     public long getTreatmentId() {
         return treatmentId;
     }
@@ -244,5 +254,37 @@ public class MetricStatsSummary {
 
     public void setDensityMap(Map<Double, Integer> densityMap) {
         this.densityMap = densityMap;
+    }
+
+    public double getImpliedMDE() {
+        return impliedMDE;
+    }
+
+    public void setImpliedMDE(double impliedMDE) {
+        this.impliedMDE = impliedMDE;
+    }
+
+    public double getCv() {
+        return cv;
+    }
+
+    public void setCv(double cv) {
+        this.cv = cv;
+    }
+
+    public double getSkewness() {
+        return skewness;
+    }
+
+    public void setSkewness(double skewness) {
+        this.skewness = skewness;
+    }
+
+    public double getKurtosis() {
+        return kurtosis;
+    }
+
+    public void setKurtosis(double kurtosis) {
+        this.kurtosis = kurtosis;
     }
 }

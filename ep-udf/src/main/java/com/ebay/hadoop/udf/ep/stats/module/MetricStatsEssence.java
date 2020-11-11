@@ -15,6 +15,10 @@ public class MetricStatsEssence implements MetricSummary {
 
     private double sumOfSquare;
 
+    private double sumOfCube;
+
+    private double sumOfTheFourthPower;
+
     private long metricCount;
 
     /**
@@ -24,10 +28,13 @@ public class MetricStatsEssence implements MetricSummary {
 
     private final long timestamp;
 
-    public MetricStatsEssence(int metricId, double sum, double sumOfSquare, long metricCount, long sampleCount, long timestamp) {
+    public MetricStatsEssence(int metricId, double sum, double sumOfSquare, double sumOfCube,
+                              double sumOfTheFourthPower, long metricCount, long sampleCount, long timestamp) {
         this.metricId = metricId;
         this.sum = sum;
         this.sumOfSquare = sumOfSquare;
+        this.sumOfCube = sumOfCube;
+        this.sumOfTheFourthPower = sumOfTheFourthPower;
         this.metricCount = metricCount;
         this.sampleCount = sampleCount;
         this.timestamp = timestamp;
@@ -58,6 +65,25 @@ public class MetricStatsEssence implements MetricSummary {
         return TSStatsUtil.calculateExtrapolatedStddev(sumOfSquare, getExtrapolatedMean(), sampleCount);
     }
 
+    // Must check NaN or Infinite while call this function
+    @Override
+    public double getExtrapolatedCV() {
+        return getExtrapolatedStddev() / getExtrapolatedMean();
+    }
+
+    // Must check NaN while call this function
+    @Override
+    public double getExtrapolatedSkewness() {
+        return TSStatsUtil.calculateExtrapolatedSkewness(sumOfSquare, sumOfCube, getExtrapolatedMean(), sampleCount);
+    }
+
+    // Must check NaN while call this function
+    @Override
+    public double getExtrapolatedKurtosis() {
+        return TSStatsUtil.calculateExtrapolatedKurtosis(sumOfSquare, sumOfCube, sumOfTheFourthPower,
+                getExtrapolatedMean(), sampleCount);
+    }
+
     @Override
     public void combine(MetricSummary summary) {
         Preconditions.checkArgument(this.metricId == summary.getMetricId());
@@ -66,14 +92,16 @@ public class MetricStatsEssence implements MetricSummary {
         MetricStatsEssence essential = (MetricStatsEssence) summary;
         this.sum += essential.getSum();
         this.sumOfSquare += essential.getSumOfSquare();
+        this.sumOfCube += essential.getSumOfCube();
+        this.sumOfTheFourthPower += essential.getSumOfTheFourthPower();
         this.metricCount += essential.getMetricCount();
         this.sampleCount += essential.getSampleCount();
     }
 
     @Override
     public MetricSummary copy() {
-        return new MetricStatsEssence(this.metricId, this.sum, this.sumOfSquare,
-            this.metricCount, this.sampleCount, this.timestamp);
+        return new MetricStatsEssence(this.metricId, this.sum, this.sumOfSquare, this.sumOfCube, this.sumOfTheFourthPower,
+                this.metricCount, this.sampleCount, this.timestamp);
     }
 
     public double getSum() {
@@ -82,6 +110,14 @@ public class MetricStatsEssence implements MetricSummary {
 
     public double getSumOfSquare() {
         return sumOfSquare;
+    }
+
+    public double getSumOfCube() {
+        return sumOfCube;
+    }
+
+    public double getSumOfTheFourthPower() {
+        return sumOfTheFourthPower;
     }
 
     public long getMetricCount() {
@@ -103,6 +139,7 @@ public class MetricStatsEssence implements MetricSummary {
     @Override
     public String toString() {
         return "MetricStatsEssential{" + "metricId=" + metricId + ", sum=" + sum + ", sumOfSquare=" + sumOfSquare
+                + ", sumOfCube=" + sumOfCube + ", sumOfTheFourthPower=" + sumOfTheFourthPower
             + ", metricCount=" + metricCount + ", sampleCount=" + sampleCount + ", timestamp=" + timestamp + '}';
     }
 }

@@ -23,9 +23,19 @@ public class TTestStatisticsService implements TSStatisticsService<Double> {
     private final ThreadLocal<TSStatsUtil> tlTsStatsUtil;
     private final ThreadLocal<NormalDistribution> tlNnormalDist;
 
+    private final double zalpha4ImpliedMDE;
+    private final double zbeta4ImpliedMDE;
+
+    private final static double IMPLIED_MDE_ALPHA = 0.1d;
+    private final static double IMPLIED_MDE_BETA = 0.2d;
+
     public TTestStatisticsService() {
         tlTsStatsUtil = ThreadLocal.withInitial(TSStatsUtil::new);
         tlNnormalDist = ThreadLocal.withInitial(NormalDistribution::new);
+
+        // In Implied MDE calculation: alpha = 10% and beta = 20%
+        zalpha4ImpliedMDE = tlNnormalDist.get().inverseCumulativeProbability(1 - IMPLIED_MDE_ALPHA / 2);
+        zbeta4ImpliedMDE = tlNnormalDist.get().inverseCumulativeProbability(1 - IMPLIED_MDE_BETA);
     }
 
     @Override
@@ -109,9 +119,9 @@ public class TTestStatisticsService implements TSStatisticsService<Double> {
         long trmtSampleCount = treatment.getSampleCount();
         long ctrlSampleCount = control.getSampleCount();
         boolean noStatsRequired = trmtSampleCount == 0L
-            || ctrlSampleCount == 0L
-            || Double.isNaN(treatment.getExtrapolatedStddev())
-            || Double.isNaN(control.getExtrapolatedStddev());
+                || ctrlSampleCount == 0L
+                || Double.isNaN(treatment.getExtrapolatedStddev())
+                || Double.isNaN(control.getExtrapolatedStddev());
         if (metricId == Constants.SAMPLE_COUNT_METRIC_ID || metricId == Constants.TGI_SAMPLE_COUNT_METRIC_ID) {
             //basically means that we do have sample count metric in the query result, we should yield it as well.
             //it is different than other no stats required field, as we need to generate cp and lift.
@@ -122,6 +132,10 @@ public class TTestStatisticsService implements TSStatisticsService<Double> {
             stats.setLift(cp * 100);
             stats.setTimestamp(treatment.getTimestamp());
             stats.setTrafficPct(t.getTrafficPct());
+            stats.setImpliedMDE(-1d);
+            stats.setCv(Double.NaN);
+            stats.setSkewness(Double.NaN);
+            stats.setKurtosis(Double.NaN);
             return stats;
         } else if (noStatsRequired) {
             return noStatsRequired(t.getTreatmentId(), t.getTrafficPct(), metricId, treatment);
@@ -145,18 +159,31 @@ public class TTestStatisticsService implements TSStatisticsService<Double> {
             double lift = MathUtil.eq(extrapolatedCtrlMean, 0d) ? 0d : (extrapolatedTrmtMean / extrapolatedCtrlMean - 1) * 100;
             stats.setLift(lift);
             stats.setPvalue(tsStatsUtil.calculatePValue(extrapolatedTrmtMean, extrapolatedCtrlMean,
-                extrapolatedTrmtStddev * extrapolatedTrmtStddev, controlVar, treatment.getSampleCount(),
-                control.getSampleCount()));
+                    extrapolatedTrmtStddev * extrapolatedTrmtStddev, controlVar, treatment.getSampleCount(),
+                    control.getSampleCount()));
             stats.setStatsType(StatsAlgorithmType.TTEST);
             stats.setCp(MathUtil.eq(extrapolatedCtrlMean, 0d) ? 0d : (extrapolatedTrmtMean - extrapolatedCtrlMean) / extrapolatedCtrlMean);
 
             double zscore = normalDist.inverseCumulativeProbability(1 - alpha / 2);
             double halfCI = TSStatsUtil.calculateHalfConfidenceInterval(extrapolatedTrmtStddev, treatment.getSampleCount(),
-                zscore, extrapolatedCtrlMean, controlVar, control.getSampleCount());
+                    zscore, extrapolatedCtrlMean, controlVar, control.getSampleCount());
             stats.setLowerCI(lift - halfCI);
             stats.setUpperCI(lift + halfCI);
             stats.setTimestamp(treatment.getTimestamp());
             stats.setTrafficPct(t.getTrafficPct());
+            double impliedMDE = -1d;
+            if (!MathUtil.eq(extrapolatedCtrlMean, 0d)) {
+                // Calc Implied MDE
+                // Get CV, observed CV from control group” to calculate CV_c = sigma_c / mu_c
+                double controlCV = controlStddev / extrapolatedCtrlMean;
+                // effective_sample_size = (controlSampleCount * treatmentSampleCount) / (controlSampleCount + treatmentSampleCount)
+                impliedMDE = controlCV * (zalpha4ImpliedMDE + zbeta4ImpliedMDE) * Math.sqrt(1.0d / ctrlSampleCount + 1.0d / trmtSampleCount);
+            }
+            stats.setImpliedMDE(impliedMDE);
+            stats.setCv(treatment.getExtrapolatedCV());
+            stats.setSkewness(treatment.getExtrapolatedSkewness());
+            stats.setKurtosis(treatment.getExtrapolatedKurtosis());
+
             return stats;
         }
     }
@@ -173,6 +200,10 @@ public class TTestStatisticsService implements TSStatisticsService<Double> {
         stats.setSampleCount(treatment.getSampleCount());
         stats.setTimestamp(treatment.getTimestamp());
         stats.setTrafficPct(trafficPct);
+        stats.setImpliedMDE(-1d);
+        stats.setCv(treatment.getExtrapolatedCV());
+        stats.setSkewness(treatment.getExtrapolatedSkewness());
+        stats.setKurtosis(treatment.getExtrapolatedKurtosis());
         return stats;
     }
 }

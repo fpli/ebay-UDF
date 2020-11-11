@@ -108,12 +108,17 @@ public class GetTTestStatsValue extends GenericUDF {
                     structObjectInspector.getStructFieldRef("sum"));
             double sumOfSquare = (double) structObjectInspector.getStructFieldData(treatmentMetricSummary,
                     structObjectInspector.getStructFieldRef("sumofsquare"));
+            double sumOfCube = (double) structObjectInspector.getStructFieldData(treatmentMetricSummary,
+                    structObjectInspector.getStructFieldRef("sumOfCube"));
+            double sumOfTheFourthPower = (double) structObjectInspector.getStructFieldData(treatmentMetricSummary,
+                    structObjectInspector.getStructFieldRef("sumOfTheFourthPower"));
             long sampleCount = (long) structObjectInspector.getStructFieldData(treatmentMetricSummary,
                     structObjectInspector.getStructFieldRef("sampleCount"));
             long metricCount = (long) structObjectInspector.getStructFieldData(treatmentMetricSummary,
                     structObjectInspector.getStructFieldRef("metricCount"));
             combinationIdList.add(combinationId);
-            MetricSummary metricSummary = new MetricStatsEssence(metricId, sum, sumOfSquare, metricCount, sampleCount, timeKey);
+            MetricSummary metricSummary = new MetricStatsEssence(metricId, sum, sumOfSquare,
+                    sumOfCube, sumOfTheFourthPower, metricCount, sampleCount, timeKey);
             PITTreatmentMetricSummary pitTreatmentMetricSummary = new PITTreatmentMetricSummary(
                     TrtmtCombinationCodec.getTreatmentId(combinationId), trafficPct,
                     TrtmtCombinationCodec.getTreatType(combinationId), timeKey, metricId, metricSummary);
