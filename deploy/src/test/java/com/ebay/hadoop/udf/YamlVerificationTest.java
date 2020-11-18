@@ -12,8 +12,7 @@ import java.nio.file.Paths;
 import java.util.*;
 
 public class YamlVerificationTest {
-
-    @Test
+    
     public void testYamls(){
 
         Yaml yaml = new Yaml();
