@@ -16,6 +16,7 @@
     <module>ebaylib-udf</module>
     <module>risk-udf</module>
     <module>dss-shpmt-udf</module>
+      <module>hadoop-udf</module>
   </modules>
 
   <properties>
