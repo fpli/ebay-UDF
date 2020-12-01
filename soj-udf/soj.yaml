@@ -774,3 +774,15 @@
   description:
   parameters:
   example:
+
+- decode_plmt_tag:
+  name: sojlib.decode_plmt_tag
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.DecodePlmtTag
+  description:
+  parameters:
+  example:
