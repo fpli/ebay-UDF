@@ -169,7 +169,7 @@ public class EPUdfTest {
         StructTypeInfo structTypeInfo = new StructTypeInfo();
         structTypeInfo.setAllStructFieldNames(Lists.newArrayList("combinationId", "trafficPct", "sum", "sumOfSquare"
                 , "sumOfCube", "sumOfTheFourthPower", "sampleCount", "metricCount"));
-        structTypeInfo.setAllStructFieldTypeInfos(Lists.newArrayList(TypeInfoFactory.longTypeInfo, TypeInfoFactory.doubleTypeInfo,
+        structTypeInfo.setAllStructFieldTypeInfos(Lists.newArrayList(TypeInfoFactory.longTypeInfo, TypeInfoFactory.doubleTypeInfo, TypeInfoFactory.doubleTypeInfo, TypeInfoFactory.doubleTypeInfo,
                 TypeInfoFactory.doubleTypeInfo, TypeInfoFactory.doubleTypeInfo, TypeInfoFactory.longTypeInfo, TypeInfoFactory.longTypeInfo));
         listTypeInfo.setListElementTypeInfo(structTypeInfo);
         ListObjectInspector listInspector = (ListObjectInspector) OrcStruct.createObjectInspector(listTypeInfo);
