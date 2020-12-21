@@ -57,7 +57,7 @@ public class TSStatsUtil extends TTest {
     }
 
     public static double calculateExtrapolatedSkewness(double sumOfSquares, double sumOfCubes, double extrapolatedMean, long sampleCount) {
-        if (sampleCount <= 2 || sumOfSquares < 0 || Double.isInfinite(sumOfCubes)) {
+        if (sampleCount <= 2 || sumOfSquares < 0 || Double.isInfinite(sumOfCubes) || Double.compare(sumOfCubes,-777d) == 0) {
             return Double.NaN;
         }
         double doubleSampleCount = (double) sampleCount ;
