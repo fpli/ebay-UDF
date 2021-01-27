@@ -1,5 +1,7 @@
 package com.ebay.hadoop.udf.ep.stats.module;
 
+import org.apache.commons.lang.NotImplementedException;
+
 /**
  * Provides summarized number of a metric for a particular treatment.
  *
@@ -13,6 +15,10 @@ public interface MetricSummary {
     double getMean();
 
     double getStddev();
+
+    default double getCV() {
+        return getStddev() / getMean();
+    }
 
     long getTimestamp();
 
@@ -28,6 +34,18 @@ public interface MetricSummary {
 
     default double getExtrapolatedStddev() {
         return getStddev();
+    }
+
+    default double getExtrapolatedCV() {
+        return getCV();
+    }
+
+    default double getExtrapolatedSkewness() {
+        throw new NotImplementedException("MetricSummary.getSkewness() not implemented!");
+    }
+
+    default double getExtrapolatedKurtosis() {
+        throw new NotImplementedException("MetricSummary.getKurtosis() not implemented!");
     }
 
     /**
