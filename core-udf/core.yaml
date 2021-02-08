@@ -1,0 +1,11 @@
+- json_to_kv:
+  name: json_to_kv
+  owner:
+  platform:
+    - hercules
+    - apollorno
+  className: com.ebay.udtf.JsonToKV
+  description: Parse the json column into the form of K and V
+  parameters:
+    - json column name
+  example: corelib.json_to_kv("{\"PROCESSOR_NAME\":\"ADYEN\",\"PayoutEntity\":\"EBAY_SARL\",\"Instrument\":\"BILLING_EBAY_SARL\",\"EBAY_BOOK_SYMBOL\":\"EBAY_BOOK\",\"PROCESSOR_REQUEST_REF_ID\":\"v2_0285e8e5-7a1d-40e8-9f26-24cd82f18395_2_1\",\"PROCESSOR_REF_ID\":\"853602670234322B\",\"EXTERNAL_TRX_ID_2\":\"16-00014-11604\",\"PayinEntity\":\"EBAY_SARL\",\"EXTERNAL_TRX_ID_1\":\"5004350193\"}")
