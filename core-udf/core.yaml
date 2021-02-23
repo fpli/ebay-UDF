@@ -4,7 +4,7 @@
   platform:
     - hercules
     - apollorno
-  className: com.ebay.udtf.JsonToKV
+  className: com.ebay.hadoop.udf.core.JsonToKV
   description: Parse the json column into the form of K and V
   parameters:
     - json column name
