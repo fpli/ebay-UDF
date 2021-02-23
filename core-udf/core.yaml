@@ -1,5 +1,5 @@
 - json_to_kv:
-  name: json_to_kv
+  name: corelib.json_to_kv
   owner:
   platform:
     - hercules
