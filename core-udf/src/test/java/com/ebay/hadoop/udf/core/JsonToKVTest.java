@@ -1,4 +1,4 @@
-package com.ebay.udtf;
+package com.ebay.hadoop.udf.core;
 
 import org.apache.hadoop.hive.ql.metadata.HiveException;
 import org.junit.Test;
