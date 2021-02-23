@@ -1,7 +1,7 @@
 package com.ebay.udtf;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import org.codehaus.jackson.JsonNode;
+import org.codehaus.jackson.map.ObjectMapper;
 
 import org.apache.hadoop.hive.ql.exec.UDFArgumentException;
 import org.apache.hadoop.hive.ql.metadata.HiveException;
@@ -34,12 +34,12 @@ public class JsonToKV extends GenericUDTF
         ObjectMapper mapper = new ObjectMapper();
         try {
             JsonNode rootNode = mapper.readTree(data);
-            Iterator<String> keys = rootNode.fieldNames();
+            Iterator<String> keys = rootNode.getFieldNames();
             ArrayList<Object[]> result = new ArrayList<Object[]>();
             while(keys.hasNext()){
                 String key = keys.next();
                 JsonNode valueNode = rootNode.path(key);
-                result.add(new Object[] {key, valueNode.textValue()});
+                result.add(new Object[] {key, valueNode.getTextValue()});
             }
             ArrayList<Object[]> results =result;
             return results;

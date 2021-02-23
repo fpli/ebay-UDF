@@ -43,11 +43,7 @@
             <version>${hive.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.kcthota</groupId>
-            <artifactId>JSONQuery</artifactId>
-            <version>0.0.5</version>
-        </dependency>
+
 
 
     </dependencies>
