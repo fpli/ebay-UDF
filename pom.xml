@@ -18,6 +18,7 @@
     <module>dss-shpmt-udf</module>
     <module>hadoop-udf</module>
     <module>bx-udf</module>
+    <module>core-udf</module>
   </modules>
 
   <properties>
