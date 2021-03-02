@@ -54,8 +54,9 @@ public class DecodePlmtTag extends UDF {
     public static String doubleDecode(String sojData) {
         try {
             return decode(URLDecoder.decode(sojData, "UTF-8"));
-        } catch (IOException e) {
+        } catch (Exception e) {
             return null;
         }
     }
+
 }
