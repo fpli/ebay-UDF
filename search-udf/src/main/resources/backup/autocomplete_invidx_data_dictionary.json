@@ -1,0 +1,53 @@
+{
+    "table" : {
+        "name" : "ac_inv_idx",
+        "zones": [
+                {
+                    "name" : "",
+                    "default term" : {
+                        "physical" : {
+                            "is_posting_list" : true
+                        }
+                    },
+                    "explicit terms": [
+                        {
+                            "name" : "tok_rank",
+                            "document_payload_value_type": {
+                                "data_type": "uint64",
+                                "is_multivalued": true
+                            },
+                            "physical": {
+                                "column_group_name": "cassini_dense",
+                                "in_column_group": true
+                            }
+                        },
+                        {
+                            "name" : "concat_rank",
+                            "document_payload_value_type": {
+                                "data_type": "uint64"
+                            },
+                            "physical": {
+                                "column_group_name": "cassini_dense",
+                                "in_column_group": true
+                            }
+                        }
+                    ]
+                },
+            {
+                "name" : "attribute",
+                "explicit terms" : [
+                {
+                    "name" : "doclen"
+                }
+                ]
+            }
+        ]
+    },
+    "column_groups": [
+        {
+            "name": "cassini_dense",
+            "column_group_type": "dense",
+            "id": 0
+        }
+    ]
+}

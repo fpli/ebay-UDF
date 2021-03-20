@@ -1,0 +1,118 @@
+{
+    "table" : {
+        "name" : "ac_td",
+        "zones": [
+                {
+                    "name" : "",
+                    "default term" : {
+                        "physical" : {
+                            "is_posting_list" : true
+                        }
+                    },
+                    "explicit terms": [
+                        {
+                            "name" : "id",
+                            "document_payload_value_type": {
+                                "data_type": "uint64"
+                            },
+                            "physical": {
+                                "column_group_name": "cassini_dense",
+                                "in_column_group": true
+                            }
+                        },
+                        {
+                            "name" : "banner_name",
+                            "document_payload_value_type": {
+                                "data_type": "string"
+                            },
+                            "physical": {
+                                "column_group_name": "cassini_dense",
+                                "in_column_group": true
+                            }
+                        },
+                        {
+                            "name" : "site",
+                            "document_payload_value_type": {
+                                "data_type": "string"
+                            },
+                            "physical": {
+                                "column_group_name": "cassini_dense",
+                                "in_column_group": true
+                            }
+                        },
+                        {
+                            "name" : "keywords",
+                            "physical": {
+                                "is_posting_list": true
+                            }
+                        },
+                        {
+                            "name" : "display_image",
+                            "document_payload_value_type": {
+                                "data_type": "string"
+                            },
+                            "physical": {
+                                "column_group_name": "cassini_dense",
+                                "in_column_group": true
+                            }
+                        },
+                        {
+                            "name" : "link",
+                            "document_payload_value_type": {
+                                "data_type": "string"
+                            },
+                            "physical": {
+                                "column_group_name": "cassini_dense",
+                                "in_column_group": true
+                            }
+                        },
+                        {
+                            "name" : "start_timestamp",
+                            "document_payload_value_type": {
+                                "data_type": "uint64"
+                            },
+                            "physical": {
+                                "column_group_name": "cassini_dense",
+                                "in_column_group": true
+                            }
+                        },
+                        {
+                            "name" : "end_timestamp",
+                            "document_payload_value_type": {
+                                "data_type": "uint64"
+                            },
+                            "physical": {
+                                "column_group_name": "cassini_dense",
+                                "in_column_group": true
+                            }
+                        },
+                        {
+                            "name" : "priority",
+                            "document_payload_value_type": {
+                                "data_type": "uint64"
+                            },
+                            "physical": {
+                                "column_group_name": "cassini_dense",
+                                "in_column_group": true
+                            }
+                        }
+                    ]
+                },
+            {
+                "name" : "attribute",
+                "explicit terms" : [
+                {
+                    "name" : "doclen"
+                }
+                ]
+            }
+        ]
+    },
+    "column_groups": [
+        {
+            "name": "cassini_dense",
+            "column_group_type": "dense",
+            "id": 0
+        }
+    ]
+}

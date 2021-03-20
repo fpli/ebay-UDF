@@ -1,0 +1,130 @@
+{
+   "cassini_dsbe_use_cases" : "cassini_use_case_dictionary.json",
+   "cassini_end_point" : {
+      "host_info" : [],
+      "softlb_config" : {
+         "connect_timeout" : 50,
+         "error_rate_count" : 20,
+         "error_rate_period" : 10000,
+         "idle_duration" : 10000,
+         "idle_thread_period" : 10000,
+         "markup_socket_timeout" : 1000,
+         "markup_thread_period" : 12000,
+         "max_attempts" : 3,
+         "max_endpoint_switches" : 3,
+         "max_requests_per_connection" : 20,
+         "max_seq_error_count" : 3,
+         "probe_uri_path" : "monitor",
+         "probe_uri_query" : "cmd=status&rx=container_version",
+         "socket_timeout" : 45000
+      }
+   },
+   "data_dictionary" : [
+      "item_active+seller.json",
+      "item_completed+seller_completed.json",
+      "synthetic_schema.txt",
+      "bgm_related.json",
+      "bgm_refine.json",
+      "category_refine.json",
+      "aspect_refine.json",
+      "keyword_to_browse_node_map.json",
+      "product.json",
+      "product_clean.json",
+      "guides.json",
+      "reviews.json",
+      "knm.json",
+      "item_display.json",
+      "store.json",
+      "user_info.json",
+      "shipping.json",
+      "autocomplete_traffic_driver.json",
+      "autocomplete_data_dictionary.json",
+      "autocomplete_invidx_data_dictionary.json"
+   ],
+   "default_activity_step" : 1,
+   "default_base_activity" : 0,
+   "default_uri_path" : "load_balance",
+   "default_uri_query" : "",
+   "default_uri_scheme" : "http",
+   "disable_compression" : false,
+   "fitment_configuration" : "fitment_master_configuration.json",
+   "macro_registry" : "macro_registry.json",
+   "metadata" : {
+      "poll_interval" : 20000,
+      "resources" : [
+         {
+            "class_name" : "com.ebay.cassini.query.impl.metadata.TenantsResource",
+            "names" : [
+               "tenants.json"
+            ]
+         },
+         {
+            "class_name" : "com.ebay.cassini.query.impl.metadata.DataDictionaryResource",
+            "names" : [
+               "item_active+seller.json",
+               "item_completed+seller_completed.json",
+               "synthetic_schema.txt",
+               "bgm_related.json",
+               "bgm_refine.json",
+               "category_refine.json",
+               "aspect_refine.json",
+               "keyword_to_browse_node_map.json",
+               "product.json",
+               "product_clean.json",
+               "guides.json",
+               "reviews.json",
+               "knm.json",
+               "item_display.json",
+               "store.json",
+               "user_info.json",
+               "shipping.json",
+               "autocomplete_traffic_driver.json",
+               "autocomplete_data_dictionary.json",
+               "autocomplete_invidx_data_dictionary.json"
+            ]
+         },
+         {
+            "class_name" : "com.ebay.cassini.query.impl.metadata.DsbeUseCasesResource",
+            "names" : [
+               "cassini_use_case_dictionary.json"
+            ]
+         },
+         {
+            "class_name" : "com.ebay.cassini.query.impl.metadata.OperatorDictionaryResource",
+            "names" : [
+               "operator_dictionary.json"
+            ]
+         },
+         {
+            "class_name" : "com.ebay.cassini.query.impl.metadata.MaterializerArenaResource",
+            "names" : [
+               "table_materializers.json"
+            ]
+         },
+         {
+            "class_name" : "com.ebay.cassini.query.impl.metadata.CatalogsResource",
+            "names" : [
+               "fitment_master_configuration.json"
+            ]
+         },
+         {
+            "class_name" : "com.ebay.cassini.query.impl.metadata.MlrRegistryResource",
+            "names" : [
+               "mlr_registry.json"
+            ]
+         },
+         {
+            "class_name" : "com.ebay.cassini.query.impl.metadata.MacroRegistryResource",
+            "names" : [
+               "macro_registry.json"
+            ]
+         }
+      ],
+      "uri_base_query" : "cmd=file&path=/config/",
+      "uri_path" : "debug"
+   },
+   "mlr_registry" : "mlr_registry.json",
+   "operator_dictionary" : "operator_dictionary.json",
+   "output_table_materializers" : "table_materializers.json",
+   "tenants" : "tenants.json"
+}

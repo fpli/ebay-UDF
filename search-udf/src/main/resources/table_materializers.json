@@ -1,0 +1,156 @@
+{
+    "#": "Materializers define the configuration for the class responsible for materializing new output tables on",
+    "#": "the client from the set of output tables returned by the back end. An example use case for a materializer is",
+    "#": "generating a table containing structured error messages which will be built from the raw error messages",
+    "#": "in the $errors_table returned by the BE.",
+    "materializers": [
+        {
+            "#": "The errors materializer materializes the $structured_errors_table.",
+            "name": "errors",
+            "#": "The minimum compatible API version for this materializer.",
+            "min_compatible_version": "3.0.0",
+            "#": "The regular expression for the table name.",
+            "table_name_regex": "\\$structured_errors_table",
+            "#": "The class that handles the materialization.",
+            "class_name": "com.ebay.cassini.query.api.summary.ErrorsTableMaterializer",
+            "#": "The configuration for this materializer.",
+            "config": {
+                "#": "Adding exact match strings whenever possible is recommended for performance.",
+                "exact_match": [
+                ],
+                "regex_match": [
+                    {
+                        "#": "Message associated with the rule.  It will be exported in the errors table.",
+                        "match": ".*Connection refused.*",
+                        "message": "Failed to get a connection to the SLB",
+                        "cause": "None of the backend SLB hosts are reachable.",
+                        "action": ""
+                    },
+                    {
+                        "match": ".*No registered tenant for client name .*",
+                        "message": "Invalid Client Name",
+                        "cause": "An unregistered client name was specified.",
+                        "action": "Register the client name with Cassini PM."
+                    },
+                    {
+                        "match": ".*Read timed out.*",
+                        "message": "Request timed out",
+                        "cause": "The request timed out on client which could be due to the BE not returning response within a specified time.",
+                        "action": "Retry request."
+                    },
+                    {
+                        "match": ".*invalid_test_id_exception.*",
+                        "message": "Invalid Test ID",
+                        "cause": "An incorrect test ID was specified.",
+                        "action": "Retry with a valid test ID."
+                    },
+                    {
+                        "match": ".*Input table required for blending has not been found.*",
+                        "message": "Aggregator blending error",
+                        "cause": "Blending failed on the aggregator most likely due to missing output tables required for blending.",
+                        "action": "Check the errors_table for clues as to why there was no output table produced."
+                    },
+                    {
+                        "match": ".*Unable to find specified profile .*",
+                        "message": "Missing profile",
+                        "cause": "A non-existent profile was specified in the query.",
+                        "action": "Retry with a valid profile."
+                    },
+                    {
+                        "match": ".*storage_policy_exception.*No such term.*",
+                        "message": "No such term",
+                        "cause": "A field referenced in the query was not found in the BE data dictionary.",
+                        "action": "This is most likely due to inconsistencies in the data dictionary versions in the Cassini Query Serving Stack."
+                    },
+                    {
+                        "match": ".*Request blocked due to black listing.*",
+                        "message": "Request blocked due to black listing",
+                        "cause": "The request was blocked due to the client being blacklisted.",
+                        "action": "Contact OPS to find out the reason for blacklisting."
+                    },
+                    {
+                        "match": ".*Query container validation failed : Too many results asked:.*",
+                        "message": "Number of results asked exceeded the maximum allowed 20000",
+                        "cause": "The caller specified a large value for desired_result_count+skip_result_count which was not honored.",
+                        "action": ""
+                    },
+                    {
+                        "match": ".*Query container validation failed : Too many values asked:.*",
+                        "message": "Number of values asked exceeded the maximum allowed 3000000",
+                        "cause": "The caller specified a large value for output_fields_count*(desired_result_count+skip_result_count) which was not honored.",
+                        "action": ""
+                    },
+                    {
+                        "match": ".*fitment_rewrite_exception.*Malformed property.*|.*fitment_rewrite_exception.*Missing.*|.*Input string is not correctly URL encoded.*fitment_rewrite.*",
+                        "message": "Malformed fitment query property",
+                        "cause": "The fitment query property specified by the caller was malformed.",
+                        "action": "Specify a valid query property with URL escaped aspect values and leftover tokens."
+                    },
+                    {
+                        "match": ".*Host is marked down.*",
+                        "message": "SLB hosts marked down",
+                        "cause": "The SLBs are inaccessible which could be either due to several consecutive requests timing out or the hostnames and port counts misconfigured.",
+                        "action": "Check the SLB hostnames and port counts and if this is OK check the overall health of the BE."
+                    },
+                    {
+                        "match": ".*Full table scan not allowed.*",
+                        "message": "Full table scan not allowed",
+                        "cause": "The request triggered full table scan while the client is not allowed to send full table scan queries.",
+                        "action": "Check the selection criteria in the queries."
+                    },
+                    {
+                        "match": ".*HTTP request blocked due to traffic quota violation.*",
+                        "message": "Traffic quota violation",
+                        "cause": "The client has reached its maximum traffic quota assigned by Cassini.",
+                        "action": "Reduce QPS or contact Cassini PM to raise traffic quota."
+                    },
+                    {
+                        "match": ".*Use case not registered.*",
+                        "message": "Usecase not registered",
+                        "cause": "The use case for the query request has not been registered with the QueryApi.",
+                        "action": "Register the use case with QueryApi before sending any requests for this use case."
+                    },
+                    {
+                        "match": ".*Backend service is marked down for.*",
+                        "message": "Service marked down",
+                        "cause": "Too many queries for this service (tenant, usecase, colo) have timed out.",
+                        "action": "Investigate whether queries on this service could be made less expensive. Check the overall health of the BE."
+                    }
+                ],
+                "default_match": {
+                    "match": "Internal Error.",
+                    "message": "Internal Error.",
+                    "cause": "",
+                    "action": ""
+                }
+            }
+        },
+        {
+            "#": "The materializer materializes the $sojourner table.",
+            "name": "sojourner",
+            "min_compatible_version": "3.2.0",
+            "table_name_regex": "\\$sojourner_table",
+            "class_name": "com.ebay.cassini.query.api.summary.SojournerMaterializer",
+            "config": {
+                "name_mappings" : [
+                    {
+                        "original_name" : "profile_name",
+                        "mapped_name" : "prof"
+                    },
+                    {
+                        "original_name" : "translation",
+                        "mapped_name" : "tsQr"
+                    }
+                ]
+            }
+        },
+        {
+            "#": "The materializer materializes the $counters_table.",
+            "name": "counters",
+            "min_compatible_version": "3.2.2-RELEASE",
+            "table_name_regex": "\\$counters_table",
+            "class_name": "com.ebay.cassini.query.api.summary.CountersTableMaterializer",
+            "config": {}
+        }
+    ]
+}
