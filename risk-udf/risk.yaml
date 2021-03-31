@@ -1,0 +1,57 @@
+- rem_phone:
+  name: risk.rem_phone
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+  className: com.ebay.risk.normalize.hive.v4.RiskNormalizePhone
+  description: Map entity of user's phone number and remove non-digit
+  parameters:
+    - countryId
+    - phoneNumber
+    - nullIfInvalid
+    - minimumLength
+  example:
+    rem_phone(1, "(987) 987 - 9898") will return "9879879898"
+    rem_phone(1, "aaaaa") will return null
+    rem_phone(1, "aaaaa", false, 8) will return "aaaaa" (keep original input)
+
+- rem_email:
+  name: risk.rem_email
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+  className: com.ebay.risk.normalize.hive.v4.RiskNormalizeEmail
+  description: Map entity of an email address and remove known vendor's alias
+  parameters:
+    - email
+    - nullIfInvalid
+    - useApacheValidator
+  example:
+    rem_email("hello+123@gmail.COM") will return "hello@gmail.com"
+    rem_email("aaaaa") will return null (bad format)
+    rem_email("aaaaa", false) will return "aaaaa" (keep original input)
+
+- rem_country:
+  name: risk.rem_country
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+  className: com.ebay.risk.normalize.hive.v4.RiskNormalizeCountry
+  description: Convert country id, country abbr., or PGW informal country names into formal country\
+    full name. If an unknown or invalid input is specified, it will return null.
+  parameters:
+    - inputCntry
+  example:
+    rem_country(1) returns "United States" (Get from countryId)
+    rem_country("1") will return "United States" (Get from string countryId)
+    rem_country("840") will return "United States" (Ebay's next gen countryId)
+    rem_country("gb") will return "United Kingdom" (Get from ISO alpha2)
+    rem_country("uk") will return "United Kingdom" (Some conventions)
+    rem_country("great Britain") will return "United Kingdom" (Some conventions)
+
+
+
+

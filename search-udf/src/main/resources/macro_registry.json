@@ -1,0 +1,4685 @@
+{
+    "name": "MACRO",
+    "path": "\/home\/alakshminath\/build\/macro\/.\/libmacro.so",
+    "context_size": 1688,
+    "map_offset": 1652,
+    "map_size": 32,
+    "signature": "4e881dcedea277e405bd5940f5a4b821",
+    "macros": [
+        {
+            "name": "AnalyticalDeliveryEstimate",
+            "attributes": [
+                {
+                    "name": "item:attribute:AllCats",
+                    "type": "int64",
+                    "offset": 8,
+                    "ordinal": 2
+                },
+                {
+                    "name": "item:attribute:PostCode",
+                    "type": "string",
+                    "offset": 24,
+                    "ordinal": 4
+                },
+                {
+                    "name": "synthetic:query:ModelConfigId",
+                    "type": "int32",
+                    "offset": 88,
+                    "ordinal": 13
+                },
+                {
+                    "name": "mem_alloc;void*;size_t",
+                    "type": "function",
+                    "offset": 136,
+                    "ordinal": 20
+                },
+                {
+                    "name": "item:attribute:Site",
+                    "type": "int32",
+                    "offset": 4,
+                    "ordinal": 1
+                },
+                {
+                    "name": "item:attribute:NCurrentPrice",
+                    "type": "int32",
+                    "offset": 16,
+                    "ordinal": 3
+                },
+                {
+                    "name": "synthetic:query:ModelThresholdId",
+                    "type": "int32",
+                    "offset": 72,
+                    "ordinal": 9
+                },
+                {
+                    "name": "seller:attribute:FnfOptOut",
+                    "type": "int32",
+                    "offset": 128,
+                    "ordinal": 19
+                },
+                {
+                    "name": "synthetic:query:sde_model",
+                    "type": "int32",
+                    "offset": 92,
+                    "ordinal": 14
+                },
+                {
+                    "name": "mem_free;void;void*",
+                    "type": "function",
+                    "offset": 152,
+                    "ordinal": 21
+                },
+                {
+                    "name": "item:attribute:SellerID",
+                    "type": "int64",
+                    "offset": 48,
+                    "ordinal": 6
+                },
+                {
+                    "name": "synthetic:named_expression:Distance",
+                    "type": "int64",
+                    "offset": 120,
+                    "ordinal": 18
+                },
+                {
+                    "name": "synthetic:query:destination_region",
+                    "type": "int32",
+                    "offset": 84,
+                    "ordinal": 12
+                },
+                {
+                    "name": "synthetic:query:destination_country_id",
+                    "type": "int32",
+                    "offset": 80,
+                    "ordinal": 11
+                },
+                {
+                    "name": "synthetic:named_expression:NxDeliveryEstimateStartDate",
+                    "type": "int64",
+                    "offset": 112,
+                    "ordinal": 17
+                },
+                {
+                    "name": "synthetic:named_expression:NxNativeDeliveryEstimate",
+                    "type": "int64",
+                    "offset": 104,
+                    "ordinal": 16
+                },
+                {
+                    "name": "item:attribute:Ctry",
+                    "type": "int32",
+                    "offset": 56,
+                    "ordinal": 7
+                },
+                {
+                    "name": "item:attribute:a228",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                },
+                {
+                    "name": "item:attribute:LeafCats",
+                    "type": "int64",
+                    "offset": 40,
+                    "ordinal": 5
+                },
+                {
+                    "name": "synthetic:named_expression:CalculatedShippingCost",
+                    "type": "int64",
+                    "offset": 96,
+                    "ordinal": 15
+                },
+                {
+                    "name": "item:attribute:ExtraMailClassInfo",
+                    "type": "int64",
+                    "offset": 64,
+                    "ordinal": 8
+                },
+                {
+                    "name": "synthetic:query:destination_zipcode",
+                    "type": "int32",
+                    "offset": 76,
+                    "ordinal": 10
+                }
+            ]
+        },
+        {
+            "name": "AvailableToCountry",
+            "attributes": [
+                {
+                    "name": "item:attribute:ShipToLocations2_new",
+                    "type": "int64",
+                    "offset": 176,
+                    "ordinal": 24
+                },
+                {
+                    "name": "item:attribute:Avail",
+                    "type": "int32",
+                    "offset": 168,
+                    "ordinal": 22
+                },
+                {
+                    "name": "item:attribute:Site",
+                    "type": "int32",
+                    "offset": 4,
+                    "ordinal": 1
+                },
+                {
+                    "name": "item:attribute:a650",
+                    "type": "int32",
+                    "offset": 172,
+                    "ordinal": 23
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "ctryID",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "CalendarDeliveryEstimate",
+            "attributes": [
+                {
+                    "name": "item:attribute:PostCode",
+                    "type": "string",
+                    "offset": 24,
+                    "ordinal": 4
+                },
+                {
+                    "name": "item:attribute:Site",
+                    "type": "int32",
+                    "offset": 4,
+                    "ordinal": 1
+                },
+                {
+                    "name": "item:attribute:Ctry",
+                    "type": "int32",
+                    "offset": 56,
+                    "ordinal": 7
+                },
+                {
+                    "name": "synthetic:named_expression:NxNativeDeliveryEstimate",
+                    "type": "int64",
+                    "offset": 104,
+                    "ordinal": 16
+                },
+                {
+                    "name": "mem_alloc;void*;size_t",
+                    "type": "function",
+                    "offset": 136,
+                    "ordinal": 20
+                },
+                {
+                    "name": "synthetic:query_container:QueryTime",
+                    "type": "int64",
+                    "offset": 192,
+                    "ordinal": 26
+                },
+                {
+                    "name": "synthetic:named_expression:NxDeliveryEstimateStartDate",
+                    "type": "int64",
+                    "offset": 112,
+                    "ordinal": 17
+                },
+                {
+                    "name": "synthetic:query:destination_country_id",
+                    "type": "int32",
+                    "offset": 80,
+                    "ordinal": 11
+                },
+                {
+                    "name": "synthetic:query:destination_zipcode",
+                    "type": "int32",
+                    "offset": 76,
+                    "ordinal": 10
+                },
+                {
+                    "name": "synthetic:query:sde_model",
+                    "type": "int32",
+                    "offset": 92,
+                    "ordinal": 14
+                },
+                {
+                    "name": "mem_free;void;void*",
+                    "type": "function",
+                    "offset": 152,
+                    "ordinal": 21
+                },
+                {
+                    "name": "synthetic:named_expression:NxCombinedDeliveryEstimate",
+                    "type": "int64",
+                    "offset": 184,
+                    "ordinal": 25
+                }
+            ]
+        },
+        {
+            "name": "CombinedDeliveryEstimate",
+            "attributes": [
+                {
+                    "name": "synthetic:named_expression:NxAnalyticalDeliveryEstimate",
+                    "type": "int64",
+                    "offset": 200,
+                    "ordinal": 27
+                },
+                {
+                    "name": "mem_alloc;void*;size_t",
+                    "type": "function",
+                    "offset": 136,
+                    "ordinal": 20
+                },
+                {
+                    "name": "synthetic:named_expression:NxNativeDeliveryEstimate",
+                    "type": "int64",
+                    "offset": 104,
+                    "ordinal": 16
+                },
+                {
+                    "name": "mem_free;void;void*",
+                    "type": "function",
+                    "offset": 152,
+                    "ordinal": 21
+                }
+            ]
+        },
+        {
+            "name": "DeliveryEstimateStartDate",
+            "attributes": [
+                {
+                    "name": "synthetic:query_container:QueryTime",
+                    "type": "int64",
+                    "offset": 192,
+                    "ordinal": 26
+                },
+                {
+                    "name": "item:attribute:EndTime",
+                    "type": "int32",
+                    "offset": 228,
+                    "ordinal": 33
+                },
+                {
+                    "name": "item:attribute:eBaySaleType",
+                    "type": "int32",
+                    "offset": 208,
+                    "ordinal": 28
+                },
+                {
+                    "name": "item:attribute:Bids",
+                    "type": "int32",
+                    "offset": 224,
+                    "ordinal": 32
+                },
+                {
+                    "name": "mem_free;void;void*",
+                    "type": "function",
+                    "offset": 152,
+                    "ordinal": 21
+                },
+                {
+                    "name": "item:attribute:HasReservePrice",
+                    "type": "int32",
+                    "offset": 216,
+                    "ordinal": 30
+                },
+                {
+                    "name": "item:attribute:ReserveMet",
+                    "type": "int32",
+                    "offset": 220,
+                    "ordinal": 31
+                },
+                {
+                    "name": "item:attribute:Ctry",
+                    "type": "int32",
+                    "offset": 56,
+                    "ordinal": 7
+                },
+                {
+                    "name": "item:attribute:Site",
+                    "type": "int32",
+                    "offset": 4,
+                    "ordinal": 1
+                },
+                {
+                    "name": "mem_alloc;void*;size_t",
+                    "type": "function",
+                    "offset": 136,
+                    "ordinal": 20
+                },
+                {
+                    "name": "item:attribute:NBinPrice",
+                    "type": "int32",
+                    "offset": 212,
+                    "ordinal": 29
+                }
+            ]
+        },
+        {
+            "name": "DoesQuerySegmentMatch",
+            "attributes": [
+                {
+                    "name": "synthetic:query:original_tokenized_token_list",
+                    "type": "blob",
+                    "offset": 232,
+                    "ordinal": 34
+                },
+                {
+                    "name": "synthetic:named_expression:NxDocId",
+                    "type": "int64",
+                    "offset": 248,
+                    "ordinal": 35
+                },
+                {
+                    "name": "item:attribute:TitleClean",
+                    "type": "blob_vector",
+                    "offset": 256,
+                    "ordinal": 36
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "start_pos",
+                    "type": "int64",
+                    "offset": 0,
+                    "ordinal": 0
+                },
+                {
+                    "name": "segment_length",
+                    "type": "int64",
+                    "offset": 8,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "ETRSQUALIFIED",
+            "attributes": [
+                {
+                    "name": "item:attribute:ETRS24",
+                    "type": "int32",
+                    "offset": 280,
+                    "ordinal": 40
+                },
+                {
+                    "name": "item:attribute:ETRS22",
+                    "type": "int32",
+                    "offset": 272,
+                    "ordinal": 38
+                },
+                {
+                    "name": "item:attribute:ETRS23",
+                    "type": "int32",
+                    "offset": 276,
+                    "ordinal": 39
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "siteID",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "ETRSQUALIFIEDGLOBAL",
+            "attributes": [
+                {
+                    "name": "item:attribute:ETRS21",
+                    "type": "int32",
+                    "offset": 284,
+                    "ordinal": 41
+                }
+            ]
+        },
+        {
+            "name": "EffectiveStartTime",
+            "attributes": [
+                {
+                    "name": "item:attribute:StartTime",
+                    "type": "int32",
+                    "offset": 292,
+                    "ordinal": 43
+                },
+                {
+                    "name": "item:attribute:OriginalIndexTime",
+                    "type": "int32",
+                    "offset": 288,
+                    "ordinal": 42
+                }
+            ]
+        },
+        {
+            "name": "ExternalItemsAvailableToCountry",
+            "attributes": [
+                {
+                    "name": "item:attribute:ShipToLocations2_new",
+                    "type": "int64",
+                    "offset": 176,
+                    "ordinal": 24
+                },
+                {
+                    "name": "item:attribute:Avail",
+                    "type": "int32",
+                    "offset": 168,
+                    "ordinal": 22
+                },
+                {
+                    "name": "item:attribute:a650",
+                    "type": "int32",
+                    "offset": 172,
+                    "ordinal": 23
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "unused",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                },
+                {
+                    "name": "ctryID",
+                    "type": "int32",
+                    "offset": 4,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "FreeShippingInSite",
+            "attributes": [
+                {
+                    "name": "item:attribute:BuyerFixedShippingCost",
+                    "type": "int32",
+                    "offset": 312,
+                    "ordinal": 46
+                },
+                {
+                    "name": "item:attribute:ShipFeeOverride",
+                    "type": "int64",
+                    "offset": 304,
+                    "ordinal": 45
+                },
+                {
+                    "name": "item:attribute:InsuranceFee",
+                    "type": "int32",
+                    "offset": 324,
+                    "ordinal": 49
+                },
+                {
+                    "name": "item:attribute:Site",
+                    "type": "int32",
+                    "offset": 4,
+                    "ordinal": 1
+                },
+                {
+                    "name": "item:attribute:InsuranceReqdFlag",
+                    "type": "int32",
+                    "offset": 344,
+                    "ordinal": 51
+                },
+                {
+                    "name": "item:attribute:ShippingFlag",
+                    "type": "int32",
+                    "offset": 296,
+                    "ordinal": 44
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "siteID",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "GetIVFBit",
+            "attributes": [
+                {
+                    "name": "item:attribute:ItemVisibility",
+                    "type": "blob",
+                    "offset": 328,
+                    "ordinal": 50
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "country_id",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                },
+                {
+                    "name": "bitno",
+                    "type": "int32",
+                    "offset": 4,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "IsAdFormat",
+            "attributes": [
+                {
+                    "name": "item:attribute:NoShowInEbaySearch",
+                    "type": "int32",
+                    "offset": 316,
+                    "ordinal": 47
+                },
+                {
+                    "name": "item:attribute:eBaySaleType",
+                    "type": "int32",
+                    "offset": 208,
+                    "ordinal": 28
+                }
+            ]
+        },
+        {
+            "name": "IsAuction",
+            "attributes": [
+                {
+                    "name": "item:attribute:eBaySaleType",
+                    "type": "int32",
+                    "offset": 208,
+                    "ordinal": 28
+                }
+            ]
+        },
+        {
+            "name": "IsAuctionBin",
+            "attributes": [
+                {
+                    "name": "item:attribute:eBaySaleType",
+                    "type": "int32",
+                    "offset": 208,
+                    "ordinal": 28
+                },
+                {
+                    "name": "item:attribute:NBinPrice",
+                    "type": "int32",
+                    "offset": 212,
+                    "ordinal": 29
+                }
+            ]
+        },
+        {
+            "name": "IsBrandedSeller",
+            "attributes": [
+                {
+                    "name": "item:attribute:SpltyFlags",
+                    "type": "int32",
+                    "offset": 320,
+                    "ordinal": 48
+                }
+            ]
+        },
+        {
+            "name": "IsExemptSpecialitySeller",
+            "attributes": [
+                {
+                    "name": "item:attribute:SpltyFlags",
+                    "type": "int32",
+                    "offset": 320,
+                    "ordinal": 48
+                }
+            ]
+        },
+        {
+            "name": "IsFastNFree",
+            "attributes": [
+                {
+                    "name": "synthetic:query:destination_zipcode",
+                    "type": "int32",
+                    "offset": 76,
+                    "ordinal": 10
+                },
+                {
+                    "name": "synthetic:query:destination_country_id",
+                    "type": "int32",
+                    "offset": 80,
+                    "ordinal": 11
+                },
+                {
+                    "name": "synthetic:query:fnf_definition",
+                    "type": "string",
+                    "offset": 352,
+                    "ordinal": 53
+                },
+                {
+                    "name": "synthetic:named_expression:NxDeliveryEstimateStartDate",
+                    "type": "int64",
+                    "offset": 112,
+                    "ordinal": 17
+                },
+                {
+                    "name": "synthetic:query:destination_region",
+                    "type": "int32",
+                    "offset": 84,
+                    "ordinal": 12
+                },
+                {
+                    "name": "synthetic:named_expression:NxCombinedDeliveryEstimate",
+                    "type": "int64",
+                    "offset": 184,
+                    "ordinal": 25
+                },
+                {
+                    "name": "synthetic:named_expression:NxCalendarDeliveryEstimate",
+                    "type": "int64",
+                    "offset": 368,
+                    "ordinal": 54
+                },
+                {
+                    "name": "seller:attribute:FnfOptOut",
+                    "type": "int32",
+                    "offset": 128,
+                    "ordinal": 19
+                },
+                {
+                    "name": "synthetic:named_expression:CalculatedShippingCost",
+                    "type": "int64",
+                    "offset": 96,
+                    "ordinal": 15
+                },
+                {
+                    "name": "item:attribute:a228",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                },
+                {
+                    "name": "synthetic:named_expression:NxNativeDeliveryEstimate",
+                    "type": "int64",
+                    "offset": 104,
+                    "ordinal": 16
+                },
+                {
+                    "name": "item:attribute:Ctry",
+                    "type": "int32",
+                    "offset": 56,
+                    "ordinal": 7
+                },
+                {
+                    "name": "item:attribute:eBayPayPal",
+                    "type": "int32",
+                    "offset": 348,
+                    "ordinal": 52
+                },
+                {
+                    "name": "item:attribute:Site",
+                    "type": "int32",
+                    "offset": 4,
+                    "ordinal": 1
+                }
+            ]
+        },
+        {
+            "name": "IsFeaturedFirst",
+            "attributes": [
+                {
+                    "name": "item:attribute:eBayGalFeaturedInt",
+                    "type": "int32",
+                    "offset": 376,
+                    "ordinal": 55
+                },
+                {
+                    "name": "item:attribute:FeaturedFirstExpiryTime",
+                    "type": "int32",
+                    "offset": 380,
+                    "ordinal": 56
+                },
+                {
+                    "name": "synthetic:query_container:QueryTime",
+                    "type": "int64",
+                    "offset": 192,
+                    "ordinal": 26
+                }
+            ]
+        },
+        {
+            "name": "IsFeaturedFirstTnsFiltered",
+            "attributes": [
+                {
+                    "name": "item:attribute:BM_TNS_BUCKETSCORE",
+                    "type": "int32",
+                    "offset": 384,
+                    "ordinal": 57
+                },
+                {
+                    "name": "item:attribute:eBayGalFeaturedInt",
+                    "type": "int32",
+                    "offset": 376,
+                    "ordinal": 55
+                },
+                {
+                    "name": "synthetic:query_container:QueryTime",
+                    "type": "int64",
+                    "offset": 192,
+                    "ordinal": 26
+                },
+                {
+                    "name": "item:attribute:FeaturedFirstExpiryTime",
+                    "type": "int32",
+                    "offset": 380,
+                    "ordinal": 56
+                }
+            ]
+        },
+        {
+            "name": "IsFixedPriceKnown",
+            "attributes": [
+                {
+                    "name": "item:attribute:IndexTime",
+                    "type": "int32",
+                    "offset": 396,
+                    "ordinal": 60
+                },
+                {
+                    "name": "synthetic:query_container:QueryTime",
+                    "type": "int64",
+                    "offset": 192,
+                    "ordinal": 26
+                },
+                {
+                    "name": "item:attribute:IndexTime2",
+                    "type": "int32",
+                    "offset": 392,
+                    "ordinal": 59
+                },
+                {
+                    "name": "item:attribute:StartTime",
+                    "type": "int32",
+                    "offset": 292,
+                    "ordinal": 43
+                },
+                {
+                    "name": "item:attribute:ImpressionCount",
+                    "type": "int32",
+                    "offset": 388,
+                    "ordinal": 58
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "thresholdImpression",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                },
+                {
+                    "name": "thresholdTimeOnSite",
+                    "type": "int32",
+                    "offset": 4,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "IsFixedPriceUnknown",
+            "attributes": [
+                {
+                    "name": "synthetic:query_container:QueryTime",
+                    "type": "int64",
+                    "offset": 192,
+                    "ordinal": 26
+                },
+                {
+                    "name": "item:attribute:IndexTime",
+                    "type": "int32",
+                    "offset": 396,
+                    "ordinal": 60
+                },
+                {
+                    "name": "item:attribute:StartTime",
+                    "type": "int32",
+                    "offset": 292,
+                    "ordinal": 43
+                },
+                {
+                    "name": "item:attribute:ImpressionCount",
+                    "type": "int32",
+                    "offset": 388,
+                    "ordinal": 58
+                },
+                {
+                    "name": "item:attribute:IndexTime2",
+                    "type": "int32",
+                    "offset": 392,
+                    "ordinal": 59
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "thresholdImpression",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                },
+                {
+                    "name": "thresholdTimeOnSite",
+                    "type": "int32",
+                    "offset": 4,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "IsGift",
+            "attributes": [
+                {
+                    "name": "item:attribute:eBayGift",
+                    "type": "int32",
+                    "offset": 400,
+                    "ordinal": 61
+                },
+                {
+                    "name": "item:attribute:Site",
+                    "type": "int32",
+                    "offset": 4,
+                    "ordinal": 1
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "giftValue",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "IsMCCPayment",
+            "attributes": [
+                {
+                    "name": "item:attribute:PaymentTypes",
+                    "type": "int32",
+                    "offset": 404,
+                    "ordinal": 62
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "version",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "IsOutletSeller",
+            "attributes": [
+                {
+                    "name": "item:attribute:SpltyFlags",
+                    "type": "int32",
+                    "offset": 320,
+                    "ordinal": 48
+                }
+            ]
+        },
+        {
+            "name": "IsRelevant",
+            "attributes": [
+                {
+                    "name": "synthetic:factor:QueryItem_TitleRelV4_PctStaticRange",
+                    "type": "float",
+                    "offset": 432,
+                    "ordinal": 69
+                },
+                {
+                    "name": "synthetic:factor:Query_CatViewCountMax",
+                    "type": "float",
+                    "offset": 424,
+                    "ordinal": 67
+                },
+                {
+                    "name": "synthetic:query:isrel_min_cv_countmax",
+                    "type": "int64",
+                    "offset": 464,
+                    "ordinal": 76
+                },
+                {
+                    "name": "synthetic:query:isrel_max_qdsp",
+                    "type": "float",
+                    "offset": 472,
+                    "ordinal": 77
+                },
+                {
+                    "name": "synthetic:factor:Item_MiscatScore_v1",
+                    "type": "float",
+                    "offset": 440,
+                    "ordinal": 71
+                },
+                {
+                    "name": "synthetic:factor:Query_HasCategoryDemand",
+                    "type": "float",
+                    "offset": 408,
+                    "ordinal": 63
+                },
+                {
+                    "name": "synthetic:factor:Query_HasTitleRelV4",
+                    "type": "float",
+                    "offset": 412,
+                    "ordinal": 64
+                },
+                {
+                    "name": "synthetic:factor:QueryItem_AppliedCategory_CatViewOverMax",
+                    "type": "float",
+                    "offset": 428,
+                    "ordinal": 68
+                },
+                {
+                    "name": "synthetic:query:isrel_min_cvom",
+                    "type": "float",
+                    "offset": 444,
+                    "ordinal": 72
+                },
+                {
+                    "name": "synthetic:factor:Query_AppliedCategory_CatViewMax",
+                    "type": "float",
+                    "offset": 416,
+                    "ordinal": 65
+                },
+                {
+                    "name": "synthetic:query:isrel_max_miscat",
+                    "type": "int64",
+                    "offset": 480,
+                    "ordinal": 78
+                },
+                {
+                    "name": "synthetic:query:isrel_good_cvom",
+                    "type": "float",
+                    "offset": 448,
+                    "ordinal": 73
+                },
+                {
+                    "name": "synthetic:query:isrel_good_trv4",
+                    "type": "float",
+                    "offset": 456,
+                    "ordinal": 75
+                },
+                {
+                    "name": "synthetic:query:isrel_min_trv4",
+                    "type": "float",
+                    "offset": 452,
+                    "ordinal": 74
+                },
+                {
+                    "name": "synthetic:factor:Item_Spam_Msku",
+                    "type": "float",
+                    "offset": 436,
+                    "ordinal": 70
+                },
+                {
+                    "name": "synthetic:factor:Query_CatViewMax",
+                    "type": "float",
+                    "offset": 420,
+                    "ordinal": 66
+                }
+            ]
+        },
+        {
+            "name": "IsRelevant1",
+            "attributes": [
+                {
+                    "name": "synthetic:factor:QueryItem_AppliedCategory_CatViewOverMax",
+                    "type": "float",
+                    "offset": 428,
+                    "ordinal": 68
+                },
+                {
+                    "name": "synthetic:factor:Query_HasTitleRelV4",
+                    "type": "float",
+                    "offset": 412,
+                    "ordinal": 64
+                },
+                {
+                    "name": "synthetic:query:isrel1_max_qdsp",
+                    "type": "float",
+                    "offset": 512,
+                    "ordinal": 84
+                },
+                {
+                    "name": "synthetic:query:isrel1_max_miscat",
+                    "type": "int64",
+                    "offset": 520,
+                    "ordinal": 85
+                },
+                {
+                    "name": "synthetic:query:isrel1_good_trv4",
+                    "type": "float",
+                    "offset": 500,
+                    "ordinal": 82
+                },
+                {
+                    "name": "synthetic:factor:Query_AppliedCategory_CatViewMax",
+                    "type": "float",
+                    "offset": 416,
+                    "ordinal": 65
+                },
+                {
+                    "name": "synthetic:query:isrel1_good_cvom",
+                    "type": "float",
+                    "offset": 492,
+                    "ordinal": 80
+                },
+                {
+                    "name": "synthetic:factor:Item_Spam_Msku",
+                    "type": "float",
+                    "offset": 436,
+                    "ordinal": 70
+                },
+                {
+                    "name": "synthetic:factor:Query_CatViewMax",
+                    "type": "float",
+                    "offset": 420,
+                    "ordinal": 66
+                },
+                {
+                    "name": "synthetic:query:isrel1_min_trv4",
+                    "type": "float",
+                    "offset": 496,
+                    "ordinal": 81
+                },
+                {
+                    "name": "synthetic:factor:QueryItem_TitleRelV4_PctStaticRange",
+                    "type": "float",
+                    "offset": 432,
+                    "ordinal": 69
+                },
+                {
+                    "name": "synthetic:factor:Query_CatViewCountMax",
+                    "type": "float",
+                    "offset": 424,
+                    "ordinal": 67
+                },
+                {
+                    "name": "synthetic:query:isrel1_min_cv_countmax",
+                    "type": "int64",
+                    "offset": 504,
+                    "ordinal": 83
+                },
+                {
+                    "name": "synthetic:factor:Item_MiscatScore_v1",
+                    "type": "float",
+                    "offset": 440,
+                    "ordinal": 71
+                },
+                {
+                    "name": "synthetic:query:isrel1_min_cvom",
+                    "type": "float",
+                    "offset": 488,
+                    "ordinal": 79
+                },
+                {
+                    "name": "synthetic:factor:Query_HasCategoryDemand",
+                    "type": "float",
+                    "offset": 408,
+                    "ordinal": 63
+                }
+            ]
+        },
+        {
+            "name": "IsRelevant2",
+            "attributes": [
+                {
+                    "name": "synthetic:factor:QueryItem_TitleRelV4_PctStaticRange",
+                    "type": "float",
+                    "offset": 432,
+                    "ordinal": 69
+                },
+                {
+                    "name": "synthetic:factor:Query_AppliedCategory_CatViewMax",
+                    "type": "float",
+                    "offset": 416,
+                    "ordinal": 65
+                },
+                {
+                    "name": "synthetic:factor:Query_HasTitleRelV4",
+                    "type": "float",
+                    "offset": 412,
+                    "ordinal": 64
+                },
+                {
+                    "name": "synthetic:factor:QueryItem_AppliedCategory_CatViewOverMax",
+                    "type": "float",
+                    "offset": 428,
+                    "ordinal": 68
+                },
+                {
+                    "name": "synthetic:factor:Query_HasCategoryDemand",
+                    "type": "float",
+                    "offset": 408,
+                    "ordinal": 63
+                },
+                {
+                    "name": "synthetic:factor:Item_Spam_Msku",
+                    "type": "float",
+                    "offset": 436,
+                    "ordinal": 70
+                }
+            ]
+        },
+        {
+            "name": "IsRelevant3",
+            "attributes": [
+                {
+                    "name": "synthetic:query:isrel3_min_cvom",
+                    "type": "float",
+                    "offset": 528,
+                    "ordinal": 86
+                },
+                {
+                    "name": "synthetic:factor:QueryItem_AppliedCategory_CatViewOverMax",
+                    "type": "float",
+                    "offset": 428,
+                    "ordinal": 68
+                },
+                {
+                    "name": "synthetic:factor:QueryItem_TitleRelV4_PctStaticRange",
+                    "type": "float",
+                    "offset": 432,
+                    "ordinal": 69
+                },
+                {
+                    "name": "synthetic:query:isrel3_good_cvom",
+                    "type": "float",
+                    "offset": 532,
+                    "ordinal": 87
+                },
+                {
+                    "name": "synthetic:factor:Query_HasTitleRelV4",
+                    "type": "float",
+                    "offset": 412,
+                    "ordinal": 64
+                },
+                {
+                    "name": "synthetic:query:isrel3_good_trv4",
+                    "type": "float",
+                    "offset": 540,
+                    "ordinal": 89
+                },
+                {
+                    "name": "synthetic:factor:Item_Spam_Msku",
+                    "type": "float",
+                    "offset": 436,
+                    "ordinal": 70
+                },
+                {
+                    "name": "synthetic:factor:Query_HasCategoryDemand",
+                    "type": "float",
+                    "offset": 408,
+                    "ordinal": 63
+                },
+                {
+                    "name": "synthetic:query:isrel3_min_trv4",
+                    "type": "float",
+                    "offset": 536,
+                    "ordinal": 88
+                },
+                {
+                    "name": "synthetic:factor:Query_AppliedCategory_CatViewMax",
+                    "type": "float",
+                    "offset": 416,
+                    "ordinal": 65
+                }
+            ]
+        },
+        {
+            "name": "IsRelevant4",
+            "attributes": [
+                {
+                    "name": "synthetic:query:isrel4_good_cvom",
+                    "type": "float",
+                    "offset": 548,
+                    "ordinal": 91
+                },
+                {
+                    "name": "synthetic:factor:Query_AppliedCategory_CatViewMax",
+                    "type": "float",
+                    "offset": 416,
+                    "ordinal": 65
+                },
+                {
+                    "name": "synthetic:query:isrel4_good_trv4",
+                    "type": "float",
+                    "offset": 556,
+                    "ordinal": 93
+                },
+                {
+                    "name": "synthetic:factor:Query_HasCategoryDemand",
+                    "type": "float",
+                    "offset": 408,
+                    "ordinal": 63
+                },
+                {
+                    "name": "synthetic:factor:Item_Spam_Msku",
+                    "type": "float",
+                    "offset": 436,
+                    "ordinal": 70
+                },
+                {
+                    "name": "synthetic:factor:QueryItem_TitleRelV4_PctStaticRange",
+                    "type": "float",
+                    "offset": 432,
+                    "ordinal": 69
+                },
+                {
+                    "name": "synthetic:factor:Query_HasTitleRelV4",
+                    "type": "float",
+                    "offset": 412,
+                    "ordinal": 64
+                },
+                {
+                    "name": "synthetic:factor:QueryItem_AppliedCategory_CatViewOverMax",
+                    "type": "float",
+                    "offset": 428,
+                    "ordinal": 68
+                },
+                {
+                    "name": "synthetic:query:isrel4_min_trv4",
+                    "type": "float",
+                    "offset": 552,
+                    "ordinal": 92
+                },
+                {
+                    "name": "synthetic:query:isrel4_min_cvom",
+                    "type": "float",
+                    "offset": 544,
+                    "ordinal": 90
+                }
+            ]
+        },
+        {
+            "name": "IsRelevantV1",
+            "attributes": [
+                {
+                    "name": "synthetic:factor:Query_HasTitleRelV4",
+                    "type": "float",
+                    "offset": 412,
+                    "ordinal": 64
+                },
+                {
+                    "name": "synthetic:factor:QueryItem_TitleRelV4_PctStaticRange",
+                    "type": "float",
+                    "offset": 432,
+                    "ordinal": 69
+                },
+                {
+                    "name": "synthetic:factor:QueryItem_CatViewOverMax",
+                    "type": "float",
+                    "offset": 560,
+                    "ordinal": 94
+                },
+                {
+                    "name": "synthetic:factor:Query_HasCategoryDemand",
+                    "type": "float",
+                    "offset": 408,
+                    "ordinal": 63
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "min_catview_over_max",
+                    "type": "double",
+                    "offset": 0,
+                    "ordinal": 0
+                },
+                {
+                    "name": "dismin_catview_over_max",
+                    "type": "double",
+                    "offset": 8,
+                    "ordinal": 0
+                },
+                {
+                    "name": "min_trv4",
+                    "type": "double",
+                    "offset": 16,
+                    "ordinal": 0
+                },
+                {
+                    "name": "dismin_trv4",
+                    "type": "double",
+                    "offset": 24,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "IsRelevantV2",
+            "attributes": [
+                {
+                    "name": "synthetic:factor:QueryItem_AppliedCategory_CatViewOverMax",
+                    "type": "float",
+                    "offset": 428,
+                    "ordinal": 68
+                },
+                {
+                    "name": "synthetic:factor:QueryItem_TitleRelV4_PctStaticRange",
+                    "type": "float",
+                    "offset": 432,
+                    "ordinal": 69
+                },
+                {
+                    "name": "synthetic:factor:Query_HasTitleRelV4",
+                    "type": "float",
+                    "offset": 412,
+                    "ordinal": 64
+                },
+                {
+                    "name": "synthetic:factor:Query_AppliedCategory_CatViewMax",
+                    "type": "float",
+                    "offset": 416,
+                    "ordinal": 65
+                },
+                {
+                    "name": "synthetic:factor:Item_Spam_Msku",
+                    "type": "float",
+                    "offset": 436,
+                    "ordinal": 70
+                },
+                {
+                    "name": "synthetic:factor:Query_AppliedCategory_IsMultiDomCatLeaf",
+                    "type": "float",
+                    "offset": 564,
+                    "ordinal": 95
+                },
+                {
+                    "name": "synthetic:factor:Query_HasCategoryDemand",
+                    "type": "float",
+                    "offset": 408,
+                    "ordinal": 63
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "min_catview_over_max",
+                    "type": "double",
+                    "offset": 0,
+                    "ordinal": 0
+                },
+                {
+                    "name": "dismin_catview_over_max",
+                    "type": "double",
+                    "offset": 8,
+                    "ordinal": 0
+                },
+                {
+                    "name": "min_trv4",
+                    "type": "double",
+                    "offset": 16,
+                    "ordinal": 0
+                },
+                {
+                    "name": "dismin_trv4",
+                    "type": "double",
+                    "offset": 24,
+                    "ordinal": 0
+                },
+                {
+                    "name": "msku_spam_threshold",
+                    "type": "double",
+                    "offset": 32,
+                    "ordinal": 0
+                },
+                {
+                    "name": "filter_leaf_cats",
+                    "type": "int64",
+                    "offset": 40,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "IsRetailSeller",
+            "attributes": [
+                {
+                    "name": "item:attribute:SpltyFlags",
+                    "type": "int32",
+                    "offset": 320,
+                    "ordinal": 48
+                }
+            ]
+        },
+        {
+            "name": "IsSif",
+            "attributes": [
+                {
+                    "name": "item:attribute:eBaySaleType",
+                    "type": "int32",
+                    "offset": 208,
+                    "ordinal": 28
+                }
+            ]
+        },
+        {
+            "name": "ListedInCBTSites",
+            "attributes": [
+                {
+                    "name": "item:attribute:Site",
+                    "type": "int32",
+                    "offset": 4,
+                    "ordinal": 1
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "siteID",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "ListedInSite",
+            "attributes": [
+                {
+                    "name": "item:attribute:a650",
+                    "type": "int32",
+                    "offset": 172,
+                    "ordinal": 23
+                },
+                {
+                    "name": "item:attribute:Lang",
+                    "type": "int32",
+                    "offset": 568,
+                    "ordinal": 96
+                },
+                {
+                    "name": "item:attribute:Ctry",
+                    "type": "int32",
+                    "offset": 56,
+                    "ordinal": 7
+                },
+                {
+                    "name": "item:attribute:Site",
+                    "type": "int32",
+                    "offset": 4,
+                    "ordinal": 1
+                },
+                {
+                    "name": "item:attribute:Avail",
+                    "type": "int32",
+                    "offset": 168,
+                    "ordinal": 22
+                },
+                {
+                    "name": "item:attribute:ShipToLocations2_new",
+                    "type": "int64",
+                    "offset": 176,
+                    "ordinal": 24
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "siteID",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "LocalAvailabilityBOPIS",
+            "attributes": [
+                {
+                    "name": "synthetic:index:earth_grid_size",
+                    "type": "double",
+                    "offset": 616,
+                    "ordinal": 101
+                },
+                {
+                    "name": "item:attribute:StoresIndex",
+                    "type": "blob",
+                    "offset": 576,
+                    "ordinal": 97
+                },
+                {
+                    "name": "synthetic:query:buyer_longitude",
+                    "type": "double",
+                    "offset": 600,
+                    "ordinal": 99
+                },
+                {
+                    "name": "synthetic:query:pickup_radius",
+                    "type": "double",
+                    "offset": 608,
+                    "ordinal": 100
+                },
+                {
+                    "name": "synthetic:query:buyer_latitude",
+                    "type": "double",
+                    "offset": 592,
+                    "ordinal": 98
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "inventoryBitMap",
+                    "type": "blob",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "LocalAvailabilityEBN",
+            "attributes": [
+                {
+                    "name": "synthetic:query:buyer_longitude",
+                    "type": "double",
+                    "offset": 600,
+                    "ordinal": 99
+                },
+                {
+                    "name": "synthetic:query:buyer_latitude",
+                    "type": "double",
+                    "offset": 592,
+                    "ordinal": 98
+                },
+                {
+                    "name": "synthetic:query:ebaynow_radius",
+                    "type": "double",
+                    "offset": 624,
+                    "ordinal": 102
+                },
+                {
+                    "name": "synthetic:index:earth_grid_size",
+                    "type": "double",
+                    "offset": 616,
+                    "ordinal": 101
+                },
+                {
+                    "name": "item:attribute:StoresIndex",
+                    "type": "blob",
+                    "offset": 576,
+                    "ordinal": 97
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "inventoryBitMap",
+                    "type": "blob",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "LocatedInCountry",
+            "attributes": [
+                {
+                    "name": "item:attribute:a650",
+                    "type": "int32",
+                    "offset": 172,
+                    "ordinal": 23
+                },
+                {
+                    "name": "item:attribute:Avail",
+                    "type": "int32",
+                    "offset": 168,
+                    "ordinal": 22
+                },
+                {
+                    "name": "item:attribute:Ctry",
+                    "type": "int32",
+                    "offset": 56,
+                    "ordinal": 7
+                },
+                {
+                    "name": "item:attribute:Site",
+                    "type": "int32",
+                    "offset": 4,
+                    "ordinal": 1
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "ctryID",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "MayShippedToCountry",
+            "parameters": [
+                {
+                    "name": "ctryID",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "MayShippedToCountryRegion",
+            "parameters": [
+                {
+                    "name": "ctryID",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                },
+                {
+                    "name": "regionID",
+                    "type": "int32",
+                    "offset": 4,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "MskuView",
+            "attributes": [
+                {
+                    "name": "item:attribute:IsVariant",
+                    "type": "int32",
+                    "offset": 632,
+                    "ordinal": 103
+                },
+                {
+                    "name": "item:attribute:Quantity",
+                    "type": "int32",
+                    "offset": 636,
+                    "ordinal": 104
+                },
+                {
+                    "name": "item:attribute:IsMsku",
+                    "type": "int32",
+                    "offset": 644,
+                    "ordinal": 106
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "flag",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "MskuView_compiq",
+            "attributes": [
+                {
+                    "name": "item:attribute:IsMsku",
+                    "type": "int32",
+                    "offset": 644,
+                    "ordinal": 106
+                },
+                {
+                    "name": "item:attribute:IsVariant",
+                    "type": "int32",
+                    "offset": 632,
+                    "ordinal": 103
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "flag",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "NativeDeliveryEstimate",
+            "attributes": [
+                {
+                    "name": "item:attribute:Ctry",
+                    "type": "int32",
+                    "offset": 56,
+                    "ordinal": 7
+                },
+                {
+                    "name": "item:attribute:Site",
+                    "type": "int32",
+                    "offset": 4,
+                    "ordinal": 1
+                },
+                {
+                    "name": "mem_alloc;void*;size_t",
+                    "type": "function",
+                    "offset": 136,
+                    "ordinal": 20
+                },
+                {
+                    "name": "item:attribute:PostCode",
+                    "type": "string",
+                    "offset": 24,
+                    "ordinal": 4
+                },
+                {
+                    "name": "synthetic:query:z2z_model",
+                    "type": "int32",
+                    "offset": 640,
+                    "ordinal": 105
+                },
+                {
+                    "name": "synthetic:named_expression:CalculatedShippingCost",
+                    "type": "int64",
+                    "offset": 96,
+                    "ordinal": 15
+                },
+                {
+                    "name": "item:attribute:a228",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                },
+                {
+                    "name": "item:attribute:ExtraMailClassInfo",
+                    "type": "int64",
+                    "offset": 64,
+                    "ordinal": 8
+                },
+                {
+                    "name": "mem_free;void;void*",
+                    "type": "function",
+                    "offset": 152,
+                    "ordinal": 21
+                },
+                {
+                    "name": "synthetic:query:destination_country_id",
+                    "type": "int32",
+                    "offset": 80,
+                    "ordinal": 11
+                },
+                {
+                    "name": "synthetic:query:destination_zipcode",
+                    "type": "int32",
+                    "offset": 76,
+                    "ordinal": 10
+                },
+                {
+                    "name": "synthetic:query_container:QueryTime",
+                    "type": "int64",
+                    "offset": 192,
+                    "ordinal": 26
+                }
+            ]
+        },
+        {
+            "name": "NoSaleDemotion",
+            "attributes": [
+                {
+                    "name": "synthetic:query_container:QueryTime",
+                    "type": "int64",
+                    "offset": 192,
+                    "ordinal": 26
+                },
+                {
+                    "name": "item:attribute:ChangeTime",
+                    "type": "int32",
+                    "offset": 652,
+                    "ordinal": 108
+                },
+                {
+                    "name": "item:attribute:LastSaleTime",
+                    "type": "int32",
+                    "offset": 648,
+                    "ordinal": 107
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "time",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "OKToShowInMerch",
+            "attributes": [
+                {
+                    "name": "item:attribute:ItemVisibility",
+                    "type": "blob",
+                    "offset": 328,
+                    "ordinal": 50
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "query_site_id",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "OKToShowInSite2",
+            "attributes": [
+                {
+                    "name": "item:attribute:ItemVisibility",
+                    "type": "blob",
+                    "offset": 328,
+                    "ordinal": 50
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "siteID",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "ParenteBayPicURL",
+            "attributes": [
+                {
+                    "name": "item:attribute:ParenteBayPicURLInCaty",
+                    "type": "int32",
+                    "offset": 656,
+                    "ordinal": 109
+                },
+                {
+                    "name": "item:attribute:a181",
+                    "type": "int32",
+                    "offset": 660,
+                    "ordinal": 110
+                }
+            ]
+        },
+        {
+            "name": "Popularity",
+            "attributes": [
+                {
+                    "name": "item:attribute:SalesCountDay2",
+                    "type": "int32",
+                    "offset": 672,
+                    "ordinal": 113
+                },
+                {
+                    "name": "item:attribute:SalesCountDay4",
+                    "type": "int32",
+                    "offset": 680,
+                    "ordinal": 115
+                },
+                {
+                    "name": "item:attribute:SalesCountDay6",
+                    "type": "int32",
+                    "offset": 688,
+                    "ordinal": 117
+                },
+                {
+                    "name": "synthetic:query_container:QueryTime",
+                    "type": "int64",
+                    "offset": 192,
+                    "ordinal": 26
+                },
+                {
+                    "name": "item:attribute:SalesCountDay1",
+                    "type": "int32",
+                    "offset": 668,
+                    "ordinal": 112
+                },
+                {
+                    "name": "item:attribute:SalesCountDay3",
+                    "type": "int32",
+                    "offset": 676,
+                    "ordinal": 114
+                },
+                {
+                    "name": "item:attribute:EffectiveDate",
+                    "type": "int32",
+                    "offset": 664,
+                    "ordinal": 111
+                },
+                {
+                    "name": "item:attribute:SalesCountDay7",
+                    "type": "int32",
+                    "offset": 692,
+                    "ordinal": 118
+                },
+                {
+                    "name": "item:attribute:SalesCountDay5",
+                    "type": "int32",
+                    "offset": 684,
+                    "ordinal": 116
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "time",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "QuantitySold",
+            "attributes": [
+                {
+                    "name": "item:attribute:TotalQuantity",
+                    "type": "int32",
+                    "offset": 696,
+                    "ordinal": 119
+                },
+                {
+                    "name": "item:attribute:Quantity",
+                    "type": "int32",
+                    "offset": 636,
+                    "ordinal": 104
+                }
+            ]
+        },
+        {
+            "name": "QueryItem_GlobalPhrasesBoost_Ratio",
+            "attributes": [
+                {
+                    "name": "table_get_value;const QPL_NS::any_value*;const QPL_NS::any_value*;size_t*",
+                    "type": "function",
+                    "offset": 1208,
+                    "ordinal": 203,
+                    "info": "{\"property_name\":\"GlobalPhrases\",\"format\":\"sii\",\"idx_field\":\"0\"}"
+                },
+                {
+                    "name": "item:attribute:TitleClean",
+                    "type": "blob_vector",
+                    "offset": 256,
+                    "ordinal": 36
+                },
+                {
+                    "name": "table_get_value_idx;const QPL_NS::any_value*;const QPL_NS::any_value*;size_t*",
+                    "type": "function",
+                    "offset": 1328,
+                    "ordinal": 215,
+                    "info": "{\"property_name\":\"GlobalPhrases\",\"format\":\"sii\",\"idx_field\":\"0\"}"
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "minimum_score",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                },
+                {
+                    "name": "score_column",
+                    "type": "int32",
+                    "offset": 4,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "QueryItem_PhrasesBoostV2_Ratio",
+            "attributes": [
+                {
+                    "name": "item:attribute:TitleClean",
+                    "type": "blob_vector",
+                    "offset": 256,
+                    "ordinal": 36
+                },
+                {
+                    "name": "table_get_value;const QPL_NS::any_value*;const QPL_NS::any_value*;size_t*",
+                    "type": "function",
+                    "offset": 1600,
+                    "ordinal": 250,
+                    "info": "{\"property_name\":\"PhrasesBoostV2\",\"format\":\"siii\",\"idx_field\":\"0\"}"
+                },
+                {
+                    "name": "synthetic:query:original_tokenized_token_list",
+                    "type": "blob",
+                    "offset": 232,
+                    "ordinal": 34
+                },
+                {
+                    "name": "synthetic:named_expression:NxDocId",
+                    "type": "int64",
+                    "offset": 248,
+                    "ordinal": 35
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "minimum_score",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "QueryItem_PhrasesBoost_Ratio",
+            "attributes": [
+                {
+                    "name": "table_get_value;const QPL_NS::any_value*;const QPL_NS::any_value*;size_t*",
+                    "type": "function",
+                    "offset": 1568,
+                    "ordinal": 246,
+                    "info": "{\"property_name\":\"PhrasesBoost\",\"format\":\"si\",\"idx_field\":\"0\"}"
+                },
+                {
+                    "name": "item:attribute:TitleRel",
+                    "type": "blob_vector",
+                    "offset": 704,
+                    "ordinal": 120
+                },
+                {
+                    "name": "table_get_value_idx;const QPL_NS::any_value*;const QPL_NS::any_value*;size_t*",
+                    "type": "function",
+                    "offset": 1288,
+                    "ordinal": 211,
+                    "info": "{\"property_name\":\"PhrasesBoost\",\"format\":\"si\",\"idx_field\":\"0\"}"
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "minimum_score",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "QueryItem_PhrasesBoost_ScoreRatio",
+            "attributes": [
+                {
+                    "name": "table_get_value;const QPL_NS::any_value*;const QPL_NS::any_value*;size_t*",
+                    "type": "function",
+                    "offset": 1568,
+                    "ordinal": 246,
+                    "info": "{\"property_name\":\"PhrasesBoost\",\"format\":\"si\",\"idx_field\":\"0\"}"
+                },
+                {
+                    "name": "table_get_value_idx;const QPL_NS::any_value*;const QPL_NS::any_value*;size_t*",
+                    "type": "function",
+                    "offset": 1288,
+                    "ordinal": 211,
+                    "info": "{\"property_name\":\"PhrasesBoost\",\"format\":\"si\",\"idx_field\":\"0\"}"
+                },
+                {
+                    "name": "item:attribute:TitleRel",
+                    "type": "blob_vector",
+                    "offset": 704,
+                    "ordinal": 120
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "minimum_score",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "QueryItem_TitleMatchCount",
+            "attributes": [
+                {
+                    "name": "item:attribute:TitleClean",
+                    "type": "blob_vector",
+                    "offset": 256,
+                    "ordinal": 36
+                },
+                {
+                    "name": "synthetic:named_expression:NxDocId",
+                    "type": "int64",
+                    "offset": 248,
+                    "ordinal": 35
+                },
+                {
+                    "name": "synthetic:query:original_tokenized_token_list",
+                    "type": "blob",
+                    "offset": 232,
+                    "ordinal": 34
+                }
+            ]
+        },
+        {
+            "name": "Query_CatScore2ForNthHighestCatView",
+            "attributes": [
+                {
+                    "name": "table_get_value_idx;const QPL_NS::any_value*;const QPL_NS::any_value*;size_t*",
+                    "type": "function",
+                    "offset": 1360,
+                    "ordinal": 218,
+                    "info": "{\"property_name\":\"CategoryDemandViewRelScore2\",\"format\":\"Iii\",\"idx_field\":\"0\"}"
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "nth_highest",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "Query_GlobalPhrasesBoost_Count",
+            "attributes": [
+                {
+                    "name": "table_get_value_idx;const QPL_NS::any_value*;const QPL_NS::any_value*;size_t*",
+                    "type": "function",
+                    "offset": 1328,
+                    "ordinal": 215,
+                    "info": "{\"property_name\":\"GlobalPhrases\",\"format\":\"sii\",\"idx_field\":\"0\"}"
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "minimum_score",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                },
+                {
+                    "name": "score_column",
+                    "type": "int32",
+                    "offset": 4,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "Query_NthHighestCatIDByCatView",
+            "attributes": [
+                {
+                    "name": "table_get_value_idx;const QPL_NS::any_value*;const QPL_NS::any_value*;size_t*",
+                    "type": "function",
+                    "offset": 1152,
+                    "ordinal": 197,
+                    "info": "{\"property_name\":\"CategoryDemandView\",\"format\":\"Ii\",\"idx_field\":\"0\"}"
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "nth_highest",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "Query_NthHighestCatScore2",
+            "attributes": [
+                {
+                    "name": "table_get_value_idx;const QPL_NS::any_value*;const QPL_NS::any_value*;size_t*",
+                    "type": "function",
+                    "offset": 1408,
+                    "ordinal": 224,
+                    "info": "{\"property_name\":\"CategoryDemandRelScore2\",\"format\":\"Ii\",\"idx_field\":\"0\"}"
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "nth_highest",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "Query_NthHighestCatView",
+            "attributes": [
+                {
+                    "name": "table_get_value_idx;const QPL_NS::any_value*;const QPL_NS::any_value*;size_t*",
+                    "type": "function",
+                    "offset": 1152,
+                    "ordinal": 197,
+                    "info": "{\"property_name\":\"CategoryDemandView\",\"format\":\"Ii\",\"idx_field\":\"0\"}"
+                },
+                {
+                    "name": "table_get_value_idx;const QPL_NS::any_value*;const QPL_NS::any_value*;size_t*",
+                    "type": "function",
+                    "offset": 1232,
+                    "ordinal": 205,
+                    "info": "{\"property_name\":\"CategoryDemandViewAgg\",\"format\":\"i\",\"idx_field\":\"0\"}"
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "nth_highest",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "Query_NthHighestClickWeightedCatScore2",
+            "attributes": [
+                {
+                    "name": "table_get_value_idx;const QPL_NS::any_value*;const QPL_NS::any_value*;size_t*",
+                    "type": "function",
+                    "offset": 1232,
+                    "ordinal": 205,
+                    "info": "{\"property_name\":\"CategoryDemandViewAgg\",\"format\":\"i\",\"idx_field\":\"0\"}"
+                },
+                {
+                    "name": "table_get_value_idx;const QPL_NS::any_value*;const QPL_NS::any_value*;size_t*",
+                    "type": "function",
+                    "offset": 1360,
+                    "ordinal": 218,
+                    "info": "{\"property_name\":\"CategoryDemandViewRelScore2\",\"format\":\"Iii\",\"idx_field\":\"0\"}"
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "nth_highest",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "Query_PhrasesBoost_Count",
+            "attributes": [
+                {
+                    "name": "table_get_value_idx;const QPL_NS::any_value*;const QPL_NS::any_value*;size_t*",
+                    "type": "function",
+                    "offset": 1288,
+                    "ordinal": 211,
+                    "info": "{\"property_name\":\"PhrasesBoost\",\"format\":\"si\",\"idx_field\":\"0\"}"
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "minimum_score",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "Query_PhrasesBoost_TotalScore",
+            "attributes": [
+                {
+                    "name": "table_get_value_idx;const QPL_NS::any_value*;const QPL_NS::any_value*;size_t*",
+                    "type": "function",
+                    "offset": 1288,
+                    "ordinal": 211,
+                    "info": "{\"property_name\":\"PhrasesBoost\",\"format\":\"si\",\"idx_field\":\"0\"}"
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "minimum_score",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "Random",
+            "attributes": [
+                {
+                    "name": "item:attribute:ItemID",
+                    "type": "int64",
+                    "offset": 712,
+                    "ordinal": 121
+                },
+                {
+                    "name": "synthetic:query_container:QueryTime",
+                    "type": "int64",
+                    "offset": 192,
+                    "ordinal": 26
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "Version",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "RegTest1",
+            "attributes": [
+                {
+                    "name": "synthetic:factor:RegTestTitleRel",
+                    "type": "float",
+                    "offset": 720,
+                    "ordinal": 122
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "p0",
+                    "type": "int64",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "RegTestPositionMatchMapMacro1",
+            "attributes": [
+                {
+                    "name": "synthetic:query:original_tokenized_token_list",
+                    "type": "blob",
+                    "offset": 232,
+                    "ordinal": 34
+                },
+                {
+                    "name": "synthetic:named_expression:NxDocId",
+                    "type": "int64",
+                    "offset": 248,
+                    "ordinal": 35
+                },
+                {
+                    "name": "item:attribute:TitleClean",
+                    "type": "blob_vector",
+                    "offset": 256,
+                    "ordinal": 36
+                }
+            ]
+        },
+        {
+            "name": "ReturnUSScore1",
+            "attributes": [
+                {
+                    "name": "item:attribute:USScore1",
+                    "type": "int32",
+                    "offset": 724,
+                    "ordinal": 123
+                }
+            ]
+        },
+        {
+            "name": "RuleMask",
+            "attributes": [
+                {
+                    "name": "item:attribute:Rule3Version",
+                    "type": "int32",
+                    "offset": 736,
+                    "ordinal": 126
+                },
+                {
+                    "name": "item:attribute:Rule1Version",
+                    "type": "int32",
+                    "offset": 728,
+                    "ordinal": 124
+                },
+                {
+                    "name": "item:attribute:Rule2Version",
+                    "type": "int32",
+                    "offset": 732,
+                    "ordinal": 125
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "ruleID",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                },
+                {
+                    "name": "version",
+                    "type": "int32",
+                    "offset": 4,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "SafeStartTime",
+            "attributes": [
+                {
+                    "name": "item:attribute:IndexTime",
+                    "type": "int32",
+                    "offset": 396,
+                    "ordinal": 60
+                },
+                {
+                    "name": "item:attribute:IndexTime2",
+                    "type": "int32",
+                    "offset": 392,
+                    "ordinal": 59
+                },
+                {
+                    "name": "item:attribute:StartTime",
+                    "type": "int32",
+                    "offset": 292,
+                    "ordinal": 43
+                }
+            ]
+        },
+        {
+            "name": "SaleClass",
+            "attributes": [
+                {
+                    "name": "item:attribute:eBayRealEstate",
+                    "type": "int32",
+                    "offset": 740,
+                    "ordinal": 127
+                },
+                {
+                    "name": "item:attribute:eBaysf",
+                    "type": "int32",
+                    "offset": 752,
+                    "ordinal": 130
+                },
+                {
+                    "name": "item:attribute:IsClassifiedFormat",
+                    "type": "int32",
+                    "offset": 760,
+                    "ordinal": 132
+                },
+                {
+                    "name": "item:attribute:NoShowInEbaySearch",
+                    "type": "int32",
+                    "offset": 316,
+                    "ordinal": 47
+                },
+                {
+                    "name": "item:attribute:VacationHold",
+                    "type": "int32",
+                    "offset": 748,
+                    "ordinal": 129
+                },
+                {
+                    "name": "item:attribute:TotalQuantity",
+                    "type": "int32",
+                    "offset": 696,
+                    "ordinal": 119
+                },
+                {
+                    "name": "item:attribute:persistentBIN",
+                    "type": "int32",
+                    "offset": 756,
+                    "ordinal": 131
+                },
+                {
+                    "name": "item:attribute:eBayBin",
+                    "type": "int32",
+                    "offset": 744,
+                    "ordinal": 128
+                },
+                {
+                    "name": "item:attribute:eBaySaleType",
+                    "type": "int32",
+                    "offset": 208,
+                    "ordinal": 28
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "id",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "ShippedToCountry",
+            "attributes": [
+                {
+                    "name": "item:attribute:a650",
+                    "type": "int32",
+                    "offset": 172,
+                    "ordinal": 23
+                },
+                {
+                    "name": "item:attribute:ShipToLocations2_new",
+                    "type": "int64",
+                    "offset": 176,
+                    "ordinal": 24
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "ctryID",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "ShippedToCountryBlack",
+            "attributes": [
+                {
+                    "name": "item:attribute:exclusion_bitmap",
+                    "type": "int32",
+                    "offset": 764,
+                    "ordinal": 133
+                },
+                {
+                    "name": "item:attribute:ShipToLocations2_new",
+                    "type": "int64",
+                    "offset": 176,
+                    "ordinal": 24
+                },
+                {
+                    "name": "item:attribute:exclusion_list",
+                    "type": "int64",
+                    "offset": 768,
+                    "ordinal": 134
+                },
+                {
+                    "name": "item:attribute:ShipToLocations1",
+                    "type": "int32",
+                    "offset": 776,
+                    "ordinal": 135
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "country_id",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "ShippedToCountryRegion",
+            "parameters": [
+                {
+                    "name": "ctryID",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                },
+                {
+                    "name": "regionID",
+                    "type": "int32",
+                    "offset": 4,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "ShippedToCountryWhite",
+            "attributes": [
+                {
+                    "name": "item:attribute:exclusion_list",
+                    "type": "int64",
+                    "offset": 768,
+                    "ordinal": 134
+                },
+                {
+                    "name": "item:attribute:ShipToLocations1",
+                    "type": "int32",
+                    "offset": 776,
+                    "ordinal": 135
+                },
+                {
+                    "name": "item:attribute:ShipToLocations2_new",
+                    "type": "int64",
+                    "offset": 176,
+                    "ordinal": 24
+                },
+                {
+                    "name": "item:attribute:exclusion_bitmap",
+                    "type": "int32",
+                    "offset": 764,
+                    "ordinal": 133
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "country_id",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "ShippingBucket",
+            "attributes": [
+                {
+                    "name": "item:attribute:ShippingFlag",
+                    "type": "int32",
+                    "offset": 296,
+                    "ordinal": 44
+                }
+            ]
+        },
+        {
+            "name": "ShippingDeliveryEstimate",
+            "attributes": [
+                {
+                    "name": "mem_free;void;void*",
+                    "type": "function",
+                    "offset": 152,
+                    "ordinal": 21
+                },
+                {
+                    "name": "item:attribute:Site",
+                    "type": "int32",
+                    "offset": 4,
+                    "ordinal": 1
+                },
+                {
+                    "name": "mem_alloc;void*;size_t",
+                    "type": "function",
+                    "offset": 136,
+                    "ordinal": 20
+                },
+                {
+                    "name": "synthetic:query_container:QueryTime",
+                    "type": "int64",
+                    "offset": 192,
+                    "ordinal": 26
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "service_id",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "ShowInLocation1",
+            "attributes": [
+                {
+                    "name": "item:attribute:ShipToLocations2_new",
+                    "type": "int64",
+                    "offset": 176,
+                    "ordinal": 24
+                },
+                {
+                    "name": "item:attribute:Avail",
+                    "type": "int32",
+                    "offset": 168,
+                    "ordinal": 22
+                },
+                {
+                    "name": "item:attribute:AllCats",
+                    "type": "int64",
+                    "offset": 8,
+                    "ordinal": 2
+                },
+                {
+                    "name": "item:attribute:Ctry",
+                    "type": "int32",
+                    "offset": 56,
+                    "ordinal": 7
+                },
+                {
+                    "name": "item:attribute:eBayPayPal",
+                    "type": "int32",
+                    "offset": 348,
+                    "ordinal": 52
+                },
+                {
+                    "name": "item:attribute:Site",
+                    "type": "int32",
+                    "offset": 4,
+                    "ordinal": 1
+                },
+                {
+                    "name": "item:attribute:CoreCat1MotorsCat2",
+                    "type": "int32",
+                    "offset": 780,
+                    "ordinal": 136
+                },
+                {
+                    "name": "item:attribute:ItemVisibility",
+                    "type": "blob",
+                    "offset": 328,
+                    "ordinal": 50
+                },
+                {
+                    "name": "item:attribute:NoShowInEbaySearch",
+                    "type": "int32",
+                    "offset": 316,
+                    "ordinal": 47
+                },
+                {
+                    "name": "item:precomputed:item_in_asia",
+                    "type": "int32",
+                    "offset": 788,
+                    "ordinal": 138
+                },
+                {
+                    "name": "item:attribute:Lang",
+                    "type": "int32",
+                    "offset": 568,
+                    "ordinal": 96
+                },
+                {
+                    "name": "item:precomputed:item_in_eu",
+                    "type": "int32",
+                    "offset": 784,
+                    "ordinal": 137
+                },
+                {
+                    "name": "item:attribute:a650",
+                    "type": "int32",
+                    "offset": 172,
+                    "ordinal": 23
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "siteID",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                },
+                {
+                    "name": "allowed_cbt",
+                    "type": "int32",
+                    "offset": 4,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "ShowInMagellan",
+            "attributes": [
+                {
+                    "name": "item:attribute:IsMagellanQualified",
+                    "type": "int32",
+                    "offset": 796,
+                    "ordinal": 140
+                },
+                {
+                    "name": "item:attribute:OffensiveInSite",
+                    "type": "int32",
+                    "offset": 792,
+                    "ordinal": 139
+                },
+                {
+                    "name": "item:attribute:Lilo",
+                    "type": "int32",
+                    "offset": 808,
+                    "ordinal": 143
+                },
+                {
+                    "name": "item:attribute:eBayAdult",
+                    "type": "int32",
+                    "offset": 804,
+                    "ordinal": 142
+                },
+                {
+                    "name": "item:attribute:VacationHold",
+                    "type": "int32",
+                    "offset": 748,
+                    "ordinal": 129
+                },
+                {
+                    "name": "item:attribute:NoShowInEbaySearch",
+                    "type": "int32",
+                    "offset": 316,
+                    "ordinal": 47
+                },
+                {
+                    "name": "item:attribute:PayPerLeadNoTollFreeNum",
+                    "type": "int32",
+                    "offset": 812,
+                    "ordinal": 144
+                },
+                {
+                    "name": "item:attribute:Ctry",
+                    "type": "int32",
+                    "offset": 56,
+                    "ordinal": 7
+                },
+                {
+                    "name": "item:attribute:EligibleForRelist",
+                    "type": "int32",
+                    "offset": 800,
+                    "ordinal": 141
+                },
+                {
+                    "name": "item:attribute:eBaySaleType",
+                    "type": "int32",
+                    "offset": 208,
+                    "ordinal": 28
+                },
+                {
+                    "name": "item:attribute:a650",
+                    "type": "int32",
+                    "offset": 172,
+                    "ordinal": 23
+                },
+                {
+                    "name": "item:attribute:CoreCat1MotorsCat2",
+                    "type": "int32",
+                    "offset": 780,
+                    "ordinal": 136
+                },
+                {
+                    "name": "item:attribute:eBaysf",
+                    "type": "int32",
+                    "offset": 752,
+                    "ordinal": 130
+                },
+                {
+                    "name": "item:attribute:persistentBIN",
+                    "type": "int32",
+                    "offset": 756,
+                    "ordinal": 131
+                },
+                {
+                    "name": "item:attribute:ShipToLocations2_new",
+                    "type": "int64",
+                    "offset": 176,
+                    "ordinal": 24
+                },
+                {
+                    "name": "item:attribute:Avail",
+                    "type": "int32",
+                    "offset": 168,
+                    "ordinal": 22
+                },
+                {
+                    "name": "item:attribute:AllCats",
+                    "type": "int64",
+                    "offset": 8,
+                    "ordinal": 2
+                },
+                {
+                    "name": "item:attribute:Site",
+                    "type": "int32",
+                    "offset": 4,
+                    "ordinal": 1
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "siteID",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                },
+                {
+                    "name": "UseCase",
+                    "type": "int32",
+                    "offset": 4,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "ShowInMagellan1",
+            "attributes": [
+                {
+                    "name": "item:attribute:eBayAdult",
+                    "type": "int32",
+                    "offset": 804,
+                    "ordinal": 142
+                },
+                {
+                    "name": "item:attribute:Lilo",
+                    "type": "int32",
+                    "offset": 808,
+                    "ordinal": 143
+                },
+                {
+                    "name": "item:attribute:IsMagellanQualified",
+                    "type": "int32",
+                    "offset": 796,
+                    "ordinal": 140
+                },
+                {
+                    "name": "item:attribute:EligibleForRelist",
+                    "type": "int32",
+                    "offset": 800,
+                    "ordinal": 141
+                },
+                {
+                    "name": "item:attribute:eBaySaleType",
+                    "type": "int32",
+                    "offset": 208,
+                    "ordinal": 28
+                },
+                {
+                    "name": "item:attribute:eBayPayPal",
+                    "type": "int32",
+                    "offset": 348,
+                    "ordinal": 52
+                },
+                {
+                    "name": "item:attribute:Site",
+                    "type": "int32",
+                    "offset": 4,
+                    "ordinal": 1
+                },
+                {
+                    "name": "item:attribute:PayPerLeadNoTollFreeNum",
+                    "type": "int32",
+                    "offset": 812,
+                    "ordinal": 144
+                },
+                {
+                    "name": "item:attribute:NoShowInEbaySearch",
+                    "type": "int32",
+                    "offset": 316,
+                    "ordinal": 47
+                },
+                {
+                    "name": "item:attribute:eBaysf",
+                    "type": "int32",
+                    "offset": 752,
+                    "ordinal": 130
+                },
+                {
+                    "name": "item:attribute:VacationHold",
+                    "type": "int32",
+                    "offset": 748,
+                    "ordinal": 129
+                },
+                {
+                    "name": "item:attribute:ItemVisibility",
+                    "type": "blob",
+                    "offset": 328,
+                    "ordinal": 50
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "siteID",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                },
+                {
+                    "name": "UseCase",
+                    "type": "int32",
+                    "offset": 4,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "ShowInSite3",
+            "attributes": [
+                {
+                    "name": "item:attribute:EligibleForRelist",
+                    "type": "int32",
+                    "offset": 800,
+                    "ordinal": 141
+                },
+                {
+                    "name": "item:attribute:eBaySaleType",
+                    "type": "int32",
+                    "offset": 208,
+                    "ordinal": 28
+                },
+                {
+                    "name": "item:attribute:Lang",
+                    "type": "int32",
+                    "offset": 568,
+                    "ordinal": 96
+                },
+                {
+                    "name": "item:attribute:a650",
+                    "type": "int32",
+                    "offset": 172,
+                    "ordinal": 23
+                },
+                {
+                    "name": "item:attribute:eBaysf",
+                    "type": "int32",
+                    "offset": 752,
+                    "ordinal": 130
+                },
+                {
+                    "name": "item:attribute:persistentBIN",
+                    "type": "int32",
+                    "offset": 756,
+                    "ordinal": 131
+                },
+                {
+                    "name": "item:attribute:QualifiedToShowOnUK",
+                    "type": "int32",
+                    "offset": 816,
+                    "ordinal": 145
+                },
+                {
+                    "name": "item:attribute:Avail",
+                    "type": "int32",
+                    "offset": 168,
+                    "ordinal": 22
+                },
+                {
+                    "name": "item:attribute:Site",
+                    "type": "int32",
+                    "offset": 4,
+                    "ordinal": 1
+                },
+                {
+                    "name": "item:attribute:OffensiveInSite",
+                    "type": "int32",
+                    "offset": 792,
+                    "ordinal": 139
+                },
+                {
+                    "name": "item:attribute:Lilo",
+                    "type": "int32",
+                    "offset": 808,
+                    "ordinal": 143
+                },
+                {
+                    "name": "item:attribute:eBayAdult",
+                    "type": "int32",
+                    "offset": 804,
+                    "ordinal": 142
+                },
+                {
+                    "name": "item:attribute:VacationHold",
+                    "type": "int32",
+                    "offset": 748,
+                    "ordinal": 129
+                },
+                {
+                    "name": "item:attribute:LeafCats",
+                    "type": "int64",
+                    "offset": 40,
+                    "ordinal": 5
+                },
+                {
+                    "name": "item:attribute:NoShowInEbaySearch",
+                    "type": "int32",
+                    "offset": 316,
+                    "ordinal": 47
+                },
+                {
+                    "name": "item:attribute:QualifiedToShowOnUS",
+                    "type": "int32",
+                    "offset": 820,
+                    "ordinal": 146
+                },
+                {
+                    "name": "item:attribute:PayPerLeadNoTollFreeNum",
+                    "type": "int32",
+                    "offset": 812,
+                    "ordinal": 144
+                },
+                {
+                    "name": "item:attribute:Ctry",
+                    "type": "int32",
+                    "offset": 56,
+                    "ordinal": 7
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "siteID",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                },
+                {
+                    "name": "UseCase",
+                    "type": "int32",
+                    "offset": 4,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "ShowInSite5",
+            "attributes": [
+                {
+                    "name": "item:attribute:Lilo",
+                    "type": "int32",
+                    "offset": 808,
+                    "ordinal": 143
+                },
+                {
+                    "name": "item:attribute:eBayAdult",
+                    "type": "int32",
+                    "offset": 804,
+                    "ordinal": 142
+                },
+                {
+                    "name": "item:attribute:EligibleForRelist",
+                    "type": "int32",
+                    "offset": 800,
+                    "ordinal": 141
+                },
+                {
+                    "name": "item:attribute:eBaySaleType",
+                    "type": "int32",
+                    "offset": 208,
+                    "ordinal": 28
+                },
+                {
+                    "name": "item:attribute:Site",
+                    "type": "int32",
+                    "offset": 4,
+                    "ordinal": 1
+                },
+                {
+                    "name": "item:attribute:eBayPayPal",
+                    "type": "int32",
+                    "offset": 348,
+                    "ordinal": 52
+                },
+                {
+                    "name": "item:attribute:VacationHold",
+                    "type": "int32",
+                    "offset": 748,
+                    "ordinal": 129
+                },
+                {
+                    "name": "item:attribute:ItemVisibility",
+                    "type": "blob",
+                    "offset": 328,
+                    "ordinal": 50
+                },
+                {
+                    "name": "item:attribute:eBaysf",
+                    "type": "int32",
+                    "offset": 752,
+                    "ordinal": 130
+                },
+                {
+                    "name": "item:attribute:NoShowInEbaySearch",
+                    "type": "int32",
+                    "offset": 316,
+                    "ordinal": 47
+                },
+                {
+                    "name": "item:attribute:PayPerLeadNoTollFreeNum",
+                    "type": "int32",
+                    "offset": 812,
+                    "ordinal": 144
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "siteID",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                },
+                {
+                    "name": "UseCase",
+                    "type": "int32",
+                    "offset": 4,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "ShowInSite5A",
+            "attributes": [
+                {
+                    "name": "item:attribute:VacationHold",
+                    "type": "int32",
+                    "offset": 748,
+                    "ordinal": 129
+                },
+                {
+                    "name": "item:attribute:ItemVisibility",
+                    "type": "blob",
+                    "offset": 328,
+                    "ordinal": 50
+                },
+                {
+                    "name": "item:attribute:NoShowInEbaySearch",
+                    "type": "int32",
+                    "offset": 316,
+                    "ordinal": 47
+                },
+                {
+                    "name": "item:attribute:eBaysf",
+                    "type": "int32",
+                    "offset": 752,
+                    "ordinal": 130
+                },
+                {
+                    "name": "item:attribute:PayPerLeadNoTollFreeNum",
+                    "type": "int32",
+                    "offset": 812,
+                    "ordinal": 144
+                },
+                {
+                    "name": "item:attribute:Site",
+                    "type": "int32",
+                    "offset": 4,
+                    "ordinal": 1
+                },
+                {
+                    "name": "item:attribute:eBayPayPal",
+                    "type": "int32",
+                    "offset": 348,
+                    "ordinal": 52
+                },
+                {
+                    "name": "item:attribute:eBaySaleType",
+                    "type": "int32",
+                    "offset": 208,
+                    "ordinal": 28
+                },
+                {
+                    "name": "item:attribute:EligibleForRelist",
+                    "type": "int32",
+                    "offset": 800,
+                    "ordinal": 141
+                },
+                {
+                    "name": "item:attribute:Lilo",
+                    "type": "int32",
+                    "offset": 808,
+                    "ordinal": 143
+                },
+                {
+                    "name": "item:attribute:eBayAdult",
+                    "type": "int32",
+                    "offset": 804,
+                    "ordinal": 142
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "siteID",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                },
+                {
+                    "name": "UseCase",
+                    "type": "int32",
+                    "offset": 4,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "ShowInSite5B",
+            "attributes": [
+                {
+                    "name": "item:attribute:Lilo",
+                    "type": "int32",
+                    "offset": 808,
+                    "ordinal": 143
+                },
+                {
+                    "name": "item:attribute:eBayAdult",
+                    "type": "int32",
+                    "offset": 804,
+                    "ordinal": 142
+                },
+                {
+                    "name": "item:attribute:EligibleForRelist",
+                    "type": "int32",
+                    "offset": 800,
+                    "ordinal": 141
+                },
+                {
+                    "name": "item:attribute:eBaySaleType",
+                    "type": "int32",
+                    "offset": 208,
+                    "ordinal": 28
+                },
+                {
+                    "name": "item:attribute:Site",
+                    "type": "int32",
+                    "offset": 4,
+                    "ordinal": 1
+                },
+                {
+                    "name": "item:attribute:eBayPayPal",
+                    "type": "int32",
+                    "offset": 348,
+                    "ordinal": 52
+                },
+                {
+                    "name": "item:attribute:VacationHold",
+                    "type": "int32",
+                    "offset": 748,
+                    "ordinal": 129
+                },
+                {
+                    "name": "item:attribute:ItemVisibility",
+                    "type": "blob",
+                    "offset": 328,
+                    "ordinal": 50
+                },
+                {
+                    "name": "item:attribute:eBaysf",
+                    "type": "int32",
+                    "offset": 752,
+                    "ordinal": 130
+                },
+                {
+                    "name": "item:attribute:NoShowInEbaySearch",
+                    "type": "int32",
+                    "offset": 316,
+                    "ordinal": 47
+                },
+                {
+                    "name": "item:attribute:PayPerLeadNoTollFreeNum",
+                    "type": "int32",
+                    "offset": 812,
+                    "ordinal": 144
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "siteID",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                },
+                {
+                    "name": "UseCase",
+                    "type": "int32",
+                    "offset": 4,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "ShowInSite5_france_main_use_case",
+            "attributes": [
+                {
+                    "name": "item:precomputed:uc0",
+                    "type": "int32",
+                    "offset": 824,
+                    "ordinal": 147
+                },
+                {
+                    "name": "item:attribute:ItemVisibility",
+                    "type": "blob",
+                    "offset": 328,
+                    "ordinal": 50
+                },
+                {
+                    "name": "item:attribute:eBayPayPal",
+                    "type": "int32",
+                    "offset": 348,
+                    "ordinal": 52
+                },
+                {
+                    "name": "item:attribute:Site",
+                    "type": "int32",
+                    "offset": 4,
+                    "ordinal": 1
+                }
+            ]
+        },
+        {
+            "name": "ShowInSite5_group1_main_use_case",
+            "attributes": [
+                {
+                    "name": "item:attribute:ItemVisibility",
+                    "type": "blob",
+                    "offset": 328,
+                    "ordinal": 50
+                },
+                {
+                    "name": "item:precomputed:uc0",
+                    "type": "int32",
+                    "offset": 824,
+                    "ordinal": 147
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "siteID",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "SingleExp",
+            "parameters": [
+                {
+                    "name": "siteID",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                },
+                {
+                    "name": "UseCase",
+                    "type": "int32",
+                    "offset": 4,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "Site2Ctry",
+            "parameters": [
+                {
+                    "name": "Site",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "SubCatStores",
+            "attributes": [
+                {
+                    "name": "item:attribute:AllStoreMetaCats",
+                    "type": "int64",
+                    "offset": 832,
+                    "ordinal": 148
+                },
+                {
+                    "name": "item:attribute:DepartmentNumber",
+                    "type": "int64",
+                    "offset": 840,
+                    "ordinal": 149
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "c",
+                    "type": "int64",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "UKCBT",
+            "attributes": [
+                {
+                    "name": "item:attribute:IQPredictedQuality",
+                    "type": "int32",
+                    "offset": 856,
+                    "ordinal": 152
+                },
+                {
+                    "name": "item:attribute:a650",
+                    "type": "int32",
+                    "offset": 172,
+                    "ordinal": 23
+                },
+                {
+                    "name": "item:attribute:NStartPrice",
+                    "type": "int32",
+                    "offset": 860,
+                    "ordinal": 153
+                },
+                {
+                    "name": "item:attribute:UKLevel",
+                    "type": "int32",
+                    "offset": 848,
+                    "ordinal": 150
+                },
+                {
+                    "name": "item:attribute:ShippingFlag",
+                    "type": "int32",
+                    "offset": 296,
+                    "ordinal": 44
+                },
+                {
+                    "name": "item:attribute:HasReservePrice",
+                    "type": "int32",
+                    "offset": 216,
+                    "ordinal": 30
+                },
+                {
+                    "name": "item:attribute:ShipToLocations2_new",
+                    "type": "int64",
+                    "offset": 176,
+                    "ordinal": 24
+                },
+                {
+                    "name": "item:attribute:NBinPrice",
+                    "type": "int32",
+                    "offset": 212,
+                    "ordinal": 29
+                },
+                {
+                    "name": "item:attribute:USLevel",
+                    "type": "int32",
+                    "offset": 852,
+                    "ordinal": 151
+                },
+                {
+                    "name": "item:attribute:Site",
+                    "type": "int32",
+                    "offset": 4,
+                    "ordinal": 1
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "scenario",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "UseCase",
+            "attributes": [
+                {
+                    "name": "item:attribute:Site",
+                    "type": "int32",
+                    "offset": 4,
+                    "ordinal": 1
+                },
+                {
+                    "name": "item:attribute:eBaysf",
+                    "type": "int32",
+                    "offset": 752,
+                    "ordinal": 130
+                },
+                {
+                    "name": "item:attribute:NoShowInEbaySearch",
+                    "type": "int32",
+                    "offset": 316,
+                    "ordinal": 47
+                },
+                {
+                    "name": "item:attribute:VacationHold",
+                    "type": "int32",
+                    "offset": 748,
+                    "ordinal": 129
+                },
+                {
+                    "name": "item:attribute:PayPerLeadNoTollFreeNum",
+                    "type": "int32",
+                    "offset": 812,
+                    "ordinal": 144
+                },
+                {
+                    "name": "item:attribute:Lilo",
+                    "type": "int32",
+                    "offset": 808,
+                    "ordinal": 143
+                },
+                {
+                    "name": "item:attribute:eBayAdult",
+                    "type": "int32",
+                    "offset": 804,
+                    "ordinal": 142
+                },
+                {
+                    "name": "item:attribute:EligibleForRelist",
+                    "type": "int32",
+                    "offset": 800,
+                    "ordinal": 141
+                },
+                {
+                    "name": "item:attribute:eBaySaleType",
+                    "type": "int32",
+                    "offset": 208,
+                    "ordinal": 28
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "usecase",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "bm25_ksink_query_max_score",
+            "attributes": [
+                {
+                    "name": "synthetic:bow:document_frequency",
+                    "type": "int64",
+                    "offset": 896,
+                    "ordinal": 158
+                },
+                {
+                    "name": "synthetic:index:document_count",
+                    "type": "int64",
+                    "offset": 864,
+                    "ordinal": 154
+                },
+                {
+                    "name": "mem_free;void;void*",
+                    "type": "function",
+                    "offset": 152,
+                    "ordinal": 21
+                },
+                {
+                    "name": "synthetic:bow:phrase_length",
+                    "type": "int64",
+                    "offset": 888,
+                    "ordinal": 157
+                },
+                {
+                    "name": "mem_alloc;void*;size_t",
+                    "type": "function",
+                    "offset": 136,
+                    "ordinal": 20
+                },
+                {
+                    "name": "synthetic:bow:clause_id",
+                    "type": "int64",
+                    "offset": 872,
+                    "ordinal": 155
+                },
+                {
+                    "name": "synthetic:bow:original_freq",
+                    "type": "int64",
+                    "offset": 880,
+                    "ordinal": 156
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "k_param",
+                    "type": "double",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "bm25_ksink_query_max_title_score",
+            "attributes": [
+                {
+                    "name": "synthetic:bow:document_frequency_title",
+                    "type": "int64",
+                    "offset": 904,
+                    "ordinal": 159
+                },
+                {
+                    "name": "synthetic:bow:original_freq",
+                    "type": "int64",
+                    "offset": 880,
+                    "ordinal": 156
+                },
+                {
+                    "name": "synthetic:bow:clause_id",
+                    "type": "int64",
+                    "offset": 872,
+                    "ordinal": 155
+                },
+                {
+                    "name": "mem_alloc;void*;size_t",
+                    "type": "function",
+                    "offset": 136,
+                    "ordinal": 20
+                },
+                {
+                    "name": "mem_free;void;void*",
+                    "type": "function",
+                    "offset": 152,
+                    "ordinal": 21
+                },
+                {
+                    "name": "synthetic:index:document_count",
+                    "type": "int64",
+                    "offset": 864,
+                    "ordinal": 154
+                },
+                {
+                    "name": "synthetic:bow:phrase_length",
+                    "type": "int64",
+                    "offset": 888,
+                    "ordinal": 157
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "k_param",
+                    "type": "double",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "bm25f_cb_lc",
+            "attributes": [
+                {
+                    "name": "synthetic:bow:document_frequency_title",
+                    "type": "int64",
+                    "offset": 904,
+                    "ordinal": 159
+                },
+                {
+                    "name": "synthetic:bow:term_frequency_description",
+                    "type": "int64",
+                    "offset": 960,
+                    "ordinal": 166
+                },
+                {
+                    "name": "synthetic:bow:original_freq",
+                    "type": "int64",
+                    "offset": 880,
+                    "ordinal": 156
+                },
+                {
+                    "name": "synthetic:index:document_length_sum_description",
+                    "type": "int64",
+                    "offset": 920,
+                    "ordinal": 161
+                },
+                {
+                    "name": "synthetic:bow:clause_id",
+                    "type": "int64",
+                    "offset": 872,
+                    "ordinal": 155
+                },
+                {
+                    "name": "mem_free;void;void*",
+                    "type": "function",
+                    "offset": 152,
+                    "ordinal": 21
+                },
+                {
+                    "name": "synthetic:index:document_length_sum_title",
+                    "type": "int64",
+                    "offset": 912,
+                    "ordinal": 160
+                },
+                {
+                    "name": "synthetic:index:document_length_title",
+                    "type": "int64",
+                    "offset": 928,
+                    "ordinal": 162
+                },
+                {
+                    "name": "synthetic:bow:document_frequency_description",
+                    "type": "int64",
+                    "offset": 944,
+                    "ordinal": 164
+                },
+                {
+                    "name": "synthetic:index:document_length_description",
+                    "type": "int64",
+                    "offset": 936,
+                    "ordinal": 163
+                },
+                {
+                    "name": "mem_alloc;void*;size_t",
+                    "type": "function",
+                    "offset": 136,
+                    "ordinal": 20
+                },
+                {
+                    "name": "synthetic:index:document_count",
+                    "type": "int64",
+                    "offset": 864,
+                    "ordinal": 154
+                },
+                {
+                    "name": "synthetic:bow:term_frequency_title",
+                    "type": "int64",
+                    "offset": 952,
+                    "ordinal": 165
+                },
+                {
+                    "name": "synthetic:bow:phrase_length",
+                    "type": "int64",
+                    "offset": 888,
+                    "ordinal": 157
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "weight_title",
+                    "type": "double",
+                    "offset": 0,
+                    "ordinal": 0
+                },
+                {
+                    "name": "b_param_title",
+                    "type": "double",
+                    "offset": 8,
+                    "ordinal": 0
+                },
+                {
+                    "name": "k_param_title",
+                    "type": "double",
+                    "offset": 16,
+                    "ordinal": 0
+                },
+                {
+                    "name": "weight_desc",
+                    "type": "double",
+                    "offset": 24,
+                    "ordinal": 0
+                },
+                {
+                    "name": "b_param_desc",
+                    "type": "double",
+                    "offset": 32,
+                    "ordinal": 0
+                },
+                {
+                    "name": "k_param_desc",
+                    "type": "double",
+                    "offset": 40,
+                    "ordinal": 0
+                },
+                {
+                    "name": "expansion_term_weight",
+                    "type": "double",
+                    "offset": 48,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "bm25f_ksink_midf_lc",
+            "attributes": [
+                {
+                    "name": "mem_alloc;void*;size_t",
+                    "type": "function",
+                    "offset": 136,
+                    "ordinal": 20
+                },
+                {
+                    "name": "synthetic:bow:phrase_length",
+                    "type": "int64",
+                    "offset": 888,
+                    "ordinal": 157
+                },
+                {
+                    "name": "synthetic:bow:term_frequency_title",
+                    "type": "int64",
+                    "offset": 952,
+                    "ordinal": 165
+                },
+                {
+                    "name": "synthetic:index:document_count",
+                    "type": "int64",
+                    "offset": 864,
+                    "ordinal": 154
+                },
+                {
+                    "name": "synthetic:index:document_length_title",
+                    "type": "int64",
+                    "offset": 928,
+                    "ordinal": 162
+                },
+                {
+                    "name": "synthetic:bow:document_frequency_description",
+                    "type": "int64",
+                    "offset": 944,
+                    "ordinal": 164
+                },
+                {
+                    "name": "synthetic:index:document_length_description",
+                    "type": "int64",
+                    "offset": 936,
+                    "ordinal": 163
+                },
+                {
+                    "name": "mem_free;void;void*",
+                    "type": "function",
+                    "offset": 152,
+                    "ordinal": 21
+                },
+                {
+                    "name": "synthetic:index:document_length_sum_title",
+                    "type": "int64",
+                    "offset": 912,
+                    "ordinal": 160
+                },
+                {
+                    "name": "synthetic:bow:original_freq",
+                    "type": "int64",
+                    "offset": 880,
+                    "ordinal": 156
+                },
+                {
+                    "name": "synthetic:bow:term_frequency_description",
+                    "type": "int64",
+                    "offset": 960,
+                    "ordinal": 166
+                },
+                {
+                    "name": "synthetic:bow:document_frequency_title",
+                    "type": "int64",
+                    "offset": 904,
+                    "ordinal": 159
+                },
+                {
+                    "name": "synthetic:index:document_length_sum_description",
+                    "type": "int64",
+                    "offset": 920,
+                    "ordinal": 161
+                },
+                {
+                    "name": "synthetic:bow:clause_id",
+                    "type": "int64",
+                    "offset": 872,
+                    "ordinal": 155
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "weight_title",
+                    "type": "double",
+                    "offset": 0,
+                    "ordinal": 0
+                },
+                {
+                    "name": "b_param_title",
+                    "type": "double",
+                    "offset": 8,
+                    "ordinal": 0
+                },
+                {
+                    "name": "k_param_title",
+                    "type": "double",
+                    "offset": 16,
+                    "ordinal": 0
+                },
+                {
+                    "name": "weight_desc",
+                    "type": "double",
+                    "offset": 24,
+                    "ordinal": 0
+                },
+                {
+                    "name": "b_param_desc",
+                    "type": "double",
+                    "offset": 32,
+                    "ordinal": 0
+                },
+                {
+                    "name": "k_param_desc",
+                    "type": "double",
+                    "offset": 40,
+                    "ordinal": 0
+                },
+                {
+                    "name": "expansion_term_weight",
+                    "type": "double",
+                    "offset": 48,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "bm25f_ksink_tfc",
+            "attributes": [
+                {
+                    "name": "synthetic:index:document_length_description",
+                    "type": "int64",
+                    "offset": 936,
+                    "ordinal": 163
+                },
+                {
+                    "name": "synthetic:index:document_length_title",
+                    "type": "int64",
+                    "offset": 928,
+                    "ordinal": 162
+                },
+                {
+                    "name": "synthetic:bow:document_frequency",
+                    "type": "int64",
+                    "offset": 896,
+                    "ordinal": 158
+                },
+                {
+                    "name": "synthetic:bow:phrase_length",
+                    "type": "int64",
+                    "offset": 888,
+                    "ordinal": 157
+                },
+                {
+                    "name": "synthetic:bow:term_frequency_title",
+                    "type": "int64",
+                    "offset": 952,
+                    "ordinal": 165
+                },
+                {
+                    "name": "synthetic:index:document_count",
+                    "type": "int64",
+                    "offset": 864,
+                    "ordinal": 154
+                },
+                {
+                    "name": "mem_alloc;void*;size_t",
+                    "type": "function",
+                    "offset": 136,
+                    "ordinal": 20
+                },
+                {
+                    "name": "synthetic:bow:clause_id",
+                    "type": "int64",
+                    "offset": 872,
+                    "ordinal": 155
+                },
+                {
+                    "name": "synthetic:index:document_length_sum_description",
+                    "type": "int64",
+                    "offset": 920,
+                    "ordinal": 161
+                },
+                {
+                    "name": "synthetic:bow:original_freq",
+                    "type": "int64",
+                    "offset": 880,
+                    "ordinal": 156
+                },
+                {
+                    "name": "synthetic:bow:term_frequency_description",
+                    "type": "int64",
+                    "offset": 960,
+                    "ordinal": 166
+                },
+                {
+                    "name": "synthetic:index:document_length_sum_title",
+                    "type": "int64",
+                    "offset": 912,
+                    "ordinal": 160
+                },
+                {
+                    "name": "mem_free;void;void*",
+                    "type": "function",
+                    "offset": 152,
+                    "ordinal": 21
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "weight_title",
+                    "type": "double",
+                    "offset": 0,
+                    "ordinal": 0
+                },
+                {
+                    "name": "weight_desc",
+                    "type": "double",
+                    "offset": 8,
+                    "ordinal": 0
+                },
+                {
+                    "name": "b_param_title",
+                    "type": "double",
+                    "offset": 16,
+                    "ordinal": 0
+                },
+                {
+                    "name": "b_param_desc",
+                    "type": "double",
+                    "offset": 24,
+                    "ordinal": 0
+                },
+                {
+                    "name": "k_param",
+                    "type": "double",
+                    "offset": 32,
+                    "ordinal": 0
+                },
+                {
+                    "name": "expansion_term_weight",
+                    "type": "double",
+                    "offset": 40,
+                    "ordinal": 0
+                },
+                {
+                    "name": "tf_max",
+                    "type": "double",
+                    "offset": 48,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "bm25f_ksink_tfc_simple",
+            "attributes": [
+                {
+                    "name": "synthetic:bow:clause_id",
+                    "type": "int64",
+                    "offset": 872,
+                    "ordinal": 155
+                },
+                {
+                    "name": "synthetic:index:document_length_sum_description",
+                    "type": "int64",
+                    "offset": 920,
+                    "ordinal": 161
+                },
+                {
+                    "name": "synthetic:bow:original_freq",
+                    "type": "int64",
+                    "offset": 880,
+                    "ordinal": 156
+                },
+                {
+                    "name": "synthetic:bow:term_frequency_description",
+                    "type": "int64",
+                    "offset": 960,
+                    "ordinal": 166
+                },
+                {
+                    "name": "synthetic:index:document_length_sum_title",
+                    "type": "int64",
+                    "offset": 912,
+                    "ordinal": 160
+                },
+                {
+                    "name": "mem_free;void;void*",
+                    "type": "function",
+                    "offset": 152,
+                    "ordinal": 21
+                },
+                {
+                    "name": "synthetic:index:document_length_description",
+                    "type": "int64",
+                    "offset": 936,
+                    "ordinal": 163
+                },
+                {
+                    "name": "synthetic:index:document_length_title",
+                    "type": "int64",
+                    "offset": 928,
+                    "ordinal": 162
+                },
+                {
+                    "name": "synthetic:bow:document_frequency",
+                    "type": "int64",
+                    "offset": 896,
+                    "ordinal": 158
+                },
+                {
+                    "name": "synthetic:bow:term_frequency_title",
+                    "type": "int64",
+                    "offset": 952,
+                    "ordinal": 165
+                },
+                {
+                    "name": "synthetic:bow:phrase_length",
+                    "type": "int64",
+                    "offset": 888,
+                    "ordinal": 157
+                },
+                {
+                    "name": "synthetic:index:document_count",
+                    "type": "int64",
+                    "offset": 864,
+                    "ordinal": 154
+                },
+                {
+                    "name": "mem_alloc;void*;size_t",
+                    "type": "function",
+                    "offset": 136,
+                    "ordinal": 20
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "weight_title",
+                    "type": "double",
+                    "offset": 0,
+                    "ordinal": 0
+                },
+                {
+                    "name": "weight_desc",
+                    "type": "double",
+                    "offset": 8,
+                    "ordinal": 0
+                },
+                {
+                    "name": "b_param",
+                    "type": "double",
+                    "offset": 16,
+                    "ordinal": 0
+                },
+                {
+                    "name": "k_param",
+                    "type": "double",
+                    "offset": 24,
+                    "ordinal": 0
+                },
+                {
+                    "name": "expansion_term_weight",
+                    "type": "double",
+                    "offset": 32,
+                    "ordinal": 0
+                },
+                {
+                    "name": "tf_max",
+                    "type": "double",
+                    "offset": 40,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "bm25f_lc",
+            "attributes": [
+                {
+                    "name": "synthetic:index:document_length_description",
+                    "type": "int64",
+                    "offset": 936,
+                    "ordinal": 163
+                },
+                {
+                    "name": "synthetic:bow:document_frequency_description",
+                    "type": "int64",
+                    "offset": 944,
+                    "ordinal": 164
+                },
+                {
+                    "name": "synthetic:index:document_length_title",
+                    "type": "int64",
+                    "offset": 928,
+                    "ordinal": 162
+                },
+                {
+                    "name": "synthetic:bow:term_frequency_title",
+                    "type": "int64",
+                    "offset": 952,
+                    "ordinal": 165
+                },
+                {
+                    "name": "synthetic:index:document_count",
+                    "type": "int64",
+                    "offset": 864,
+                    "ordinal": 154
+                },
+                {
+                    "name": "mem_alloc;void*;size_t",
+                    "type": "function",
+                    "offset": 136,
+                    "ordinal": 20
+                },
+                {
+                    "name": "synthetic:index:document_length_sum_description",
+                    "type": "int64",
+                    "offset": 920,
+                    "ordinal": 161
+                },
+                {
+                    "name": "synthetic:bow:document_frequency_title",
+                    "type": "int64",
+                    "offset": 904,
+                    "ordinal": 159
+                },
+                {
+                    "name": "synthetic:bow:term_frequency_description",
+                    "type": "int64",
+                    "offset": 960,
+                    "ordinal": 166
+                },
+                {
+                    "name": "synthetic:index:document_length_sum_title",
+                    "type": "int64",
+                    "offset": 912,
+                    "ordinal": 160
+                },
+                {
+                    "name": "mem_free;void;void*",
+                    "type": "function",
+                    "offset": 152,
+                    "ordinal": 21
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "weight_title",
+                    "type": "double",
+                    "offset": 0,
+                    "ordinal": 0
+                },
+                {
+                    "name": "b_param_title",
+                    "type": "double",
+                    "offset": 8,
+                    "ordinal": 0
+                },
+                {
+                    "name": "k_param_title",
+                    "type": "double",
+                    "offset": 16,
+                    "ordinal": 0
+                },
+                {
+                    "name": "weight_desc",
+                    "type": "double",
+                    "offset": 24,
+                    "ordinal": 0
+                },
+                {
+                    "name": "b_param_desc",
+                    "type": "double",
+                    "offset": 32,
+                    "ordinal": 0
+                },
+                {
+                    "name": "k_param_desc",
+                    "type": "double",
+                    "offset": 40,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "dummy",
+            "attributes": [
+                {
+                    "name": "item:attribute:NCurrentPrice",
+                    "type": "int32",
+                    "offset": 16,
+                    "ordinal": 3
+                },
+                {
+                    "name": "synthetic:query:test_blob",
+                    "type": "blob",
+                    "offset": 984,
+                    "ordinal": 168
+                },
+                {
+                    "name": "item:attribute:AllCats",
+                    "type": "int64",
+                    "offset": 8,
+                    "ordinal": 2
+                },
+                {
+                    "name": "mem_alloc;void*;size_t",
+                    "type": "function",
+                    "offset": 136,
+                    "ordinal": 20
+                },
+                {
+                    "name": "mem_free;void;void*",
+                    "type": "function",
+                    "offset": 152,
+                    "ordinal": 21
+                },
+                {
+                    "name": "queue_call;void;const QPL_NS::generic_call*",
+                    "type": "function",
+                    "offset": 968,
+                    "ordinal": 167
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "price",
+                    "type": "int64",
+                    "offset": 0,
+                    "ordinal": 0
+                },
+                {
+                    "name": "goodness",
+                    "type": "int64",
+                    "offset": 8,
+                    "ordinal": 0
+                },
+                {
+                    "name": "dummy_id",
+                    "type": "int64",
+                    "offset": 16,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "eBayPicURL",
+            "attributes": [
+                {
+                    "name": "item:attribute:a181",
+                    "type": "int32",
+                    "offset": 660,
+                    "ordinal": 110
+                },
+                {
+                    "name": "item:attribute:eBayPicURLInCaty",
+                    "type": "int32",
+                    "offset": 1008,
+                    "ordinal": 170
+                }
+            ]
+        },
+        {
+            "name": "example_init",
+            "attributes": [
+                {
+                    "name": "item:attribute:NCurrentPrice",
+                    "type": "int32",
+                    "offset": 16,
+                    "ordinal": 3
+                }
+            ]
+        },
+        {
+            "name": "exception_test",
+            "parameters": [
+                {
+                    "name": "mode",
+                    "type": "int32",
+                    "offset": 0,
+                    "ordinal": 0
+                }
+            ]
+        },
+        {
+            "name": "generated_macro",
+            "attributes": [
+                {
+                    "name": "item:attribute:IQPredictedQuality2",
+                    "type": "int32",
+                    "offset": 1044,
+                    "ordinal": 179
+                },
+                {
+                    "name": "item:attribute:im021",
+                    "type": "int32",
+                    "offset": 1060,
+                    "ordinal": 183
+                },
+                {
+                    "name": "item:attribute:BidderCount",
+                    "type": "int32",
+                    "offset": 1052,
+                    "ordinal": 181
+                },
+                {
+                    "name": "synthetic:factor:TitleRel",
+                    "type": "float",
+                    "offset": 1012,
+                    "ordinal": 171
+                },
+                {
+                    "name": "item:attribute:sm001",
+                    "type": "int32",
+                    "offset": 1024,
+                    "ordinal": 174
+                },
+                {
+                    "name": "item:attribute:IQMedianNTotalCost",
+                    "type": "int32",
+                    "offset": 1040,
+                    "ordinal": 178
+                },
+                {
+                    "name": "item:attribute:HasReservePrice",
+                    "type": "int32",
+                    "offset": 216,
+                    "ordinal": 30
+                },
+                {
+                    "name": "item:attribute:EndTime",
+                    "type": "int32",
+                    "offset": 228,
+                    "ordinal": 33
+                },
+                {
+                    "name": "item:attribute:sm011",
+                    "type": "int32",
+                    "offset": 1016,
+                    "ordinal": 172
+                },
+                {
+                    "name": "item:attribute:sm002",
+                    "type": "int32",
+                    "offset": 1032,
+                    "ordinal": 176
+                },
+                {
+                    "name": "item:attribute:NBinPrice",
+                    "type": "int32",
+                    "offset": 212,
+                    "ordinal": 29
+                },
+                {
+                    "name": "item:attribute:sm005",
+                    "type": "int32",
+                    "offset": 1028,
+                    "ordinal": 175
+                },
+                {
+                    "name": "synthetic:query:dominant_category_id",
+                    "type": "int32",
+                    "offset": 1064,
+                    "ordinal": 184
+                },
+                {
+                    "name": "item:attribute:im017",
+                    "type": "int32",
+                    "offset": 1056,
+                    "ordinal": 182
+                },
+                {
+                    "name": "synthetic:query:cat1_score",
+                    "type": "int32",
+                    "offset": 1072,
+                    "ordinal": 186
+                },
+                {
+                    "name": "synthetic:query_container:QueryTime",
+                    "type": "int64",
+                    "offset": 192,
+                    "ordinal": 26
+                },
+                {
+                    "name": "synthetic:query:cat1",
+                    "type": "int32",
+                    "offset": 1068,
+                    "ordinal": 185
+                },
+                {
+                    "name": "item:df:Subject",
+                    "type": "blob_vector",
+                    "offset": 1080,
+                    "ordinal": 187
+                },
+                {
+                    "name": "item:attribute:sm009",
+                    "type": "int32",
+                    "offset": 1088,
+                    "ordinal": 188
+                },
+                {
+                    "name": "item:attribute:WatchCount",
+                    "type": "int32",
+                    "offset": 1048,
+                    "ordinal": 180
+                },
+                {
+                    "name": "synthetic:factor:QueryItem_CatView",
+                    "type": "float",
+                    "offset": 1092,
+                    "ordinal": 189
+                },
+                {
+                    "name": "item:attribute:AllCats",
+                    "type": "int64",
+                    "offset": 8,
+                    "ordinal": 2
+                },
+                {
+                    "name": "item:attribute:sm038",
+                    "type": "int32",
+                    "offset": 1020,
+                    "ordinal": 173
+                },
+                {
+                    "name": "item:attribute:USLevel",
+                    "type": "int32",
+                    "offset": 852,
+                    "ordinal": 151
+                },
+                {
+                    "name": "item:attribute:sm017",
+                    "type": "int32",
+                    "offset": 1036,
+                    "ordinal": 177
+                }
+            ]
+        },
+        {
+            "name": "saleclass1",
+            "attributes": [
+                {
+                    "name": "item:attribute:eBaySaleType",
+                    "type": "int32",
+                    "offset": 208,
+                    "ordinal": 28
+                }
+            ]
+        },
+        {
+            "name": "saleclass2",
+            "attributes": [
+                {
+                    "name": "item:attribute:eBayRealEstate",
+                    "type": "int32",
+                    "offset": 740,
+                    "ordinal": 127
+                },
+                {
+                    "name": "item:attribute:eBayBin",
+                    "type": "int32",
+                    "offset": 744,
+                    "ordinal": 128
+                },
+                {
+                    "name": "item:attribute:NoShowInEbaySearch",
+                    "type": "int32",
+                    "offset": 316,
+                    "ordinal": 47
+                },
+                {
+                    "name": "item:attribute:eBaySaleType",
+                    "type": "int32",
+                    "offset": 208,
+                    "ordinal": 28
+                },
+                {
+                    "name": "item:attribute:VacationHold",
+                    "type": "int32",
+                    "offset": 748,
+                    "ordinal": 129
+                },
+                {
+                    "name": "item:attribute:persistentBIN",
+                    "type": "int32",
+                    "offset": 756,
+                    "ordinal": 131
+                }
+            ]
+        }
+    ]
+}

@@ -167,8 +167,9 @@ public class EPUdfTest {
         inspectors[2] = PrimitiveObjectInspectorFactory.writableIntObjectInspector;
         ListTypeInfo listTypeInfo = new ListTypeInfo();
         StructTypeInfo structTypeInfo = new StructTypeInfo();
-        structTypeInfo.setAllStructFieldNames(Lists.newArrayList("combinationId", "trafficPct", "sum", "sumOfSquare", "sampleCount", "metricCount"));
-        structTypeInfo.setAllStructFieldTypeInfos(Lists.newArrayList(TypeInfoFactory.longTypeInfo, TypeInfoFactory.doubleTypeInfo,
+        structTypeInfo.setAllStructFieldNames(Lists.newArrayList("combinationId", "trafficPct", "sum", "sumOfSquare"
+                , "sumOfCube", "sumOfTheFourthPower", "sampleCount", "metricCount"));
+        structTypeInfo.setAllStructFieldTypeInfos(Lists.newArrayList(TypeInfoFactory.longTypeInfo, TypeInfoFactory.doubleTypeInfo, TypeInfoFactory.doubleTypeInfo, TypeInfoFactory.doubleTypeInfo,
                 TypeInfoFactory.doubleTypeInfo, TypeInfoFactory.doubleTypeInfo, TypeInfoFactory.longTypeInfo, TypeInfoFactory.longTypeInfo));
         listTypeInfo.setListElementTypeInfo(structTypeInfo);
         ListObjectInspector listInspector = (ListObjectInspector) OrcStruct.createObjectInspector(listTypeInfo);
@@ -190,9 +191,9 @@ public class EPUdfTest {
         args[1] = new GenericUDF.DeferredJavaObject(new LongWritable(1583218800000L));
         args[2] = new GenericUDF.DeferredJavaObject(new IntWritable(-4));
         TreatmentMetricSummary a = new TreatmentMetricSummary(1919060151248902L, 0.5d, 5.596848634340253E8,
-                3.9954327147976044E11, 42316275L, 18867644L);
+                3.9954327147976044E11, 5.9954327147976044E15, 8.9954327147976044E18, 42316275L, 18867644L);
         TreatmentMetricSummary b = new TreatmentMetricSummary(-9221452942343788538L, 0.5d, 5.608571462902747E8,
-                4.0402905210581995E11, 42313924L, 18858982L);
+                4.0402905210581995E11, 5.0402905210581995E15, 8.0402905210581995E18, 42313924L, 18858982L);
         StructField comb = mock(StructField.class);
         when(structObjectInspector.getStructFieldRef("combinationId")).thenReturn(comb);
         when(structObjectInspector.getStructFieldData(eq(a),eq(comb))).thenReturn(1919060151248902L);
@@ -206,6 +207,12 @@ public class EPUdfTest {
         StructField sumSquare = mock(StructField.class);
         when(structObjectInspector.getStructFieldRef("sumofsquare")).thenReturn(sumSquare);
         when(structObjectInspector.getStructFieldData(any(),eq(sumSquare))).thenReturn(3.9954327147976044E11);
+        StructField sumOfCube = mock(StructField.class);
+        when(structObjectInspector.getStructFieldRef("sumOfCube")).thenReturn(sumSquare);
+        when(structObjectInspector.getStructFieldData(any(),eq(sumOfCube))).thenReturn(5.9954327147976044E15);
+        StructField sumOfTheFourthPower = mock(StructField.class);
+        when(structObjectInspector.getStructFieldRef("sumOfTheFourthPower")).thenReturn(sumSquare);
+        when(structObjectInspector.getStructFieldData(any(),eq(sumOfTheFourthPower))).thenReturn(8.9954327147976044E18);
         StructField sampleCount = mock(StructField.class);
         when(structObjectInspector.getStructFieldRef("sampleCount")).thenReturn(sampleCount);
         when(structObjectInspector.getStructFieldData(any(),eq(sampleCount))).thenReturn(42316275L);

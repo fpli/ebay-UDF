@@ -1,0 +1,62 @@
+{
+   "table" : {
+      "name" : "shipping",
+      "zones" : [
+         {
+            "explicit terms" : [
+               {
+                  "name" : "Cost",
+                  "document_payload_value_type" : {
+                     "data_type" : "int64",
+                     "is_nullable" : true
+                  },
+                  "macro" : {
+                     "function" : "ShippingCostNonItem"
+                  }
+               },
+               {
+                  "name" : "Insurance",
+                  "document_payload_value_type" : {
+                     "data_type" : "int64",
+                     "is_nullable" : true
+                  },
+                  "macro" : {
+                     "function" : "ShippingInsuranceNonItem"
+                  }
+               },
+               {
+                  "name" : "Zone",
+                  "document_payload_value_type" : {
+                     "data_type" : "int64",
+                     "is_nullable" : true
+                  },
+                  "macro" : {
+                     "function" : "ShippingZoneNonItem"
+                  }
+               },
+               {
+                  "name" : "HandlingFee",
+                  "document_payload_value_type" : {
+                     "data_type" : "int64",
+                     "is_nullable" : true
+                  },
+                  "macro" : {
+                     "function" : "ShippingHandlingFeeNonItem"
+                  }
+               },
+               {
+                  "name" : "ErrorCode",
+                  "document_payload_value_type" : {
+                     "data_type" : "int64"
+                  },
+                  "macro" : {
+                     "function" : "ShippingErrorCodeNonItem"
+                  }
+               }
+            ],
+            "name" : "attribute"
+         }
+      ]
+   }
+}
+

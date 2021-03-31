@@ -14,7 +14,11 @@
     <module>sys-udf</module>
     <module>datelib-udf</module>
     <module>ebaylib-udf</module>
+    <module>risk-udf</module>
     <module>dss-shpmt-udf</module>
+    <module>hadoop-udf</module>
+    <module>bx-udf</module>
+    <module>core-udf</module>
   </modules>
 
   <properties>

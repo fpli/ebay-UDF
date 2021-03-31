@@ -10,7 +10,7 @@ public class IsInteger extends UDF {
 
     @SuppressWarnings("unused")
     public IntWritable evaluate( Text inst) {
-        if (inst == null|| StringUtils.isEmpty(inst.toString())) {
+        if (inst == null || StringUtils.isEmpty(inst.toString())) {
             return new IntWritable(0);
         }
         // Never use JDK's Integer.valueOf which throws exception for invalid integer and hurts performance

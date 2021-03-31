@@ -1,0 +1,301 @@
+{
+   "version" : {
+      "major" : "1",
+      "minor" : "0"
+   },
+   "column_groups" : [
+      {
+         "id" : 0,
+         "name" : "cassini_dense",
+         "column_group_type" : "dense"
+      },
+      {
+         "column_group_type" : "sparse",
+         "name" : "cassini_sparse",
+         "id" : 1
+      }
+   ],
+   "table" : {
+      "version" : {
+         "minor" : "0",
+         "major" : "1"
+      },
+      "primary_key" : [
+         {
+            "primary_term" : "StoreID",
+            "primary_zone" : "attribute"
+         }
+      ],
+      "zones" : [
+         {
+            "name" : "attribute",
+            "explicit terms" : [
+               {
+                  "name" : "StoreID",
+                  "physical" : {
+                     "column_group_name" : "cassini_sparse",
+                     "base_term_zone_name" : "attribute",
+                     "in_column_group" : true
+                  },
+                  "document_payload_value_type" : {
+                     "data_type" : "uint64"
+                  }
+               },
+               {
+                  "document_payload_value_type" : {
+                     "data_type" : "string"
+                  },
+                  "physical" : {
+                     "posting_encoding_zone_name" : "A",
+                     "is_posting_list" : true,
+                     "column_group_name" : "cassini_dense",
+                     "in_column_group" : true,
+                     "base_term_zone_name" : "attribute"
+                  },
+                  "name" : "OwnerID"
+               },
+               {
+                  "name" : "SubsLevel",
+                  "document_payload_value_type" : {
+                     "data_type" : "string"
+                  },
+                  "physical" : {
+                     "is_posting_list" : true,
+                     "posting_encoding_zone_name" : "A",
+                     "column_group_name" : "cassini_dense",
+                     "in_column_group" : true,
+                     "base_term_zone_name" : "attribute"
+                  }
+               },
+               {
+                  "name" : "LastModified",
+                  "document_payload_value_type" : {
+                     "data_type" : "int64"
+                  },
+                  "physical" : {
+                     "column_group_name" : "cassini_dense",
+                     "in_column_group" : true
+                  }
+               },
+               {
+                  "physical" : {
+                     "base_term_zone_name" : "attribute",
+                     "in_column_group" : true,
+                     "column_group_name" : "cassini_sparse",
+                     "is_posting_list" : true,
+                     "posting_encoding_zone_name" : "A"
+                  },
+                  "document_payload_value_type" : {
+                     "data_type" : "uint8"
+                  },
+                  "name" : "SiteID"
+               },
+               {
+                  "document_payload_value_type" : {
+                     "data_type" : "string"
+                  },
+                  "physical" : {
+                     "in_column_group" : true,
+                     "column_group_name" : "cassini_sparse"
+                  },
+                  "name" : "Name"
+               },
+               {
+                  "physical" : {
+                     "column_group_name" : "cassini_sparse",
+                     "in_column_group" : true
+                  },
+                  "document_payload_value_type" : {
+                     "data_type" : "string",
+                     "is_nullable" : true
+                  },
+                  "name" : "Description"
+               },
+               {
+                  "physical" : {
+                     "column_group_name" : "cassini_sparse",
+                     "in_column_group" : true
+                  },
+                  "document_payload_value_type" : {
+                     "is_nullable" : true,
+                     "data_type" : "string"
+                  },
+                  "name" : "Specialties"
+               },
+               {
+                  "document_payload_value_type" : {
+                     "data_type" : "string"
+                  },
+                  "physical" : {
+                     "in_column_group" : true,
+                     "base_term_zone_name" : "attribute",
+                     "posting_encoding_zone_name" : "A",
+                     "is_posting_list" : true,
+                     "column_group_name" : "cassini_sparse"
+                  },
+                  "name" : "StoreUrl"
+               },
+               {
+                  "physical" : {
+                     "base_term_zone_name" : "",
+                     "is_posting_list" : true
+                  },
+                  "document_payload_value_type" : {
+                     "is_nullable" : true,
+                     "data_type" : "string",
+                     "is_multivalued" : true
+                  },
+                  "name" : "SpecialtiesInd"
+               }
+            ]
+         },
+         {
+            "explicit terms" : [
+               {
+                  "name" : "NameInd",
+                  "physical" : {
+                     "zone_marker_zone_name" : "zone_markers",
+                     "has_zone_markers" : true,
+                     "is_posting_list" : true,
+                     "term_frequency_marker_zone_name" : "X",
+                     "use_zone_marker_for_match" : true,
+                     "base_term_zone_name" : "",
+                     "has_term_frequency_markers" : true,
+                     "zone_marker_term_name" : "name"
+                  },
+                  "document_payload_value_type" : {
+                     "data_type" : "string",
+                     "is_multivalued" : true
+                  }
+               }
+            ],
+            "default term" : {
+               "physical" : {
+                  "zone_marker_term_name" : "name",
+                  "has_term_frequency_markers" : true,
+                  "base_term_zone_name" : "",
+                  "use_zone_marker_for_match" : true,
+                  "is_posting_list" : true,
+                  "term_frequency_marker_zone_name" : "X",
+                  "has_zone_markers" : true,
+                  "zone_marker_zone_name" : "zone_markers"
+               },
+               "document_payload_value_type" : {
+                  "is_nullable" : true,
+                  "data_type" : "uint32"
+               }
+            },
+            "name" : "name"
+         },
+         {
+            "name" : "description",
+            "default term" : {
+               "document_payload_value_type" : {
+                  "is_nullable" : true,
+                  "data_type" : "uint32"
+               },
+               "physical" : {
+                  "is_posting_list" : true,
+                  "term_frequency_marker_zone_name" : "Y",
+                  "has_zone_markers" : true,
+                  "zone_marker_zone_name" : "zone_markers",
+                  "has_term_frequency_markers" : true,
+                  "zone_marker_term_name" : "description",
+                  "use_zone_marker_for_match" : true,
+                  "base_term_zone_name" : ""
+               }
+            },
+            "explicit terms" : [
+               {
+                  "physical" : {
+                     "base_term_zone_name" : "",
+                     "use_zone_marker_for_match" : true,
+                     "has_term_frequency_markers" : true,
+                     "zone_marker_term_name" : "description",
+                     "has_zone_markers" : true,
+                     "term_frequency_marker_zone_name" : "Y",
+                     "is_posting_list" : true,
+                     "zone_marker_zone_name" : "zone_markers"
+                  },
+                  "document_payload_value_type" : {
+                     "data_type" : "string",
+                     "is_multivalued" : true,
+                     "is_nullable" : true
+                  },
+                  "name" : "DescriptionInd"
+               }
+            ]
+         },
+         {
+            "name" : "A",
+            "default term" : {
+               "physical" : {
+                  "is_posting_list" : true,
+                  "base_term_zone_name" : ""
+               },
+               "document_payload_value_type" : {
+                  "data_type" : "uint32",
+                  "is_nullable" : true
+               }
+            }
+         },
+         {
+            "default term" : {
+               "physical" : {
+                  "base_term_zone_name" : "",
+                  "is_posting_list" : true
+               },
+               "document_payload_value_type" : {
+                  "is_nullable" : true,
+                  "data_type" : "uint32"
+               }
+            },
+            "name" : "X"
+         },
+         {
+            "default term" : {
+               "physical" : {
+                  "base_term_zone_name" : "",
+                  "is_posting_list" : true
+               },
+               "document_payload_value_type" : {
+                  "is_nullable" : true,
+                  "data_type" : "uint32"
+               }
+            },
+            "name" : "Y"
+         },
+         {
+            "name" : "zone_markers",
+            "default term" : {
+               "document_payload_value_type" : {
+                  "is_nullable" : true,
+                  "data_type" : "uint32"
+               },
+               "physical" : {
+                  "is_posting_list" : true,
+                  "base_term_zone_name" : ""
+               },
+               "word_payload_value_type" : {
+                  "is_nullable" : true,
+                  "data_type" : "uint32"
+               }
+            }
+         },
+         {
+            "name" : "",
+            "default term" : {
+               "document_payload_value_type" : {
+                  "is_nullable" : true,
+                  "data_type" : "uint32"
+               },
+               "physical" : {
+                  "base_term_zone_name" : "",
+                  "is_posting_list" : true
+               }
+            }
+         }
+      ],
+      "name" : "store"
+   }
+}

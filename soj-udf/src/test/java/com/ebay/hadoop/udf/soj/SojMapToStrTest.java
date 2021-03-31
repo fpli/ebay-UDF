@@ -9,24 +9,24 @@ import org.junit.Test;
 
 public class SojMapToStrTest {
 
-  @Test
-  public void evaluateInOrder() throws Exception {
-    Map<String,String> sojMap = new LinkedHashMap<>();
-    sojMap.put("rdt","1");
-    sojMap.put("Encoding","gzip, deflate");
+    @Test
+    public void evaluateInOrder() throws Exception {
+        Map<String,String> sojMap = new LinkedHashMap<>();
+        sojMap.put("rdt","1");
+        sojMap.put("Encoding","gzip, deflate");
 
-    assertEquals("rdt=1&Encoding=gzip, deflate", new SojMapToStr().evaluate(
-        sojMap  ).toString());
+        assertEquals("rdt=1&Encoding=gzip, deflate", new SojMapToStr().evaluate(
+                sojMap  ).toString());
 
-  }
-  @Test
-  public void evaluateOutOfOrder() throws Exception {
-    Map<String,String> sojMap = new LinkedHashMap<>();
-    sojMap.put("Encoding","gzip, deflate");
-    sojMap.put("rdt","1");
+    }
+    @Test
+    public void evaluateOutOfOrder() throws Exception {
+        Map<String,String> sojMap = new LinkedHashMap<>();
+        sojMap.put("Encoding","gzip, deflate");
+        sojMap.put("rdt","1");
 
-    assertNotEquals("rdt=1&Encoding=gzip, deflate", new SojMapToStr().evaluate(
-        sojMap  ).toString());
+        assertNotEquals("rdt=1&Encoding=gzip, deflate", new SojMapToStr().evaluate(
+                sojMap  ).toString());
 
-  }
+    }
 }

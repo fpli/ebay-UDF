@@ -1,0 +1,302 @@
+{
+  "column_groups" : [
+    {
+      "column_group_type" : "dense",
+      "id" : 0,
+      "name" : "product_dense"
+    },
+    {
+      "column_group_type" : "sparse",
+      "id" : 1,
+      "name" : "product_sparse"
+    }
+  ],
+  "table" : {
+    "join_criteria" : [
+      {
+        "primary_join" : {
+          "table" : "product_clean_physical",
+          "term" : "InternalProductId",
+          "zone" : "attribute"
+        },
+        "secondary_join" : {
+          "table" : "product_clean_physical",
+          "term" : "InternalProductId",
+          "zone" : "attribute"
+        }
+      }
+    ],
+    "name" : "product_clean",
+    "primary_key" : [
+      {
+        "primary_term" : "InternalProductId",
+        "primary_zone" : "attribute"
+      }
+    ],
+    "version" : {
+      "major" : "1",
+      "minor" : "0"
+    },
+    "zones" : [
+      {
+        "default term" : {
+          "document_payload_value_type" : {
+            "data_type" : "uint32",
+            "is_nullable" : true
+          },
+          "term_reference" : {
+            "table" : "product_clean_physical",
+            "term" : "",
+            "zone" : ""
+          }
+        },
+        "name" : ""
+      },
+      {
+        "default term" : {
+          "document_payload_value_type" : {
+            "data_type" : "uint32",
+            "is_nullable" : true
+          },
+          "term_reference" : {
+            "table" : "product_clean_physical",
+            "term" : "",
+            "zone" : "description"
+          }
+        },
+        "name" : "description"
+      },
+      {
+        "default term" : {
+          "document_payload_value_type" : {
+            "data_type" : "string",
+            "is_multivalued" : true,
+            "is_nullable" : true
+          },
+          "term_reference" : {
+            "table" : "product_clean_physical",
+            "term" : "",
+            "zone" : "df"
+          }
+        },
+        "name" : "df"
+      },
+      {
+        "default term" : {
+          "document_payload_value_type" : {
+            "data_type" : "uint32",
+            "is_nullable" : true
+          },
+          "term_reference" : {
+            "table" : "product_clean_physical",
+            "term" : "",
+            "zone" : "gtin"
+          }
+        },
+        "name" : "gtin"
+      },
+      {
+        "default term" : {
+          "document_payload_value_type" : {
+            "data_type" : "uint32",
+            "is_nullable" : true
+          },
+          "term_reference" : {
+            "table" : "product_clean_physical",
+            "term" : "",
+            "zone" : "other_product_ids"
+          }
+        },
+        "name" : "other_product_ids"
+      },
+      {
+        "default term" : {
+          "document_payload_value_type" : {
+            "data_type" : "uint32",
+            "is_nullable" : true
+          },
+          "term_reference" : {
+            "table" : "product_clean_physical",
+            "term" : "",
+            "zone" : "title"
+          }
+        },
+        "name" : "title"
+      },
+      {
+        "default term" : {
+          "document_payload_value_type" : {
+            "data_type" : "uint32",
+            "is_nullable" : true
+          },
+          "term_reference" : {
+            "table" : "product_clean_physical",
+            "term" : "",
+            "zone" : "title_extensions"
+          }
+        },
+        "name" : "title_extensions"
+      },
+      {
+        "explicit terms" : [
+          {
+            "document_payload_value_type" : {
+              "data_type" : "uint32",
+              "is_multivalued" : true
+            },
+            "name" : "AllCats",
+            "term_reference" : {
+              "table" : "product_clean_physical",
+              "term" : "AllCats",
+              "zone" : "attribute"
+            }
+          },
+          {
+            "document_payload_value_type" : {
+              "data_type" : "uint32"
+            },
+            "name" : "DefaultLeafCat",
+            "term_reference" : {
+              "table" : "product_clean_physical",
+              "term" : "DefaultLeafCat",
+              "zone" : "attribute"
+            }
+          },
+          {
+            "document_payload_value_type" : {
+              "data_type" : "string",
+              "is_multivalued" : true,
+              "is_nullable" : true
+            },
+            "name" : "Description",
+            "term_reference" : {
+              "table" : "product_clean_physical",
+              "term" : "Description",
+              "zone" : "attribute"
+            }
+          },
+          {
+            "document_payload_value_type" : {
+              "data_type" : "string",
+              "is_multivalued" : true,
+              "is_nullable" : true
+            },
+            "name" : "GTINs",
+            "term_reference" : {
+              "table" : "product_clean_physical",
+              "term" : "GTINs",
+              "zone" : "attribute"
+            }
+          },
+          {
+            "document_payload_value_type" : {
+              "data_type" : "string"
+            },
+            "name" : "InternalProductId",
+            "term_reference" : {
+              "table" : "product_clean_physical",
+              "term" : "InternalProductId",
+              "zone" : "attribute"
+            }
+          },
+          {
+            "document_payload_value_type" : {
+              "data_type" : "uint32",
+              "is_multivalued" : true
+            },
+            "name" : "LeafCats",
+            "term_reference" : {
+              "table" : "product_clean_physical",
+              "term" : "LeafCats",
+              "zone" : "attribute"
+            }
+          },
+          {
+            "document_payload_value_type" : {
+              "data_type" : "uint32"
+            },
+            "name" : "Site",
+            "term_reference" : {
+              "table" : "product_clean_physical",
+              "term" : "Site",
+              "zone" : "attribute"
+            }
+          },
+          {
+            "document_payload_value_type" : {
+              "data_type" : "string"
+            },
+            "name" : "Title",
+            "term_reference" : {
+              "table" : "product_clean_physical",
+              "term" : "Title",
+              "zone" : "attribute"
+            }
+          },
+          {
+            "document_payload_value_type" : {
+              "data_type" : "string",
+              "is_multivalued" : true,
+              "is_nullable" : true
+            },
+            "name" : "ZoomGUIDs",
+            "term_reference" : {
+              "table" : "product_clean_physical",
+              "term" : "ZoomGUIDs",
+              "zone" : "attribute"
+            }
+          },
+          {
+            "document_payload_value_type" : {
+              "data_type" : "uint64"
+            },
+            "name" : "epid",
+            "term_reference" : {
+              "table" : "product_clean_physical",
+              "term" : "epid",
+              "zone" : "attribute"
+            }
+          },
+          {
+            "document_payload_value_type" : {
+              "data_type" : "string",
+              "is_multivalued" : true
+            },
+            "name" : "TitleClean",
+            "term_reference" : {
+              "table" : "product_clean_physical",
+              "term" : "TitleClean",
+              "zone" : "attribute"
+            }
+          },
+          {
+            "document_payload_value_type" : {
+              "data_type" : "string",
+              "is_multivalued" : true,
+              "is_nullable" : true
+            },
+            "name" : "gtin_norm",
+            "term_reference" : {
+              "table" : "product_clean_physical",
+              "term" : "gtin_norm",
+              "zone" : "attribute"
+            },
+            "tokenizer" : "gtin"
+          }
+        ],
+        "name" : "attribute"
+      },
+      {
+        "name" : "default_recall",
+        "target_zones" : [
+          "gtin",
+          "title"
+        ]
+      }
+    ]
+  },
+  "version" : {
+    "major" : "1",
+    "minor" : "0"
+  }
+}

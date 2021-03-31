@@ -1,0 +1,28 @@
+- hp_module_join:
+  name: bx.hp_module_join
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+  className: com.ebay.hadoop.udf.bx.ModuleIIDInfoClickImprn
+  description: Generate homepage module level metrics based on the pageview
+  parameters:
+    - module placements
+    - module impressions
+    - module click lists
+    - module view list
+    - module hscroll list
+  example: hp_module_join(map("5241_1","[{\"moduleId\":\"5241\",\"iid\":\"1\",\"moduleData\":\"interestType%3Aexplicit\"}]"),array("4776:RIVER:1:0:1"),array("4776.3949.1.1"),array("mi:5241|iid:1|dur:16"),array("mi:5241|iid:1"))
+
+- hp_popdest_join:
+  name: bx.hp_popdest_join
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+  className: com.ebay.hadoop.udf.bx.HPPopDestImprnClickExt
+  description: Generate homepage popular destination clicks/impressions based on the title name
+  parameters:
+    - module placements
+    - module clicks
+  example: hp_popdest_join(map("5241_1","[{\"moduleId\":\"5241\",\"iid\":\"1\",\"moduleData\":\"interestType%3Aexplicit\"}]"),array("5241.3949.1.1"))

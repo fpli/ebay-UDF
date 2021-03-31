@@ -77,6 +77,12 @@ public class GetTTestStatsValue extends GenericUDF {
         structFieldObjectInspectors.add(PrimitiveObjectInspectorFactory.writableDoubleObjectInspector);
         structFieldNames.add("upper_ci");
         structFieldObjectInspectors.add(PrimitiveObjectInspectorFactory.writableDoubleObjectInspector);
+        structFieldNames.add("cv");
+        structFieldObjectInspectors.add(PrimitiveObjectInspectorFactory.writableDoubleObjectInspector);
+        structFieldNames.add("skewness");
+        structFieldObjectInspectors.add(PrimitiveObjectInspectorFactory.writableDoubleObjectInspector);
+        structFieldNames.add("kurtosis");
+        structFieldObjectInspectors.add(PrimitiveObjectInspectorFactory.writableDoubleObjectInspector);
         StandardStructObjectInspector structObjectInspector = ObjectInspectorFactory.getStandardStructObjectInspector(structFieldNames,
                 structFieldObjectInspectors);
         return ObjectInspectorFactory.getStandardListObjectInspector(structObjectInspector);
@@ -108,12 +114,17 @@ public class GetTTestStatsValue extends GenericUDF {
                     structObjectInspector.getStructFieldRef("sum"));
             double sumOfSquare = (double) structObjectInspector.getStructFieldData(treatmentMetricSummary,
                     structObjectInspector.getStructFieldRef("sumofsquare"));
+            double sumOfCube = (double) structObjectInspector.getStructFieldData(treatmentMetricSummary,
+                    structObjectInspector.getStructFieldRef("sumOfCube"));
+            double sumOfTheFourthPower = (double) structObjectInspector.getStructFieldData(treatmentMetricSummary,
+                    structObjectInspector.getStructFieldRef("sumOfTheFourthPower"));
             long sampleCount = (long) structObjectInspector.getStructFieldData(treatmentMetricSummary,
                     structObjectInspector.getStructFieldRef("sampleCount"));
             long metricCount = (long) structObjectInspector.getStructFieldData(treatmentMetricSummary,
                     structObjectInspector.getStructFieldRef("metricCount"));
             combinationIdList.add(combinationId);
-            MetricSummary metricSummary = new MetricStatsEssence(metricId, sum, sumOfSquare, metricCount, sampleCount, timeKey);
+            MetricSummary metricSummary = new MetricStatsEssence(metricId, sum, sumOfSquare,
+                    sumOfCube, sumOfTheFourthPower, metricCount, sampleCount, timeKey);
             PITTreatmentMetricSummary pitTreatmentMetricSummary = new PITTreatmentMetricSummary(
                     TrtmtCombinationCodec.getTreatmentId(combinationId), trafficPct,
                     TrtmtCombinationCodec.getTreatType(combinationId), timeKey, metricId, metricSummary);
@@ -128,7 +139,7 @@ public class GetTTestStatsValue extends GenericUDF {
         MutableInt index = new MutableInt(0);
         metricStatsSummaryList.forEach(metricStatsSummary -> {
             long combinationId = getCombinationId(combinationIdList, metricStatsSummary.getTreatmentId());
-            Object[] summaryStruct = new Object[7];
+            Object[] summaryStruct = new Object[10];
             summaryStruct[0] = new LongWritable(combinationId);
             summaryStruct[1] = new DoubleWritable(metricStatsSummary.getNormalized());
             summaryStruct[2] = new DoubleWritable(metricStatsSummary.getLift());
@@ -136,6 +147,9 @@ public class GetTTestStatsValue extends GenericUDF {
             summaryStruct[4] = new DoubleWritable(metricStatsSummary.getPvalue());
             summaryStruct[5] = new DoubleWritable(metricStatsSummary.getLowerCI());
             summaryStruct[6] = new DoubleWritable(metricStatsSummary.getUpperCI());
+            summaryStruct[7] = new DoubleWritable(metricStatsSummary.getCv());
+            summaryStruct[8] = new DoubleWritable(metricStatsSummary.getSkewness());
+            summaryStruct[9] = new DoubleWritable(metricStatsSummary.getKurtosis());
             summaryList[index.intValue()] = summaryStruct;
             index.increment();
         });
