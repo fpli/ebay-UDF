@@ -36,34 +36,10 @@ public class SojTimestamp {
     String res;
     //        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
     //        sdf.setTimeZone(TimeZone.getTimeZone("GMT-7"));
-    Date date = SojTimestamp.formatter2.parseDateTime(s.substring(0, 10)).toDate();
+    Date date = formatter2.parseDateTime(s.substring(0, 10)).toDate();
     long ts = date.getTime();
     long sojTimestamp = (ts * MILLI2MICRO) + OFFSET;
     res = String.valueOf(sojTimestamp);
     return res;
   }
-
-  public static void main(String[] args) {
-    String sojTimestamp = getSojTimestamp("2020-04-20 03:06:22.903");
-    for (String arg : args) {
-
-    }
-
-
-
-    System.out.println();
-    System.out.println();
-    System.out.println("2020-04-27 04:32:03.201".equals("2020-04-27 04:32:03.201"));
-    System.out.println(getSojTimestamp("2020-04-27 04:32:03.201"));
-    System.out.println(getSojTimestamp("2020-04-27 04:32:03.201"));
-  }
-
-
-
-
-
-
-
-
-
 }
