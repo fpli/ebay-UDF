@@ -6,6 +6,7 @@ import com.ebay.hadoop.udf.ep.codec.DimensionCodec;
 import com.ebay.hadoop.udf.ep.codec.TreatmentInfoCodec;
 import com.ebay.hadoop.udf.ep.codec.TrtmtCombinationCodec;
 import com.ebay.hadoop.udf.ep.meta.QualificationType;
+import com.ebay.hadoop.udf.ep.meta.TreatedDecision;
 import com.ebay.hadoop.udf.ep.meta.TreatedType;
 import com.ebay.hadoop.udf.ep.meta.TreatmentType;
 import com.google.common.collect.Lists;
@@ -25,11 +26,13 @@ import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.junit.Test;
 
+import java.nio.ByteBuffer;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -222,5 +225,30 @@ public class EPUdfTest {
         args[3] = new GenericUDF.DeferredJavaObject(Lists.newArrayList(a, b));
         getTTestStatsValue.evaluate(args);
 
+    }
+
+    @Test
+    public void testGetTreatedEvents() {
+        GetTreatedEvents method = new GetTreatedEvents();
+        TreatedDecision treatedDecision1 = new TreatedDecision();
+        treatedDecision1.treated(1, TreatedType.XT);
+        treatedDecision1.treated(3, TreatedType.TRC);
+        ByteBuffer byteBuffer1 = treatedDecision1.toByteBuffer();
+        byte[] bytes1 = null;
+        if (byteBuffer1 != null) {
+            bytes1 = new byte[byteBuffer1.remaining()];
+            byteBuffer1.get(bytes1);
+        }
+        System.out.println(bytes1.toString());
+        assertEquals("1,3", method.evaluate(bytes1));
+
+        TreatedDecision treatedDecision2 = new TreatedDecision();
+        ByteBuffer byteBuffer2 = treatedDecision2.toByteBuffer();
+        byte[] bytes2 = null;
+        if (byteBuffer2 != null) {
+            bytes2 = new byte[byteBuffer2.remaining()];
+            byteBuffer2.get(bytes2);
+        }
+        assertNull(method.evaluate(bytes2));
     }
 }
