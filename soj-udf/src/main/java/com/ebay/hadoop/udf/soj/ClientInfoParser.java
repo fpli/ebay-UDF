@@ -25,11 +25,13 @@ public final class ClientInfoParser extends UDF {
       .addSearchString("&TDuration=")
       .addSearchString("&TPayload=")
       .addSearchString("&TMachine=")
+      .addSearchString("&corrId=")
+      .addSearchString("&nodeId=")
       .build();
 
   private static int isValidCIname(String key) {
     String candidates = "ForwardedFor|RemoteIP|Referer|ContentLength|Script|Server|Agent|Encoding"
-        + "|TPool|TStamp|TType|TName|TStatus|TDuration|TPayload|TMachine";
+        + "|TPool|TStamp|TType|TName|TStatus|TDuration|TPayload|TMachine|corrId|nodeId";
     return candidates.indexOf(key) >= 0 ? 1 : 0;
   }
 
