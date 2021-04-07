@@ -786,3 +786,15 @@
   description:
   parameters:
   example:
+
+- soj_parse_rlogid:
+  name: sojlib.soj_parse_rlogid
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.SojParseRlogid
+  description:
+  parameters:
+  example:

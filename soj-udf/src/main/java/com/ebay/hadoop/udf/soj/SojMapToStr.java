@@ -1,6 +1,7 @@
 package com.ebay.hadoop.udf.soj;
 
 import java.util.Map;
+
 import org.apache.commons.collections.MapUtils;
 import org.apache.hadoop.hive.ql.exec.UDF;
 import org.apache.hadoop.io.Text;
@@ -24,5 +25,4 @@ public class SojMapToStr extends UDF {
         }
         return null;
     }
-
 }

@@ -11,7 +11,8 @@ public class IsIntegerTest {
     @Test
     public void test() {
         IsInteger obj = new IsInteger();
-        assertEquals(new IntWritable(1), obj.evaluate(new Text("+234")));
+        assertEquals(new IntWritable(0), obj.evaluate(new Text("")));
+        assertEquals(new IntWritable(0), obj.evaluate(new Text(" ")));
         assertEquals(new IntWritable(0), obj.evaluate(new Text("++234")));
         assertEquals(new IntWritable(1), obj.evaluate(new Text("-234")));
         assertEquals(new IntWritable(1), obj.evaluate(new Text("234561")));
