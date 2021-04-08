@@ -16,7 +16,7 @@ public class SojParseRlogidTest {
         assertEquals(new Text("SLC"), sojParseRlogid.evaluate("t6pwehq%60%3C%3Dpie3a57d.%3C1002b-1397389e1f0-0xbc", "datacenter"));
         assertEquals(new Text("r1srcore"), sojParseRlogid.evaluate("t6pwehq%60%3C%3Dpie3a57d.%3C1002b-1397389e1f0-0xbc", "pool"));
         assertEquals(new Text("slc4b01c-97737d"), sojParseRlogid.evaluate("t6pwehq%60%3C%3Dpie3a57d.%3C1002b-1397389e1f0-0xbc", "machine"));
-        assertEquals(new Text("2012-08-29 17:59:39"), sojParseRlogid.evaluate("t6pwehq%60%3C%3Dpie3a57d.%3C1002b-1397389e1f0-0xbc", "timestamp"));
+        assertEquals(new Text("2012-08-29 10:59:39"), sojParseRlogid.evaluate("t6pwehq%60%3C%3Dpie3a57d.%3C1002b-1397389e1f0-0xbc", "timestamp"));
         assertEquals(new Text("0xbc"), sojParseRlogid.evaluate("t6pwehq%60%3C%3Dpie3a57d.%3C1002b-1397389e1f0-0xbc", "THREADID"));
         assertEquals(new Text("r1srcore::slc4b01c-97737d"), sojParseRlogid.evaluate("t6pwehq%60%3C%3Dpie3a57d.%3C1002b-1397389e1f0-0xbc", "poolmachine"));
 
