@@ -9,6 +9,12 @@ import java.nio.ByteBuffer;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/*
+ * This class is the UDF method to extract treated events from the encoded byte array.
+ * As spark cannot parse java byte array, change the parameter to Object as a workaround.
+ * Add ConciseSet and IntSet dependency to align with Touchstone repo.
+ *
+ */
 public class GetTreatedEvents extends UDF {
     public String evaluate(Object obj) {
         if (obj == null) {

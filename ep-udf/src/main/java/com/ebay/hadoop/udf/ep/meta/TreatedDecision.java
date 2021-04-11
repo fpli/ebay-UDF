@@ -5,6 +5,11 @@ import it.uniroma3.mat.extendedset.intset.ConciseSet;
 
 import java.nio.ByteBuffer;
 
+/*
+ * This class is used to mock treated events in UT.
+ * Add ConciseSet dependency to align with Touchstone repo.
+ *
+ */
 public class TreatedDecision {
     private TreatedType firstTreatedType;
 

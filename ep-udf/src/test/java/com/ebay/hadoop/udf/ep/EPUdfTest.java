@@ -239,7 +239,6 @@ public class EPUdfTest {
             bytes1 = new byte[byteBuffer1.remaining()];
             byteBuffer1.get(bytes1);
         }
-        System.out.println(bytes1.toString());
         assertEquals("1,3", method.evaluate(bytes1));
 
         TreatedDecision treatedDecision2 = new TreatedDecision();
