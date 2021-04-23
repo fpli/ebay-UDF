@@ -171,3 +171,15 @@
     - metric id
     - treatment metric summary group
   example:
+
+- get_treated_events:
+  name: ep.get_treated_events
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+  className: com.ebay.hadoop.udf.ep.GetTreatedEvents
+  description: Extract treated events from encoded bytes array
+  parameters:
+    - treated events bytes array
+  example:
