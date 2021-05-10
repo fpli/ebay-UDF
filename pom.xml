@@ -28,7 +28,23 @@
     <hadoop.version>2.7.1</hadoop.version>
     <hive.version>1.2.1</hive.version>
     <junit.version>4.11</junit.version>
+    <!-- eBay central repository -->
+    <distMgmtReleasesUrl>http://ebaycentral.qa.ebay.com/content/repositories/releases</distMgmtReleasesUrl>
+    <distMgmtSnapshotsUrl>http://ebaycentral.qa.ebay.com/content/repositories/snapshots</distMgmtSnapshotsUrl>
   </properties>
+
+  <distributionManagement>
+    <repository>
+      <id>raptor.releases</id>
+      <name>eBay Raptor Distribution Repository</name>
+      <url>${distMgmtReleasesUrl}</url>
+    </repository>
+    <snapshotRepository>
+      <id>raptor.snapshots</id>
+      <name>eBay Raptor Distribution Snapshot Repository</name>
+      <url>${distMgmtSnapshotsUrl}</url>
+    </snapshotRepository>
+  </distributionManagement>
 
     <dependencyManagement>
     <dependencies>
