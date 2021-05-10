@@ -10,7 +10,7 @@
   parameters:
   example:
 
-- base64_decode:
+- base64_encode:
   name: base64_encode
   owner:
   platform:
@@ -22,7 +22,7 @@
   parameters:
   example:
 
-- base64_decode:
+- current_user:
   name: current_user
   owner:
   platform:
@@ -34,7 +34,7 @@
   parameters:
   example:
 
-- base64_decode:
+- date2ms:
   name: date2ms
   owner:
   platform:
@@ -46,7 +46,7 @@
   parameters:
   example:
 
-- base64_decode:
+- decodeappflag:
   name: decodeappflag
   owner:
   platform:
@@ -58,7 +58,7 @@
   parameters:
   example:
 
-- base64_decode:
+- decrypt:
   name: decrypt
   owner:
   platform:
@@ -70,7 +70,7 @@
   parameters:
   example:
 
-- base64_decode:
+- encrypt:
   name: encrypt
   owner:
   platform:
@@ -82,7 +82,7 @@
   parameters:
   example:
 
-- base64_decode:
+- firstnameof:
   name: firstnameof
   owner:
   platform:
@@ -94,7 +94,7 @@
   parameters:
   example:
 
-- base64_decode:
+- is_ascii:
   name: is_ascii
   owner:
   platform:
@@ -106,7 +106,7 @@
   parameters:
   example:
 
-- base64_decode:
+- is_decimal:
   name: is_decimal
   owner:
   platform:
@@ -118,7 +118,7 @@
   parameters:
   example:
 
-- base64_decode:
+- lastnameof:
   name: lastnameof
   owner:
   platform:
@@ -130,7 +130,7 @@
   parameters:
   example:
 
-- base64_decode:
+- ms2date:
   name: ms2date
   owner:
   platform:
@@ -143,7 +143,7 @@
   example:
 
 
-- base64_decode:
+- ms2ts:
   name: ms2ts
   owner:
   platform:
@@ -156,7 +156,7 @@
   example:
 
 
-- base64_decode:
+- ts2ms:
   name: ts2ms
   owner:
   platform:
@@ -168,7 +168,7 @@
   parameters:
   example:
 
-- base64_decode:
+- udf_d8_id_obscure:
   name: udf_d8_id_obscure
   owner:
   platform:
@@ -180,7 +180,7 @@
   parameters:
   example:
 
-- base64_decode:
+- url_hex_encode:
   name: url_hex_encode
   owner:
   platform:
@@ -192,7 +192,7 @@
   parameters:
   example:
 
-- base64_decode:
+- utf8_to_ascii:
   name: utf8_to_ascii
   owner:
   platform:
@@ -204,7 +204,7 @@
   parameters:
   example:
 
-- base64_decode:
+- json_split:
   name: json_split
   owner:
   platform:
@@ -216,7 +216,7 @@
   parameters:
   example:
 
-- base64_decode:
+- json_map:
   name: json_map
   owner:
   platform:
@@ -224,6 +224,19 @@
     - apollorno
     - herculeslvs
   className: com.ebay.hadoop.udf.common.JsonMapUDF
+  description:
+  parameters:
+  example:
+
+- bytes2num:
+  name: bytes2num
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hermeslvs
+    - herculeslvs
+  className: com.ebay.hadoop.udf.common.ByteArrayToNumHive
   description:
   parameters:
   example:
