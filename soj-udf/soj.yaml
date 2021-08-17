@@ -267,7 +267,7 @@
   className: com.ebay.hadoop.udf.soj.SojExtractNVP
   description:
   parameters:
-  example: sojlib.soj_extract_nvp('h8:d3|h4:d9|', 'h4', ':', '|')
+  example: sojlib.soj_extract_nvp('h8:d3|h4:d9|', 'h4', '|', ':')
 
 - soj_get_base64encoded_bits_set:
   name: sojlib.soj_get_base64encoded_bits_set
@@ -798,3 +798,15 @@
   description:
   parameters:
   example:
+
+- soj_ex_list_nvp:
+  name: sojlib.soj_ex_list_nvp
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.SojExtractListNVP
+  description:
+  parameters:
+  example: sojlib.soj_ex_list_nvp('h8:d3|h4:d9|', 'h4', '|', ':')
