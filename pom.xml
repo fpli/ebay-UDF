@@ -20,6 +20,8 @@
     <module>bx-udf</module>
     <module>core-udf</module>
     <module>tags</module>
+    <module>ecg-udf</module>
+    <module>search-udf</module>
   </modules>
 
   <properties>
