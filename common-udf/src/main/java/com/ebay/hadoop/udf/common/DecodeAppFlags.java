@@ -2,6 +2,7 @@ package com.ebay.hadoop.udf.common;
 
 
 import com.ebay.hadoop.udf.common.encrypt.Base64Ebay;
+import com.ebay.hadoop.udf.tags.ETLUdf;
 import org.apache.hadoop.hive.ql.exec.Description;
 import org.apache.hadoop.hive.ql.exec.UDFArgumentException;
 import org.apache.hadoop.hive.ql.exec.UDFArgumentLengthException;
@@ -19,6 +20,7 @@ import java.util.List;
 @Description(
         name = "DecodeAppFlags",
         value = "_FUNC_(app_flags) - Decode Sojourner app flags into an array of boolean")
+@ETLUdf(name = "decodeappflag")
 public class DecodeAppFlags extends GenericUDF {
 
     private ObjectInspectorConverters.Converter converter;

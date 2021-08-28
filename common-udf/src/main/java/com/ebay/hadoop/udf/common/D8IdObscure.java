@@ -1,5 +1,6 @@
 package com.ebay.hadoop.udf.common;
 
+import com.ebay.hadoop.udf.tags.ETLUdf;
 import org.apache.hadoop.hive.ql.exec.UDF;
 
 /**
@@ -7,6 +8,7 @@ import org.apache.hadoop.hive.ql.exec.UDF;
  *
  * Please refer to com.ebay.dss.zeta.hive.LastnameOf for documentation details about this Class.
  */
+@ETLUdf(name = "udf_d8_id_obscure")
 public class D8IdObscure extends UDF {
     static long LowComplement = 238675309;
     static long HighComplement = 10 * ((long) Math.pow(2, 32));

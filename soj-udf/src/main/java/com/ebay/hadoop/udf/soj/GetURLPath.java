@@ -1,7 +1,9 @@
 package com.ebay.hadoop.udf.soj;
 
+import com.ebay.hadoop.udf.tags.ETLUdf;
 import org.apache.hadoop.hive.ql.exec.UDF;
 
+@ETLUdf(name = "soj_get_url_path")
 public class GetURLPath extends UDF {
     public String evaluate(String url) {
         if (url == null) {

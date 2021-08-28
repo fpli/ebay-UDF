@@ -1,11 +1,13 @@
 package com.ebay.hadoop.udf.common;
 
+import com.ebay.hadoop.udf.tags.ETLUdf;
 import org.apache.hadoop.hive.ql.exec.Description;
 import org.apache.hadoop.hive.ql.exec.UDF;
 import org.apache.hadoop.io.BytesWritable;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
 
+@ETLUdf(name = "soj_bytes2num")
 public class ByteArrayToNumHive extends UDF {
   @Description(name = "ByteArrayToNum",
     value = "_FUNC_(ByteWritable) - Returns numeric value of the Byte array",

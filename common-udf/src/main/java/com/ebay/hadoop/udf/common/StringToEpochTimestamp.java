@@ -4,6 +4,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
+import com.ebay.hadoop.udf.tags.ETLUdf;
 import org.apache.commons.lang.StringUtils;
 import org.apache.hadoop.hive.ql.exec.Description;
 import org.apache.hadoop.hive.ql.exec.UDF;
@@ -14,6 +15,7 @@ import org.apache.hadoop.hive.ql.udf.UDFType;
 		name = "StringToEpochTimestamp",
 		value = "_FUNC_(datetime Str, datetime format) - conver readable datetime String to milisecond",
 		extended = "Example:\n  > SELECT StringToEpochDate('2017-01-01 00:00:00.000', 'yyyy-MM-dd HH:mm:ss.SSS';\n")
+@ETLUdf(name = "ts2ms")
 public class StringToEpochTimestamp extends UDF {
 	long timestamp;
     public Long evaluate(String dateFormatted) throws ParseException {

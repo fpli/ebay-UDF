@@ -1,6 +1,7 @@
 package com.ebay.hadoop.udf.common;
 
 import com.ebay.hadoop.udf.common.utils.StrUtils;
+import com.ebay.hadoop.udf.tags.ETLUdf;
 import org.apache.hadoop.hive.ql.exec.UDF;
 
 /**
@@ -15,6 +16,7 @@ import org.apache.hadoop.hive.ql.exec.UDF;
  * In TD pipeline, dw_user.stg_user_pii_n_w.xfr was applied to generate additional "Firstname" and "Lastname" columns for downstream STT convenience.
  * In Spark pipeline, this UDF will be used to do the same thing so that the logics can match at each stage.
  */
+@ETLUdf(name = "lastnameOf")
 public class LastnameOf extends UDF {
 
     public String evaluate(String name) {

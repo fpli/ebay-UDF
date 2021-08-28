@@ -1,5 +1,6 @@
 package com.ebay.hadoop.udf.soj;
 
+import com.ebay.hadoop.udf.tags.ETLUdf;
 import org.apache.commons.lang.StringUtils;
 import org.apache.hadoop.hive.ql.exec.UDF;
 
@@ -11,7 +12,7 @@ import org.apache.hadoop.hive.ql.exec.UDF;
  *         element.
  *
  */
-
+@ETLUdf(name = "soj_list_last_element")
 public class SojListLastElement extends UDF {
 
 	public String evaluate(String str, String delimit) {

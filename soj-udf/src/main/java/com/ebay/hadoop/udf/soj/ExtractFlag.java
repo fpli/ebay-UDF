@@ -1,10 +1,12 @@
 package com.ebay.hadoop.udf.soj;
 
+import com.ebay.hadoop.udf.tags.ETLUdf;
 import com.ebay.sojourner.common.sojlib.SOJExtractFlag;
 import org.apache.hadoop.hive.ql.exec.UDF;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 
+@ETLUdf(name = "soj_extract_flag")
 public class ExtractFlag extends UDF {
     
     public IntWritable evaluate(Text sojFlag, int bitPos) {

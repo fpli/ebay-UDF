@@ -1,8 +1,10 @@
 package com.ebay.hadoop.udf.soj;
 
+import com.ebay.hadoop.udf.tags.ETLUdf;
 import jodd.util.StringUtil;
 import org.apache.hadoop.hive.ql.exec.UDF;
 
+@ETLUdf(name = "soj_str_between_endlist")
 public class StrBetweenEndList extends UDF {
     public String evaluate( String url, String start, String end ) {
         if (StringUtil.isBlank(url))

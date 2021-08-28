@@ -1,6 +1,7 @@
 package com.ebay.hadoop.udf.common;
 
 import com.ebay.hadoop.udf.common.utils.StrUtils;
+import com.ebay.hadoop.udf.tags.ETLUdf;
 import org.apache.hadoop.hive.ql.exec.UDF;
 
 /**
@@ -8,6 +9,7 @@ import org.apache.hadoop.hive.ql.exec.UDF;
  *
  * Please refer to com.ebay.dss.zeta.hive.LastnameOf for documentation details about this Class.
  */
+@ETLUdf(name = "firstnameOf")
 public class FirstnameOf extends UDF {
 
     public String evaluate(String name) {

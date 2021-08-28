@@ -19,6 +19,7 @@
     <module>hadoop-udf</module>
     <module>bx-udf</module>
     <module>core-udf</module>
+    <module>tags</module>
   </modules>
 
   <properties>
@@ -48,6 +49,18 @@
 
     <dependencyManagement>
     <dependencies>
+    <!--internal dependencies start -->
+    <dependency>
+      <groupId>com.ebay.hadoop.udf</groupId>
+      <artifactId>udf-tags</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>com.ebay.hadoop.udf.ep</groupId>
+      <artifactId>ep-udf</artifactId>
+      <version>1.4-SNAPSHOT</version>
+    </dependency>
+    <!--internal dependencies end -->
     <dependency>
       <groupId>org.apache.hadoop</groupId>
       <artifactId>hadoop-common</artifactId>

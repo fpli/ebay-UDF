@@ -1,5 +1,6 @@
 package com.ebay.hadoop.udf.soj;
 
+import com.ebay.hadoop.udf.tags.ETLUdf;
 import org.apache.hadoop.hive.ql.exec.UDF;
 
 /**
@@ -10,7 +11,7 @@ import org.apache.hadoop.hive.ql.exec.UDF;
  *         string.
  *
  */
-
+@ETLUdf(name = "soj_replace_char")
 public class SojReplaceRChar extends UDF {
 
 	public String evaluate(String str, String charList, String replaceChar) {

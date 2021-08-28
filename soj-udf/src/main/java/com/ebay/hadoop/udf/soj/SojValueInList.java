@@ -1,5 +1,6 @@
 package com.ebay.hadoop.udf.soj;
 
+import com.ebay.hadoop.udf.tags.ETLUdf;
 import org.apache.hadoop.hive.ql.exec.UDF;
 
 /**
@@ -11,7 +12,7 @@ import org.apache.hadoop.hive.ql.exec.UDF;
  *         string is available in list.
  *
  */
-
+@ETLUdf(name = "soj_value_in_list")
 public class SojValueInList extends UDF {
 
 	public String evaluate(String str, String delimit, String element) {

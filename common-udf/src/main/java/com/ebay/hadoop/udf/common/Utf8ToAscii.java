@@ -1,5 +1,6 @@
 package com.ebay.hadoop.udf.common;
 
+import com.ebay.hadoop.udf.tags.ETLUdf;
 import org.apache.hadoop.hive.ql.exec.UDF;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
@@ -28,6 +29,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
  *
  *      The UDF will convert all non-ASCII characters to user-defined subchar.
  */
+@ETLUdf(name = "utf8_to_ascii")
 public class Utf8ToAscii extends UDF {
 
     /*

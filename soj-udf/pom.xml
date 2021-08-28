@@ -25,6 +25,10 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.ebay.hadoop.udf</groupId>
+            <artifactId>udf-tags</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.ebay.hadoop.sojourner</groupId>
             <artifactId>sojourner-common</artifactId>
             <version>0.2.0-hadoop2-SNAPSHOT</version>

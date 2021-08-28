@@ -1,5 +1,6 @@
 package com.ebay.hadoop.udf.soj;
 
+import com.ebay.hadoop.udf.tags.ETLUdf;
 import org.apache.hadoop.hive.ql.exec.UDF;
 import org.apache.hadoop.hive.serde2.io.HiveDecimalWritable;
 
@@ -8,6 +9,7 @@ import java.nio.charset.Charset;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+@ETLUdf(name = "soj_md5_hash_128")
 public class SojMd5Hash128 extends UDF {
     public static final String MD5_ALGORITHM = "MD5";
     private MessageDigest msgDigest;

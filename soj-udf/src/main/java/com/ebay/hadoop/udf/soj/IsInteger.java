@@ -1,11 +1,13 @@
 package com.ebay.hadoop.udf.soj;
 
+import com.ebay.hadoop.udf.tags.ETLUdf;
 import com.google.common.primitives.Ints;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.hadoop.hive.ql.exec.UDF;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 
+@ETLUdf(name = "soj_isint")
 public class IsInteger extends UDF {
 
     @SuppressWarnings("unused")

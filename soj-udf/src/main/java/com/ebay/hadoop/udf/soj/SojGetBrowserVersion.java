@@ -1,5 +1,6 @@
 package com.ebay.hadoop.udf.soj;
 
+import com.ebay.hadoop.udf.tags.ETLUdf;
 import org.apache.commons.lang.StringUtils;
 import org.apache.hadoop.hive.ql.exec.UDF;
 
@@ -10,7 +11,7 @@ import org.apache.hadoop.hive.ql.exec.UDF;
  *         This UDF takes userAgent as input and returns Browser Version.
  *
  */
-
+@ETLUdf(name = "soj_get_browser_version")
 public class SojGetBrowserVersion extends UDF {
 
 	public String evaluate(String userAgent) {

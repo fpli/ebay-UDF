@@ -2,6 +2,7 @@ package com.ebay.hadoop.udf.common;
 
 import java.io.IOException;
 
+import com.ebay.hadoop.udf.tags.ETLUdf;
 import org.apache.commons.lang.StringUtils;
 import org.apache.hadoop.hive.ql.exec.Description;
 import org.apache.hadoop.hive.ql.exec.UDFArgumentException;
@@ -15,6 +16,7 @@ import org.apache.hadoop.security.UserGroupInformation;
 
 @UDFType(deterministic = true)
 @Description(name = "current_user", value = "_FUNC_() - Returns current user name", extended = "SessionState UserFromAuthenticator")
+@ETLUdf(name = "current_user")
 public class CurrentUser extends GenericUDF {
 	protected Text currentUser;
 

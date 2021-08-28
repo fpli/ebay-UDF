@@ -1,5 +1,6 @@
 package com.ebay.hadoop.udf.common;
 
+import com.ebay.hadoop.udf.tags.ETLUdf;
 import org.apache.hadoop.hive.ql.exec.UDF;
 
 import static java.lang.Character.isDigit;
@@ -21,7 +22,7 @@ import static java.lang.Character.isDigit;
  *      input: "0000.1"
  */
 
-
+@ETLUdf(name = "is_decimal")
 public class IsDecimal extends UDF {
 
     public boolean evaluate(String input, int digitLimit) {

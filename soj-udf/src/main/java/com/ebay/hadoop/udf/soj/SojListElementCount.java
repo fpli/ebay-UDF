@@ -1,7 +1,9 @@
 package com.ebay.hadoop.udf.soj;
 
+import com.ebay.hadoop.udf.tags.ETLUdf;
 import org.apache.hadoop.hive.ql.exec.UDF;
 
+@ETLUdf(name = "soj_list_element_count")
 public class SojListElementCount extends UDF {
 
 	public Integer evaluate(String str, String delimit) {

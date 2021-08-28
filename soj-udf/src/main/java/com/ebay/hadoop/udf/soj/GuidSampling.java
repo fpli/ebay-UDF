@@ -1,10 +1,12 @@
 package com.ebay.hadoop.udf.soj;
 
+import com.ebay.hadoop.udf.tags.ETLUdf;
 import com.ebay.sojourner.common.sojlib.SOJSampleHash;
 import org.apache.hadoop.hive.ql.exec.UDF;
 import org.apache.hadoop.io.BooleanWritable;
 import org.apache.hadoop.io.Text;
 
+@ETLUdf(name = "soj_guidsampling")
 public class GuidSampling extends UDF {
     public static final int MOD_VALUE = 1000;
     public static final int FETCH_BIT = 10;

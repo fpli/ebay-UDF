@@ -3,9 +3,11 @@ package com.ebay.hadoop.udf.common;
 import java.util.Arrays;
 import java.util.HashSet;
 
+import com.ebay.hadoop.udf.tags.ETLUdf;
 import org.apache.commons.lang.StringUtils;
 import org.apache.hadoop.hive.ql.exec.UDF;
 
+@ETLUdf(name = "url_hex_encode")
 public class UrlHexEncode extends UDF{
 
 	static final String hex = "0123456789abcdef";

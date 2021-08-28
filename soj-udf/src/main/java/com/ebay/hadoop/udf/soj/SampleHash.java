@@ -1,11 +1,13 @@
 package com.ebay.hadoop.udf.soj;
 
+import com.ebay.hadoop.udf.tags.ETLUdf;
 import org.apache.hadoop.hive.ql.exec.UDF;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+@ETLUdf(name = "soj_sample_hash")
 public class SampleHash extends UDF {
     public static final String MD5_ALGORITHM = "MD5";
     private MessageDigest msgDigest;

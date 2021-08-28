@@ -1,10 +1,12 @@
 package com.ebay.hadoop.udf.soj;
 
+import com.ebay.hadoop.udf.tags.ETLUdf;
 import com.ebay.sojourner.common.sojlib.SOJExtractNVP;
 import org.apache.commons.lang.StringUtils;
 import org.apache.hadoop.hive.ql.exec.UDF;
 import org.apache.hadoop.io.Text;
 
+@ETLUdf(name = "soj_extract_nvp")
 public class SojExtractNVP extends UDF{
 
 	public Text evaluate(String payloadValue, String PayloadKey, String keyDelimiter, String valueDelimiter){

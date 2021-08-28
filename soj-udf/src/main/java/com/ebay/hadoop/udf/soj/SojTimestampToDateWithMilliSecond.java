@@ -2,6 +2,8 @@ package com.ebay.hadoop.udf.soj;
 
 import java.util.Date;
 import java.util.TimeZone;
+
+import com.ebay.hadoop.udf.tags.ETLUdf;
 import org.apache.hadoop.hive.ql.exec.Description;
 import org.apache.hadoop.hive.ql.exec.UDF;
 import org.apache.hadoop.io.LongWritable;
@@ -13,6 +15,7 @@ import org.joda.time.format.DateTimeFormatter;
 @Description(
     name = "SojTimestampToDate",
     value = "_FUNC_(soj_timestamp) - Convert Sojourner timestamp to yyyy/MM/dd HH:mm:ss")
+@ETLUdf(name = "sojts2millsec")
 public final class SojTimestampToDateWithMilliSecond extends UDF {
 
   private static final long OFFSET = ((long) 25567) * 24 * 3600 * 1000;

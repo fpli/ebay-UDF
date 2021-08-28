@@ -1,9 +1,11 @@
 package com.ebay.hadoop.udf.soj;
 
+import com.ebay.hadoop.udf.tags.ETLUdf;
 import com.ebay.sojourner.common.sojlib.SOJListGetValueByIndex;
 import org.apache.hadoop.hive.ql.exec.UDF;
 import org.apache.hadoop.io.Text;
 
+@ETLUdf(name = "soj_list_get_val_by_idx")
 public class SojListGetValByIdx extends UDF{
 	
 	public Text evaluate(final Text str_vec, String delim, int index){

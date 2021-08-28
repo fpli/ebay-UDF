@@ -1,8 +1,10 @@
 package com.ebay.hadoop.udf.soj;
 
+import com.ebay.hadoop.udf.tags.ETLUdf;
 import com.ebay.sojourner.common.sojlib.SOJGetPageType;
 import org.apache.hadoop.hive.ql.exec.UDF;
 
+@ETLUdf(name = "soj_get_page_type")
 public class GetPageType extends UDF{
 	
 	public Integer evaluate(String itemId, String flags, int rdt, int id, Integer lkup, Integer fbp){

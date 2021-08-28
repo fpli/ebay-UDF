@@ -4,6 +4,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import com.ebay.hadoop.udf.tags.ETLUdf;
 import org.apache.hadoop.hive.ql.exec.Description;
 import org.apache.hadoop.hive.ql.exec.UDF;
 import org.apache.hadoop.hive.ql.udf.UDFType;
@@ -13,6 +14,7 @@ import org.apache.hadoop.hive.ql.udf.UDFType;
 		name = "EpochDateToString",
 		value = "_FUNC_(milisecond, date format) - conver milisecond to readable date String",
 		extended = "Example:\n  > SELECT EpochDateToString(1497033129000, 'yyyy-MM-dd';\n")
+@ETLUdf(name = "ms2date")
 public class EpochDateToString extends UDF {
     String dateFormatted;
     

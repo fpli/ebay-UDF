@@ -1,5 +1,6 @@
 package com.ebay.hadoop.udf.soj;
 
+import com.ebay.hadoop.udf.tags.ETLUdf;
 import org.apache.commons.lang.StringUtils;
 import org.apache.hadoop.hive.ql.exec.UDF;
 import org.apache.hadoop.io.Text;
@@ -7,6 +8,7 @@ import org.apache.hadoop.io.Text;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 
+@ETLUdf(name = "soj_url_decode_escapes")
 public class SOJURLDecodeEscapeHive extends UDF{
 
 	public Text evaluate(Text url, String enc){

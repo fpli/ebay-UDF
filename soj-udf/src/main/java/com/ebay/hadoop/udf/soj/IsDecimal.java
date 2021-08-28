@@ -1,5 +1,6 @@
 package com.ebay.hadoop.udf.soj;
 
+import com.ebay.hadoop.udf.tags.ETLUdf;
 import org.apache.hadoop.hive.ql.exec.UDF;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
@@ -25,7 +26,7 @@ import java.math.BigDecimal;
  *      input: "0000.1"
  */
 
-
+@ETLUdf(name = "soj_isdecimal")
 public class IsDecimal extends UDF {
 
     public IntWritable evaluate( Text instr, int p, int s) {

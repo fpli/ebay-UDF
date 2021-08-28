@@ -2,6 +2,7 @@ package com.ebay.hadoop.udf.common;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
+import com.ebay.hadoop.udf.tags.ETLUdf;
 import org.apache.hadoop.hive.ql.exec.UDF;
 
 /**
@@ -13,6 +14,7 @@ import org.apache.hadoop.hive.ql.exec.UDF;
  *
  * Otherwise, return the position of the first non-ASCII character in the string, starting from 1.
  */
+@ETLUdf(name = "is_ascii")
 public class IsAscii extends UDF {
 
     public int evaluate(String input) {

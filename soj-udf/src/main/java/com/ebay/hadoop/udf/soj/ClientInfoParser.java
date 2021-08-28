@@ -1,11 +1,13 @@
 package com.ebay.hadoop.udf.soj;
 
 import com.ebay.hadoop.udf.stringsearch.StringSearcherExt;
+import com.ebay.hadoop.udf.tags.ETLUdf;
 import org.apache.commons.lang.StringUtils;
 import org.apache.hadoop.hive.ql.exec.UDF;
 import org.apache.hadoop.io.Text;
 import org.neosearch.stringsearcher.Emit;
 
+@ETLUdf(name = "soj_parse_clientinfo")
 public final class ClientInfoParser extends UDF {
 
   StringSearcherExt<?> stringSearcher = StringSearcherExt.builder()
