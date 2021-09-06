@@ -90,4 +90,12 @@
   </dependencies>
     </dependencyManagement>
 
+  <profiles>
+    <profile>
+      <id>etl-udf-assembly</id>
+      <modules>
+        <module>etl-udf-assembly</module>
+      </modules>
+    </profile>
+  </profiles>
 </project>

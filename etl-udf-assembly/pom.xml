@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+      <artifactId>ebay-udf</artifactId>
+    <groupId>com.ebay.hadoop</groupId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+
+  <groupId>com.ebay.hadoop.udf</groupId>
+  <artifactId>etl-udf-assembly</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  <name>etl-udf-assembly</name>
+
+  <properties>
+    <maven.plugin.shade.version>3.2.4</maven.plugin.shade.version>
+    <etl.udf.shade.packageName>org.apache.spark.sql.ebay.shaded</etl.udf.shade.packageName>
+    <!-- please update the versions before deploying -->
+    <common.udf.version>1.1-SNAPSHOT</common.udf.version>
+    <soj.udf.version>1.20-SNAPSHOT</soj.udf.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.ebay.hadoop.udf.common</groupId>
+      <artifactId>common-udf</artifactId>
+      <version>${common.udf.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.ebay.hadoop.udf.soj</groupId>
+      <artifactId>soj-udf</artifactId>
+      <version>${soj.udf.version}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>${maven.plugin.shade.version}</version>
+        <configuration>
+          <shadedArtifactAttached>false</shadedArtifactAttached>
+          <artifactSet>
+            <includes>
+              <include>com.ebay.hadoop.udf.common:common-udf</include>
+              <include>com.ebay.hadoop.udf.soj:soj-udf</include>
+            </includes>
+          </artifactSet>
+          <relocations>
+            <relocation>
+              <pattern>com.ebay.hadoop.udf</pattern>
+              <shadedPattern>${etl.udf.shade.packageName}.udf</shadedPattern>
+              <includes>
+                <include>com.ebay.hadoop.udf.**</include>
+              </includes>
+            </relocation>
+          </relocations>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
