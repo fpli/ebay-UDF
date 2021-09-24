@@ -14,12 +14,12 @@ public class CommandGenerator {
 
         Yaml yaml = new Yaml();
 
-        List<Map<String, Object>> list = yaml.load(new FileInputStream(new File("xxx/ebay-UDF/soj-udf/soj.yaml")));
+        List<Map<String, Object>> list = yaml.load(new FileInputStream(new File("soj-udf/soj.yaml")));
 
-        createTestFunctions(list, "soj", "soj-udf-1.15-SNAPSHOT-jar-with-dependencies.jar", "apollorno");
+//        createTestFunctions(list, "soj", "soj-udf-1.21-SNAPSHOT-jar-with-dependencies.jar", "apollorno");
 
 
-//        createProductionFunctions(list, "soj", "soj-udf-1.15-SNAPSHOT-jar-with-dependencies.jar");
+        createProductionFunctions(list, "soj", "soj-udf-1.21-SNAPSHOT-jar-with-dependencies.jar", "herculeslvs");
 
     }
 
