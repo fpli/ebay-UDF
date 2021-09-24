@@ -40,7 +40,7 @@ public class SojExtractNVP extends UDF{
 				String searchKey = keyDelimiter + key + valueDelimiter;
 				int l = kLen + kDelimiterLen + vDelimiterLen;
 				int startPos = value.indexOf(searchKey);
-				if (startPos > 0) {
+				if (startPos >= 0) {
 					if (value.length() > l + startPos) {
 						int endPos = value.indexOf(keyDelimiter, l + startPos);
 						if (endPos >= 0) {
