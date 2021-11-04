@@ -43,18 +43,7 @@
             <artifactId>hive-exec</artifactId>
             <version>${hive.version}</version>
         </dependency>
-
-
-
-
     </dependencies>
-    <properties>
-
-
-        <java.version>${java.version}</java.version>
-
-    </properties>
-
 
     <build>
         <plugins>
@@ -69,7 +58,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <version>3.1.1</version>
                 <configuration>
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>

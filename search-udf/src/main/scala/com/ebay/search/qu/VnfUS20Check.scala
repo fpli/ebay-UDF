@@ -1,9 +1,6 @@
 package com.ebay.search.qu
 
-import org.apache.commons.lang.StringUtils
 import org.apache.hadoop.hive.ql.exec.UDF
-import com.ebay.hadoop.scalaplatform.helpers.SojHelpers
-import com.ebay.searchscience.aspects.normalize.JsonRegexAspectNormalizer
 
 class VnfUS20Check extends UDF {
   val defVal = new java.lang.String("0")
@@ -19,4 +16,3 @@ class VnfUS20Check extends UDF {
     }
   }
 }
-

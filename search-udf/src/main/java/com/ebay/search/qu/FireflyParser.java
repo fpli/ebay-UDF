@@ -1,12 +1,6 @@
 package com.ebay.search.qu;
 
-import org.apache.commons.lang.StringUtils;
-import org.apache.hadoop.hive.ql.exec.UDF;
-import com.ebay.hadoop.scalaplatform.helpers.SojHelpers;
-import com.ebay.hadoop.scalaplatform.spark.SparkUtils;
-import java.util.*;
 import java.io.*;
-import java.util.zip.GZIPInputStream;
 
 import org.apache.commons.codec.binary.Base64;
 import com.ebay.cassini.common.exceptions.SBEException;
@@ -52,7 +46,7 @@ public class FireflyParser {
         InputStream is = null;
         try {
             // configFilePath is the full file path to the test_config.json file.
-            is = com.ebay.search.qu.util.CommonUtils.accessFile(configFilePath);
+            is = com.ebay.search.util.CommonUtils.accessFile(configFilePath);
 
             // Create QueryApi from the input stream.
             ms_api = QueryApiManager.createQueryApi(is);

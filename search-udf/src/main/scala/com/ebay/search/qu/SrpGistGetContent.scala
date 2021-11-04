@@ -2,21 +2,12 @@
 package com.ebay.search.qu
 
 import java.util.Base64
-import java.io._
-import java.net.{URI, URLDecoder}
+import java.net.URLDecoder
 
 import com.ebay.tracking.search._
 import com.ebay.tracking._
-import org.apache.avro.SchemaNormalization
-import org.apache.avro.message.{BinaryMessageDecoder, BinaryMessageEncoder}
-import org.apache.avro.specific.SpecificData
 
-import org.apache.commons.lang.StringUtils
 import org.apache.hadoop.hive.ql.exec.UDF
-import com.ebay.hadoop.scalaplatform.helpers.SojHelpers
-import org.apache.commons.lang.StringUtils
-import com.ebay.cassini.tokenizer.api.TokenizerArena
-import com.ebay.hadoop.scalaplatform.spark._
 
 /**
  * A UDF to get a specific serialized content of a SRP extracted from a SRP tracking input.

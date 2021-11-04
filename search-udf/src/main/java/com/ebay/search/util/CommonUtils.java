@@ -1,42 +1,14 @@
-package com.ebay.search.qu.util;
+package com.ebay.search.util;
 
-import java.net.UnknownHostException;
 import java.util.List;
 
 import java.io.*;
-import java.util.*;
-
-import org.apache.log4j.Logger;
-import org.apache.log4j.Level;
-
-import java.io.File;
 import java.io.IOException;
-import java.io.Serializable;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.Map.Entry;
-
 import java.math.BigDecimal;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.io.OutputStream;
 import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.zip.GZIPOutputStream;
 import java.util.zip.GZIPInputStream;
 
 /**

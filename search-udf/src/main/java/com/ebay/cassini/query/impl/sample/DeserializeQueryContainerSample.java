@@ -49,7 +49,7 @@ public class DeserializeQueryContainerSample {
         String configFilePath = "no_mds_api_config.json";
 
         // configFilePath is the full file path to the test_config.json file.
-        InputStream is = com.ebay.search.qu.util.CommonUtils.accessFile(configFilePath);
+        InputStream is = com.ebay.search.util.CommonUtils.accessFile(configFilePath);
 
         // Create QueryApi from the input stream.
         QueryApi api = QueryApiManager.createQueryApi(is);

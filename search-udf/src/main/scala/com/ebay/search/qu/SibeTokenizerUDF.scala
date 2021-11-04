@@ -1,6 +1,5 @@
 package com.ebay.search.qu
 
-import org.apache.commons.lang.StringUtils
 import org.apache.hadoop.hive.ql.exec.UDF
 import com.ebay.hadoop.scalaplatform.helpers.SojHelpers
 
