@@ -19,8 +19,7 @@
         <java.version>1.8</java.version>
         <scala.version>2.11.8</scala.version>
         <scala.binary.version>2.11</scala.binary.version>
-        <!-- <scalatest.version>2.2.4</scalatest.version> -->
-        <scalatest.version>2.11</scalatest.version>
+        <scalatest.version>3.0.3</scalatest.version>
         <spark.version>2.1.1</spark.version>
         <flink.version>1.6.1</flink.version>
         <hadoop.version>2.7.1</hadoop.version>
@@ -218,6 +217,11 @@
             <artifactId>query-plugin</artifactId>
             <version>3.5.17-RELEASE</version>
         </dependency>
+        <dependency>
+            <groupId>org.scalatest</groupId>
+            <artifactId>scalatest_${scala.binary.version}</artifactId>
+            <scope>test</scope>
+        </dependency>
 
     </dependencies>
 
@@ -255,6 +259,10 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.scalatest</groupId>
+                <artifactId>scalatest-maven-plugin</artifactId>
             </plugin>
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
