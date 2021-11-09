@@ -25,14 +25,29 @@ class SrpGistString extends UDF {
     var s1:java.lang.String = s
 
     if (url_decode_flag == 1) {
-      s1 = URLDecoder.decode(s, "UTF-8")
+      try {
+        s1 = URLDecoder.decode(s, "UTF-8")
+      }
+      catch {
+        case e: Exception => {
+          // best effort style
+        }
+      }
     }
 
     try {
       var srp: Srp= null
       if (base64_flag ==  1)  {
-        val bytes = Base64.getDecoder.decode(s1)
-        srp = srpDecoder.decode(bytes)
+        try {
+          val bytes = Base64.getDecoder.decode(s1)
+          srp = srpDecoder.decode(bytes)
+        }
+        catch {
+          case e: Exception => {
+            // best effort style
+            srp = srpDecoder.decode(s1.getBytes())
+          }
+        }
       }
       else {
         srp = srpDecoder.decode(s1.getBytes())
