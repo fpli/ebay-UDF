@@ -3,7 +3,7 @@ package com.ebay.search.qu
 import com.ebay.cassini.tokenizer.api.TokenizerArena
 import org.apache.hadoop.hive.ql.exec.UDF
 
-import scala.collection.JavaConversions._
+import scala.collection.JavaConverters._
 
 class CassiniTokenizerUDF extends UDF {
   /**  Tokenizer used in Cassini. */
@@ -16,7 +16,7 @@ class CassiniTokenizerUDF extends UDF {
       // SojHelpers.stringNormalizedDSBEStyle(Option(s), siteId).get
       val s1 = Option(s)
       s1.map(q => normalizer.tokenize(siteId.toString, v, q)
-        .getOutputTokenList.map { t => t.getData }
+        .getOutputTokenList.asScala.map { t => t.getData }
         .mkString(" "))
         .get
     }

@@ -50,9 +50,7 @@ import java.{util => jutil}
  *
  */
 
-@Description(name = "complexTagReader", value = "_FUNC_(base64_encoded_payload, complex_tag_name) - "
-  + "Parses the given Avro Base64 encoded data according to the given complex type specification"
-  + "Example:\n" + "select _FUNC_('wwE7ZdSosGGJDwIAEG0', 'srpGist'")
+@Description(name = "complexTagReader", value = "_FUNC_(base64_encoded_payload, complex_tag_name) - Parses the given Avro Base64 encoded data according to the given complex type specification Example:\n select _FUNC_('wwE7ZdSosGGJDwIAEG0', 'srpGist'")
 class ComplexTagUDF extends GenericUDF {
 
   @transient var payloadOI: StringObjectInspector = _
@@ -116,16 +114,19 @@ class ComplexTagUDF extends GenericUDF {
    * @return Complex Tag With Parsed Struct Hive Schema
    */
   override def evaluate(arguments: Array[GenericUDF.DeferredObject]): AnyRef = {
-    val payloadString: java.lang.String = payloadOI.getPrimitiveJavaObject(arguments(0).get())
-    val binaryInput = Base64.decodeBase64(payloadString)
-    val (fingerprint, binaryData) = (fingerprintStringForTag(binaryInput.slice(2, 10)), binaryInput.drop(10))
-    val writerSchema: Schema = schemaForFingerprint(fingerprint)
-    val decoder = DecoderFactory.get().binaryDecoder(binaryData, 0, binaryInput.length, null)
-    val reader = new GenericDatumReader[Any](writerSchema, trackingSchemaLatest)
-    val result = reader.read(null, decoder).asInstanceOf[org.apache.avro.generic.GenericRecord]
-    val avroWritable = new AvroGenericRecordWritable(result)
-    avroWritable.setFileSchema(trackingSchemaLatest) // Set OutputSchema
-    avroSerde.deserialize(avroWritable)
+    if(arguments(0).get() == null) null
+    else {
+      val payloadString: java.lang.String = payloadOI.getPrimitiveJavaObject(arguments(0).get())
+      val binaryInput = Base64.decodeBase64(payloadString)
+      val (fingerprint, binaryData) = (fingerprintStringForTag(binaryInput.slice(2, 10)), binaryInput.drop(10))
+      val writerSchema: Schema = schemaForFingerprint(fingerprint)
+      val decoder = DecoderFactory.get().binaryDecoder(binaryData, 0, binaryInput.length, null)
+      val reader = new GenericDatumReader[Any](writerSchema, trackingSchemaLatest)
+      val result = reader.read(null, decoder).asInstanceOf[org.apache.avro.generic.GenericRecord]
+      val avroWritable = new AvroGenericRecordWritable(result)
+      avroWritable.setFileSchema(trackingSchemaLatest) // Set OutputSchema
+      avroSerde.deserialize(avroWritable)
+    }
   }
 
 
