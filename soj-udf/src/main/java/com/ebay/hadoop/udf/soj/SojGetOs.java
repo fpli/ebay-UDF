@@ -15,8 +15,8 @@ public class SojGetOs  extends UDF{
         if (str_vec == null) {
             return new Text("unknown");
         }
-        String strUpper = str_vec.toString().toUpperCase();
-        String strOrigin = str_vec.toString();
+        String strUpper = str_vec.toUpperCase();
+        String strOrigin = str_vec;
         if(FunctionUtil.isContain(strUpper,"Windows-NT".toUpperCase()))
         {
             return new Text("Windows NT");
@@ -81,7 +81,7 @@ public class SojGetOs  extends UDF{
         {
             return new Text("Windows phone OS");
         }
-        else if (FunctionUtil.isContain(strUpper,"Windows".toUpperCase())||FunctionUtil.isContain(strUpper,"Win".toUpperCase()))
+        else if (FunctionUtil.isContain(strUpper,"Windows".toUpperCase())||FunctionUtil.isContain(strOrigin,"Win"))
         {
             return new Text("Windows ");
         }
