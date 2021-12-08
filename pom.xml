@@ -22,6 +22,7 @@
     <module>tags</module>
     <module>ecg-udf</module>
     <module>search-udf</module>
+    <module>search-udf/search-udf-vnfnormalizer-shaded</module>
   </modules>
 
   <properties>

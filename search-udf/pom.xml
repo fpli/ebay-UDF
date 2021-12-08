@@ -11,7 +11,7 @@
 
     <groupId>com.ebay.hadoop.scalaplatform.spark</groupId>
     <artifactId>search-qu-udf</artifactId>
-    <version>1.5-SNAPSHOT</version>
+    <version>1.6-SNAPSHOT</version>
 
     <properties>
         <encoding>UTF-8</encoding>
@@ -75,23 +75,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.ebay.searchscience</groupId>
-            <artifactId>vnfnormalizer</artifactId>
-            <version>1.0.4</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.scala-lang</groupId>
-                    <artifactId>scala-library</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.scala-lang</groupId>
-                    <artifactId>scala-reflect</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.scala-lang</groupId>
-                    <artifactId>scala-compiler</artifactId>
-                </exclusion>
-            </exclusions>
+            <groupId>com.ebay.hadoop.udf</groupId>
+            <artifactId>search-udf-vnfnormalizer-shaded</artifactId>
+            <version>1.1.1</version>
         </dependency>
 
         <dependency>
@@ -103,6 +89,12 @@
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-reflect</artifactId>
+            <version>${scala.version}</version>
+            <scope>${scala.scope}</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scalap</artifactId>
             <version>${scala.version}</version>
             <scope>${scala.scope}</scope>
         </dependency>
@@ -278,7 +270,7 @@
                 </configuration>
                 <executions>
                     <execution>
-                        <id>make-assembly</id>
+                        <id>binary</id>
                         <phase>package</phase>
                         <goals>
                             <goal>single</goal>
