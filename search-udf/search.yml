@@ -85,3 +85,16 @@ parameters:
   - Base64EncodedString
   - CaseSensitiveComplexTagName
 example: complexTagReader('wwGnJNADX5smHgAAAgAAEDEyMzQ1Njc4EE9yaWdpbmFs4JoFxusBAAAKZp6HneW2Ce7BtJjqGpSxkbbpEpj1zsnvHeCO7LfpEpCHgYfqHYLKyd6yF+iepqONJ9L6p7eGB4Sy9rC6GNCMjabAEOzP0PKDIoaxpYueEua30ebQI9aF5MWqE+bBgfS/H66f06rCDYTl6Nn3HoLyq/y8BsDEtuHwF8aQyprDEPSm0ZGJIqqbseS8BqLKgdDwF87SlLiGB+Cyi6u6GPSx7pHEELzf5LSKIozu28TWEdygtoWMI7rS3PO/EO716PGCIqjXr9qxF6L6xICMJ+T055GeB+bhzfnfGKap+LjBEOaR39eGIpziyrS/EMSQoe+BItCVsIy9Btj16enwF8D4x+W8BsSC9tDwF6KOv7TEELjwytuKIuzLvL+IB/KjsOG7GPLchJzNFZrtjdeiJZSewdC8Bvzcvd7wF9jsu6W0F7ien8GPJ5iE/M61F66Q/ZqRJ+7+otXAEMTfjPGEIpyz3be8Bry4zbTwF/br38WqE/TO/PO/H9aSld7AEK7WsIeFIqjCkveHB7bSr6W7GLLFkdLDEMre3saJIpCL4fHMFaKBo6iiJdqin9q8Bq638cfwF/7risjAEObB7NGEIuS8hqPEEMztlcmKIpjxxafjBwD228K23wuW6Mfymh2QpN3pnQe8hfK03xj4pJiGmwf8gMXl2xi+rdyxvxDwyY3pgSKyvaW+8BLwz72S8R3w3YivwAaorceL9Bf28ZWjwBC0xqbpgyLewda5ngf8hqWc4BjqnO63wRDQ57jVhiL6lrPewRDckPmchyLijuPMhgegk5m0uhjCyMu3jgr68M/avxsAAA==', 'srpGist')
+
+- queryType:
+name: search.queryType
+owner:
+platform:
+- hermesrno
+- apollorno
+- hercules
+className: com.ebay.search.qu.QueryTypeUDF
+description:
+parameters:
+- query
+example: queryType('hello -world')
