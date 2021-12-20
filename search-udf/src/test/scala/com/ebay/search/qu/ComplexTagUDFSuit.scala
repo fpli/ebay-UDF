@@ -3,7 +3,9 @@ package com.ebay.search.qu
 import com.ebay.search.util.TagNameNotFoundException
 import org.apache.hadoop.hive.ql.udf.generic.GenericUDF.{DeferredJavaObject, DeferredObject}
 import org.apache.hadoop.hive.serde2.objectinspector.ObjectInspector
-import org.apache.hadoop.hive.serde2.objectinspector.primitive.JavaConstantStringObjectInspector
+import org.apache.hadoop.hive.serde2.objectinspector.primitive.{JavaConstantStringObjectInspector, PrimitiveObjectInspectorFactory}
+import org.apache.hadoop.hive.serde2.typeinfo.PrimitiveTypeInfo
+import org.apache.hadoop.io.Text
 import org.scalatest.FunSuite
 import org.scalatest.Matchers._
 
@@ -36,5 +38,29 @@ class ComplexTagUDFSuit extends FunSuite {
     val deferredObjectArray: Array[DeferredObject] = Array(new DeferredJavaObject(null),
       new DeferredJavaObject(stringOITagName))
    new ComplexTagUDF().evaluate(deferredObjectArray) should be (null)
+  }
+
+  test("Init should verify parameters") {
+    val stringOIPayload = PrimitiveObjectInspectorFactory.javaStringObjectInspector
+    val tagStringType  = new PrimitiveTypeInfo()
+    tagStringType.setTypeName("string")
+    val stringOITagName = PrimitiveObjectInspectorFactory.getPrimitiveWritableConstantObjectInspector(tagStringType,
+      new Text("srpGist"))
+    val udfObject = new ComplexTagUDF()
+    val objectInspectorArray : Array[ObjectInspector] = Array(stringOIPayload, stringOITagName)
+    udfObject.initialize(objectInspectorArray)
+  }
+
+
+  test("Good Payload should return non-null value") {
+    val stringOIPayload = PrimitiveObjectInspectorFactory.javaStringObjectInspector
+    val stringOITagName  = new JavaConstantStringObjectInspector("srpGist")
+    val udfObject = new ComplexTagUDF()
+    val objectInspectorArray : Array[ObjectInspector] = Array(stringOIPayload, stringOITagName)
+    udfObject.initialize(objectInspectorArray)
+    val deferredObjectArray: Array[DeferredObject] = Array(new DeferredJavaObject(payload),
+      new DeferredJavaObject("srpGist"))
+    udfObject.evaluate(deferredObjectArray) shouldNot be (null)
+    println(udfObject.evaluate(deferredObjectArray))
   }
 }

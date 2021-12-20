@@ -5,13 +5,13 @@ import com.ebay.tracking.Schemas
 import org.apache.avro.Schema
 import org.apache.avro.Schema.Parser
 import org.apache.avro.SchemaNormalization.parsingFingerprint
-import org.apache.avro.generic.GenericDatumReader
-import org.apache.avro.io.DecoderFactory
 import org.apache.commons.codec.binary.Base64
 import org.apache.hadoop.hive.ql.exec.{Description, UDFArgumentException, UDFArgumentLengthException, UDFArgumentTypeException}
 import org.apache.hadoop.hive.ql.udf.generic.GenericUDF
 import org.apache.hadoop.hive.serde2.avro.{AvroGenericRecordWritable, AvroSerDe, AvroSerdeUtils}
-import org.apache.hadoop.hive.serde2.objectinspector.{ObjectInspector, ObjectInspectorUtils}
+import org.apache.hadoop.hive.serde2.objectinspector.PrimitiveObjectInspector.PrimitiveCategory
+import org.apache.hadoop.hive.serde2.objectinspector.{ObjectInspector, ObjectInspectorUtils, PrimitiveObjectInspector}
+import org.apache.hadoop.hive.serde2.objectinspector.primitive.PrimitiveObjectInspectorConverter.TextConverter
 import org.apache.hadoop.hive.serde2.objectinspector.primitive.StringObjectInspector
 import java.util.Properties
 import java.{util => jutil}
@@ -53,12 +53,14 @@ import java.{util => jutil}
 @Description(name = "complexTagReader", value = "_FUNC_(base64_encoded_payload, complex_tag_name) - Parses the given Avro Base64 encoded data according to the given complex type specification Example:\n select _FUNC_('wwE7ZdSosGGJDwIAEG0', 'srpGist'")
 class ComplexTagUDF extends GenericUDF {
 
-  @transient var payloadOI: StringObjectInspector = _
-  @transient var trackingSchemaLatest: Schema = _
-  @transient val fingerprintToSchemaMap = new jutil.HashMap[String, Schema]()
-  @transient val supportedTags = new jutil.HashSet[String]()
-  @transient var tagNameString: java.lang.String = null
-  @transient var avroSerde: AvroSerDe = null
+  @transient private var payloadOI: StringObjectInspector = _
+  @transient private var trackingSchemaLatest: Schema = _
+  @transient private val fingerprintToSchemaMap = new jutil.HashMap[String, Schema]()
+  @transient private val supportedTags = new jutil.HashSet[String]()
+  @transient private var tagNameString: String = null
+  @transient private var avroSerde: AvroSerDe = null
+  @transient private var inputPayloadObjectConverter: TextConverter = null
+  @transient private var avroWritable: AvroGenericRecordWritable = null
 
   /**
    * Initialize Based on given ObjectInspectors
@@ -70,18 +72,19 @@ class ComplexTagUDF extends GenericUDF {
    */
   override def initialize(arguments: Array[ObjectInspector]): ObjectInspector = {
     /*** All checks must be passed to proceed further **/
-    tagNameString = new String(getConstantStringValue(arguments, 1))
     validArguments(arguments)
     /** Initialize Fingerprints Map **/
     initFingerprintsToSchemaMap
     trackingSchemaLatest = new Parser().parse(Schemas.latest(tagNameString))
-    /** Set up Avro SerDe Object and Initialize it **/
+    /** Set up Avro SerDe & Writable Object and Initialize it **/
+    avroWritable = new AvroGenericRecordWritable()
     avroSerde = new AvroSerDe()
     val propertiesWithSchema = new Properties()
     propertiesWithSchema.setProperty(AvroSerdeUtils.AvroTableProperties.SCHEMA_LITERAL.getPropName(), trackingSchemaLatest.toString())
     avroSerde.initialize(null, propertiesWithSchema)
     /*** Initialize up ObjectInspectors **/
     payloadOI = arguments(0).asInstanceOf[StringObjectInspector]
+    inputPayloadObjectConverter = new TextConverter(payloadOI)
     avroSerde.getObjectInspector
   }
 
@@ -102,9 +105,11 @@ class ComplexTagUDF extends GenericUDF {
         + "1st: Payload [Base64 Encoded], 2nd: Complex Tag Name")
     else if (!ObjectInspectorUtils.isConstantObjectInspector(arguments(1)))
       throw new UDFArgumentTypeException(1, getFuncName + " argument 2 may only be a constant (tag name)")
-    else if(!arguments(0).isInstanceOf[StringObjectInspector])
-      throw new UDFArgumentException("Argument Complex Tag must be a String")
-    else if(!supportedTags.contains(tagNameString))
+    else if((!arguments(0).isInstanceOf[PrimitiveObjectInspector]) ||
+      (arguments(0).asInstanceOf[PrimitiveObjectInspector].getPrimitiveCategory != PrimitiveCategory.STRING))
+      throw new UDFArgumentException("Argument Payload must be a String")
+    tagNameString = new String(getConstantStringValue(arguments, 1))
+    if(!supportedTags.contains(tagNameString))
       throw new TagNameNotFoundException(s"Tag Name must be one of the : ${supportedTags.toString}")
   }
 
@@ -114,21 +119,39 @@ class ComplexTagUDF extends GenericUDF {
    * @return Complex Tag With Parsed Struct Hive Schema
    */
   override def evaluate(arguments: Array[GenericUDF.DeferredObject]): AnyRef = {
-    if(arguments(0).get() == null) null
+    val payloadObject = arguments(0).get()
+    if(badPayload(payloadObject)) null
     else {
-      val payloadString: java.lang.String = payloadOI.getPrimitiveJavaObject(arguments(0).get())
-      val binaryInput = Base64.decodeBase64(payloadString)
-      val (fingerprint, binaryData) = (fingerprintStringForTag(binaryInput.slice(2, 10)), binaryInput.drop(10))
-      val writerSchema: Schema = schemaForFingerprint(fingerprint)
-      val decoder = DecoderFactory.get().binaryDecoder(binaryData, 0, binaryInput.length, null)
-      val reader = new GenericDatumReader[Any](writerSchema, trackingSchemaLatest)
-      val result = reader.read(null, decoder).asInstanceOf[org.apache.avro.generic.GenericRecord]
-      val avroWritable = new AvroGenericRecordWritable(result)
-      avroWritable.setFileSchema(trackingSchemaLatest) // Set OutputSchema
-      avroSerde.deserialize(avroWritable)
+      try {
+        val payloadString: String = payloadStringValue(payloadObject)
+        val binaryInput = Base64.decodeBase64(payloadString)
+        val (fingerprint, binaryData) = (fingerprintStringForTag(binaryInput.slice(2, 10)), binaryInput.drop(10))
+        val writerSchema: Schema = schemaForFingerprint(fingerprint)
+        avroWritable.readFields(binaryData, 0, binaryData.length, writerSchema, trackingSchemaLatest)
+        avroSerde.deserialize(avroWritable)
+      } catch {
+        case _: Throwable => null
+      }
     }
   }
 
+  /**
+   * @param payloadObject
+   * @return
+   */
+  private def payloadStringValue(payloadObject: Object): String = inputPayloadObjectConverter.convert(payloadObject).toString
+
+
+  /**
+   * Verify if Payload is Good to be processed further
+   * @param payloadObject
+   * @return
+   */
+  private def badPayload(payloadObject: Object): Boolean = {
+    if(payloadObject == null) true
+    else if(inputPayloadObjectConverter.convert(payloadObject).toString.trim.isEmpty) true
+    else false
+  }
 
   /**
    *
