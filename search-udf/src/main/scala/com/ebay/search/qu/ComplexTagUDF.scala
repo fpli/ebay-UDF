@@ -96,7 +96,7 @@ class ComplexTagUDF extends GenericUDF {
    */
   def validArguments(arguments: Array[ObjectInspector]): Unit = {
     /// Add way in tracking schema to fetch this nicely
-    Seq("srpGist", "ep", "cassini").foreach(tag => supportedTags.add(tag))
+    Schemas.allTags.foreach(tag => supportedTags.add(tag))
     // checkArgsSize(arguments, 2, 2)
     checkArgPrimitive(arguments, 0)
     checkArgPrimitive(arguments, 1)
