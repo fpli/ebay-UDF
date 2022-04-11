@@ -1,0 +1,23 @@
+- gdpr_detect:
+  name: gdpr_detect
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: com.ebay.hadoop.udf.dapgap.GdprDetect
+  description:
+  parameters:
+  example:
+
+- gdpr_remediate:
+  name: gdpr_remediate
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: com.ebay.hadoop.udf.dapgap.GdprRemediate
+  description:
+  parameters:
+  example:

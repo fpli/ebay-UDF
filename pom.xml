@@ -23,6 +23,7 @@
     <module>ecg-udf</module>
     <module>search-udf</module>
     <module>search-udf/search-udf-vnfnormalizer-shaded</module>
+    <module>dapgap-udf</module>
   </modules>
 
   <properties>
