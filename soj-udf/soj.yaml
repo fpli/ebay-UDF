@@ -822,3 +822,15 @@
   description:
   parameters:
   example: sojlib.soj_get_OS_NG('Agent=Opera/9.52 (Windows NT 5.1; U; en)')
+
+- get_tags_from_query_statement:
+  name: sojlib.get_tags_from_query_statement
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.TagParser
+  description:
+  parameters:
+  example: sojlib.get_tags_from_query_statement('select count(*) from ubi_v.ubi_event where sojlib.soj_nvl(soj,\'sid\')=\'p2486981\'')
