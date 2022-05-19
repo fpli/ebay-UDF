@@ -100,13 +100,7 @@ class ComplexTagUDF extends GenericUDF {
    */
   def validArguments(arguments: Array[ObjectInspector]): Unit = {
     /// Add way in tracking schema to fetch this nicely
-    Schemas.allTags.foreach(tag =>
-      if (tag.contains("/")) {
-        supportedTags.add(tag.substring(0, tag.length - 1))
-      }
-      else {
-        supportedTags.add(tag)
-      })
+    Schemas.allTags.foreach(tag => supportedTags.add(tag))
     // checkArgsSize(arguments, 2, 2)
     checkArgPrimitive(arguments, 0)
     checkArgPrimitive(arguments, 1)
