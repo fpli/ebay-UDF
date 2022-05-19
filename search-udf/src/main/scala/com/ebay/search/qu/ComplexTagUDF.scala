@@ -17,36 +17,37 @@ import java.util.Properties
 import java.{util => jutil}
 
 
-/***
-  ****** SPARK Dataframe UDF Code Replacement ********
-  import org.apache.spark.sql.Column
-  import org.apache.spark.sql.avro.functions._
-  import org.apache.spark.sql.functions.{udf, unbase64}
-  import com.ebay.tracking.Schemas
-
-  object ComplexTagData {
-
-    private def dropK(k: Int) = (binary: Array[Byte]) => binary.drop(k)
-    private val drop10UDF = udf(dropK(10))
-
-
-    /**
-   * Retrieve Complex Tag Data data along with its schema [Here nested "Structs"] understandable in [Spark] SQL
-   * @param writerSchema - Schema with which data is being written to a file [content from ".avsc" file in String]
-   * @param readerSchema - Schema with which data to be read in [content from ".avsc" file in String]
-   * @param inputColumn - Dataframe Column having Complex Tag as a String formatted data rows
-   * @return Column with ComplexTag data along with its schema
-     */
-    def tagWithSchema(writerSchema: String = Schemas.latest("TAG_NAME"),
-                       readerSchema: String = Schemas.latest("TAG_NAME"))
-                      (inputColumn: Column) : Column = {
-      val optionsMap = new java.util.HashMap[String, String]
-      optionsMap.put("mode", "PERMISSIVE")
-      optionsMap.put("avroSchema", readerSchema)
-
-      from_avro(drop10UDF(unbase64(inputColumn)), writerSchema, optionsMap)
-    }
-  }
+/** *
+ * ***** SPARK Dataframe UDF Code Replacement ********
+ * import org.apache.spark.sql.Column
+ * import org.apache.spark.sql.avro.functions._
+ * import org.apache.spark.sql.functions.{udf, unbase64}
+ * import com.ebay.tracking.Schemas
+ *
+ * object ComplexTagData {
+ *
+ * private def dropK(k: Int) = (binary: Array[Byte]) => binary.drop(k)
+ * private val drop10UDF = udf(dropK(10))
+ *
+ *
+ * /**
+ * Retrieve Complex Tag Data data along with its schema [Here nested "Structs"] understandable in [Spark] SQL
+ *
+ * @param writerSchema - Schema with which data is being written to a file [content from ".avsc" file in String]
+ * @param readerSchema - Schema with which data to be read in [content from ".avsc" file in String]
+ * @param inputColumn  - Dataframe Column having Complex Tag as a String formatted data rows
+ * @return Column with ComplexTag data along with its schema
+ *         */
+ *         def tagWithSchema(writerSchema: String = Schemas.latest("TAG_NAME"),
+ *         readerSchema: String = Schemas.latest("TAG_NAME"))
+ *         (inputColumn: Column) : Column = {
+ *         val optionsMap = new java.util.HashMap[String, String]
+ *         optionsMap.put("mode", "PERMISSIVE")
+ *         optionsMap.put("avroSchema", readerSchema)
+ *
+ *         from_avro(drop10UDF(unbase64(inputColumn)), writerSchema, optionsMap)
+ *         }
+ *         }
  *
  */
 
@@ -71,56 +72,66 @@ class ComplexTagUDF extends GenericUDF {
    * @return objectInspector with desired schema type
    */
   override def initialize(arguments: Array[ObjectInspector]): ObjectInspector = {
-    /*** All checks must be passed to proceed further **/
+    /** * All checks must be passed to proceed further * */
     validArguments(arguments)
-    /** Initialize Fingerprints Map **/
+
+    /** Initialize Fingerprints Map * */
     initFingerprintsToSchemaMap
     trackingSchemaLatest = new Parser().parse(Schemas.latest(tagNameString))
-    /** Set up Avro SerDe & Writable Object and Initialize it **/
+
+    /** Set up Avro SerDe & Writable Object and Initialize it * */
     avroWritable = new AvroGenericRecordWritable()
     avroSerde = new AvroSerDe()
     val propertiesWithSchema = new Properties()
     propertiesWithSchema.setProperty(AvroSerdeUtils.AvroTableProperties.SCHEMA_LITERAL.getPropName(), trackingSchemaLatest.toString())
     avroSerde.initialize(null, propertiesWithSchema)
-    /*** Initialize up ObjectInspectors **/
+
+    /** * Initialize up ObjectInspectors * */
     payloadOI = arguments(0).asInstanceOf[StringObjectInspector]
     inputPayloadObjectConverter = new TextConverter(payloadOI)
     avroSerde.getObjectInspector
   }
 
 
-
   /**
    * Verify all arguments are as per expectations of UDF
+   *
    * @param arguments
    */
   def validArguments(arguments: Array[ObjectInspector]): Unit = {
     /// Add way in tracking schema to fetch this nicely
-    Schemas.allTags.foreach(tag => supportedTags.add(tag))
+    Schemas.allTags.foreach(tag =>
+      if (tag.contains("/")) {
+        supportedTags.add(tag.substring(0, tag.length - 1))
+      }
+      else {
+        supportedTags.add(tag)
+      })
     // checkArgsSize(arguments, 2, 2)
     checkArgPrimitive(arguments, 0)
     checkArgPrimitive(arguments, 1)
-    if(arguments.length != 2)
+    if (arguments.length != 2)
       throw new UDFArgumentLengthException("ComplexTagUDF only takes 2 arguments: "
         + "1st: Payload [Base64 Encoded], 2nd: Complex Tag Name")
     else if (!ObjectInspectorUtils.isConstantObjectInspector(arguments(1)))
       throw new UDFArgumentTypeException(1, getFuncName + " argument 2 may only be a constant (tag name)")
-    else if((!arguments(0).isInstanceOf[PrimitiveObjectInspector]) ||
+    else if ((!arguments(0).isInstanceOf[PrimitiveObjectInspector]) ||
       (arguments(0).asInstanceOf[PrimitiveObjectInspector].getPrimitiveCategory != PrimitiveCategory.STRING))
       throw new UDFArgumentException("Argument Payload must be a String")
     tagNameString = new String(getConstantStringValue(arguments, 1))
-    if(!supportedTags.contains(tagNameString))
+    if (!supportedTags.contains(tagNameString))
       throw new TagNameNotFoundException(s"Tag Name must be one of the : ${supportedTags.toString}")
   }
 
   /**
    * Evaluates each data row based on schema passed and Base64 Encoded String
+   *
    * @param arguments
    * @return Complex Tag With Parsed Struct Hive Schema
    */
   override def evaluate(arguments: Array[GenericUDF.DeferredObject]): AnyRef = {
     val payloadObject = arguments(0).get()
-    if(badPayload(payloadObject)) null
+    if (badPayload(payloadObject)) null
     else {
       try {
         val payloadString: String = payloadStringValue(payloadObject)
@@ -144,12 +155,13 @@ class ComplexTagUDF extends GenericUDF {
 
   /**
    * Verify if Payload is Good to be processed further
+   *
    * @param payloadObject
    * @return
    */
   private def badPayload(payloadObject: Object): Boolean = {
-    if(payloadObject == null) true
-    else if(inputPayloadObjectConverter.convert(payloadObject).toString.trim.isEmpty) true
+    if (payloadObject == null) true
+    else if (inputPayloadObjectConverter.convert(payloadObject).toString.trim.isEmpty) true
     else false
   }
 
@@ -161,8 +173,9 @@ class ComplexTagUDF extends GenericUDF {
   override def getDisplayString(children: Array[String]): String =
     getStandardDisplayString("complex_tag_read", children)
 
-  /***
+  /** *
    * Retrieve matching writer schema for the current Record
+   *
    * @param currentFingerprint
    * @return
    */
@@ -175,7 +188,7 @@ class ComplexTagUDF extends GenericUDF {
   private def initFingerprintsToSchemaMap = {
     Schemas.all(tagNameString)
       .map(schemaStr => new Parser().parse(schemaStr))
-      .foreach{ schema =>
+      .foreach { schema =>
         fingerprintToSchemaMap.put(fingerprintStringForTag(parsingFingerprint("CRC-64-AVRO", schema)), schema)
       }
   }
@@ -185,7 +198,7 @@ class ComplexTagUDF extends GenericUDF {
    */
   @transient private lazy val keyPrefix = tagNameString + "_"
 
-  /***
+  /** *
    * Easy way to store fingerprints as a String to fetch schema back from Map,
    * This is to avoid overriding, custom hashCode and equality on byteArray
    */
