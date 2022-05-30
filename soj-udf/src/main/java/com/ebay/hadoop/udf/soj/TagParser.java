@@ -3,6 +3,7 @@ package com.ebay.hadoop.udf.soj;
 import com.google.common.collect.Lists;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Locale;
 import java.util.Set;
 import org.apache.hadoop.hive.ql.exec.UDF;
 
@@ -30,7 +31,7 @@ public class TagParser extends UDF {
                 String parameters = sub.substring(start + 1, end);
 
                 String[] p = parameters.split(",");
-                if (p.length == 2 && p[0].contains("soj")) {
+                if (p.length == 2 && p[0].toLowerCase(Locale.ROOT).contains("soj")) {
                     int from = p[1].indexOf("'");
                     int to = p[1].indexOf("'", from + 1);
                     if (from >= 0 && to >= 0) {

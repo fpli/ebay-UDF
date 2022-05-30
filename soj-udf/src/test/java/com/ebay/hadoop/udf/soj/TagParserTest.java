@@ -91,4 +91,40 @@ public class TagParserTest {
         assertEquals(parser.evaluate(statement).size(), 4);
         assertTrue(parser.evaluate(statement).contains("moduledtl"));
     }
+
+    @Test
+    public void testEvaluate_MultiTag_UpperCase_OK() throws Exception {
+        String statement = "CREATE TEMP TABLE P_SD_T.AVE_VI_MODULES_CLICKS_VI_COUPON \n" +
+                "USING DELTA \n" +
+                "SELECT   GUID \n" +
+                "      \t,SESSION_SKEY\n" +
+                "\t  \t,SITE_ID\n" +
+                "\t  \t,SESSION_START_DT\n" +
+                "        ,ITEM_ID \n" +
+                "\t\t,EXPRNC_NAME AS PLATFORM \n" +
+                "\t\t,TRAFFIC_SRC_LVL4\t\tAS TRAFFIC_SOURCE\t\n" +
+                "        ,SEQNUM\n" +
+                "        ,PAGE_ID\n" +
+                "\t\t,SRC_PAGE_ID\n" +
+                "\t\t,USER_ID\n" +
+                "\t\t\n" +
+                "\t\n" +
+                "\t    ,is_lndpg_flag\n" +
+                "\t    ,sps_flag\n" +
+                "\t    ,is_exitpg_flag\n" +
+                "\t\t\n" +
+                "        ,CASE WHEN sojlib.soj_nvl(SOJ, 'vicoupons') IS NOT NULL THEN 1 ELSE 0 END AS NATIVE_COUPON_SHOW\n" +
+                "        ,CASE WHEN sojlib.soj_nvl(SOJ, 'vicoupondweb') IS NOT NULL THEN 1 ELSE 0 END AS DWEB_COUPON_SHOW\n" +
+                "FROM ACCESS_VIEWS.VI_EVENT_FACT \n" +
+                "WHERE SESSION_START_DT  BETWEEN  CURRENT_DATE-4 AND CURRENT_DATE-2\n" +
+                "\n" +
+                "\n" +
+                "AND ITEM_ID>0\n" +
+                "AND COBRAND IN  (0,6,7)";
+
+        TagParser parser = new TagParser();
+        assertEquals(parser.evaluate(statement).size(), 2);
+        assertTrue(parser.evaluate(statement).contains("vicoupons"));
+        assertTrue(parser.evaluate(statement).contains("vicoupondweb"));
+    }
 }
