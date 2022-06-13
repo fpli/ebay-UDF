@@ -127,4 +127,11 @@ public class TagParserTest {
         assertTrue(parser.evaluate(statement).contains("vicoupons"));
         assertTrue(parser.evaluate(statement).contains("vicoupondweb"));
     }
+
+    @Test
+    public void test_selfStatement_OK() throws Exception {
+        String statement = "create temporary table tag2 as  (select \tdt, \tplatform, \taccounttype, \tusername, \tsoj_tag from  ( select startdt as dt, sojlib.get_tags_from_query_statement(lower(c.statement)) as tag_list,'hermes' as platform,(case when string(username) rlike '^o_' or string(username) rlike '^b_' then 'batch' else 'individual' end) as accounttype,username from carmel_system.carmel_ql_query_v c where c.startdt = current_date-2 and c.start >= current_date -3 and replace(lower(string(c.statement)),' ','')  like concat(\"%\",\"sojlib.soj_nvl\",\"%\") ) lateral view explode(tag_list) emp_temp as soj_tag)";
+        TagParser parser = new TagParser();
+        assertEquals(parser.evaluate(statement).size(), 0);
+    }
 }

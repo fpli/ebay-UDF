@@ -26,7 +26,7 @@ public class TagParser extends UDF {
             int start = sub.indexOf("(");
             int end = sub.indexOf(")");
 
-            if (start >= 0 && end >= 0) {
+            if (start >= 0 && end >= 0 && end >= start) {
 
                 String parameters = sub.substring(start + 1, end);
 
