@@ -72,6 +72,21 @@ parameters:
 - siteID
 example: stringNormalizedSIBEStyle('2.3 mm 3,4,5 hello 123.456 world 123,456 s10', 77)
 
+- stringNormalizedDSBEStyle:
+name: search.stringNormalizedDSBEStyle
+owner:
+platform:
+- hermesrno
+- apollorno
+- hercules
+className: com.ebay.search.qu.DsbeTokenizerUDF
+description:
+parameters:
+- query
+- siteID
+example: stringNormalizedDSBEStyle('2.3 mm 3,4,5 hello 123.456 world 123,456 s10', 77)
+
+
 - complexTagReader:
 name: search.complexTagReader
 owner:
