@@ -1,0 +1,14 @@
+- dgMergeAndTransform:
+  name: dgMergeAndTransform
+  owner: DL-eBay-NuData-Dedicated-Team@ebay.com
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: org.monstor.entitymapping.spark.udf.DocumentGroupFragmentUDAF
+  description: merge documentgroup fragments and apply transformation on documentgroup
+  parameters:
+    - value: encoded documentgroup fragments
+    - transfromerCls: full qualified transformer class name
+    - transformName: transform name which is annontated in a method of transformer class
+  example: dgMergeAndTransform(value, 'org.monstor.entitymapping.spark.udf.TestTransformer', 'mapPublicationFanCount')
