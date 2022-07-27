@@ -87,6 +87,14 @@ public class EPUdfTest {
         IsNQT isNQT = new IsNQT();
         assertFalse(isNQT.evaluate(treatmentInfo));
 
+        GetAnyIdXts getAnyIdXts = new GetAnyIdXts();
+        String result = getAnyIdXts.evaluate("wwGOh78BE7LmFooOxgEAAAAAAAAAAAACGjMyNjg4MzI0MzcyMTECmJ4dAAA=");
+        assertEquals("3268832437211:239500", result);
+        result = getAnyIdXts.evaluate("wwGOh78BE7LmFooOxgEAAAAAAAAAAAACGjMyNjkzNTU2Njg5MTACmJ4dAAA=");
+        assertEquals("3269355668910:239500", result);
+        result = getAnyIdXts.evaluate("wwGOh78BE7LmFooOxgEAAAAAAAAAAAAA");
+        assertEquals(null, result);
+
         // mock this as it's hard to compose a list of structure in hive originally from avro schema
         StructObjectInspector structObjectInspector = mock(StructObjectInspector.class);
         when(structObjectInspector.getTypeName()).thenReturn("MetricIdValue");

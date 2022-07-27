@@ -172,6 +172,18 @@
     - treatment metric summary group
   example:
 
+- get_anyid_xt:
+  name: ep.get_anyid_xt
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+  className: com.ebay.hadoop.udf.ep.GetAnyIdXts
+  description: parse anyid xts from epcontext with format {anyid}:{comma separated xt}
+  parameters:
+    - epcontext string
+  example: get_anyid_xt("wwGOh78BE7LmFooOxgEAAAAAAAAAAAACGjMyNjg4MzI0MzcyMTECmJ4dAAA=")
+
 - get_treated_events:
   name: ep.get_treated_events
   owner:

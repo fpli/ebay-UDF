@@ -9,7 +9,7 @@
 
   <groupId>com.ebay.hadoop.udf.ep</groupId>
   <artifactId>ep-udf</artifactId>
-  <version>1.4-SNAPSHOT</version>
+  <version>1.5-SNAPSHOT</version>
 
   <name>ep-udf</name>
   <!-- FIXME change it to the project's website -->
@@ -58,6 +58,17 @@
           <artifactId>extendedset</artifactId>
           <version>1.3.9</version>
       </dependency>
+    <dependency>
+      <groupId>com.ebay.ep.commons</groupId>
+      <artifactId>experimentation-tracking-schemas</artifactId>
+      <version>0.0.4-RELEASE</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.avro</groupId>
+      <artifactId>avro</artifactId>
+      <version>1.8.2</version>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
 
   <build>
