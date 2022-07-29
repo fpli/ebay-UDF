@@ -31,6 +31,12 @@
             <groupId>com.51degrees</groupId>
             <artifactId>device-detection-core</artifactId>
             <version>3.2.2.20-beta</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.jasypt/jasypt -->
         <dependency>

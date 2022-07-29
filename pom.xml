@@ -51,6 +51,8 @@
     <scalatest.maven.plugin.version>1.0</scalatest.maven.plugin.version>
     <skipTests>false</skipTests>
     <skipCheckStyle>true</skipCheckStyle>
+    <!-- to fix CVE issue -->
+    <fasterxml.jackson.version>2.11.4</fasterxml.jackson.version>
   </properties>
 
   <repositories>

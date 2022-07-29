@@ -25,7 +25,6 @@
         <hive.version>1.2.1.spark2</hive.version>
         <codehaus.jackson.version>1.9.13</codehaus.jackson.version>
         <slf4j.version>1.7.16</slf4j.version>
-        <fasterxml.jackson.version>2.9.10</fasterxml.jackson.version>
     </properties>
     <dependencies>
         <dependency>
