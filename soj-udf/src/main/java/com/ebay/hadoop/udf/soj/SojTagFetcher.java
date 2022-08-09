@@ -3,17 +3,15 @@ package com.ebay.hadoop.udf.soj;
 import com.ebay.hadoop.udf.tags.ETLUdf;
 import org.apache.commons.lang.StringUtils;
 import org.apache.hadoop.hive.ql.exec.UDF;
-import org.apache.hadoop.io.Text;
 
 @ETLUdf(name = "soj_nvl")
 public class SojTagFetcher extends UDF {
 
-    public Text evaluate(final Text payloadText, String key) {
-        if (payloadText == null || key == null) {
+    public String evaluate(final String payload, String key) {
+        if (payload == null || key == null) {
             return null;
         }
 
-        String payload = payloadText.toString();
         String tagValue = null;
         try {
             tagValue = getTagValue(payload, key);
@@ -25,7 +23,7 @@ public class SojTagFetcher extends UDF {
         if (tagValue == null) {
             return null;
         } else {
-            return new Text(tagValue);
+            return tagValue;
         }
     }
 

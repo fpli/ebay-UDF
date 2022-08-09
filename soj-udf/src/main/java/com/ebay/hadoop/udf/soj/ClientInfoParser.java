@@ -4,7 +4,6 @@ import com.ebay.hadoop.udf.stringsearch.StringSearcherExt;
 import com.ebay.hadoop.udf.tags.ETLUdf;
 import org.apache.commons.lang.StringUtils;
 import org.apache.hadoop.hive.ql.exec.UDF;
-import org.apache.hadoop.io.Text;
 import org.neosearch.stringsearcher.Emit;
 
 @ETLUdf(name = "soj_parse_clientinfo")
@@ -82,17 +81,16 @@ public final class ClientInfoParser extends UDF {
         test1();
     }
 
-    public Text evaluate(final Text clientInfoTexT, String clientField) {
-        if (clientInfoTexT == null || clientField == null) {
+    public String evaluate(final String clientInfo, String clientField) {
+        if (clientInfo == null || clientField == null) {
             return null;
         }
 
-        String clientInfo = clientInfoTexT.toString();
         String value = extWoCopy(clientInfo, clientField);
         if (value == null) {
             return null;
         } else {
-            return new Text(value);
+            return value;
         }
     }
 
