@@ -18,3 +18,9 @@ Known issues:
 For spark-3, it is built with hive-2.3.* but ebay managed hive service version is 1.2.1.
 And there might be some incompatiblities between spark-2.3 and spark-3.
 So, if your GenericUDF based UDF does not work with spark-3, please try to use `org.apache.hive.ql.exec.UDF`.
+
+ADLC Related Information
+1. Adlc application address: https://cloud.ebay.com/object/detail/Application:adlctoudf
+2. Pipeline address: https://cloud.ebay.com/object/detail/Application:adlctoudf/Pipeline
+3. Hadoop folder address in ssh(Can check the newest jar): /apps/b_adlc/b_hadoop_udf/adlctoudf/1.0.0-SNAPSHOT/latest
+4. While the developer pr to git, this action will auto trigger the build system to build application.
