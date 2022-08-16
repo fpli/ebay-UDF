@@ -12,12 +12,12 @@
 
     <groupId>com.ebay.hadoop.udf</groupId>
     <artifactId>search-udf-vnfnormalizer-shaded</artifactId>
-    <version>1.1.1</version>
+    <version>1.2.0</version>
     <packaging>jar</packaging>
 
     <properties>
         <maven.plugin.shade.version>3.2.4</maven.plugin.shade.version>
-        <vnfnormalizer.version>1.1.1</vnfnormalizer.version>
+        <vnfnormalizer.version>1.2.0</vnfnormalizer.version>
         <vnfnormalizer.shade.packageName>com.ebay.udf.search.shaded</vnfnormalizer.shade.packageName>
     </properties>
 
