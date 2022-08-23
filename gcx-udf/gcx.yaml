@@ -5,10 +5,10 @@
     - hermesrno
     - apollorno
     - herculeslvs
-  className: com.ebay.dss.F90DSplit
+  className: com.ebay.hadoop.udf.gcx.F90DSplit
   description: calcluate test/control split 
   parameters:
   - customer id (string)
   - start date (string, with formtat yyyy-MM-dd))
   - split (double, value between 0.0 and 1.0 for the fraction assigned as test)
-  example: f90dsplit(custimerid, startdate, split)
+  example: f90dsplit('custimerid', '2022-08-23', '0.8')

@@ -1,7 +1,8 @@
 
-package com.ebay.dss.udf;
+package com.ebay.hadoop.udf.gcx.udf;
 
-import com.ebay.dss.utilities.CampaignCalculator;
+import com.ebay.hadoop.udf.gcx.F90DSplit;
+import com.ebay.hadoop.udf.gcx.utilities.CampaignCalculator;
 import org.junit.Test;
 
 public class F90DSplitTest {

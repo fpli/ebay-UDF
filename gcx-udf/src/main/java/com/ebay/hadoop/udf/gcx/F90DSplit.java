@@ -1,6 +1,6 @@
-package com.ebay.dss.udf;
+package com.ebay.hadoop.udf.gcx;
 
-import com.ebay.dss.utilities.CampaignCalculator;
+import com.ebay.hadoop.udf.gcx.utilities.CampaignCalculator;
 import org.apache.hadoop.hive.ql.exec.UDF;
 
 public class F90DSplit extends UDF {

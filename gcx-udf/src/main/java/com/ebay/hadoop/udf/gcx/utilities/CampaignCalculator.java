@@ -1,4 +1,4 @@
-package com.ebay.dss.utilities;
+package com.ebay.hadoop.udf.gcx.utilities;
 
 import org.apache.commons.codec.digest.MurmurHash3;
 
@@ -17,5 +17,4 @@ public class CampaignCalculator {
     public static Integer evaluate(Long customerId, String startdate, Double split)  {
         return evaluate(customerId.toString(), startdate, split);
     }
-
 }
