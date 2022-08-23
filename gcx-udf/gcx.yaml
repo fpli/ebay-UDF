@@ -1,0 +1,14 @@
+- f90dsplit:
+  name: f90dsplit
+  owner: thschweiger
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: com.ebay.dss.F90DSplit
+  description: calcluate test/control split 
+  parameters:
+  - customer id (string)
+  - start date (string, with formtat yyyy-MM-dd))
+  - split (double, value between 0.0 and 1.0 for the fraction assigned as test)
+  example: f90dsplit(custimerid, startdate, split)
