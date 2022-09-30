@@ -21,3 +21,53 @@
   description:
   parameters:
   example:
+
+- pii_mask:
+  name: pii_mask
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: com.ebay.hadoop.udf.dapgap.PIIMask
+  description: _FUNC_(value, secret_file) - Returns mask value for the input
+  parameters:
+    - value
+    - secret_file
+  example: |-
+    -> SELECT _FUNC_(1300012125);
+    res: 777
+    -> SELECT _FUNC_('abc@gmail.com');
+    res: value equals to encrypt('DELETED', 'aes.properties')
+    -> SELECT _FUNC_('abc@gmail.com', 'other_aes.properties');
+    res: value equals to encrypt('DELETED', 'other_aes.properties')
+
+- pii_mask_verify:
+  name: pii_mask_verify
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: com.ebay.hadoop.udf.dapgap.PIIMaskVerify
+  description: |- 
+    _FUNC_(value, secret_file) - Returns a flag for the input:
+        flag=0: value equals to encrypt('DELETED', secret_file) or 777
+        flag=1: value doesn't equal to encrypt('DELETED', secret_file) and 777
+        flag=2: value is null
+  parameters:
+    - value
+    - secret_file
+  example: |-
+    -> SELECT _FUNC_('abc@gmail.com');
+    res: 1
+    -> SELECT _FUNC_('abc@gmail.com', 'other_aes.properties');
+    res: 1
+    -> SELECT _FUNC_(encrypt('DELETED', 'aes.properties'), null); 
+    res: 0
+    -> SELECT _FUNC_(encrypt('DELETED', 'other_aes.properties'), 'other_aes.properties');
+    res: 0
+    -> SELECT _FUNC_(123);
+    res: 1
+    -> SELECT _FUNC_(777);
+    res: 0
