@@ -834,3 +834,15 @@
   description:
   parameters:
   example: sojlib.get_tags_from_query_statement('select count(*) from ubi_v.ubi_event where sojlib.soj_nvl(soj,\'sid\')=\'p2486981\'')
+
+- soj_sessionid_gen:
+  name: sojlib.soj_sessionid_gen
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - hercules
+  className: com.ebay.hadoop.udf.soj.SojSessionIdGen
+  description:
+  parameters:
+  example: sojlib.soj_sessionid_gen('691e44aff3774286830b8e2c1f7338e2',1667629893742)
