@@ -11,7 +11,7 @@
 
     <groupId>com.ebay.hadoop.scalaplatform.spark</groupId>
     <artifactId>search-qu-udf</artifactId>
-    <version>1.13-SNAPSHOT</version>
+    <version>1.14-SNAPSHOT</version>
 
     <properties>
         <encoding>UTF-8</encoding>
@@ -33,7 +33,7 @@
         </repository>
         <repository>
             <id>raptor.releases</id>
-            <url>http://ebaycentral.qa.ebay.com/content/repositories/releases/</url>
+            <url>https://ebaycentral.qa.ebay.com/content/repositories/releases/</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -43,7 +43,7 @@
         </repository>
         <repository>
             <id>raptor.snapshots</id>
-            <url>http://ebaycentral.qa.ebay.com/content/repositories/snapshots</url>
+            <url>https://ebaycentral.qa.ebay.com/content/repositories/snapshots</url>
             <releases>
                 <enabled>false</enabled>
             </releases>
@@ -54,7 +54,7 @@
         </repository>
         <repository>
             <id>thirdparty</id>
-            <url>http://ebaycentral.qa.ebay.com/content/repositories/v3debt</url>
+            <url>https://ebaycentral.qa.ebay.com/content/repositories/v3debt</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
