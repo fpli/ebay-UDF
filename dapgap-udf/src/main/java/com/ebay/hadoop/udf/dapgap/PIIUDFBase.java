@@ -2,16 +2,20 @@ package com.ebay.hadoop.udf.dapgap;
 
 import com.ebay.hadoop.udf.common.encrypt.AesEncrypterDecrypter;
 import com.ebay.hadoop.udf.common.encrypt.Base64Ebay;
+import com.google.common.collect.ImmutableList;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.net.URL;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
+
+import java.sql.Date;
+import java.util.List;
 import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 import org.apache.commons.lang3.StringUtils;
+
 import org.apache.hadoop.hive.ql.exec.UDFArgumentException;
 import org.apache.hadoop.hive.ql.metadata.HiveException;
 import org.apache.hadoop.hive.ql.udf.generic.GenericUDF;
@@ -21,7 +25,12 @@ import org.apache.hadoop.hive.serde2.objectinspector.primitive.PrimitiveObjectIn
 public abstract class PIIUDFBase extends GenericUDF {
 
   protected static final String MASK_TEXT = "DELETED";
-  protected static final int MASK_NUMBER = 777;
+  protected static final List<Integer> DELETED_NUMBER_LIST = ImmutableList
+      .of(-777, -77, 777);
+  protected static final int MASK_NUMBER = -777;
+  protected static final byte MASK_BYTE_NUMBER = -77;
+  protected static final Date MASK_DATE = new Date(-5364604800000L); // mask_date = "1800-01-01"
+  protected static final byte[] MASK_BINARY = {'-',7,7,7};
   protected static final String DEFAULT_SECRET_FILE = "aes.properties";
 
   protected AesEncrypterDecrypter cipher;

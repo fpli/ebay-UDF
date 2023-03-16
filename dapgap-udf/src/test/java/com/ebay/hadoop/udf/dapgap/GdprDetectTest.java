@@ -1,5 +1,7 @@
 package com.ebay.hadoop.udf.dapgap;
 
+import java.sql.Date;
+import java.util.Base64;
 import org.apache.hadoop.hive.ql.exec.UDFArgumentException;
 import org.apache.hadoop.hive.ql.metadata.HiveException;
 import org.apache.hadoop.hive.ql.udf.generic.GenericUDF.DeferredJavaObject;
@@ -21,7 +23,9 @@ public class GdprDetectTest {
     ObjectInspector[] arguments = new ObjectInspector[]{
         PrimitiveObjectInspectorFactory.javaIntObjectInspector,
         PrimitiveObjectInspectorFactory.javaStringObjectInspector,
-        PrimitiveObjectInspectorFactory.javaStringObjectInspector};
+        PrimitiveObjectInspectorFactory.javaStringObjectInspector,
+        PrimitiveObjectInspectorFactory.javaDateObjectInspector,
+        PrimitiveObjectInspectorFactory.javaByteArrayObjectInspector};
     gdprDetect.initialize(arguments);
   }
 
@@ -31,14 +35,18 @@ public class GdprDetectTest {
     DeferredObject[] deferredObject1 = new DeferredObject[]{
         new DeferredJavaObject(777),
         new DeferredJavaObject("abc"),
-        new DeferredJavaObject("Deleted")
+        new DeferredJavaObject("Deleted"),
+        new DeferredJavaObject(new Date(4562387)),
+        new DeferredJavaObject(new byte[]{'2'}),
     };
     assertEquals(expected, deferredObject1);
 
     DeferredObject[] deferredObject2 = new DeferredObject[]{
         new DeferredJavaObject(null),
         new DeferredJavaObject("abc"),
-        new DeferredJavaObject("def")
+        new DeferredJavaObject("def"),
+        new DeferredJavaObject(new Date(4562342387l)),
+        new DeferredJavaObject(new byte[]{'3'}),
     };
     assertEquals(expected, deferredObject2);
   }
@@ -49,14 +57,18 @@ public class GdprDetectTest {
     DeferredObject[] deferredObject1 = new DeferredObject[]{
         new DeferredJavaObject(123),
         new DeferredJavaObject("Deleted"),
-        new DeferredJavaObject(null)
+        new DeferredJavaObject(null),
+        new DeferredJavaObject("abc"),
+        new DeferredJavaObject("Deleted"),
     };
     assertEquals(expected, deferredObject1);
 
     DeferredObject[] deferredObject2 = new DeferredObject[]{
-        new DeferredJavaObject(123),
+        new DeferredJavaObject(777),
         new DeferredJavaObject("NRl/5n95st+Y5fmVHrHZ/Q=="),
-        new DeferredJavaObject("abc")
+        new DeferredJavaObject("NRl/5n95st+Y5fmVHrHZ/Q=="),
+        new DeferredJavaObject(new Date(-5364691200000L)),
+        new DeferredJavaObject(new byte[]{'3'}),
     };
     assertEquals(expected, deferredObject2);
   }
@@ -67,9 +79,16 @@ public class GdprDetectTest {
     DeferredObject[] deferredObjects = new DeferredObject[]{
         new DeferredJavaObject(null),
         new DeferredJavaObject(null),
-        new DeferredJavaObject(null)
+        new DeferredJavaObject(null),
+        new DeferredJavaObject(null),
+        new DeferredJavaObject(null),
     };
     assertEquals(expected, deferredObjects);
+  }
+
+  public static void main(String[] args) {
+    System.out.println(new Date(-100,0,2));
+    System.out.println(new Date(-100,0,2).getTime());
   }
 
   @Test
@@ -78,21 +97,27 @@ public class GdprDetectTest {
     DeferredObject[] deferredObject1 = new DeferredObject[]{
         new DeferredJavaObject(null),
         new DeferredJavaObject("NRl/5n95st+Y5fmVHrHZ/Q=="),
-        new DeferredJavaObject("Deleted")
+        new DeferredJavaObject("Deleted"),
+        new DeferredJavaObject(new Date(-5364604800000L)),
+        new DeferredJavaObject(Base64.getEncoder().encode(new byte[]{'-', 7, 7, 7})),
     };
     assertEquals(expected, deferredObject1);
 
     DeferredObject[] deferredObject2 = new DeferredObject[]{
         new DeferredJavaObject(777),
         new DeferredJavaObject("NRl/5n95st+Y5fmVHrHZ/Q=="),
-        new DeferredJavaObject("Deleted")
+        new DeferredJavaObject("Deleted"),
+        new DeferredJavaObject(null),
+        new DeferredJavaObject(Base64.getEncoder().encode(new byte[]{'-', 7, 7, 7})),
     };
     assertEquals(expected, deferredObject2);
 
     DeferredObject[] deferredObject3 = new DeferredObject[]{
         new DeferredJavaObject(null),
         new DeferredJavaObject("Deleted"),
-        new DeferredJavaObject(null)
+        new DeferredJavaObject(null),
+        new DeferredJavaObject(new Date(-5364604800000L)),
+        new DeferredJavaObject(null),
     };
     assertEquals(expected, deferredObject3);
   }

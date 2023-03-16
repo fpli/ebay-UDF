@@ -148,7 +148,7 @@ public class GdprRemediateTest {
         new DeferredJavaObject(HiveDecimal.create(1234567890))
     };
     Object result = gdprRemediate.evaluate(deferredObjects);
-    Assert.assertEquals(new HiveDecimalWritable(HiveDecimal.create(777)), result);
+    Assert.assertEquals(new HiveDecimalWritable(HiveDecimal.create(-777)), result);
 
     DeferredObject[] deferredObjects1 = new DeferredObject[]{
         new DeferredJavaObject(null),
@@ -170,7 +170,7 @@ public class GdprRemediateTest {
         new DeferredJavaObject(1234567890L)
     };
     Object result = gdprRemediate.evaluate(deferredObjects);
-    Assert.assertEquals(new LongWritable(777), result);
+    Assert.assertEquals(new LongWritable(-777), result);
 
     DeferredObject[] deferredObjects1 = new DeferredObject[]{
         new DeferredJavaObject(null),

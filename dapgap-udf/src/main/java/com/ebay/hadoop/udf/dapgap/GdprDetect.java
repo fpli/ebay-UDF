@@ -1,5 +1,7 @@
 package com.ebay.hadoop.udf.dapgap;
 
+import static org.apache.hadoop.hive.serde2.objectinspector.primitive.PrimitiveObjectInspectorUtils.PrimitiveGrouping.BINARY_GROUP;
+import static org.apache.hadoop.hive.serde2.objectinspector.primitive.PrimitiveObjectInspectorUtils.PrimitiveGrouping.DATE_GROUP;
 import static org.apache.hadoop.hive.serde2.objectinspector.primitive.PrimitiveObjectInspectorUtils.PrimitiveGrouping.NUMERIC_GROUP;
 import static org.apache.hadoop.hive.serde2.objectinspector.primitive.PrimitiveObjectInspectorUtils.PrimitiveGrouping.STRING_GROUP;
 import static org.apache.hadoop.hive.serde2.objectinspector.primitive.PrimitiveObjectInspectorUtils.PrimitiveGrouping.VOID_GROUP;
@@ -20,7 +22,8 @@ import org.apache.hadoop.io.Text;
         + "-> SELECT _FUNC_(123, 'abc@gmail.com');\n" + "Have column not encrypted\n"
         + "-> SELECT _FUNC_(123, 'NRl/5n95st+Y5fmVHrHZ/Q==');\n" + "Have column not deleted\n"
         + "-> SELECT _FUNC_(null, null);\n" + "All columns are null\n"
-        + "-> SELECT _FUNC_(null, 'Deleted');\n" + "All columns are encrypted and deleted\n")
+        + "-> SELECT _FUNC_(null, 'Deleted');\n" + "All columns are encrypted and deleted\n"
+        + "-> Support Type: Number String Date Binary\n")
 public class GdprDetect extends GdprGenericUDF {
 
   private static final String[] FAILED_CAUSE = new String[]{
@@ -39,7 +42,8 @@ public class GdprDetect extends GdprGenericUDF {
     inputTypes = new PrimitiveCategory[arguments.length];
     for (int i = 0; i < arguments.length; i++) {
       checkArgPrimitive(arguments, i);
-      checkArgGroups(arguments, i, inputTypes, STRING_GROUP, NUMERIC_GROUP, VOID_GROUP);
+      checkArgGroups(arguments, i, inputTypes, DATE_GROUP, BINARY_GROUP, STRING_GROUP,
+          NUMERIC_GROUP, VOID_GROUP);
     }
     aes = initAesEncrypterDecrypter();
     return PrimitiveObjectInspectorFactory.writableStringObjectInspector;
@@ -58,7 +62,8 @@ public class GdprDetect extends GdprGenericUDF {
           case NUMERIC_GROUP:
             //TODO Because currently we don't have a standard of how de/encrypt number column
             //     So we can assume that all number column is not encrypted yet
-            if (!String.valueOf(DELETED_NUMBER).equals(o.toString())) {
+            if (DELETED_NUMBER_LIST.stream()
+                .noneMatch(number -> String.valueOf(number).equals(o.toString()))) {
               //PII column not deleted
               output.set(FAILED_CAUSE[1]);
               return output;
@@ -79,6 +84,25 @@ public class GdprDetect extends GdprGenericUDF {
                 output.set(FAILED_CAUSE[0]);
                 return output;
               }
+            }
+            break;
+          case DATE_GROUP:
+            if (!DELETED_DATE.equals(o.toString().substring(0, 10))) {
+              output.set(FAILED_CAUSE[1]);
+              return output;
+            }
+            break;
+          case BINARY_GROUP:
+            try {
+              String bytes = new String((byte[]) o);
+              if (!DELETED_BINARY.equals(bytes)) {
+                output.set(FAILED_CAUSE[1]);
+                return output;
+              }
+            }catch (Exception e){
+              // in case that new String((byte[]) o) throw a exception.
+              output.set(FAILED_CAUSE[1]);
+              return output;
             }
             break;
           default:

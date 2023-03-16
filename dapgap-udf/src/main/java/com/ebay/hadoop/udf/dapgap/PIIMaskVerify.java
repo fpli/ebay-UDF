@@ -89,7 +89,8 @@ public class PIIMaskVerify extends PIIUDFBase {
 
   protected boolean verifyNumberGroup(Object value) {
     int numValue = PrimitiveObjectInspectorUtils.getInt(value, valueOI);
-    return numValue == MASK_NUMBER;
+    return DELETED_NUMBER_LIST.stream()
+        .anyMatch(number -> number == numValue);
   }
 
   protected boolean verifyStringGroup(Object value) throws HiveException {

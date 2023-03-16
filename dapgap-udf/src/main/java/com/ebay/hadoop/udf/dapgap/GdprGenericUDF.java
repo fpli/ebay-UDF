@@ -2,12 +2,15 @@ package com.ebay.hadoop.udf.dapgap;
 
 import com.ebay.hadoop.udf.common.encrypt.AesEncrypterDecrypter;
 import com.ebay.hadoop.udf.common.encrypt.Base64Ebay;
+import com.google.common.collect.ImmutableList;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
+import java.util.Date;
+import java.util.List;
 import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
@@ -18,7 +21,10 @@ public abstract class GdprGenericUDF extends GenericUDF {
 
   protected static final String DELETED_STRING = "DELETED";
   protected static final String DELETED_AES_STRING = "NRl/5n95st+Y5fmVHrHZ/Q==";
-  protected static final int DELETED_NUMBER = 777;
+  protected static final String DELETED_DATE = "1800-01-01";
+  protected static final String DELETED_BINARY = "LQcHBw==";
+  protected static final int DELETED_NUMBER = -777;
+  protected static final List<Integer> DELETED_NUMBER_LIST = ImmutableList.of(-777, -77, 777);
   protected AesEncrypterDecrypter aes;
 
   protected AesEncrypterDecrypter initAesEncrypterDecrypter() throws UDFArgumentException {
