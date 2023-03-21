@@ -86,11 +86,6 @@ public class GdprDetectTest {
     assertEquals(expected, deferredObjects);
   }
 
-  public static void main(String[] args) {
-    System.out.println(new Date(-100,0,2));
-    System.out.println(new Date(-100,0,2).getTime());
-  }
-
   @Test
   public void testAllPiiColumnsAreEncryptedAndDeleted() {
     Text expected = new Text("All columns are encrypted and deleted");
