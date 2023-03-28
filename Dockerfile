@@ -3,6 +3,7 @@ RUN mvn clean package -f /workspace -DskipTests -U
 
 FROM scratch
 COPY --from=builder /workspace/*/target/*-jar-with-dependencies.jar ./
+COPY --from=builder /workspace/*/*.yaml ./
 
-LABEL com.ebay.adi.adlc.include="*.jar"
+LABEL com.ebay.adi.adlc.include="*.jar,*.yaml"
 LABEL com.ebay.adi.adlc.tag="1.0.0-SNAPSHOT"
