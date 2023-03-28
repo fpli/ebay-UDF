@@ -26,6 +26,7 @@
     <module>search-udf/search-udf-vnfnormalizer-shaded</module>
     <module>dapgap-udf</module>
     <module>gcx-udf</module>
+    <module>tokenizer-udf</module>
   </modules>
 
   <properties>
@@ -44,6 +45,7 @@
     <distMgmtReleasesUrl>http://ebaycentral.qa.ebay.com/content/repositories/releases</distMgmtReleasesUrl>
     <distMgmtSnapshotsUrl>http://ebaycentral.qa.ebay.com/content/repositories/snapshots</distMgmtSnapshotsUrl>
     <maven.checkstyle.plugin.version>3.1.0</maven.checkstyle.plugin.version>
+    <maven.plugin.shade.version>3.2.4</maven.plugin.shade.version>
     <scala.maven.plugin.version>3.2.2</scala.maven.plugin.version>
     <!-- scala-maven-plugin unused import option, for scala-2.12 it is `-Ywarn-unused:imports` -->
     <scala.maven.unused.import.opt>-Ywarn-unused-import</scala.maven.unused.import.opt>

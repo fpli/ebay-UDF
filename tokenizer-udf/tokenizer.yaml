@@ -1,0 +1,59 @@
+- base64_decode:
+  name: tokenize
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: com.ebay.hadoop.udf.tokenizer.Tokenize
+  description:
+  parameters: tokenizerRef, data
+  example: tokenize(tokenizerRef, data)
+
+- base64_decode:
+  name: detokenize
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: com.ebay.hadoop.udf.tokenizer.DeTokenize
+  description:
+  parameters: tokenizerRef, token
+  example: detokenize(tokenizerRef, token)
+
+- base64_decode:
+  name: batch_tokenize
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: com.ebay.hadoop.udf.tokenizer.BatchTokenize
+  description:
+  parameters: tokenizerRef, dataList
+  example: batch_tokenize(tokenizerRef, dataList)
+
+- base64_decode:
+  name: batch_detokenize
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: com.ebay.hadoop.udf.tokenizer.BatchDeTokenize
+  description:
+  parameters: tokenizerRef, tokenList
+  example: batch_detokenize(tokenizerRef, tokenList)
+
+- base64_decode:
+  name: find_tokenizer_metadata
+  owner:
+  platform:
+    - hermesrno
+    - apollorno
+    - herculeslvs
+  className: com.ebay.hadoop.udf.tokenizer.FindTokenizerMetadata
+  description:
+  parameters: storeType, storeName, tableName, columnName
+  example: find_tokenizer_metadata(storeType, storeName, tableName, columnName)
