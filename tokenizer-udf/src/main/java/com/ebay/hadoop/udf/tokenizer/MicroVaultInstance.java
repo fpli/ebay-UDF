@@ -10,8 +10,10 @@ import java.util.stream.Collectors;
 public class MicroVaultInstance {
   public static String MICRO_VAULT_HOST_KEY = "MICRO_VAULT_HOST";
   public static String MICRO_VAULT_PORT_KEY = "MICRO_VAULT_PORT";
+  public static String GRPC_BUFFER_SIZE_KEY = "GRPC_BUFFER_SIZE"; // in MB
   public static String DEFAULT_MICRO_VAULT_HOST = "localhost";
   public static int DEFAULT_MICRO_VAULT_PORT = 10000;
+  public static int DEFAULT_GRPC_BUFFER_SIZE = 16 * 1024 * 1024; // 16MB
 
   private final TokenizerGrpc.TokenizerBlockingStub tokenizerBlockingStub;
   private final MetadataGrpc.MetadataBlockingStub metadataBlockingStub;
@@ -34,11 +36,17 @@ public class MicroVaultInstance {
         Optional.ofNullable(System.getenv(MICRO_VAULT_HOST_KEY)).orElse(DEFAULT_MICRO_VAULT_HOST),
         Optional.ofNullable(System.getenv(MICRO_VAULT_PORT_KEY))
             .map(i -> Integer.valueOf(i))
-            .orElse(DEFAULT_MICRO_VAULT_PORT));
+            .orElse(DEFAULT_MICRO_VAULT_PORT),
+        Optional.ofNullable(System.getenv(GRPC_BUFFER_SIZE_KEY))
+            .map(i -> Integer.valueOf(i) * 1024 * 1024)
+            .orElse(DEFAULT_GRPC_BUFFER_SIZE));
   }
 
-  private MicroVaultInstance(String host, int port) {
-    this(ManagedChannelBuilder.forAddress(host, port).usePlaintext());
+  private MicroVaultInstance(String host, int port, int grpcBuffer) {
+    this(
+        ManagedChannelBuilder.forAddress(host, port)
+            .usePlaintext()
+            .maxInboundMessageSize(grpcBuffer));
   }
 
   private MicroVaultInstance(ManagedChannelBuilder<?> channelBuilder) {
