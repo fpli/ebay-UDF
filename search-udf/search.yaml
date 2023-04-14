@@ -128,4 +128,7 @@ parameters:
   - module
   - topN
   - boostStats
-example: parseSrpRelevance('relevanceScore_PEGFB_3_1', 'all', 50, 'ItemID:334703177466|ParentID:0|relevanceScore_PEGFB_3_1:3.539140|relevanceScore_RelOrNot_9_1:0.902836|boosttype:relevance|NL:main,ItemID:266090860839|ParentID:0|relevanceScore_PEGFB_3_1:3.489703|relevanceScore_RelOrNot_9_1:0.899113|boosttype:relevance|NL:main,ItemID:465261020228|ParentID:165751310358|relevanceScore_PEGFB_3_1:3.530238|relevanceScore_RelOrNot_9_1:0.889004|boosttype:relevance|NL:keyword_constraint,ItemID:362146698772|ParentID:0|relevanceScore_PEGFB_3_1:3.347452|relevanceScore_RelOrNot_9_1:0.845309|boosttype:relevance|NL:keyword_constraint')
+  - excludeCPC
+  - excludeCPA
+  - clktrack
+example: parseSrpRelevance('relevance_score', 'all', 50, 'ItemID:334703177466|ParentID:0|relevance_score:3.539140|relevance_score_binary:0.902836|boosttype:relevance|NL:main,ItemID:266090860839|ParentID:0|relevance_score:3.489703|relevance_score_binary:0.899113|boosttype:relevance|NL:main,ItemID:465261020228|ParentID:165751310358|relevance_score:3.530238|relevance_score_binary:0.889004|boosttype:relevance|NL:keyword_constraint,ItemID:362146698772|ParentID:0|relevance_score:3.347452|relevance_score_binary:0.845309|boosttype:relevance|NL:keyword_constraint', 0, 0, '1024,0,256,0')
