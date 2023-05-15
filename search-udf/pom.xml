@@ -11,7 +11,7 @@
 
     <groupId>com.ebay.hadoop.scalaplatform.spark</groupId>
     <artifactId>search-qu-udf</artifactId>
-    <version>1.16-SNAPSHOT</version>
+    <version>1.17-SNAPSHOT</version>
 
     <properties>
         <encoding>UTF-8</encoding>
