@@ -2,7 +2,7 @@ package com.ebay.hadoop.udf.tokenizer;
 
 import org.junit.Test;
 
-public class DeTokenizeTest {
+public class DeTokenizeTest extends AbstractTokenizerTest {
   @Test(expected = TokenizerException.class)
   public void testDeTokenize() {
     DeTokenize deTokenize = new DeTokenize();

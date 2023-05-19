@@ -1,5 +1,6 @@
 package com.ebay.hadoop.udf.tokenizer;
 
+import com.ebay.hadoop.udf.tokenizer.util.TokenizerUtils;
 import com.ebay.platform.security.tokenizer.*;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
@@ -60,25 +61,29 @@ public class MicroVaultInstance {
 
   /** Wait tokenizer service reachable for production environment. */
   private static void waitProdTokenizerServiceReachable() {
-    String podEnv = Optional.ofNullable(System.getenv(POD_ENV_KEY)).orElse(DEFAULT_POD_ENV);
-    if (PROD_ENV.equalsIgnoreCase(podEnv)) {
-      String svcHost =
-          Optional.ofNullable(System.getenv(TOKENIZER_SERVICE_HOST_KEY))
-              .orElse(DEFAULT_PROD_TOKENIZER_SERVICE_HOST);
-      int svcPort =
-          Optional.ofNullable(System.getenv(TOKENIZER_SERVICE_PORT_KEY))
-              .map(i -> Integer.valueOf(i))
-              .orElse(DEFAULT_PROD_TOKENIZER_SERVICE_PORT);
-      while (!isHostPortReachable(svcHost, svcPort)) {
-        try {
-          LOG.info(
-              "Sleeping 1 second to wait the tokenizer service {}:{} reachable.", svcHost, svcPort);
-          TimeUnit.SECONDS.sleep(1);
-        } catch (InterruptedException e) {
-          // do nothing
+    if (!TokenizerUtils.isTesting()) {
+      String podEnv = Optional.ofNullable(System.getenv(POD_ENV_KEY)).orElse(DEFAULT_POD_ENV);
+      if (PROD_ENV.equalsIgnoreCase(podEnv)) {
+        String svcHost =
+            Optional.ofNullable(System.getenv(TOKENIZER_SERVICE_HOST_KEY))
+                .orElse(DEFAULT_PROD_TOKENIZER_SERVICE_HOST);
+        int svcPort =
+            Optional.ofNullable(System.getenv(TOKENIZER_SERVICE_PORT_KEY))
+                .map(i -> Integer.valueOf(i))
+                .orElse(DEFAULT_PROD_TOKENIZER_SERVICE_PORT);
+        while (!isHostPortReachable(svcHost, svcPort)) {
+          try {
+            LOG.info(
+                "Sleeping 1 second to wait the tokenizer service {}:{} reachable.",
+                svcHost,
+                svcPort);
+            TimeUnit.SECONDS.sleep(1);
+          } catch (InterruptedException e) {
+            // do nothing
+          }
         }
+        LOG.info("Tokenizer service {}:{} is reachable.", svcHost, svcPort);
       }
-      LOG.info("Tokenizer service {}:{} is reachable.", svcHost, svcPort);
     }
   }
 
