@@ -16,7 +16,7 @@ public class FindTokenizerMetadata extends UDF {
     }
     List<TokenizerMetadata> metadataList =
         MicroVaultInstance.getSingleton()
-            .findTokenizerMetadata(storeType, storeName, tableName, columnName);
+            .findTokenizerMetadataWithRetry(storeType, storeName, tableName, columnName);
     return metadataList.stream()
         .map(
             metadata -> {

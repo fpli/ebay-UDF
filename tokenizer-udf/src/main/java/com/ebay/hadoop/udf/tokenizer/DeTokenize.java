@@ -8,7 +8,8 @@ public class DeTokenize extends UDF {
     if (tokenizerRef == null || token == null) {
       return null;
     }
-    DetokenizeResponse response = MicroVaultInstance.getSingleton().deTokenize(tokenizerRef, token);
+    DetokenizeResponse response =
+        MicroVaultInstance.getSingleton().deTokenizeWithRetry(tokenizerRef, token);
     return response.getData();
   }
 }
