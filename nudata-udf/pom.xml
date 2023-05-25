@@ -20,6 +20,7 @@
         <lombok.version>1.16.20</lombok.version>
         <!-- override base hadoop version -->
         <hadoop.version>2.7.3</hadoop.version>
+        <spark.version>3.1.1.2.0.0-SNAPSHOT</spark.version>
     </properties>
 
     <dependencies>
@@ -39,12 +40,16 @@
                     <groupId>ch.qos.logback</groupId>
                     <artifactId>*</artifactId>
                 </exclusion>
+                <exclusion>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
             </exclusions>
         </dependency>
         <dependency> <!-- Spark dependency -->
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-sql_2.12</artifactId>
-            <version>3.1.1</version>
+            <version>${spark.version}</version>
             <scope>provided</scope>
         </dependency>
 
