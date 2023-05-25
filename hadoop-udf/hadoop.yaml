@@ -1,0 +1,10 @@
+- extract_ugi:
+  name: extract_ugi
+  owner: DL-eBay-Hadoop-Services@ebay.com
+  platform:
+    - apollorno
+    - herculeslvs
+  className: com.ebay.hadoop.udf.hadoop.UgiExtract
+  description:
+  parameters: context
+  example: extract_ugi(context)

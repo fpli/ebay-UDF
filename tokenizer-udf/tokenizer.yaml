@@ -1,4 +1,4 @@
-- base64_decode:
+- tokenize:
   name: tokenize
   owner:
   platform:
@@ -10,7 +10,7 @@
   parameters: tokenizerRef, data
   example: tokenize(tokenizerRef, data)
 
-- base64_decode:
+- detokenize:
   name: detokenize
   owner:
   platform:
@@ -22,7 +22,7 @@
   parameters: tokenizerRef, token
   example: detokenize(tokenizerRef, token)
 
-- base64_decode:
+- batch_tokenize:
   name: batch_tokenize
   owner:
   platform:
@@ -34,7 +34,7 @@
   parameters: tokenizerRef, dataList
   example: batch_tokenize(tokenizerRef, dataList)
 
-- base64_decode:
+- batch_detokenize:
   name: batch_detokenize
   owner:
   platform:
@@ -46,7 +46,7 @@
   parameters: tokenizerRef, tokenList
   example: batch_detokenize(tokenizerRef, tokenList)
 
-- base64_decode:
+- find_tokenizer_metadata:
   name: find_tokenizer_metadata
   owner:
   platform:

@@ -1,0 +1,95 @@
+---
+- bx-udf:
+  deployment: bx.yaml
+  database:
+    prod: bx
+    staging: bx_test
+
+- common-udf:
+  deployment: common.yaml
+  database:
+    prod: default
+
+- core-udf:
+  deployment: core.yaml
+  database:
+    prod: corelib
+
+- dapgap-udf:
+  deployment: dapgap.yaml
+  database:
+    prod: dapgap
+    staging: dapgap_test
+
+- datelib-udf:
+  deployment: datelib.yaml
+  database:
+    prod: datelib
+
+- dss-shpmt-udf:
+  deployment: shpmt.yaml
+  database:
+    prod: shpmt
+
+- ebaylib-udf:
+  deployment: ebaylib.yaml
+  database:
+    prod: ebaylib
+
+- ecg-udf:
+  deployment: ecg.yaml
+  database:
+    prod: clsfd
+
+- ep-udf:
+  deployment: ep.yaml
+  database:
+    prod: ep
+    staging: ep_test
+
+- gcx-udf:
+  deployment: gcx.yaml
+  database:
+    prod: gcx
+    staging: gcx_test
+
+- hadoop-udf:
+  deployment: hadoop.yaml
+  database:
+    prod: operation
+    staging: hadoop_test
+
+- nudata-udf:
+  deployment: nudata.yaml
+  database:
+    prod: nudata
+    staging: nudata_test
+
+- risk-udf:
+  deployment: risk.yaml
+  database:
+    prod: risk
+    staging: risk_test
+
+- search-udf:
+  deployment: search.yaml
+  database:
+    prod: search
+    staging: search_test
+
+- soj-udf:
+  deployment: soj.yaml
+  database:
+    prod: sojlib
+    staging: sojlib_test
+
+- sys-udf:
+  deployment: sys.yaml
+  database:
+    prod: syslib
+
+- tokenizer-udf:
+  deployment: tokenizer.yaml
+  database:
+    prod: tokenizer
+    staging: tokenizer_test

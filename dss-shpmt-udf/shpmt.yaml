@@ -1,5 +1,5 @@
 - GetUrl:
-  name: com.ebay.hadoop.udf.shpmt.GetUrl
+  name: shpmt.GetUrl
   owner:
   platform:
     - hermesrno
@@ -11,7 +11,7 @@
   example: shpmt.GetUrl(" www.ebay.com hbjbbjb yahoo gmail__com") or shpmt.GetUrl($string_column)
 
 - GetEmail:
-  name: com.ebay.hadoop.udf.shpmt.GetEmail
+  name: shpmt.GetEmail
   owner:
   platform:
     - hermesrno
