@@ -1,95 +1,78 @@
----
-- bx-udf:
+bx-udf:
   deployment: bx.yaml
-  database:
-    prod: bx
-    staging: bx_test
-
-- common-udf:
+  org: bx
+  prod_db: bx
+  stg_db: bx_test
+common-udf:
   deployment: common.yaml
-  database:
-    prod: default
-
-- core-udf:
+  org: common
+  prod_db: default
+core-udf:
   deployment: core.yaml
-  database:
-    prod: corelib
-
-- dapgap-udf:
+  org: core
+  prod_db: corelib
+dapgap-udf:
   deployment: dapgap.yaml
-  database:
-    prod: dapgap
-    staging: dapgap_test
-
-- datelib-udf:
+  org: dapgap
+  prod_db: dapgap
+  stg_db: dapgap_test
+datelib-udf:
   deployment: datelib.yaml
-  database:
-    prod: datelib
-
-- dss-shpmt-udf:
+  org: datelib
+  prod_db: datelib
+dss-shpmt-udf:
   deployment: shpmt.yaml
-  database:
-    prod: shpmt
-
-- ebaylib-udf:
+  org: shpmt
+  prod_db: shpmt
+ebaylib-udf:
   deployment: ebaylib.yaml
-  database:
-    prod: ebaylib
-
-- ecg-udf:
+  org: ebaylib
+  prod_db: ebaylib
+ecg-udf:
   deployment: ecg.yaml
-  database:
-    prod: clsfd
-
-- ep-udf:
+  org: clsfd
+  prod_db: clsfd
+ep-udf:
   deployment: ep.yaml
-  database:
-    prod: ep
-    staging: ep_test
-
-- gcx-udf:
+  org: ep
+  prod_db: ep
+  stg_db: ep_test
+gcx-udf:
   deployment: gcx.yaml
-  database:
-    prod: gcx
-    staging: gcx_test
-
-- hadoop-udf:
+  org: gcx
+  prod_db: gcx
+  stg_db: gcx_test
+hadoop-udf:
   deployment: hadoop.yaml
-  database:
-    prod: operation
-    staging: hadoop_test
-
-- nudata-udf:
+  org: hadoop
+  prod_db: operation
+  stg_db: hadoop_test
+nudata-udf:
   deployment: nudata.yaml
-  database:
-    prod: nudata
-    staging: nudata_test
-
-- risk-udf:
+  org: nudata
+  prod_db: nudata
+  stg_db: nudata_test
+risk-udf:
   deployment: risk.yaml
-  database:
-    prod: risk
-    staging: risk_test
-
-- search-udf:
+  org: risk
+  prod_db: risk
+  stg_db: risk_test
+search-udf:
   deployment: search.yaml
-  database:
-    prod: search
-    staging: search_test
-
-- soj-udf:
+  org: search
+  prod_db: search
+  stg_db: search_test
+soj-udf:
   deployment: soj.yaml
-  database:
-    prod: sojlib
-    staging: sojlib_test
-
-- sys-udf:
+  org: soj
+  prod_db: sojlib
+  stg_db: sojlib_test
+sys-udf:
   deployment: sys.yaml
-  database:
-    prod: syslib
-
-- tokenizer-udf:
+  org: syslib
+  prod_db: syslib
+tokenizer-udf:
   deployment: tokenizer.yaml
-  database:
-    prod: tokenizer
-    staging: tokenizer_test
+  org: tokenizer
+  prod_db: tokenizer
+  stg_db: tokenizer_test
