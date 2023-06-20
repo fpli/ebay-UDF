@@ -19,11 +19,11 @@
     <module>hadoop-udf</module>
     <module>bx-udf</module>
     <module>core-udf</module>
-    <module>tags</module>
+    <module>udf-tags</module>
     <module>ecg-udf</module>
-    <module>search-udf</module>
+    <module>search-qu-udf</module>
     <module>nudata-udf</module>
-    <module>search-udf/search-udf-vnfnormalizer-shaded</module>
+    <module>search-qu-udf/search-qu-udf-vnfnormalizer-shaded</module>
     <module>dapgap-udf</module>
     <module>gcx-udf</module>
     <module>tokenizer-udf</module>

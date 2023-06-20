@@ -57,7 +57,7 @@ risk-udf:
   org: risk
   prod_db: risk
   stg_db: risk_test
-search-udf:
+search-qu-udf:
   deployment: search.yaml
   org: search
   prod_db: search

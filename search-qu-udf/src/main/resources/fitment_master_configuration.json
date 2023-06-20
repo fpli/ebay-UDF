@@ -1,0 +1,1436 @@
+{
+  "#": "The master configuration file is used to generate whitelists,",
+  "#": "and the actual configuration file used in fitment rewrite.",
+  "#": "The URL for downloading fitment whitelists (the blacklist in the url",
+  "#": "is misleading!!).",
+  "whitelists_url": "http://assets.vip.ebay.com/sibe_lists/blacklist_motors.txt",
+  "#": "Site specific configuration.",
+  "sites" : [
+    {
+      "#" : "Site ID.",
+      "id" : "0",
+      "#" : "The L1 fitement-enabled categories for the site.",
+      "l1_categories" : [
+         6000,
+         6028
+      ],
+      "#" : "The root categories for the site. This information is used while",
+      "#" : "computing the L1 category given the category path.",
+      "root_categories" : [
+        0,
+        6000
+      ],
+      "catalogs" : [
+        {
+          "#": "Fitment catalog name as it is used in the index, MDDS and NKWNV",
+          "name": "vehicle_US",
+          "#": "The catalog ID used in the search_site_config and lighthouse.",
+          "catalog_id": "516",
+          "application_config" : {
+            "#": "The prefix for the auxiliary table that holds the aspect",
+            "#": "names and values and the corresponding column names in",
+            "#": "the output table requested by the FE which will have the",
+            "#": "FITs information for each item.",
+            "auxiliary_table_name_prefix": "fitment.app.vehicle",
+            "#": "The prefix for the table that holds the fitment by spec",
+            "#": "constraints for this app catalog.",
+            "specification_table_name_prefix": "fitment.spec.vehicle",
+            "#": "The list of aspects",
+            "aspects" : [
+              "Year",
+              "Make",
+              "Model",
+              "Submodel",
+              "Engine - Liter_Display"
+            ],
+            "#": "The list of configured aspects",
+            "aspect_config" : [
+               {
+                  "applied_aspect_name" : "Model Year",
+                  "disabled" : true,
+                  "name" : "Year",
+                  "priority" : 3,
+                  "sibe_aspect_name" : "Year"
+               },
+               {
+                  "applied_aspect_name" : "Make",
+                  "name" : "Make",
+                  "priority" : 8,
+                  "sibe_aspect_name" : "Make"
+               },
+               {
+                  "applied_aspect_name" : "Model",
+                  "mdds_ignored_tokens" : [
+                     "Chevy II",
+                     "Honda",
+                     "BMW",
+                     "Harley",
+                     "Harley Davidson",
+                     "Ducati",
+                     "Yamaha",
+                     "Yamaha Silverado",
+                     "Kawasaki Vulcan",
+                     "Kawasaki",
+                     "Triumph Rocket V",
+                     "Victory Six",
+                     "Victory Kingpin",
+                     "Suzuki"
+                  ],
+                  "name" : "Model",
+                  "priority" : 8,
+                  "sibe_aspect_name" : "Model"
+               },
+               {
+                  "applied_aspect_name" : "Submodel",
+                  "domcat_check" : true,
+                  "name" : "Submodel",
+                  "priority" : 2,
+                  "sibe_aspect_name" : "Submodel",
+                  "whitelist_key" : "32768"
+               },
+               {
+                  "applied_aspect_name" : "Engine - Liter_Display",
+                  "disabled" : true,
+                  "name" : "Engine - Liter_Display",
+                  "priority" : 1,
+                  "sibe_aspect_name" : "Engine - Liter_Display"
+               }
+            ],
+            "aspect_suppression_list" : [],
+            "min_aspect_count" : 1,
+            "#": "The list of spec catalogs associated with the app catalog.",
+            "specification_catalog_list" : [
+              "tire_US",
+              "rim_US"
+            ],
+            "#": "The combination of aspects required to enabled fitment by spec.",
+            "required_specification_aspects" : [
+              [
+                "Year",
+                "Model"
+              ],
+              [
+                "Year",
+                "Submodel"
+              ]
+            ]
+          }
+        },
+        {
+          "name": "boat_US",
+          "catalog_id": "1700",
+          "application_config" : {
+            "auxiliary_table_name_prefix": "fitment.app.boat",
+            "#": "This is not used because spec is not enabled for this app",
+            "specification_table_name_prefix": "fitment.spec.boat",
+            "aspects" : [
+              "Year",
+              "B_Make",
+              "B_Model",
+              "B_Engine",
+              "B_Engine Type",
+              "B_Component"
+            ],
+            "aspect_config" : [
+               {
+                  "applied_aspect_name" : "Model Year",
+                  "disabled" : true,
+                  "name" : "Year",
+                  "priority" : 5,
+                  "sibe_aspect_name" : "Year"
+               },
+               {
+                  "applied_aspect_name" : "B_Make",
+                  "name" : "B_Make",
+                  "priority" : 13,
+                  "sibe_aspect_name" : "B_Make"
+               },
+               {
+                  "applied_aspect_name" : "B_Model",
+                  "name" : "B_Model",
+                  "priority" : 13,
+                  "sibe_aspect_name" : "B_Model"
+               },
+               {
+                  "applied_aspect_name" : "B_Engine",
+                  "disabled" : true,
+                  "name" : "B_Engine",
+                  "priority" : 2,
+                  "sibe_aspect_name" : "B_Engine"
+               },
+               {
+                  "applied_aspect_name" : "B_Engine Type",
+                  "name" : "B_Engine Type",
+                  "priority" : 3,
+                  "sibe_aspect_name" : "B_Engine Type"
+               },
+               {
+                  "applied_aspect_name" : "B_Component",
+                  "disabled" : true,
+                  "name" : "B_Component",
+                  "priority" : 1,
+                  "sibe_aspect_name" : "B_Component"
+               }
+            ],
+            "aspect_suppression_list" : [
+               [
+                  "Year",
+                  "B_Engine"
+               ],
+               [
+                  "Year",
+                  "B_Component"
+               ]
+            ],
+            "min_aspect_count" : 1
+          }
+        },
+        {
+          "name": "motorcycle_US",
+          "catalog_id": "848",
+          "application_config" : {
+            "auxiliary_table_name_prefix": "fitment.app.motorcycle",
+            "#": "This is not used because spec is not enabled for this app",
+            "specification_table_name_prefix": "fitment.spec.motorcycle",
+            "aspects" : [
+              "Year",
+              "Make",
+              "Model",
+              "Submodel"
+            ],
+            "aspect_config" : [
+              {
+                 "applied_aspect_name" : "Model Year",
+                 "disabled" : true,
+                 "name" : "Year",
+                 "priority" : 2,
+                 "sibe_aspect_name" : "Year"
+              },
+              {
+                 "applied_aspect_name" : "Make",
+                 "name" : "Make",
+                 "priority" : 5,
+                 "sibe_aspect_name" : "M_Make"
+              },
+              {
+                 "applied_aspect_name" : "Model",
+                 "mdds_ignored_tokens" : [
+                    "Chevy II",
+                    "Honda",
+                    "BMW",
+                    "Harley",
+                    "Harley Davidson",
+                    "Ducati",
+                    "Yamaha",
+                    "Yamaha Silverado",
+                    "Kawasaki Vulcan",
+                    "Kawasaki",
+                    "Triumph Rocket V",
+                    "Victory Six",
+                    "Victory Kingpin",
+                    "Suzuki"
+                 ],
+                 "name" : "Model",
+                 "priority" : 5,
+                 "sibe_aspect_name" : "M_Model"
+              },
+              {
+                 "applied_aspect_name" : "Submodel",
+                 "disabled" : true,
+                 "name" : "Submodel",
+                 "priority" : 1,
+                 "sibe_aspect_name" : "M_Submodel"
+              }
+            ],
+            "aspect_suppression_list" : [],
+            "auxiliary_table_name_prefix" : "fitment.app.motorcycle",
+            "min_aspect_count" : 1
+          }
+        },
+        {
+          "name": "tire_US",
+          "catalog_id": "514",
+          "specification_config" : {
+            "auxiliary_table_name_prefix": "fitment.spec.tire",
+            "#": "Identifies if the aspects for this catalog be obtained from",
+            "#": "the raw user query based on a regular expression for tire",
+            "#": "pattern.",
+            "has_pattern": 1,
+            "#": "The spec aspects are different from app aspects in the sense",
+            "#": "they are painted in a different namespace (df). The spec",
+            "#": "constraints are vanilla AND constraints for each aspect",
+            "#": "as opposed to set_match for the fitment by app constraints",
+            "aspects" : [
+              "df:Section Width",
+              "df:Aspect Ratio",
+              "df:Rim Diameter",
+              "df:Load Index",
+              "df:Speed Index"
+            ],
+            "aspect_config" : [
+              {
+                 "field_name" : "df:Section Width",
+                 "logical_name" : "AS_SECTION_WIDTH"
+              },
+              {
+                 "field_name" : "df:Aspect Ratio",
+                 "logical_name" : "AS_ASPECT_RATIO"
+              },
+              {
+                 "field_name" : "df:Rim Diameter",
+                 "logical_name" : "AS_RIM_DIAMETER"
+              },
+              {
+                 "field_name" : "df:Load Index",
+                 "logical_name" : "AS_LOAD_INDEX"
+              },
+              {
+                 "field_name" : "df:Speed Index",
+                 "logical_name" : "AS_SPEED_INDEX"
+              }
+            ],
+            "#": "The spec_type is included in the regex query sent to the catalog pool.",
+            "spec_type": "Tire",
+            "#": "The max number of specifications to include in the constraints.",
+            "spec_count": 7,
+            "#": "If the applied category is not enabled for fitment by spec,",
+            "#": "and the application aspects are not present in the whitelist,",
+            "#": "we check if the leftover tokens are present in the whitelist",
+            "#": "and if true enable fitment by spec.",
+            "leftover_token_whitelist_key": "512",
+            "#": "If the applied category is not enabled for fitment by spec,",
+            "#": "we check if the application aspects are present in the",
+            "#": "whitelist and if true enable fitment by spec.",
+            "application_whitelist_key": {
+              "catalog_name": "vehicle_US",
+              "aspect_name": "Make",
+              "whitelist_key": "2048"
+            }
+          }
+        },
+        {
+          "name": "rim_US",
+          "catalog_id": "515",
+          "specification_config" : {
+            "#": "This is used for building auxiliary tables for pattern constraints.",
+            "#": "Since there is no pattern constraints for rims, this is not being used.",
+            "auxiliary_table_name_prefix": "fitment.spec.rim",
+            "has_pattern": 0,
+            "#": "The spec aspects are different from app aspects in the sense",
+            "#": "they are painted in a different namespace (df). The spec",
+            "#": "constraints are vanilla AND constraints for each aspect",
+            "#": "as opposed to set_match for the fitment by app constraints",
+            "aspects" : [
+              "df:Offset",
+              "df:Rim Diameter",
+              "df:Bolt Pattern",
+              "df:Rim Width"
+            ],
+            "aspect_config" : [
+               {
+                  "field_name" : "df:Offset",
+                  "logical_name" : ""
+               },
+               {
+                  "field_name" : "df:Rim Diameter",
+                  "logical_name" : ""
+               },
+               {
+                  "field_name" : "df:Bolt Pattern",
+                  "logical_name" : ""
+               },
+               {
+                  "field_name" : "df:Rim Width",
+                  "logical_name" : ""
+               }
+            ],
+            "#": "If the applied category is not enabled for fitment by spec,",
+            "#": "and the application aspects are not present in the whitelist,",
+            "#": "we check if the leftover tokens are present in the whitelist",
+            "#": "and if true enable fitment by spec.",
+            "leftover_token_whitelist_key": "1024",
+            "#": "If the applied category is not enabled for fitment by spec,",
+            "#": "we check if the application aspects are present in the",
+            "#": "whitelist and if true enable fitment by spec.",
+            "application_whitelist_key": {
+              "catalog_name": "vehicle_US",
+              "aspect_name": "Make",
+              "whitelist_key": "2048"
+            }
+          }
+        }
+      ],
+      "#": "The list of spec patterns applicable for this site. Each of the patterns are applied on",
+      "#": "the raw keywords and the aspects and any leftover tokens are retrieved by the pattern processor.",
+      "spec_patterns": [
+        {
+          "#": "The name of the pattern which is defined in the patterns section later in this config.",
+          "name": "Tire spec pattern",
+          "#": "The fitment catalog name for the spec.",
+          "catalog_name": "tire_US"
+         },
+        {
+          "name": "Light truck tire spec pattern",
+          "catalog_name": "tire_US"
+        }
+      ],
+      "#": "The lighthouse URL from where to fetch per category information",
+      "#": "Only fetch categories which contain ATLEAST ONE of the following:",
+      "#": "IS_FITBYAPP_CTPA -- Identifies if single aspect fitment should be enabled.",
+      "#": "FITMENT_APP_CATALOG",
+      "#": "FITMENT_BY_SPEC",
+      "#": "The following information is populated per category:",
+      "#": "IS_FITBYAPP_CTPA -- populate default = false if not present.",
+      "#": "FITMENT_BY_SPEC -- populate default = false if not present.",
+      "#": "FITMENT_APP_CATALOG -- Array of catalogs for this category.",
+      "#": "                       Populate empty array if not present.",
+      "lighthouse_url": "http://cls-qry-phx-001.vip.ebay.com:9090/getmetadata?Fn=categorymetadata&Si=100"
+    },
+    {
+      "id" : "77",
+      "l1_categories" : [
+         131090,
+         99
+      ],
+      "root_categories" : [
+        0
+      ],
+      "catalogs" : [
+        {
+          "name": "vehicle_DE",
+          "catalog_id": "800",
+          "application_config" : {
+            "auxiliary_table_name_prefix": "fitment.app.vehicle",
+            "#": "This is not used because spec is not enabled for this app",
+            "specification_table_name_prefix": "fitment.spec.vehicle",
+            "aspects" : [
+              "Year",
+              "Make",
+              "Model",
+              "Platform",
+              "Type"
+            ],
+            "aspect_config" : [
+              {
+                 "applied_aspect_name" : "Baujahr",
+                 "disabled" : true,
+                 "name" : "Year",
+                 "priority" : 2,
+                 "sibe_aspect_name" : "Year"
+              },
+              {
+                 "applied_aspect_name" : "Marke",
+                 "name" : "Make",
+                 "priority" : 8,
+                 "sibe_aspect_name" : "Make"
+              },
+              {
+                 "applied_aspect_name" : "Modell",
+                 "name" : "Model",
+                 "priority" : 5,
+                 "sibe_aspect_name" : "Model"
+              },
+              {
+                 "applied_aspect_name" : "Plattform",
+                 "name" : "Platform",
+                 "priority" : 3,
+                 "sibe_aspect_name" : "Platform"
+              },
+              {
+                 "applied_aspect_name" : "Typ",
+                 "disabled" : true,
+                 "name" : "Type",
+                 "priority" : 1,
+                 "sibe_aspect_name" : "Type"
+              }
+            ],
+            "aspect_suppression_list" : [],
+            "min_aspect_count" : 1
+          }
+        },
+        {
+          "name": "tire_DE",
+          "catalog_id": "778",
+          "has_pattern": 1,
+          "specification_config" : {
+            "auxiliary_table_name_prefix": "fitment.spec.tire",
+            "has_pattern": 1,
+            "aspects" : [
+              "df:Reifenbreite",
+              "df:Reifenquerschnitt",
+              "df:Zollgröße"
+            ],
+            "aspect_config" : [
+              {
+                 "field_name" : "df:Reifenbreite",
+                 "logical_name" : "AS_SECTION_WIDTH"
+              },
+              {
+                 "field_name" : "df:Reifenquerschnitt",
+                 "logical_name" : "AS_ASPECT_RATIO"
+              },
+              {
+                 "field_name" : "df:Zollgröße",
+                 "logical_name" : "AS_RIM_DIAMETER"
+              }
+            ]
+          }
+        },
+        {
+          "name": "motorcycle_DE",
+          "catalog_id": "2532",
+          "application_config" : {
+            "auxiliary_table_name_prefix": "fitment.app.motorcycle",
+            "aspects" : [
+               "Year",
+               "DEM_Make",
+               "DEM_Model",
+               "DEM_CCM",
+               "DEM_Submodel",
+               "DEM_StreetName"
+            ],
+            "aspect_config" : [
+              {
+                 "applied_aspect_name" : "Baujahr",
+                 "name" : "Year",
+                 "disabled" : true,
+                 "priority" : 2,
+                 "sibe_aspect_name" : "Year"
+              },
+              {
+                 "applied_aspect_name" : "Marke",
+                 "name" : "DEM_Make",
+                 "priority" : 10,
+                 "sibe_aspect_name" : "DEM_Make"
+              },
+              {
+                 "applied_aspect_name" : "Modellbezeichnung 1",
+                 "name" : "DEM_Model",
+                 "disabled" : true,
+                 "priority" : 8,
+                 "sibe_aspect_name" : "DEM_Model"
+              },
+              {
+                 "applied_aspect_name" : "CCM",
+                 "name" : "DEM_CCM",
+                 "disabled" : true,
+                 "priority" : 6,
+                 "sibe_aspect_name" : "DEM_CCM"
+              },
+              {
+                 "applied_aspect_name" : "Modellbezeichnung 2",
+                 "name" : "DEM_Submodel",
+                 "disabled" : true,
+                 "priority" : 4,
+                 "sibe_aspect_name" : "DEM_Submodel"
+              },
+              {
+                 "applied_aspect_name" : "Name",
+                 "name" : "DEM_StreetName",
+                 "priority" : 1,
+                 "sibe_aspect_name" : "DEM_StreetName"
+              }
+            ],
+            "aspect_suppression_list" : [
+              [
+                "DEM_Model",
+                "DEM_Submodel"
+              ],
+              [
+                "DEM_Model",
+                "Year"
+              ],
+              [
+                "DEM_Model",
+                "DEM_CCM"
+              ],
+              [
+                "DEM_Submodel",
+                "DEM_CCM"
+              ],
+              [
+                "DEM_Submodel",
+                "Year"
+              ],
+              [
+                "DEM_CCM",
+                "Year"
+              ],
+              [
+                "DEM_Model",
+                "DEM_Submodel",
+                "DEM_CCM"
+              ],
+              [
+                "DEM_Model",
+                "DEM_Submodel",
+                "Year"
+              ],
+              [
+                "DEM_Submodel",
+                "DEM_CCM",
+                "Year"
+              ],
+              [
+                "DEM_CCM",
+                "Year",
+                "DEM_Model"
+              ]
+            ],
+            "min_aspect_count" : 1,
+            "specification_table_name_prefix": "fitment.spec.vehicle"
+          }
+        }
+      ],
+      "spec_patterns": [
+        {
+          "name": "Tire spec pattern",
+          "catalog_name": "tire_DE"
+         },
+        {
+          "name": "Light truck tire spec pattern",
+          "catalog_name": "tire_DE"
+        }
+      ],
+      "lighthouse_url": "http://cls-qry-phx-001.vip.ebay.com:9090/getmetadata?Fn=categorymetadata&Si=77"
+    },
+    {
+      "id" : "3",
+      "l1_categories" : [
+         131090
+      ],
+      "root_categories" : [
+        0
+      ],
+      "catalogs" : [
+        {
+          "name": "vehicle_UK",
+          "catalog_id": "844",
+          "application_config" : {
+            "auxiliary_table_name_prefix": "fitment.app.vehicle",
+            "#": "This is not used because spec is not enabled for this app",
+            "specification_table_name_prefix": "fitment.spec.vehicle",
+            "aspects" : [
+              "Cars Year",
+              "Car Make",
+              "Cars Type",
+              "Plat_Gen",
+              "Model"
+            ],
+            "aspect_config" : [
+               {
+                  "applied_aspect_name" : "Cars Year",
+                  "disabled" : true,
+                  "name" : "Cars Year",
+                  "priority" : 2,
+                  "sibe_aspect_name" : "Cars Year"
+               },
+               {
+                  "applied_aspect_name" : "Make",
+                  "name" : "Car Make",
+                  "priority" : 8,
+                  "sibe_aspect_name" : "Car Make"
+               },
+               {
+                  "applied_aspect_name" : "Cars Type",
+                  "disabled" : true,
+                  "name" : "Cars Type",
+                  "priority" : 1,
+                  "sibe_aspect_name" : "Cars Type"
+               },
+               {
+                  "applied_aspect_name" : "Plat_Gen",
+                  "name" : "Plat_Gen",
+                  "priority" : 3,
+                  "sibe_aspect_name" : "Plat_Gen"
+               },
+               {
+                  "applied_aspect_name" : "Model",
+                  "name" : "Model",
+                  "priority" : 5,
+                  "sibe_aspect_name" : "Model"
+               }
+            ],
+            "aspect_suppression_list" : [],
+            "min_aspect_count" : 1
+          }
+        },
+        {
+          "name": "tire_UK",
+          "catalog_id": "779",
+          "has_pattern": 1,
+          "specification_config" : {
+            "auxiliary_table_name_prefix": "fitment.spec.tire",
+            "has_pattern": 1,
+            "aspects" : [
+              "df:Tyre Width",
+              "df:Aspect Ratio",
+              "df:Rim Diameter"
+            ],
+            "aspect_config" : [
+               {
+                  "field_name" : "df:Tyre Width",
+                  "logical_name" : "AS_SECTION_WIDTH"
+               },
+               {
+                  "field_name" : "df:Aspect Ratio",
+                  "logical_name" : "AS_ASPECT_RATIO"
+               },
+               {
+                  "field_name" : "df:Rim Diameter",
+                  "logical_name" : "AS_RIM_DIAMETER"
+               }
+            ]
+          }
+        },
+        {
+          "name": "motorcycle_UK",
+          "catalog_id": "2531",
+          "application_config" : {
+            "auxiliary_table_name_prefix": "fitment.app.motorcycle",
+            "aspects" : [
+              "Year",
+              "UKM_Make",
+              "UKM_Model",
+              "UKM_CCM",
+              "UKM_Submodel",
+              "UKM_StreetName"
+            ],
+            "aspect_config" : [
+               {
+                  "applied_aspect_name" : "Year",
+                  "disabled" : true,
+                  "name" : "Year",
+                  "priority" : 2,
+                  "sibe_aspect_name" : "Year"
+               },
+               {
+                  "applied_aspect_name" : "Make",
+                  "name" : "UKM_Make",
+                  "priority" : 10,
+                  "sibe_aspect_name" : "UKM_Make"
+               },
+               {
+                  "applied_aspect_name" : "Model",
+                  "disabled" : true,
+                  "name" : "UKM_Model",
+                  "priority" : 8,
+                  "sibe_aspect_name" : "UKM_Model"
+               },
+               {
+                  "applied_aspect_name" : "CCM",
+                  "disabled" : true,
+                  "name" : "UKM_CCM",
+                  "priority" : 6,
+                  "sibe_aspect_name" : "UKM_CCM"
+               },
+               {
+                  "applied_aspect_name" : "Submodel",
+                  "disabled" : true,
+                  "name" : "UKM_Submodel",
+                  "priority" : 4,
+                  "sibe_aspect_name" : "UKM_Submodel"
+               },
+               {
+                  "applied_aspect_name" : "Name",
+                  "name" : "UKM_StreetName",
+                  "priority" : 1,
+                  "sibe_aspect_name" : "UKM_StreetName"
+               }
+            ],
+            "aspect_suppression_list" : [
+              [
+                "UKM_Model",
+                "UKM_Submodel"
+              ],
+              [
+                "UKM_Model",
+                "Year"
+              ],
+              [
+                "UKM_Model",
+                "UKM_CCM"
+              ],
+              [
+                "UKM_Submodel",
+                "UKM_CCM"
+              ],
+              [
+                "UKM_Submodel",
+                "Year"
+              ],
+              [
+                "UKM_CCM",
+                "Year"
+              ],
+              [
+                "UKM_Model",
+                "UKM_Submodel",
+                "UKM_CCM"
+              ],
+              [
+                "UKM_Model",
+                "UKM_Submodel",
+                "Year"
+              ],
+              [
+                "UKM_Submodel",
+                "UKM_CCM",
+                "Year"
+              ],
+              [
+                "UKM_CCM",
+                "Year",
+                "UKM_Model"
+              ]
+            ],
+            "min_aspect_count" : 1,
+            "specification_table_name_prefix": "fitment.spec.vehicle"
+          }
+        }
+      ],
+      "spec_patterns": [
+        {
+          "name": "Tire spec pattern",
+          "catalog_name": "tire_UK"
+         },
+        {
+          "name": "Light truck tire spec pattern",
+          "catalog_name": "tire_UK"
+        }
+      ],
+      "lighthouse_url": "http://cls-qry-phx-001.vip.ebay.com:9090/getmetadata?Fn=categorymetadata&Si=3"
+    },
+    {
+      "id" : "15",
+      "l1_categories" : [
+         131090
+      ],
+      "root_categories" : [
+        0
+      ],
+      "catalogs" : [
+        {
+          "name": "vehicle_AU",
+          "catalog_id": "1087",
+          "application_config" : {
+            "auxiliary_table_name_prefix": "fitment.app.vehicle",
+            "#": "This is not used because spec is not enabled for this app",
+            "specification_table_name_prefix": "fitment.spec.vehicle",
+            "aspects" : [
+              "Year",
+              "Make",
+              "Model",
+              "Plat_Gen",
+              "Submodel"
+            ],
+            "aspect_config" : [
+               {
+                  "applied_aspect_name" : "Model Year",
+                  "disabled" : true,
+                  "name" : "Year",
+                  "priority" : 2,
+                  "sibe_aspect_name" : "Year"
+               },
+               {
+                  "applied_aspect_name" : "Make",
+                  "name" : "Make",
+                  "priority" : 8,
+                  "sibe_aspect_name" : "Make"
+               },
+               {
+                  "applied_aspect_name" : "Model",
+                  "name" : "Model",
+                  "priority" : 5,
+                  "sibe_aspect_name" : "Model"
+               },
+               {
+                  "applied_aspect_name" : "Plat_Gen",
+                  "name" : "Plat_Gen",
+                  "priority" : 3,
+                  "sibe_aspect_name" : "Plat_Gen"
+               },
+               {
+                  "applied_aspect_name" : "Submodel",
+                  "domcat_check" : true,
+                  "name" : "Submodel",
+                  "priority" : 1,
+                  "sibe_aspect_name" : "Submodel",
+                  "whitelist_key" : "32768"
+               }
+            ],
+            "aspect_suppression_list" : [],
+            "min_aspect_count" : 1
+          }
+        }
+      ],
+      "lighthouse_url": "http://cls-qry-phx-001.vip.ebay.com:9090/getmetadata?Fn=categorymetadata&Si=15"
+    },
+    {
+      "id" : "71",
+      "l1_categories" : [
+         131090
+      ],
+      "root_categories" : [
+        0
+      ],
+      "catalogs" : [
+        {
+          "name": "vehicle_UK",
+          "catalog_id": "844",
+          "application_config" : {
+            "auxiliary_table_name_prefix": "fitment.app.vehicle.uk",
+            "#": "This is not used because spec is not enabled for this app",
+            "specification_table_name_prefix": "fitment.spec.vehicle.uk",
+            "aspects" : [
+              "Cars Year",
+              "Car Make",
+              "Cars Type",
+              "Plat_Gen",
+              "Model"
+            ],
+            "aspect_config" : [
+               {
+                  "applied_aspect_name" : "Cars Year",
+                  "disabled" : true,
+                  "name" : "Cars Year",
+                  "priority" : 2,
+                  "sibe_aspect_name" : "Cars Year"
+               },
+               {
+                  "applied_aspect_name" : "Make",
+                  "name" : "Car Make",
+                  "priority" : 8,
+                  "sibe_aspect_name" : "Car Make"
+               },
+               {
+                  "applied_aspect_name" : "Cars Type",
+                  "disabled" : true,
+                  "name" : "Cars Type",
+                  "priority" : 1,
+                  "sibe_aspect_name" : "Cars Type"
+               },
+               {
+                  "applied_aspect_name" : "Plat_Gen",
+                  "name" : "Plat_Gen",
+                  "priority" : 3,
+                  "sibe_aspect_name" : "Plat_Gen"
+               },
+               {
+                  "applied_aspect_name" : "Model",
+                  "name" : "Model",
+                  "priority" : 5,
+                  "sibe_aspect_name" : "Model"
+               }
+            ],
+            "aspect_suppression_list" : [],
+            "min_aspect_count" : 1
+          }
+        },
+        {
+          "name": "vehicle_DE",
+          "catalog_id": "800",
+          "application_config" : {
+            "auxiliary_table_name_prefix": "fitment.app.vehicle.de",
+            "#": "This is not used because spec is not enabled for this app",
+            "specification_table_name_prefix": "fitment.spec.vehicle.de",
+            "aspects" : [
+              "Year",
+              "Make",
+              "Model",
+              "Platform",
+              "Type"
+            ],
+            "aspect_config" : [
+               {
+                  "applied_aspect_name" : "Baujahr",
+                  "disabled" : true,
+                  "name" : "Year",
+                  "priority" : 2,
+                  "sibe_aspect_name" : "Year"
+               },
+               {
+                  "applied_aspect_name" : "Marke",
+                  "name" : "Make",
+                  "priority" : 8,
+                  "sibe_aspect_name" : "Make"
+               },
+               {
+                  "applied_aspect_name" : "Modell",
+                  "name" : "Model",
+                  "priority" : 5,
+                  "sibe_aspect_name" : "Model"
+               },
+               {
+                  "applied_aspect_name" : "Plattform",
+                  "name" : "Platform",
+                  "priority" : 3,
+                  "sibe_aspect_name" : "Platform"
+               },
+               {
+                  "applied_aspect_name" : "Typ",
+                  "disabled" : true,
+                  "name" : "Type",
+                  "priority" : 1,
+                  "sibe_aspect_name" : "Type"
+               }
+            ],
+            "aspect_suppression_list" : [],
+            "min_aspect_count" : 1
+          }
+        },
+        {
+          "name": "tire_DE",
+          "catalog_id": "778",
+          "has_pattern": 1,
+          "specification_config" : {
+            "auxiliary_table_name_prefix": "fitment.spec.tire.de",
+            "has_pattern": 1,
+            "aspects" : [
+              "df:Reifenbreite",
+              "df:Reifenquerschnitt",
+              "df:Zollgröße"
+            ],
+            "aspect_config" : [
+              {
+                 "field_name" : "df:Reifenbreite",
+                 "logical_name" : "AS_SECTION_WIDTH"
+              },
+              {
+                 "field_name" : "df:Reifenquerschnitt",
+                 "logical_name" : "AS_ASPECT_RATIO"
+              },
+              {
+                 "field_name" : "df:Zollgröße",
+                 "logical_name" : "AS_RIM_DIAMETER"
+              }
+            ]
+          }
+        }
+      ],
+      "spec_patterns": [
+        {
+          "name": "Tire spec pattern",
+          "catalog_name": "tire_DE"
+         },
+        {
+          "name": "Light truck tire spec pattern",
+          "catalog_name": "tire_DE"
+        }
+      ],
+      "lighthouse_url": "http://cls-qry-phx-001.vip.ebay.com:9090/getmetadata?Fn=categorymetadata&Si=71"
+    },	
+    {
+      "id" : "101",
+      "l1_categories" : [
+         131090
+      ],
+      "root_categories" : [
+        0
+      ],
+      "catalogs" : [
+        {
+          "name": "vehicle_UK",
+          "catalog_id": "844",
+          "application_config" : {
+            "auxiliary_table_name_prefix": "fitment.app.vehicle.uk",
+            "#": "This is not used because spec is not enabled for this app",
+            "specification_table_name_prefix": "fitment.spec.vehicle.uk",
+            "aspects" : [
+              "Cars Year",
+              "Car Make",
+              "Cars Type",
+              "Plat_Gen",
+              "Model"
+            ],
+            "aspect_config" : [
+               {
+                  "applied_aspect_name" : "Cars Year",
+                  "disabled" : true,
+                  "name" : "Cars Year",
+                  "priority" : 2,
+                  "sibe_aspect_name" : "Cars Year"
+               },
+               {
+                  "applied_aspect_name" : "Make",
+                  "name" : "Car Make",
+                  "priority" : 8,
+                  "sibe_aspect_name" : "Car Make"
+               },
+               {
+                  "applied_aspect_name" : "Cars Type",
+                  "disabled" : true,
+                  "name" : "Cars Type",
+                  "priority" : 1,
+                  "sibe_aspect_name" : "Cars Type"
+               },
+               {
+                  "applied_aspect_name" : "Plat_Gen",
+                  "name" : "Plat_Gen",
+                  "priority" : 3,
+                  "sibe_aspect_name" : "Plat_Gen"
+               },
+               {
+                  "applied_aspect_name" : "Model",
+                  "name" : "Model",
+                  "priority" : 5,
+                  "sibe_aspect_name" : "Model"
+               }
+            ],
+            "aspect_suppression_list" : [],
+            "min_aspect_count" : 1
+          }
+        },
+        {
+          "name": "vehicle_DE",
+          "catalog_id": "800",
+          "application_config" : {
+            "auxiliary_table_name_prefix": "fitment.app.vehicle.de",
+            "#": "This is not used because spec is not enabled for this app",
+            "specification_table_name_prefix": "fitment.spec.vehicle.de",
+            "aspects" : [
+              "Year",
+              "Make",
+              "Model",
+              "Platform",
+              "Type"
+            ],
+            "aspect_config" : [
+               {
+                  "applied_aspect_name" : "Baujahr",
+                  "disabled" : true,
+                  "name" : "Year",
+                  "priority" : 2,
+                  "sibe_aspect_name" : "Year"
+               },
+               {
+                  "applied_aspect_name" : "Marke",
+                  "name" : "Make",
+                  "priority" : 8,
+                  "sibe_aspect_name" : "Make"
+               },
+               {
+                  "applied_aspect_name" : "Modell",
+                  "name" : "Model",
+                  "priority" : 5,
+                  "sibe_aspect_name" : "Model"
+               },
+               {
+                  "applied_aspect_name" : "Plattform",
+                  "name" : "Platform",
+                  "priority" : 3,
+                  "sibe_aspect_name" : "Platform"
+               },
+               {
+                  "applied_aspect_name" : "Typ",
+                  "disabled" : true,
+                  "name" : "Type",
+                  "priority" : 1,
+                  "sibe_aspect_name" : "Type"
+               }
+            ],
+            "aspect_suppression_list" : [],
+            "min_aspect_count" : 1
+          }
+        },
+        {
+          "name": "tire_DE",
+          "catalog_id": "778",
+          "has_pattern": 1,
+          "specification_config" : {
+            "auxiliary_table_name_prefix": "fitment.spec.tire.de",
+            "has_pattern": 1,
+            "aspects" : [
+              "df:Reifenbreite",
+              "df:Reifenquerschnitt",
+              "df:Zollgröße"
+            ],
+            "aspect_config" : [
+              {
+                 "field_name" : "df:Reifenbreite",
+                 "logical_name" : "AS_SECTION_WIDTH"
+              },
+              {
+                 "field_name" : "df:Reifenquerschnitt",
+                 "logical_name" : "AS_ASPECT_RATIO"
+              },
+              {
+                 "field_name" : "df:Zollgröße",
+                 "logical_name" : "AS_RIM_DIAMETER"
+              }
+            ]
+          }
+        }
+      ],
+      "spec_patterns": [
+        {
+          "name": "Tire spec pattern",
+          "catalog_name": "tire_DE"
+         },
+        {
+          "name": "Light truck tire spec pattern",
+          "catalog_name": "tire_DE"
+        }
+      ],
+      "lighthouse_url": "http://cls-qry-phx-001.vip.ebay.com:9090/getmetadata?Fn=categorymetadata&Si=101"
+    },
+    {
+      "id" : "186",
+      "l1_categories" : [
+         131090
+      ],
+      "root_categories" : [
+        0
+      ],
+      "catalogs" : [
+        {
+          "name": "vehicle_UK",
+          "catalog_id": "844",
+          "application_config" : {
+            "auxiliary_table_name_prefix": "fitment.app.vehicle.uk",
+            "#": "This is not used because spec is not enabled for this app",
+            "specification_table_name_prefix": "fitment.spec.vehicle.uk",
+            "aspects" : [
+              "Cars Year",
+              "Car Make",
+              "Cars Type",
+              "Plat_Gen",
+              "Model"
+            ],
+            "aspect_config" : [
+               {
+                  "applied_aspect_name" : "Cars Year",
+                  "disabled" : true,
+                  "name" : "Cars Year",
+                  "priority" : 2,
+                  "sibe_aspect_name" : "Cars Year"
+               },
+               {
+                  "applied_aspect_name" : "Make",
+                  "name" : "Car Make",
+                  "priority" : 8,
+                  "sibe_aspect_name" : "Car Make"
+               },
+               {
+                  "applied_aspect_name" : "Cars Type",
+                  "disabled" : true,
+                  "name" : "Cars Type",
+                  "priority" : 1,
+                  "sibe_aspect_name" : "Cars Type"
+               },
+               {
+                  "applied_aspect_name" : "Plat_Gen",
+                  "name" : "Plat_Gen",
+                  "priority" : 3,
+                  "sibe_aspect_name" : "Plat_Gen"
+               },
+               {
+                  "applied_aspect_name" : "Model",
+                  "name" : "Model",
+                  "priority" : 5,
+                  "sibe_aspect_name" : "Model"
+               }
+            ],
+            "aspect_suppression_list" : [],
+            "min_aspect_count" : 1
+          }
+        },
+        {
+          "name": "vehicle_DE",
+          "catalog_id": "800",
+          "application_config" : {
+            "auxiliary_table_name_prefix": "fitment.app.vehicle.de",
+            "#": "This is not used because spec is not enabled for this app",
+            "specification_table_name_prefix": "fitment.spec.vehicle.de",
+            "aspects" : [
+              "Year",
+              "Make",
+              "Model",
+              "Platform",
+              "Type"
+            ],
+            "aspect_config" : [
+               {
+                  "applied_aspect_name" : "Baujahr",
+                  "disabled" : true,
+                  "name" : "Year",
+                  "priority" : 2,
+                  "sibe_aspect_name" : "Year"
+               },
+               {
+                  "applied_aspect_name" : "Marke",
+                  "name" : "Make",
+                  "priority" : 8,
+                  "sibe_aspect_name" : "Make"
+               },
+               {
+                  "applied_aspect_name" : "Modell",
+                  "name" : "Model",
+                  "priority" : 5,
+                  "sibe_aspect_name" : "Model"
+               },
+               {
+                  "applied_aspect_name" : "Plattform",
+                  "name" : "Platform",
+                  "priority" : 3,
+                  "sibe_aspect_name" : "Platform"
+               },
+               {
+                  "applied_aspect_name" : "Typ",
+                  "disabled" : true,
+                  "name" : "Type",
+                  "priority" : 1,
+                  "sibe_aspect_name" : "Type"
+               }
+            ],
+            "aspect_suppression_list" : [],
+            "min_aspect_count" : 1
+          }
+        },
+        {
+          "name": "tire_DE",
+          "catalog_id": "778",
+          "has_pattern": 1,
+          "specification_config" : {
+            "auxiliary_table_name_prefix": "fitment.spec.tire.de",
+            "has_pattern": 1,
+            "aspects" : [
+              "df:Reifenbreite",
+              "df:Reifenquerschnitt",
+              "df:Zollgröße"
+            ],
+            "aspect_config" : [
+              {
+                 "field_name" : "df:Reifenbreite",
+                 "logical_name" : "AS_SECTION_WIDTH"
+              },
+              {
+                 "field_name" : "df:Reifenquerschnitt",
+                 "logical_name" : "AS_ASPECT_RATIO"
+              },
+              {
+                 "field_name" : "df:Zollgröße",
+                 "logical_name" : "AS_RIM_DIAMETER"
+              }
+            ]
+          }
+        }
+      ],
+      "spec_patterns": [
+        {
+          "name": "Tire spec pattern",
+          "catalog_name": "tire_DE"
+         },
+        {
+          "name": "Light truck tire spec pattern",
+          "catalog_name": "tire_DE"
+        }
+      ],
+      "lighthouse_url": "http://cls-qry-phx-001.vip.ebay.com:9090/getmetadata?Fn=categorymetadata&Si=186"
+    }	
+  ],
+  "#": "The configurations for the patterns used by the spec pattern processor.",
+  "patterns": [
+    {
+      "#": "The pattern name.",
+      "name": "Tire spec pattern",
+      "#": "The regex for the pattern",
+      "regex": "(^| )([Pp]|[Ll][Tt]|[Ss][Tt]|[Tt])?([0-9]{3,3})(/| |-)([0-9]{2,3})(((-| )+([0-9]{2}))|((-| )?([BbDdRrXx])(-| )?([0-9]{2}))|(([B-Zb-z])(-| )?([0-9]{2}))|(([B-Zb-z])(-| )?([BbDdRrXx])(-| )?([0-9]{2})))([Cc])?(( )(([0-9]{2,3})((/)([0-9]{2,3}))?)([A-Za-z])?)?( |$)",
+      "#": "The matches to be extracted from the regex pattern.",
+      "matches": [
+        {
+          "#": "The index in the matching regex group.",
+          "match_index": 2,
+          "#": "The logical aspect name which could be mapped to different name in the Cassini index.",
+          "aspect_name": "AS_TIRE_CLASS"
+        },
+        {
+          "match_index": 3,
+          "aspect_name": "AS_SECTION_WIDTH"
+        },
+        {
+          "match_index": 5,
+          "aspect_name": "AS_ASPECT_RATIO"
+        },
+        {
+          "match_index": 9,
+          "aspect_name": "AS_RIM_DIAMETER"
+        },
+        {
+          "match_index": 14,
+          "aspect_name": "AS_RIM_DIAMETER"
+        },
+        {
+          "match_index": 18,
+          "aspect_name": "AS_RIM_DIAMETER"
+        },
+        {
+          "match_index": 24,
+          "aspect_name": "AS_RIM_DIAMETER"
+        },
+        {
+          "match_index": 12,
+          "aspect_name": "CONSTRUCTION"
+        },
+        {
+          "match_index": 33,
+          "aspect_name": "AS_SPEED_INDEX"
+        },
+        {
+          "match_index": 16,
+          "aspect_name": "AS_SPEED_INDEX"
+        },
+        {
+          "match_index": 20,
+          "aspect_name": "AS_SPEED_INDEX"
+        },
+        {
+          "match_index": 22,
+          "aspect_name": "CONSTRUCTION"
+        },
+        {
+          "match_index": 25,
+          "aspect_name": "TIRE_CLASS_COMMERCIAL"
+        },
+        {
+          "match_index": 29,
+          "aspect_name": "AS_LOAD_INDEX"
+        },
+        {
+          "match_index": 32,
+          "aspect_name": "AS_LOAD_INDEX"
+        }
+      ]
+    },
+    {
+      "name": "Light truck tire spec pattern",
+      "regex": "(^| )(([0-9]{2})( )?([Xx])( )?)?([0-9]{1,2}\\.[0-9]{2})([BbDdRrXx])([0-9]{2})([Ll][Tt])(( )(([0-9]{2,3})((/)([0-9]{2,3}))?)([A-Za-z])?)?( |$)",
+      "matches": [
+        {
+           "match_index": 3,
+           "aspect_name": "TIRE_DIAMETER"
+        },
+        {
+           "match_index": 7,
+           "aspect_name": "AS_SECTION_WIDTH"
+        },
+        {
+          "match_index": 9,
+          "aspect_name": "AS_RIM_DIAMETER"
+        },
+        {
+          "match_index": 14,
+          "aspect_name": "AS_LOAD_INDEX"
+        },
+        {
+          "match_index": 17,
+          "aspect_name": "AS_LOAD_INDEX"
+        },
+        {
+          "match_index": 18,
+          "aspect_name": "AS_SPEED_INDEX"
+        }
+      ]
+    }
+  ]
+}

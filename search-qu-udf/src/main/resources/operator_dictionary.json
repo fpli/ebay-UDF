@@ -1,0 +1,6804 @@
+{
+  "version": {
+    "major": 1,
+    "minor": 0,
+    "patch": "",
+    "buildno": 0,
+    "time_stamp": 0,
+    "info": ""
+  },
+  "operators":
+  {
+    "tensor_as_float":
+    {
+      "attributes" : ["is-nullable"],
+      "return-type" : "float",
+      "operands" :
+      [
+        {
+          "data-type" : "blob",
+          "attributes": ["is-nullable"]
+        }
+      ]
+    },
+   "tensor_cosine" :
+   {
+     "attributes" : ["is-nullable"],
+     "return-type" : "blob",
+     "operands" :
+     [
+       {
+         "data-type" : "blob",
+         "attributes": ["is-nullable"]
+       },
+       {
+         "data-type" : "blob",
+         "attributes": ["is-nullable"]
+       }
+     ],
+     "variable-repeat-last-operand" : false
+   },
+    "tensor_string_as_vector" :
+    {
+      "attributes" : ["is-nullable"],
+      "return-type" : "blob",
+      "operands" :
+      [
+        {
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "data-type" : "blob",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "data-type" : "blob",
+          "attributes": ["is-nullable"]
+        }
+      ],
+      "variable-repeat-last-operand" : false
+    },
+    "base64_decode":
+    {
+      "attributes" : ["is-nullable"],
+      "return-type" : "blob",
+      "operands" :
+      [
+        {
+          "data-type" : "blob",
+          "attributes": ["is-nullable"]
+        }
+      ]
+    },
+    "query_descriptor":
+    {
+      "attributes" : [],
+      "return-type" : "bool",
+      "operands" :
+      [
+        {
+          "data-type" : "bool",
+          "attributes": []
+        }
+      ],
+      "variable-repeat-last-operand" : true
+    },
+    "query_descriptor_component":
+    {
+      "attributes" : [],
+      "return-type" : "bool",
+      "operands" :
+      [
+        {
+          "data-type" : "blob",
+          "attributes": []
+        },
+        {
+          "data-type" : "blob",
+          "attributes": []
+        }
+      ]
+    },
+    "ranker":
+    {
+      "attributes" : ["multi-value"],
+      "return-type" : "float",
+      "operands" :
+      [
+        {
+          "data-type" : "float",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "data-type" : "float",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "data-type" : "float",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        }
+      ],
+      "named-operands" :
+      [
+        {
+          "name" : "sort_order",
+          "data-type" : "blob",
+          "attributes": ["is-nullable"]
+        }
+      ]
+    },
+    "mval_ranker":
+    {
+      "attributes" : ["multi-value"],
+      "return-type" : "float",
+      "operands" :
+      [
+        {
+          "data-type" : "float",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "data-type" : "float",
+          "attributes": ["multi-value", "is-nullable"]
+        },
+        {
+          "data-type" : "float",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        }
+      ],
+      "named-operands" :
+      [
+        {
+          "name" : "sort_order",
+          "data-type" : "blob",
+          "attributes": ["is-nullable"]
+        }
+      ]
+    },
+    "macro":
+    {
+      "attributes" : [],
+      "return-type" : "int64",
+      "operands" :
+      [
+      ]
+    },
+    "dummy":
+    {
+      "attributes" : [],
+      "return-type" : "int64",
+      "operands" :
+      [
+        {
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        }
+      ]
+    },
+    "RegTest1":
+    {
+      "attributes" : [],
+      "return-type" : "int64",
+      "operands" :
+      [
+        {
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        }
+      ]
+    },
+    "RegTestPositionMatchMapMacro1":
+    {
+      "attributes" : [],
+      "return-type" : "int64",
+      "operands" :
+      [
+      ]
+    },
+    "shipcalc_arg5":
+    {
+      "attributes" : ["multi-value"],
+      "return-type" : "int64",
+      "operands" :
+      [
+        {
+          "data-type" : "blob",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "data-type" : "blob",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        }
+      ]
+    },
+    "shipcalc_arg6":
+    {
+      "attributes" : ["multi-value"],
+      "return-type" : "int64",
+      "operands" :
+      [
+        {
+          "data-type" : "blob",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "data-type" : "blob",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        }
+      ]
+    },
+    "shipcalc_arg7":
+    {
+      "attributes" : ["multi-value"],
+      "return-type" : "int64",
+      "operands" :
+      [
+        {
+          "data-type" : "blob",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "data-type" : "blob",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        }
+      ]
+    },
+    "shipcalc_arg11":
+    {
+      "attributes" : ["multi-value"],
+      "return-type" : "int64",
+      "operands" :
+      [
+        {
+          "data-type" : "blob",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "data-type" : "blob",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        }
+      ]
+    },
+    "ShippingServiceId":
+    {
+      "attributes" : ["is-nullable"],
+      "return-type" : "int64",
+      "operands" :
+      [
+      ]
+    },
+    "AllShippingServiceIds":
+    {
+      "attributes" : ["multi-value"],
+      "return-type" : "int64",
+      "operands" :
+      [
+      ]
+    },
+       "NShippingCost":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+           ]
+       },
+    "AppliedLoyaltyPrograms":
+    {
+      "attributes" : ["multi-value", "is-nullable"],
+      "return-type" : "int64",
+      "operands" :
+      [
+      ]
+    },
+    "total_cost_sort":
+    {
+      "_comment" : "Operator (short_form) that returns a value that applies the total cost sort business logic (buckets for various cases where shipping can't be determined)",
+      "attributes" : [],
+      "return-type" : "int64",
+      "operands" :
+      [
+        {
+          "_comment" : "site",
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "_comment" : "usecase (auction vs bin)",
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "_comment" : "destination country code",
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "_comment" : "destination postal code",
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "_comment" : "destination region code if any or 0",
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "_comment" : "order (increasing = 0, descreasing = 1)",
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        }
+      ]
+    },
+    "total_cost_sort_long_form":
+    {
+      "_comment" : "Operator (long form) that returns a value that applies the total cost sort business logic (buckets for various cases where shipping can't be determined)",
+      "attributes" : [],
+      "return-type" : "int64",
+      "operands" :
+      [
+        {
+          "_comment" : "site",
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "_comment" : "usecase (auction vs bin)",
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "_comment" : "destination country code",
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "_comment" : "destination postal code",
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "_comment" : "destination region code if any or 0",
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "_comment" : "order (increasing = 0, descreasing = 1)",
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "_comment" : "Gps x",
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "_comment" : "Gps y",
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "_comment" : "Gps z",
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        },
+        {
+          "_comment" : "Local area radius",
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        }
+      ]
+    },
+    "ReturnUSScore1":
+    {
+      "attributes" : [],
+      "return-type" : "int64",
+      "operands" :
+      [
+      ]
+    },
+    "hostname":
+    {
+      "attributes" : [],
+      "return-type" : "blob",
+      "operands" :
+      [
+      ]
+    },
+    "PLPKeywords":
+    {
+      "return-type" : "string",
+      "attributes" : ["is-nullable", "multi-value"],
+      "operands" :
+      [
+      ]
+    },
+    "PLPTopScore" :
+    {
+      "attributes" : ["is-nullable"],
+      "return-type" : "float",
+      "operands" :
+      [
+      ]
+    },
+    "PLPTopScoredKeyword" :
+    {
+      "attributes" : ["is-nullable"],
+      "return-type" : "string",
+      "operands" :
+      [
+      ]
+    },
+    "PLPTopScoredKeywordIndex" :
+    {
+      "attributes" : ["is-nullable"],
+      "return-type" : "int64",
+      "operands" :
+      [
+      ]
+    },
+    "sibe_sub_terms":
+    {
+      "attributes" : [],
+      "return-type" : "bool",
+      "operands" :
+      [
+      ]
+    },
+    "sibe_category":
+    {
+      "attributes" : [],
+      "return-type" : "bool",
+      "operands" :
+      [
+      ]
+    },
+    "zone_length":
+    {
+      "attributes" : [],
+      "return-type" : "int64",
+      "operands" :
+      [
+        {
+          "data-type" : "blob",
+          "attributes": []
+        }
+      ]
+    },
+    "docid":
+    {
+      "attributes" : [],
+      "return-type" : "int64",
+      "operands" :
+      [
+      ]
+    },
+    "doc_count":
+    {
+      "attributes" : [],
+      "return-type" : "int64",
+      "operands" :
+      [
+      ]
+    },
+    "docdata":
+    {
+      "attributes" : ["is-nullable"],
+      "return-type" : "blob",
+      "operands" :
+      [
+      ]
+    },
+    "docfreq":
+    {
+      "attributes" : [ ],
+      "return-type" : "int64",
+      "operands" :
+      [
+        {
+          "data-type" : "bool",
+          "attributes": ["return-position"]
+        }
+      ]
+    },
+    "docfreq_mvalue":
+    {
+      "attributes" : ["multi-value"],
+      "return-type" : "int64",
+      "operands" :
+      [
+        {
+          "data-type" : "bool",
+          "attributes": ["return-position"]
+        }
+      ],
+      "variable-repeat-last-operand" : "true"
+    },
+    "termfreq":
+    {
+      "attributes" : [ ],
+      "return-type" : "int64",
+      "operands" :
+      [
+        {
+          "data-type" : "bool",
+          "attributes": ["return-position"]
+        }
+      ]
+    },
+    "termfreq_mvalue":
+    {
+      "attributes" : ["multi-value"],
+      "return-type" : "int64",
+      "operands" :
+      [
+        {
+          "data-type" : "bool",
+          "attributes": ["return-position"]
+        }
+      ],
+      "variable-repeat-last-operand" : "true"
+    },
+    "lua_int64":
+    {
+      "attributes" : ["is-nullable"],
+      "return-type" : "int64",
+      "operands" :
+      [
+      ],
+      "variable-repeat-last-operand" : "false"
+    },
+    "lua_mvalue_int64":
+    {
+      "attributes" : ["is-nullable", "multi-value"],
+      "return-type" : "int64",
+      "operands" :
+      [
+      ],
+      "variable-repeat-last-operand" : "false"
+    },
+    "lua_float":
+    {
+      "attributes" : ["is-nullable"],
+      "return-type" : "float",
+      "operands" :
+      [
+      ],
+      "variable-repeat-last-operand" : "false"
+    },
+    "lua_mvalue_float":
+    {
+      "attributes" : ["is-nullable", "multi-value"],
+      "return-type" : "float",
+      "operands" :
+      [
+      ],
+      "variable-repeat-last-operand" : "false"
+    },
+    "lua_blob":
+    {
+      "attributes" : ["is-nullable"],
+      "return-type" : "blob",
+      "operands" :
+      [
+      ],
+      "variable-repeat-last-operand" : "false"
+    },
+    "lua_mvalue_blob":
+    {
+      "attributes" : ["is-nullable", "multi-value"],
+      "return-type" : "blob",
+      "operands" :
+      [
+      ],
+      "variable-repeat-last-operand" : "false"
+    },
+    "luap_int64":
+    {
+      "attributes" : ["is-nullable"],
+      "return-type" : "int64",
+      "operands" :
+      [
+        {
+          "data-type" : "any",
+          "attributes": []
+        }
+      ],
+      "variable-repeat-last-operand" : "true"
+    },
+    "luap_mvalue_int64":
+    {
+      "attributes" : ["is-nullable", "multi-value"],
+      "return-type" : "int64",
+      "operands" :
+      [
+        {
+          "data-type" : "any",
+          "attributes": []
+        }
+      ],
+      "variable-repeat-last-operand" : "true"
+    },
+    "luap_float":
+    {
+      "attributes" : ["is-nullable"],
+      "return-type" : "float",
+      "operands" :
+      [
+        {
+          "data-type" : "any",
+          "attributes": []
+        }
+      ],
+      "variable-repeat-last-operand" : "true"
+    },
+    "luap_mvalue_float":
+    {
+      "attributes" : ["is-nullable", "multi-value"],
+      "return-type" : "float",
+      "operands" :
+      [
+        {
+          "data-type" : "any",
+          "attributes": []
+        }
+      ],
+      "variable-repeat-last-operand" : "true"
+    },
+    "luap_blob":
+    {
+      "attributes" : ["is-nullable"],
+      "return-type" : "blob",
+      "operands" :
+      [
+        {
+          "data-type" : "any",
+          "attributes": []
+        }
+      ],
+      "variable-repeat-last-operand" : "true"
+    },
+    "luap_mvalue_blob":
+    {
+      "attributes" : ["is-nullable", "multi-value"],
+      "return-type" : "blob",
+      "operands" :
+      [
+        {
+          "data-type" : "any",
+          "attributes": []
+        }
+      ],
+      "variable-repeat-last-operand" : "true"
+    },
+    "wordpos":
+    {
+      "attributes" : ["multi-value"],
+      "return-type" : "int64",
+      "operands" :
+      [
+        {
+          "data-type" : "bool",
+          "attributes": ["return-position"]
+        }
+      ]
+    },
+    "wordpld_int64":
+    {
+      "attributes" : ["multi-value"],
+      "return-type" : "int64",
+      "operands" :
+      [
+        {
+          "data-type" : "bool",
+          "attributes": ["return-position"]
+        }
+      ]
+    },
+    "FreeShippingInSite":
+    {
+      "attributes" : [],
+      "return-type" : "bool",
+      "operands" :
+      [
+        {
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        }
+      ]
+    },
+    "MayShippedToCountry":
+    {
+      "attributes" : [],
+      "return-type" : "bool",
+      "operands" :
+      [
+        {
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        }
+      ]
+    },
+    "ShippedToCountry":
+    {
+      "attributes" : [],
+      "return-type" : "bool",
+      "operands" :
+      [
+        {
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+        }
+      ]
+    },
+    "NativeDeliveryEstimate":
+    {
+      "attributes" : ["multi-value"],
+      "return-type" : "int64",
+      "operands" :
+      [
+      ]
+    },
+    "AnalyticalDeliveryEstimate":
+    {
+      "attributes" : ["multi-value"],
+      "return-type" : "int64",
+      "operands" :
+      [
+      ]
+    },
+    "CalendarDeliveryEstimate":
+    {
+      "attributes" : ["multi-value"],
+      "return-type" : "int64",
+      "operands" :
+      [
+      ]
+    },
+    "CombinedDeliveryEstimate":
+    {
+      "attributes" : ["multi-value"],
+      "return-type" : "int64",
+      "operands" :
+      [
+      ]
+    },
+    "DeliveryEstimateStartDate":
+    {
+      "attributes" : ["multi-value"],
+      "return-type" : "int64",
+      "operands" :
+      [
+      ]
+    },
+    "IsFastNFree":
+    {
+      "attributes" : [],
+      "return-type" : "bool",
+      "operands" :
+      [
+      ]
+    },
+    "IsAnalyticalEligible":
+    {
+      "attributes" : [],
+      "return-type" : "int64",
+      "operands" :
+      [
+      ]
+    },
+    "GuaranteedDeliveryDays":
+    {
+      "attributes" : ["is-nullable"],
+      "return-type" : "int64",
+      "operands" :
+      [
+      ]
+    },
+    "AllGuaranteedDeliveryDays":
+    {
+      "attributes" : ["multi-value"],
+      "return-type" : "int64",
+      "operands" :
+      [
+      ]
+    },
+    "IsGuaranteedDelivery":
+    {
+      "attributes" : [],
+      "return-type" : "bool",
+      "operands" :
+      [
+        {
+          "#": "Upper limit of calendar days",
+          "data-type" : "int64",
+          "attributes": []
+        },
+        {
+          "#": "Destination country",
+          "data-type" : "int64",
+          "attributes": []
+        },
+        {
+          "#": "Destination postal code",
+          "data-type" : "blob",
+          "attributes": []
+        }
+      ]
+    },
+    "AllGuaranteedDeliveryExpirationTimes":
+    {
+      "attributes" : ["multi-value"],
+      "return-type" : "int64",
+      "operands" :
+      [
+      ]
+    },
+    "AllGuaranteedDeliveryHandlingDueDates":
+    {
+      "attributes" : ["multi-value"],
+      "return-type" : "int64",
+      "operands" :
+      [
+      ]
+    },
+    "AllGuaranteedDeliveryTypes":
+    {
+      "attributes" : ["multi-value"],
+      "return-type" : "int64",
+      "operands" :
+      [
+      ]
+    },
+    "AllGuaranteedDeliveryBusinessDays":
+    {
+      "attributes" : ["multi-value"],
+      "return-type" : "int64",
+      "operands" :
+      [
+      ]
+    },
+    "GuaranteedDeliveryShippingHelper":
+    {
+      "attributes" : ["is-nullable"],
+      "return-type" : "int64",
+      "operands" :
+      [
+      ]
+    },
+    "EstimatedDeliveryMinDays":
+    {
+      "attributes" : ["is-nullable"],
+      "return-type" : "int64",
+      "operands" :
+      [
+      ]
+    },
+       "EstimatedDeliveryMaxDaysTest":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+           ]
+       },
+       "EstimatedDeliveryMaxDays":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+           ]
+       },
+       "EstimatedDeliveryMinBusinessDays":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+           ]
+       },
+       "EstimatedDeliveryMaxBusinessDays":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+           ]
+       },
+       "AllEstimatedDeliveryMinDays":
+       {
+           "attributes" : ["multi-value"],
+           "return-type" : "int64",
+           "operands" :
+           [
+           ]
+       },
+       "AllEstimatedDeliveryMaxDays":
+       {
+           "attributes" : ["multi-value"],
+           "return-type" : "int64",
+           "operands" :
+           [
+           ]
+       },
+       "AllEstimatedDeliveryMinBusinessDays":
+       {
+           "attributes" : ["multi-value"],
+           "return-type" : "int64",
+           "operands" :
+           [
+           ]
+       },
+       "AllEstimatedDeliveryMaxBusinessDays":
+       {
+           "attributes" : ["multi-value"],
+           "return-type" : "int64",
+           "operands" :
+           [
+           ]
+       },
+       "DatesFromBusinessDays":
+       {
+           "attributes" : ["multi-value"],
+           "return-type" : "int64",
+           "operands" :
+           [
+           ]
+       },
+       "SetShippingResultIdx":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "ShippedToCountryRegion":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "MayShippedToCountryRegion":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "MayShippedToCountryPostalCode":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "ShippedToCountryPostalCode":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "UseCase":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "IsFeaturedFirst":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+           ]
+       },
+       "EffectiveStartTime":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+           ]
+       },
+       "GetIVFBit":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": []
+               }
+           ]
+       },
+       "LocalAvailabilityBOPIS":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "GetBOPISDistance":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+           ]
+       },
+       "GetEBNImmediateDistance":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+           ]
+       },
+       "GetEBNSameDayDistance":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+           ]
+       },
+       "GetEBNNextDayDistance":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+           ]
+       },
+       "ShowInSite5":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "ShowInSite5A":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "ShowInSite5B":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "ShowInIOS":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": []
+               }
+           ]
+       },
+       "ProductShowInSearch":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": []
+               }
+           ]
+       },
+       "ETRSQUALIFIED":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "ETRSQUALIFIEDGLOBAL":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" : []
+       },
+       "ShowInLocation1":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "RuleMask":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "OKToShowInSite2":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "OKToShowInMerch":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "AvailableToCountry":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "SubCatStores":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "MskuView":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "MskuView_compiq":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "SaleClass":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "UKCBT":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "IsAuction":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+           ]
+       },
+       "IsFeaturedFirstTnsFiltered":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+           ]
+       },
+       "SafeStartTime":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+           ]
+       },
+       "ListedInCBTSites":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "ListedInSite":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "LocatedInCountry":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "NoSaleDemotion":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "IsFixedPriceKnown":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "IsFixedPriceUnknown":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "IsGift":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "IsMCCPayment":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "IsReturnAccepted":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": []
+               }
+           ]
+       },
+       "IsReturnFree":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": []
+               }
+           ]
+       },
+       "MustReturnWithinDays":
+       {
+           "attributes": ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": []
+               }
+           ]
+       },
+       "Popularity":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "ShowInMagellan":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+      "ImageAsymmetricPQDistance":
+       {
+          "attributes" : [],
+          "return-type" : "float",
+          "operands" :
+          [
+            {
+              "data-type" : "int64",
+              "attributes": []
+            },
+            {
+              "data-type" : "float",
+              "attributes": ["multi-value"]
+            }
+          ]
+      },
+      "ImageAsymmetricPQDistanceMC":
+       {
+          "attributes" : [],
+          "return-type" : "float",
+          "operands" :
+          [
+            {
+              "data-type" : "int64",
+              "attributes": ["multi-value"]
+            },
+            {
+              "data-type" : "float",
+              "attributes": ["multi-value"]
+            }
+          ]
+      },
+      "GetItemImagePQVector":
+       {
+          "attributes" : ["multi-value"],
+          "return-type" : "float",
+          "operands" :
+          [
+            {
+              "data-type" : "int64",
+              "attributes": []
+            }
+          ]
+      },
+      "GetItemImageCodebookID":
+       {
+          "attributes" : [],
+          "return-type" : "int64",
+          "operands" :
+          [
+            {
+              "data-type" : "int64",
+              "attributes": []
+            }
+          ]
+      },
+      "ExtractTensorBullseye":
+      {
+        "attributes" : ["is-nullable"],
+        "return-type" : "blob",
+        "operands" :
+        [
+        ]
+      },
+      "ShowInMagellan1":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "ExternalItemsAvailableToCountry":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "SingleExp":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "Random":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "isnull_int64" :
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ],
+           "variable-repeat-last-operand" : false
+       },
+       "isnull_blob" :
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               }
+           ],
+           "variable-repeat-last-operand" : false
+       },
+       "isnull_float" :
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ],
+           "variable-repeat-last-operand" : false
+       },
+       "isnull_mvalue_int64" :
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable", "multi-value"]
+               }
+           ],
+           "variable-repeat-last-operand" : false
+       },
+       "isnull_mvalue_blob" :
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable", "multi-value"]
+               }
+           ],
+           "variable-repeat-last-operand" : false
+       },
+       "isnull_mvalue_float" :
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable", "multi-value"]
+               }
+           ],
+           "variable-repeat-last-operand" : false
+       },
+       "count_trues" :
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "bool",
+                   "attributes": []
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "kand" :
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "bool",
+                   "attributes": []
+               }
+           ],
+           "variable-repeat-last-operand" : true,
+           "named-operands" :
+           [
+               {
+                   "name" : "quorum",
+                   "data-type" : "int64",
+                   "attributes": [ ]
+               },
+               {
+                   "name" : "quorum_pct",
+                   "data-type" : "int64",
+                   "attributes": [ ]
+               },
+               {
+                   "name" : "min_quorum",
+                   "data-type" : "int64",
+                   "attributes": [ ]
+               }
+           ]
+       },
+       "and" :
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "bool",
+                   "attributes": []
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "or":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "bool",
+                   "attributes": []
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "not":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "bool",
+                   "attributes": []
+               }
+           ]
+       },
+       "dedup_hash":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "any",
+                   "attributes": ["is-nullable"]
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "first_match":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "bool",
+                   "attributes": []
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "term_alt":
+       {
+           "attributes" : ["return-position"],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "bool",
+                   "attributes": ["return-position"]
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "phrase":
+       {
+           "attributes" : ["return-position"],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "bool",
+                   "attributes": ["return-position"]
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "set_match":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "bool",
+                   "attributes": ["return-position"]
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "near":
+       {
+           "attributes" : ["return-position"],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "bool",
+                   "attributes": ["return-position"]
+               }
+           ],
+           "named-operands" :
+           [
+               {
+                   "name" : "space_ratio",
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "name" : "box_size",
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "name" : "ordered",
+                   "data-type" : "bool",
+                   "attributes": ["is-nullable"]
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "regex" :
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "blob",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "blob",
+                   "attributes": []
+               }
+           ],
+           "variable-repeat-last-operand" : false,
+           "named-operands" :
+           [
+               {
+                   "name" : "regex_idx",
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "regex_mvalue" :
+       {
+           "attributes" : ["is-nullable", "multi-value"],
+           "return-type" : "blob",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable", "multi-value"]
+               },
+               {
+                   "data-type" : "blob",
+                   "attributes": []
+               }
+           ],
+           "variable-repeat-last-operand" : false,
+           "named-operands" :
+           [
+               {
+                   "name" : "regex_idx",
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "regex_bool" :
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "blob",
+                   "attributes": []
+               }
+           ],
+           "variable-repeat-last-operand" : false,
+           "named-operands" :
+           [
+               {
+                   "name" : "regex_idx",
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "base64":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "blob",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "sub_terms":
+       {
+           "attributes" : ["return-position"],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": []
+               }
+           ],
+           "variable-repeat-last-operand" : "false"
+       },
+       "spell":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "named-operands" :
+           [
+               {
+                   "name" : "site",
+                   "data-type" : "blob",
+                   "attributes": ["is-required"]
+               },
+               {
+                   "name": "category",
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "name" : "user_query",
+                   "data-type" : "blob",
+                   "attributes": ["is-required"]
+               },
+               {
+                   "name" : "tokenizer_version",
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "name" : "debug",
+                   "data-type" : "int64",
+                   "attributes" : ["is-nullable"]
+               },
+               {
+                   "name" : "aggressive",
+                   "data-type" : "int64",
+                   "attributes" : ["is-nullable"]
+               }
+           ],
+           "variable-repeat-last-operand" : "false"
+       },
+       "TermExists":
+       {
+           "attributes" : ["return-position"],
+           "interfaces" : ["term"],
+           "return-type" : "bool",
+           "operands" :
+           [
+           ]
+       },
+       "TermPayload":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "any",
+           "operands" :
+           [
+           ]
+       },
+       "bm25_alpha":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "any",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "any",
+                   "attributes": ["is-nullable"]
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "bm25":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "bm25_section":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "bm25_tunable":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "bm25_section_tunable":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "bm25f_lc":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               }
+           ]
+       },
+       "bm25f_cb_lc":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               }
+           ]
+       },
+       "bm25f_ksink_tfc_simple":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               }
+           ]
+       },
+       "bm25f_ksink_tfc":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               }
+           ]
+       },
+       "bm25f_ksink_tfc_sd":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               }
+           ]
+       },
+       "bm25_ksink_title":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               }
+           ]
+       },
+       "bm25_ksink_query_max_score":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               }
+           ]
+       },
+       "bm25_ksink_query_max_score_sd":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               }
+           ]
+       },
+       "bm25_ksink_query_max_title_score":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               }
+           ]
+       },
+       "IsRelevantV1":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               }
+           ]
+       },
+       "IsRelevantV2":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": []
+               }
+           ]
+       },
+       "IsRelevant":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+           ]
+       },
+       "IsRelevant1":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+           ]
+       },
+       "IsRelevant2":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+           ]
+       },
+       "IsRelevant3":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+           ]
+       },
+       "IsRelevant4":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+           ]
+       },
+       "QueryItem_TitleMatchCount":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+           ]
+       },
+       "DoesQuerySegmentMatch":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": []
+               }
+           ]
+       },
+       "mlr_model":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "mlr_factor":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "word_in_section":
+       {
+           "attributes" : ["return-position"],
+           "interfaces" : ["term"],
+           "return-type" : "bool",
+           "operands" :
+           [
+           ]
+       },
+       "word":
+       {
+           "attributes" : ["return-position"],
+           "interfaces" : ["term"],
+           "return-type" : "bool",
+           "operands" :
+           [
+           ]
+       },
+       "field_value":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "any",
+           "operands" :
+           [
+           ]
+       },
+       "field_value_blob":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "blob",
+           "operands" :
+           [
+           ]
+       },
+       "field_mvalue_blob":
+       {
+           "attributes" : ["is-nullable", "multi-value"],
+           "return-type" : "blob",
+           "operands" :
+           [
+           ]
+       },
+       "field_value_bool":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "bool",
+           "operands" :
+           [
+           ]
+       },
+       "field_value_int64":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+           ]
+       },
+       "field_mvalue_int64":
+       {
+           "attributes" : ["is-nullable", "multi-value"],
+           "return-type" : "int64",
+           "operands" :
+           [
+           ]
+       },
+       "field_value_float":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "float",
+           "operands" :
+           [
+           ]
+       },
+       "field_mvalue_float":
+       {
+           "attributes" : ["is-nullable", "multi-value"],
+           "return-type" : "float",
+           "operands" :
+           [
+           ]
+       },
+       "TermInt64":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+           ]
+       },
+       "term_int64":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+           ]
+       },
+       "term_mvalue_int64":
+       {
+           "attributes" : ["is-nullable", "multi-value"],
+           "return-type" : "int64",
+           "operands" :
+           [
+           ]
+       },
+       "term_bool":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "bool",
+           "operands" :
+           [
+           ]
+       },
+       "dist":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "gps_dist":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "hasvalue_int64":
+       {
+           "attributes" : ["return-position"],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable", "multi-value"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "hasvalue_float":
+       {
+           "attributes" : ["return-position"],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable", "multi-value"]
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "hasvalue_blob":
+       {
+           "attributes" : ["return-position"],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable", "multi-value"]
+               },
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "eq_bool":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "bool",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "bool",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "eq_int64":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "ne_bool":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "bool",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "bool",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "ne_int64":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "gt_int64":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "ge_int64":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "lt_int64":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "le_int64":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "add_int64":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "sub_int64":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "mul_int64":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "div_int64":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "mod_int64":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+          ]
+       },
+       "neg_int64":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "const_bool":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "interfaces" : ["constant"],
+           "operands" :
+           [
+           ]
+       },
+       "if_bool":
+       {
+           "return-type" : "bool",
+           "attributes" : ["is-nullable"],
+           "operands" :
+           [
+               {
+                   "data-type" : "bool",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "bool",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "bool",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "if_mvalue_bool":
+       {
+           "return-type" : "bool",
+           "attributes" : ["is-nullable", "multi-value"],
+           "operands" :
+           [
+               {
+                   "data-type" : "bool",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "bool",
+                   "attributes": ["is-nullable", "multi-value"]
+               },
+               {
+                   "data-type" : "bool",
+                   "attributes": ["is-nullable", "multi-value"]
+               }
+           ]
+       },
+       "skip_if_bool":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "bool",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "bool",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "bool",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "skip_if_nnull_bool":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "bool",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "bool",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "bool",
+                   "attributes": []
+               }
+           ]
+       },
+       "skip_if_nnull_wpos_bool":
+       {
+           "attributes" : ["return-position"],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "bool",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "bool",
+                   "attributes": ["return-position"]
+               },
+               {
+                   "data-type" : "bool",
+                   "attributes": ["return-position"]
+               }
+           ]
+       },
+       "const_int64":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "interfaces" : ["constant"],
+           "operands" :
+           [
+           ]
+       },
+       "if_int64":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "bool",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "if_mvalue_int64":
+       {
+           "return-type" : "int64",
+           "attributes" : ["is-nullable", "multi-value"],
+           "operands" :
+           [
+               {
+                   "data-type" : "bool",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable", "multi-value"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable", "multi-value"]
+               }
+           ]
+       },
+       "skip_if_int64":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "bool",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "term_float":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "float",
+           "operands" :
+           [
+           ]
+       },
+       "term_mvalue_float":
+       {
+           "attributes" : ["is-nullable", "multi-value"],
+           "return-type" : "float",
+           "operands" :
+           [
+           ]
+       },
+       "eq_float":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "ne_float":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "gt_float":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "ge_float":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "lt_float":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "le_float":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "add_float":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "sub_float":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "mul_float":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "div_float":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "mod_float":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "neg_float":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "const_float":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "interfaces" : ["constant"],
+           "operands" :
+           [
+           ]
+       },
+       "if_float":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "bool",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "if_mvalue_float":
+       {
+           "return-type" : "float",
+           "attributes" : ["is-nullable", "multi-value"],
+           "operands" :
+           [
+               {
+                   "data-type" : "bool",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable", "multi-value"]
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable", "multi-value"]
+               }
+           ]
+       },
+       "skip_if_float":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "bool",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "term_blob":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "blob",
+           "operands" :
+           [
+           ]
+       },
+       "term_mvalue_blob":
+       {
+           "attributes" : ["is-nullable", "multi-value"],
+           "return-type" : "blob",
+           "operands" :
+           [
+           ]
+       },
+       "eq_blob":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "ne_blob":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "gt_blob":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "ge_blob":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "lt_blob":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "le_blob":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "const_blob":
+       {
+           "attributes" : [],
+           "return-type" : "blob",
+           "interfaces" : ["constant"],
+           "operands" :
+           [
+           ]
+       },
+       "if_blob":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "blob",
+           "operands" :
+           [
+               {
+                   "data-type" : "bool",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "if_mvalue_blob":
+       {
+           "return-type" : "blob",
+           "attributes" : ["is-nullable", "multi-value"],
+           "operands" :
+           [
+               {
+                   "data-type" : "bool",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable", "multi-value"]
+               },
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable", "multi-value"]
+               }
+           ]
+       },
+       "skip_if_blob":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "blob",
+           "operands" :
+           [
+               {
+                   "data-type" : "bool",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "now":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+           ]
+       },
+       "boot_time":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+           ]
+       },
+       "cast_int64_to_float":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "cast_float_to_int64":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "cast_int64_to_bool":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "cast_bool_to_int64":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "bool",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "cast_int64_to_blob":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "blob",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "cast_blob_to_int64":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "cast_float_to_blob":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "blob",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "cast_blob_to_float":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "cast_blob_to_string":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "string",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "cast_string_to_blob":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "blob",
+           "operands" :
+           [
+               {
+                   "data-type" : "string",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "cast_mvalue_blob_to_mvalue_string":
+       {
+           "attributes" : ["is-nullable", "multi-value"],
+           "return-type" : "string",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable", "multi-value"]
+               }
+           ]
+       },
+       "cast_mvalue_string_to_mvalue_blob":
+       {
+           "attributes" : ["is-nullable", "multi-value"],
+           "return-type" : "blob",
+           "operands" :
+           [
+               {
+                   "data-type" : "string",
+                   "attributes": ["is-nullable", "multi-value"]
+               }
+           ]
+       },
+       "bitand":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "bitor":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "bitxor":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "bitnot":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "shift_left":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "shift_right":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "ushift_right":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "add":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "debug_bool":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "bool",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "debug_float":
+       {
+           "attributes" : [],
+           "return-type" : "blob",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "debug_int64":
+       {
+           "attributes" : [],
+           "return-type" : "blob",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "debug_blob":
+       {
+           "attributes" : [],
+           "return-type" : "blob",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "high_idf_or":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "bool",
+                   "attributes": []
+               }
+           ],
+           "variable-repeat-last-operand" : true,
+           "named-operands" :
+           [
+               {
+                   "name" : "min_operands",
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "name" : "min_operands_pct",
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "name" : "target_recall_fraction",
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "bmscale":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "bmmul":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "bmdiv":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "bmlinear":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "bmnorm" :
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "user_query" :
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "bool",
+                   "attributes": []
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "uq_and" :
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "bool",
+                   "attributes": []
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "uq_not":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "bool",
+                   "attributes": []
+               }
+           ]
+       },
+       "uq_or":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "bool",
+                   "attributes": []
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "uq_text":
+       {
+           "attributes" : ["return-position"],
+           "return-type" : "bool",
+           "operands" :
+           [
+           ],
+           "named-operands" :
+           [
+               {
+                   "name" : "do_expansion",
+                   "data-type" : "bool",
+                   "attributes" : ["is-nullable"]
+               }
+           ]
+       },
+       "uq_phrase":
+       {
+           "attributes" : ["return-position"],
+           "return-type" : "bool",
+           "operands" :
+           [
+           ]
+       },
+       "raw_user_query":
+       {
+           "attributes" : ["return-position"],
+           "return-type" : "bool",
+           "operands" :
+           [
+           ]
+       },
+       "raw_term_list_bool":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "bool",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "raw_term_list_int64":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "raw_term_list_blob":
+       {
+           "attributes" : [],
+           "return-type" : "blob",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "raw_term_list_float":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "raw_term_list_wpos_bool":
+       {
+           "attributes" : ["return-position"],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "bool",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "dsbe_usecase":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+           ]
+       },
+       "sibe_service":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "multi_stage":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "define_variable_int64":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"],
+                   "interfaces" : ["variable"]
+               }
+           ]
+       },
+       "define_variable_mvalue_int64":
+       {
+           "attributes" : ["is-nullable", "multi-value"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable", "multi-value"],
+                   "interfaces" : ["variable"]
+               }
+           ]
+       },
+       "define_variable_float":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"],
+                   "interfaces" : ["variable"]
+               }
+           ]
+       },
+       "define_variable_mvalue_float":
+       {
+           "attributes" : ["is-nullable", "multi-value"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable", "multi-value"],
+                   "interfaces" : ["variable"]
+               }
+           ]
+       },
+       "define_variable_blob":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "blob",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"],
+                   "interfaces" : ["variable"]
+               }
+           ]
+       },
+       "define_variable_mvalue_blob":
+       {
+           "attributes" : ["is-nullable", "multi-value"],
+           "return-type" : "blob",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable", "multi-value"],
+                   "interfaces" : ["variable"]
+               }
+           ]
+       },
+       "variable_int64":
+       {
+           "attributes" : ["is-nullable"],
+           "interfaces" : ["variable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+           ]
+       },
+       "variable_mvalue_int64":
+       {
+           "attributes" : ["is-nullable", "multi-value"],
+           "interfaces" : ["variable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+           ]
+       },
+       "assign_variable_int64":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"],
+                   "interfaces" : ["variable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "assign_variable_mvalue_int64":
+       {
+           "attributes" : ["is-nullable", "multi-value"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable", "multi-value"],
+                   "interfaces" : ["variable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable", "multi-value"]
+               }
+           ]
+       },
+       "expression_list_int64":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "expression_list_mvalue_int64":
+       {
+           "attributes" : ["is-nullable", "multi-value"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable", "multi-value"]
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "variable_float":
+       {
+           "attributes" : ["is-nullable"],
+           "interfaces" : ["variable"],
+           "return-type" : "float",
+           "operands" :
+           [
+           ]
+       },
+       "variable_mvalue_float":
+       {
+           "attributes" : ["is-nullable", "multi-value"],
+           "interfaces" : ["variable"],
+           "return-type" : "float",
+           "operands" :
+           [
+           ]
+       },
+       "assign_variable_float":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"],
+                   "interfaces" : ["variable"]
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "assign_variable_mvalue_float":
+       {
+           "attributes" : ["is-nullable", "multi-value"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable", "multi-value"],
+                   "interfaces" : ["variable"]
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable", "multi-value"]
+               }
+           ]
+       },
+       "expression_list_float":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "expression_list_mvalue_float":
+       {
+           "attributes" : ["is-nullable", "multi-value"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable", "multi-value"]
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "variable_blob":
+       {
+           "attributes" : ["is-nullable"],
+           "interfaces" : ["variable"],
+           "return-type" : "blob",
+           "operands" :
+           [
+           ]
+       },
+       "variable_mvalue_blob":
+       {
+           "attributes" : ["is-nullable", "multi-value"],
+           "interfaces" : ["variable"],
+           "return-type" : "blob",
+           "operands" :
+           [
+           ]
+       },
+       "assign_variable_blob":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "blob",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"],
+                   "interfaces" : ["variable"]
+               },
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "assign_variable_mvalue_blob":
+       {
+           "attributes" : ["is-nullable", "multi-value"],
+           "return-type" : "blob",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable", "multi-value"],
+                   "interfaces" : ["variable"]
+               },
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable", "multi-value"]
+               }
+           ]
+       },
+       "expression_list_blob":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "blob",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "expression_list_mvalue_blob":
+       {
+           "attributes" : ["is-nullable", "multi-value"],
+           "return-type" : "blob",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable", "multi-value"]
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "aggregate_latch_bool":
+       {
+           "attributes" : ["is-nullable", "aggregate-function"],
+            "return-type" : "bool",
+            "operands" :
+            [
+                {
+                    "data-type" : "bool",
+                    "attributes": ["is-nullable"]
+                }
+            ]
+        },
+       "aggregate_latch_int64":
+       {
+           "attributes" : ["is-nullable", "aggregate-function"],
+            "return-type" : "int64",
+            "operands" :
+            [
+                {
+                    "data-type" : "int64",
+                    "attributes": ["is-nullable"]
+                }
+            ]
+        },
+        "aggregate_latch_float":
+        {
+            "attributes" : ["is-nullable", "aggregate-function"],
+            "return-type" : "float",
+            "operands" :
+            [
+                {
+                    "data-type" : "float",
+                    "attributes": ["is-nullable"]
+                }
+            ]
+        },
+        "aggregate_latch_blob":
+        {
+            "attributes" : ["is-nullable", "aggregate-function"],
+            "return-type" : "blob",
+            "operands" :
+            [
+                {
+                    "data-type" : "blob",
+                    "attributes": ["is-nullable"]
+                }
+            ]
+       },
+       "aggregate_min_int64":
+       {
+           "attributes" : ["is-nullable", "aggregate-function"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "aggregate_min_float":
+       {
+           "attributes" : ["is-nullable", "aggregate-function"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+        },
+        "aggregate_max_int64":
+        {
+           "attributes" : ["is-nullable", "aggregate-function"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "aggregate_max_float":
+       {
+           "attributes" : ["is-nullable", "aggregate-function"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+        },
+        "aggregate_sum_int64":
+        {
+           "attributes" : ["is-nullable", "aggregate-function"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "aggregate_sum_float":
+       {
+           "attributes" : ["is-nullable", "aggregate-function"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+        },
+        "aggregate_count":
+        {
+           "attributes" : ["is-nullable", "aggregate-function"],
+           "return-type" : "int64",
+           "operands" :
+           [
+           ]
+        },
+       "bucket_int64":
+        {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+        },
+        "bucket_float":
+        {
+           "attributes" : ["is-nullable"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "in_section":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "bool",
+                   "attributes": []
+               }
+           ]
+       },
+       "in_term_blob":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "bool",
+                   "attributes": []
+               }
+           ]
+       },
+       "in_term_mvalue_blob":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable", "multi-value"]
+               },
+               {
+                   "data-type" : "bool",
+                   "attributes": []
+               }
+           ]
+       },
+       "min_int64":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "min_float":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ],
+           "variable-repeat-last-operand" : true
+        },
+       "max_int64":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "max_float":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ],
+           "variable-repeat-last-operand" : true
+        },
+       "phrase_in_section":
+       {
+           "_comment" : "@brief Match a phrase restricted to a section specified by a const string first argument",
+           "attributes" : ["return-position"],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "_comment" : "@brief string which gives the section (zone) name",
+                   "data-type" : "blob",
+                   "attributes": []
+               },
+               {
+                   "_comment" : "@brief a term for the phrase.",
+                   "data-type" : "bool",
+                   "attributes": ["return-position"]
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "phrase_with_zone_marker":
+       {
+           "_comment" : "@brief a phrase operator w/ a zone marker as its first argument to filter to section by.",
+           "attributes" : ["return-position"],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "_comment" : "@brief zone marker for the target section (zone)",
+                   "data-type" : "bool",
+                   "attributes": ["return-position"]
+               },
+               {
+                   "_comment" : "@brief a term for the phrase.",
+                   "data-type" : "bool",
+                   "attributes": ["return-position"]
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "relevance_sort":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+           ]
+       },
+       "relevance_sort_int64":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+           ]
+       },
+       "relevance_sort_float":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+           ]
+       },
+       "relevance_sort_blob":
+       {
+           "attributes" : [],
+           "return-type" : "blob",
+           "operands" :
+           [
+           ]
+       },
+       "relevance_sort_mvalue_int64":
+       {
+           "attributes" : ["multi-value"],
+           "return-type" : "int64",
+           "operands" :
+           [
+           ]
+       },
+       "relevance_sort_mvalue_float":
+       {
+           "attributes" : ["multi-value"],
+           "return-type" : "float",
+           "operands" :
+           [
+           ]
+       },
+       "relevance_sort_mvalue_blob":
+       {
+           "attributes" : ["multi-value"],
+           "return-type" : "blob",
+           "operands" :
+           [
+           ]
+       },
+       "has_key":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "bool",
+                   "attributes": []
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "key_lookup_int64":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": []
+               }
+           ]
+       },
+       "key_lookup_float":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               }
+           ]
+       },
+       "key_lookup_blob":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": []
+               }
+           ]
+       },
+       "named_expression_bool":
+       {
+           "#FIXME,DL": "Should be is-nullable",
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": []
+               }
+           ]
+       },
+       "named_expression_wpos_bool":
+       {
+           "#FIXME,DL": "Should be is-nullable",
+           "attributes" : ["return-position"],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": []
+               }
+           ]
+       },
+       "named_expression_nnull_bool":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": []
+               }
+           ]
+       },
+       "named_expression_nnull_wpos_bool":
+       {
+           "attributes" : ["return-position"],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": []
+               }
+           ]
+       },
+       "named_expression_mvalue_bool":
+       {
+           "attributes" : ["is-nullable", "multi-value"],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": []
+               }
+           ]
+       },
+       "named_expression_mvalue_nnull_bool":
+       {
+           "attributes" : ["multi-value"],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": []
+               }
+           ]
+       },
+       "named_expression_int64":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": []
+               }
+           ]
+       },
+       "named_expression_mvalue_int64":
+       {
+           "attributes" : ["is-nullable", "multi-value"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": []
+               }
+           ]
+       },
+       "named_expression_nnull_int64":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": []
+               }
+           ]
+       },
+       "named_expression_mvalue_nnull_int64":
+       {
+           "attributes" : ["multi-value"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": []
+               }
+           ]
+       },
+       "named_expression_float":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": []
+               }
+           ]
+       },
+       "named_expression_mvalue_float":
+       {
+           "attributes" : ["is-nullable", "multi-value"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": []
+               }
+           ]
+       },
+       "named_expression_nnull_float":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": []
+               }
+           ]
+       },
+       "named_expression_mvalue_nnull_float":
+       {
+           "attributes" : ["multi-value"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": []
+               }
+           ]
+       },
+       "named_expression_blob":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "blob",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": []
+               }
+           ]
+       },
+       "named_expression_mvalue_blob":
+       {
+           "attributes" : ["is-nullable", "multi-value"],
+           "return-type" : "blob",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": []
+               }
+           ]
+       },
+       "named_expression_nnull_blob":
+       {
+           "attributes" : [],
+           "return-type" : "blob",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": []
+               }
+           ]
+       },
+       "named_expression_mvalue_nnull_blob":
+       {
+           "attributes" : ["multi-value"],
+           "return-type" : "blob",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": []
+               }
+           ]
+       },
+       "timed_doccount":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": []
+               }
+           ],
+           "variable-repeat-last-operand" : false
+       },
+       "docstart":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": []
+               }
+           ],
+           "variable-repeat-last-operand" : false
+       },
+       "docbound":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": []
+               }
+           ],
+           "variable-repeat-last-operand" : false
+       },
+       "eof":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "bool",
+                   "attributes": []
+               }
+           ],
+           "variable-repeat-last-operand" : false
+       },
+       "topn_recall":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" : [ ]
+       },
+       "topn_count":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" : [ ]
+       },
+       "topn_size":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" : [ ]
+       },
+       "topn_min_int64":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" : [ ]
+       },
+       "topn_min_float":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "float",
+           "operands" : [ ]
+       },
+       "topn_max_int64":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" : [ ]
+       },
+       "topn_max_float":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "float",
+           "operands" : [ ]
+       },
+       "multikey_int64":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": []
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "multikey_float":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "multikey_blob":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": []
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "mval_int64":
+       {
+           "attributes" : ["multi-value"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "mval_float":
+       {
+           "attributes" : ["multi-value"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "mval_blob":
+       {
+           "attributes" : ["multi-value"],
+           "return-type" : "blob",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "mval_idx_int64":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable", "multi-value"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": []
+               }
+           ]
+       },
+       "mval_idx_float":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable", "multi-value"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": []
+               }
+           ]
+       },
+       "mval_idx_blob":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "blob",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable", "multi-value"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": []
+               }
+           ]
+       },
+       "mval_count":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "any",
+                   "attributes": ["is-nullable", "multi-value"]
+               }
+           ]
+       },
+       "field_lookup_int64_int64":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "field_lookup_int64_blob":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "blob",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+
+       "field_lookup_blob_int64":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "field_lookup_blob_blob":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "blob",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "poly_int64":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "leftover_tokens":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": []
+               }
+           ]
+       },
+       "bound_int64":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ],
+           "variable-repeat-last-operand" : false
+       },
+       "bound_float":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ],
+           "variable-repeat-last-operand" : false
+       },
+       "log":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ],
+           "variable-repeat-last-operand" : false
+       },
+       "flog":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ],
+           "variable-repeat-last-operand" : false
+       },
+       "exp":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ],
+           "variable-repeat-last-operand" : false
+       },
+       "sqrt":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ],
+           "variable-repeat-last-operand" : false
+       },
+       "floor":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ],
+           "variable-repeat-last-operand" : false
+       },
+       "ceil":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ],
+           "variable-repeat-last-operand" : false
+       },
+       "round":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ],
+           "variable-repeat-last-operand" : false
+       },
+       "fabs":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ],
+           "variable-repeat-last-operand" : false
+       },
+       "fmod":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ],
+           "variable-repeat-last-operand" : false
+       },
+       "pow":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ],
+           "variable-repeat-last-operand" : false
+       },
+       "frnd":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+           ],
+           "variable-repeat-last-operand" : false
+       },
+       "fsrnd":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+           ],
+           "variable-repeat-last-operand" : false
+       },
+       "linear_approx_float":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "linear_approx_int64":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": []
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "selector_int64":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": []
+               }
+           ],
+           "variable-repeat-last-operand" : "true"
+       },
+       "selector_float":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               }
+           ],
+           "variable-repeat-last-operand" : "true"
+       },
+       "selector_blob":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "blob",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "blob",
+                   "attributes": []
+               }
+           ],
+           "variable-repeat-last-operand" : "true"
+       },
+       "mval_selector_int64":
+       {
+           "attributes" : ["is-nullable", "multi-value"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable", "multi-value"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": []
+               }
+           ],
+           "variable-repeat-last-operand" : "true"
+       },
+       "mval_selector_float":
+       {
+           "attributes" : ["is-nullable", "multi-value"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable", "multi-value"]
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               }
+           ],
+           "variable-repeat-last-operand" : "true"
+       },
+       "mval_selector_blob":
+       {
+           "attributes" : ["is-nullable", "multi-value"],
+           "return-type" : "blob",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable", "multi-value"]
+               },
+               {
+                   "data-type" : "blob",
+                   "attributes": []
+               }
+           ],
+           "variable-repeat-last-operand" : "true"
+       },
+
+       "range_bucketing_int64":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": []
+               }
+           ],
+           "variable-repeat-last-operand" : "true"
+       },
+       "range_bucketing_float":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               }
+           ],
+           "variable-repeat-last-operand" : "true"
+       },
+       "discrete_value_enum_int64":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": []
+               }
+           ],
+           "variable-repeat-last-operand" : "true"
+       },
+       "discrete_value_enum_blob":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "blob",
+                   "attributes": []
+               }
+           ],
+           "variable-repeat-last-operand" : "true"
+       },
+       "discrete_value_mval_int64":
+       {
+           "attributes" : ["is-nullable", "multi-value"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable", "multi-value"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": []
+               }
+           ],
+           "variable-repeat-last-operand" : "true"
+       },
+       "discrete_value_mval_blob":
+       {
+           "attributes" : ["is-nullable", "multi-value"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable", "multi-value"]
+               },
+               {
+                   "data-type" : "blob",
+                   "attributes": []
+               }
+           ],
+           "variable-repeat-last-operand" : "true"
+       },
+       "graft_int64":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": []
+               }
+           ]
+       },
+       "graft_mvalue_int64":
+       {
+           "attributes" : ["multi-value"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": []
+               }
+           ]
+       },
+       "graft_float":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": []
+               }
+           ]
+       },
+       "graft_mvalue_float":
+       {
+           "attributes" : ["multi-value"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": []
+               }
+           ]
+       },
+       "graft_bool":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": []
+               }
+           ]
+       },
+       "graft_blob":
+       {
+           "attributes" : [],
+           "return-type" : "blob",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": []
+               }
+           ]
+       },
+       "graft_mvalue_blob":
+       {
+           "attributes" : ["multi-value"],
+           "return-type" : "blob",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": []
+               }
+           ]
+       },
+       "default_for_null_bool":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "bool",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "bool",
+                   "attributes": []
+               }
+           ]
+       },
+       "default_for_null_int64":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": []
+               }
+           ]
+       },
+       "default_for_null_float":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "float",
+                   "attributes": []
+               }
+           ]
+       },
+       "default_for_null_blob":
+       {
+           "attributes" : [],
+           "return-type" : "blob",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "blob",
+                   "attributes": []
+               }
+           ]
+       },
+       "notnull_bool":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "bool",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "notnull_mvalue_bool":
+       {
+           "attributes" : ["multi-value"],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "bool",
+                   "attributes": ["is-nullable", "multi-value"]
+               }
+           ]
+       },
+       "notnull_int64":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "notnull_mvalue_int64":
+       {
+           "attributes" : ["multi-value"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable", "multi-value"]
+               }
+           ]
+       },
+       "notnull_float":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "notnull_mvalue_float":
+       {
+           "attributes" : ["multi-value"],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "float",
+                   "attributes": ["is-nullable", "multi-value"]
+               }
+           ]
+       },
+       "notnull_blob":
+       {
+           "attributes" : [],
+           "return-type" : "blob",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "notnull_mvalue_blob":
+       {
+           "attributes" : ["multi-value"],
+           "return-type" : "blob",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable", "multi-value"]
+               }
+           ]
+       },
+       "ship_to":
+       {
+           "attributes" : ["is-nullable"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "ShippedToCountryBlack":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "ShippedToCountryWhite":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "QuantitySold":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" : []
+       },
+       "located_in_europe":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+           ]
+       },
+       "located_in_asia":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+           ]
+       },
+       "price_arbitrage":
+       {
+       "attributes" : [],
+       "return-type" : "bool",
+       "operands" :
+       [
+           {
+          "data-type" : "int64",
+          "attributes": ["is-nullable"]
+           }
+       ]
+       },
+       "Site2Ctry":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "bow_term":
+       {
+           "attributes" : [],
+           "return-type" : "any",
+           "interfaces" : ["bow_term"],
+           "operands" :
+           [
+               {
+                   "data-type" : "bool",
+                   "attributes" : []
+               }
+           ],
+           "named-operands" :
+           [
+               {
+                   "name" : "token_type",
+                   "data-type" : "int64",
+                   "default-value" : 0,
+                   "attributes" : []
+               },
+               {
+                   "name" : "fitment_group",
+                   "data-type" : "blob",
+                   "attributes" : ["is-nullable"]
+               },
+               {
+                   "name" : "clause_id",
+                   "data-type" : "int64",
+                   "default-value" : -1,
+                   "attributes" : []
+               },
+               {
+                   "name" : "original_freq",
+                   "data-type" : "int64",
+                   "default-value" : 1,
+                   "attributes"  : []
+               },
+               {
+                   "name" : "phrase_length",
+                   "data-type" : "int64",
+                   "default-value" : 1,
+                   "attributes" : []
+               },
+               {
+                   "name" : "expansion_conf",
+                   "data-type" : "float",
+                   "default-value" : 1.0,
+                   "attributes" : []
+               }
+           ]
+       },
+       "bow_list":
+       {
+           "attributes" : [],
+           "return-type" : "any",
+           "operands" :
+           [
+               {
+                   "data-type" : "any",
+                   "interfaces" : ["bow_term"],
+                   "attributes" : []
+               }
+           ],
+           "variable-repeat-last-operand" : true
+       },
+       "Query_NthHighestCatView":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes" : []
+               }
+           ]
+       },
+       "Query_NthHighestCatScore2":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes" : []
+               }
+           ]
+       },
+       "Query_NthHighestClickWeightedCatScore2":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes" : []
+               }
+           ]
+       },
+       "Query_CatScore2ForNthHighestCatView":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes" : []
+               }
+           ]
+       },
+       "Query_PhrasesBoost_Count":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes" : []
+               }
+           ]
+       },
+       "QueryItem_PhrasesBoost_Ratio":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes" : []
+               }
+           ]
+       },
+       "Query_PhrasesBoost_TotalScore":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes" : []
+               }
+           ]
+       },
+       "QueryItem_PhrasesBoost_ScoreRatio":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes" : []
+               }
+           ]
+       },
+       "QueryItem_PhrasesBoostV2_Ratio":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes" : []
+               }
+           ]
+       },
+       "Query_GlobalPhrasesBoost_Count":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes" : []
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes" : []
+               }
+           ]
+       },
+       "QueryItem_GlobalPhrasesBoost_Ratio":
+       {
+           "attributes" : [],
+           "return-type" : "float",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes" : []
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes" : []
+               }
+           ]
+       },
+       "sibe_expand":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+               {
+                   "data-type" : "blob",
+                   "attributes": []
+               },
+               {
+                   "data-type" : "int64",
+                   "attributes" : []
+               }
+           ]
+       },
+       "ShippingDeliveryEstimate":
+       {
+           "attributes" : ["multi-value"],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes": ["is-nullable"]
+               }
+           ]
+       },
+       "Query_NthHighestCatIDByCatView":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+               {
+                   "data-type" : "int64",
+                   "attributes" : []
+               }
+           ]
+       },
+       "eBayPicURL":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+           ]
+       },
+       "IsSif":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+           ]
+       },
+       "IsAdFormat":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+           ]
+       },
+       "IsAuctionBin":
+       {
+           "attributes" : [],
+           "return-type" : "bool",
+           "operands" :
+           [
+           ]
+       },
+       "ShippingBucket":
+       {
+           "attributes" : [],
+           "return-type" : "int64",
+           "operands" :
+           [
+           ]
+       },
+      "top_k_complete":
+      {
+        "attributes" : [],
+        "return-type" : "bool",
+        "operands" :
+        [
+          {
+            "data-type" : "blob",
+            "attributes": []
+          },
+          {
+            "data-type" : "blob",
+            "attributes": []
+          },
+          {
+            "data-type" : "int64",
+            "attributes": []
+          }
+        ],
+        "variable-repeat-last-operand" : "false"
+      },
+      "TaxRate":
+      {
+        "#0": "Given an item and the usual query context (buyer location, shipping destination)",
+        "#1": "calculate and return the applicable tax rate, using fixed point scaled to one",
+        "#2": "million (e.g. 10% is 100000). This will return 0 if no tax applies.",
+        "attributes" : [],
+        "return-type" : "int64",
+        "operands" :
+        [
+          {
+            "#": "Use case: 0 means determine tax rate using item’s BINPrice; 1 means use CurrentPrice.",
+            "data-type" : "int64",
+            "attributes": []
+          }
+        ]
+      },
+      "NTax":
+      {
+        "#0": "Given an item and the usual query context (buyer location, shipping destination)",
+        "#1": "calculate and return the normalized (US cents) tax on the normalised value passed",
+        "#2": "as the second parameter (e.g. NBINPrice or NShippingCost). This will return 0 if",
+        "#3": "no tax applies.",
+        "attributes" : [],
+        "return-type" : "int64",
+        "operands" :
+        [
+          {
+            "#": "Use case: 0 means calculate tax rate using item’s BINPrice; 1 means use CurrentPrice.",
+            "data-type" : "int64",
+            "attributes": []
+          },
+          {
+            "#": "Normalized value for which to calculate the tax.",
+            "data-type" : "int64",
+            "attributes": []
+          }
+        ]
+      }
+    }
+}

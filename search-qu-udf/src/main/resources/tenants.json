@@ -1,0 +1,1221 @@
+{
+   "default_tenant_name" : "unregistered",
+   "tenant_list" : [
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Unregistered",
+         "timeout" : 2500,
+         "name" : "unregistered",
+         "class_of_service" : "P4",
+         "description" : "Bucket for unregistered tenants"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Classification",
+         "timeout" : 60000,
+         "name" : "ngcSIMClassifier",
+         "class_of_service" : "P3",
+         "description" : "Next Gen Classification based SIM Classifier"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Classification",
+         "timeout" : 2500,
+         "name" : "ngcCategoryClassifier",
+         "class_of_service" : "P3",
+         "description" : "Next Gen Classification based Category Classifier"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Classification",
+         "timeout" : 2500,
+         "name" : "GetSuggestedCategoriesSOA",
+         "class_of_service" : "P3",
+         "description" : "GetSuggestedCategories SOA Service"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "SRP",
+         "timeout" : 2500,
+         "name" : "SFE",
+         "class_of_service" : "P1",
+         "description" : "Search Front End"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "User Facing",
+         "timeout" : 2500,
+         "name" : "eBayInc65-7a30-4aa5-9880-eeb77352867",
+         "class_of_service" : "P3",
+         "description" : "ebayinsights.com"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "SRP",
+         "timeout" : 2500,
+         "name" : "f0d44d4f-4a86-4458-9474-47fa9f19dfd9",
+         "class_of_service" : "P2",
+         "description" : "Raptor SRP"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "QE",
+         "timeout" : 2500,
+         "name" : "ebaysjinternal",
+         "class_of_service" : "P5",
+         "description" : "Special App ID for internal use, such as debugging and triaging"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Search Science",
+         "timeout" : 2500,
+         "name" : "search_science",
+         "class_of_service" : "P4",
+         "description" : "Search Science"
+      },
+      {
+         "allow_full_table_scan" : true,
+         "group" : "QE",
+         "timeout" : 2500,
+         "name" : "cassini_dev",
+         "class_of_service" : "P5",
+         "description" : "For use by Cassini DEV and QA"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "QE",
+         "timeout" : 2500,
+         "name" : "cassini_LnP",
+         "class_of_service" : "P5",
+         "description" : "Cassini Loadtester Client"
+      },
+      {
+         "allow_full_table_scan" : true,
+         "group" : "Shipping",
+         "timeout" : 2500,
+         "name" : "shipping",
+         "class_of_service" : "P3",
+         "description" : "Shipping team using Shipcalc service"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Search Science",
+         "timeout" : 2500,
+         "name" : "c5bad622-12f5-4939-b988-ea885d0ad162",
+         "class_of_service" : "P4",
+         "description" : "Search Science Heartbeat Monitor"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Search Science",
+         "timeout" : 2500,
+         "name" : "0ab83ff8-9761-4687-864a-52b3610c07bd",
+         "class_of_service" : "P4",
+         "description" : "Search Science Libscraper"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Mobile QA",
+         "timeout" : 2500,
+         "name" : "eBayiPadQAApp",
+         "class_of_service" : "P5",
+         "description" : "iPad Core QA"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Mobile",
+         "timeout" : 2500,
+         "name" : "eBayInc2d-8ed0-4a05-86c9-35aad387e80",
+         "class_of_service" : "P1",
+         "description" : "Tablet Web"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Mobile",
+         "timeout" : 2500,
+         "name" : "eBayIncd9-f29d-46e1-b9b4-a74c7ef3718",
+         "class_of_service" : "P2",
+         "description" : "Selling App"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Mobile",
+         "timeout" : 2500,
+         "name" : "eBayInc80-8977-4f05-a933-3daa1311213",
+         "class_of_service" : "P1",
+         "description" : "iPhone Core United States"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Mobile",
+         "timeout" : 2500,
+         "name" : "eBayEUMi-a756-48a6-a63f-0e78b3d2a170",
+         "class_of_service" : "P3",
+         "description" : "Windows 8 Dashboard"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Mobile",
+         "timeout" : 2500,
+         "name" : "eBayInc64-7662-48ae-8d31-2b168593ee5",
+         "class_of_service" : "P1",
+         "description" : "iPad Core"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Mobile",
+         "timeout" : 2500,
+         "name" : "eBayInc87-4aa5-47d3-bf36-31497ece89f",
+         "class_of_service" : "P2",
+         "description" : "iPhone Motors"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Mobile",
+         "timeout" : 2500,
+         "name" : "eBayMobi-6b7a-46f6-b1c3-e02887951384",
+         "class_of_service" : "P2",
+         "description" : "eBay Deals App"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Mobile QA",
+         "timeout" : 2500,
+         "name" : "AuthApp",
+         "class_of_service" : "P5",
+         "description" : "MobileWeb QA"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Mobile QA",
+         "timeout" : 2500,
+         "name" : "Motors1App",
+         "class_of_service" : "P5",
+         "description" : "Motors QA"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Mobile QA",
+         "timeout" : 2500,
+         "name" : "eBayiPhoneQAApp",
+         "class_of_service" : "P5",
+         "description" : "iPhone Core QA"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Mobile",
+         "timeout" : 2500,
+         "name" : "DYNETICSOLL2S63WD5L4VEHA15JP6Q",
+         "class_of_service" : "P1",
+         "description" : "m.ebay.com"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Mobile QA",
+         "timeout" : 2500,
+         "name" : "Windows8App",
+         "class_of_service" : "P5",
+         "description" : "Windows8 QA"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Mobile QA",
+         "timeout" : 2500,
+         "name" : "mobwatchApp",
+         "class_of_service" : "P5",
+         "description" : "iPad Watch With EBay QA"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Mobile QA",
+         "timeout" : 2500,
+         "name" : "Fashion1App",
+         "class_of_service" : "P5",
+         "description" : "iPhone CSA QA"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "eLVIS",
+         "timeout" : 2500,
+         "name" : "7fc57a9c-40a7-4fca-aae0-aa6be2c83678",
+         "class_of_service" : "P3",
+         "description" : "Elvis/Cassini Integration"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Mobile",
+         "timeout" : 2500,
+         "name" : "eBayInc52-907e-4b8a-ba0c-707469bb4d5",
+         "class_of_service" : "P1",
+         "description" : "Android Core"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Mobile QA",
+         "timeout" : 2500,
+         "name" : "AdminApp",
+         "class_of_service" : "P5",
+         "description" : "WindowsPhone (Win7), TabWeb QA"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Mobile",
+         "timeout" : 2500,
+         "name" : "eBayInc98-31e1-4fec-911d-7d71fac63c2",
+         "class_of_service" : "P1",
+         "description" : "Windows 8 Core"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Mobile",
+         "timeout" : 2500,
+         "name" : "eBayMobi-c93c-4486-8615-f63a90b510e4",
+         "class_of_service" : "P1",
+         "description" : "Windows Phone (Win7)"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Mobile",
+         "timeout" : 2500,
+         "name" : "eBayInc94-601c-4af1-a4cf-012c8a5e6cc",
+         "class_of_service" : "P1",
+         "description" : "Mobile Web"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Mobile QA",
+         "timeout" : 2500,
+         "name" : "AndrApp",
+         "class_of_service" : "P5",
+         "description" : "Android Core QA"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Mobile",
+         "timeout" : 2500,
+         "name" : "eBayInc12-768c-49da-9dcd-c4abdadfaa1",
+         "class_of_service" : "P3",
+         "description" : "iPhone Fashion"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Mobile QA",
+         "timeout" : 2500,
+         "name" : "FashionApp",
+         "class_of_service" : "P5",
+         "description" : "iPhone Fashion QA"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Mobile",
+         "timeout" : 2500,
+         "name" : "eBayInc75-86d4-46fd-b08e-3436e712384",
+         "class_of_service" : "P3",
+         "description" : "Watch With eBay"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Mobile",
+         "timeout" : 2500,
+         "name" : "rim21eb8f-88e0-41c3-8ad9-a14bdb7b026",
+         "class_of_service" : "P3",
+         "description" : "RIM App"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Mobile",
+         "timeout" : 2500,
+         "name" : "eBayInc3a-d0c7-4af3-954e-9bcf5974a26",
+         "class_of_service" : "P1",
+         "description" : "Android Motors"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Merch",
+         "timeout" : 2500,
+         "name" : "4a902ce2-c048-4ef0-ad26-1d3241b53fe1",
+         "class_of_service" : "P3",
+         "description" : "MFE Low Priority"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Half.com",
+         "timeout" : 2500,
+         "name" : "eBay_HAL-a4da-4e64-8100-05263fa7a3eb",
+         "class_of_service" : "P2",
+         "description" : "HALF.COM"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Search Science",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:c5bad622-12f5-4939-b988-ea885d0ad162",
+         "class_of_service" : "P5",
+         "description" : "Search Result Monitor"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "eLVIS",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:7fc57a9c-40a7-4fca-aae0-aa6be2c83678",
+         "class_of_service" : "P3",
+         "description" : "Elvis Cassini Consumer"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Search Science",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:0ab83ff8-9761-4687-864a-52b3610c07bd",
+         "class_of_service" : "P4",
+         "description" : "Search Metrics"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "SRP",
+         "timeout" : 2500,
+         "name" : "ebay-marketplace-consumerid:f0d44d4f-4a86-4458-9474-47fa9f19dfd9",
+         "class_of_service" : "P2",
+         "description" : "Raptor SRP"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Merch",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:4a902ce2-c048-4ef0-ad26-1d3241b53fe1",
+         "class_of_service" : "P3",
+         "description" : "MFE Low Priority"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Mobile QA",
+         "timeout" : 2500,
+         "name" : "CPS594505-05d2-4cd0-a519-0d947fe0e0c",
+         "class_of_service" : "P5",
+         "description" : "Mobile Monitoring Tool"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Mobile QA",
+         "timeout" : 2500,
+         "name" : "AMOTORSApp",
+         "class_of_service" : "P5",
+         "description" : "Android Motors QA"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Classification",
+         "timeout" : 2500,
+         "name" : "e2864fa4-b435-4149-a162-258c5184f1a3",
+         "class_of_service" : "P4",
+         "description" : "PIQ Score Export Batch App"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Buyer Exp",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:6f937b36-f633-43c7-8b6f-e07cee75ed25",
+         "class_of_service" : "P3",
+         "description" : "Watchlist"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "User Facing",
+         "timeout" : 2500,
+         "name" : "ebay-marketplace-consumerid:fc6d7514-ab15-4efe-b0b8-ebf0ac94ed1e",
+         "class_of_service" : "P3",
+         "description" : "Feeds"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "User Facing",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:aa3c203c-4b4f-4159-bdb5-1d0815274b00",
+         "class_of_service" : "P3",
+         "description" : "Feedservice"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "User Facing",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:d4ef3911-17bc-4354-863b-0da5dcf56e36",
+         "class_of_service" : "P3",
+         "description" : "Feeds Home"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Structure Data",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:6d2d9c80-1060-4242-8ff9-eba7450d0433",
+         "class_of_service" : "P2",
+         "description" : "Catalog Content Service"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Half.com",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:6e3366e4-63a1-4517-9a87-40785630fbc8",
+         "class_of_service" : "P3",
+         "description" : "HALF.COM Client"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "TnS",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:bce7c21d-0c98-4592-92e9-6f9cf8674222",
+         "class_of_service" : "P4",
+         "description" : "TnS research"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "SRP",
+         "timeout" : 60000,
+         "name" : "urn:ebay-marketplace-consumerid:3b5263c6-63d6-4a0a-860d-a0e3aa2e49fd",
+         "class_of_service" : "P1",
+         "description" : "Search Front End for SaaS"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "View Item",
+         "timeout" : 2500,
+         "name" : "ebay-marketplace-consumerid:5e892f90-e379-4072-8d98-eba1568b09a4",
+         "class_of_service" : "P1",
+         "description" : "View Item (VI)"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Israel Innovation Center",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:72032d44-73ca-49e5-b2d7-e339635e76eb",
+         "class_of_service" : "P4",
+         "description" : "stuff.ebay.com"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Structured Data",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:b119dc08-118b-444c-9a27-b0e1608633a8",
+         "class_of_service" : "P3",
+         "description" : "Inventory Insights Repository"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "User Facing",
+         "timeout" : 2500,
+         "name" : "fc6d7514-ab15-4efe-b0b8-ebf0ac94ed1e",
+         "class_of_service" : "P3",
+         "description" : "Feeds Truncated (Temporary)"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "User Facing",
+         "timeout" : 2500,
+         "name" : "d4ef3911-17bc-4354-863b-0da5dcf56e36",
+         "class_of_service" : "P3",
+         "description" : "Feeds Home Truncated (Temporary)"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Selling",
+         "timeout" : 2500,
+         "name" : "ebay-marketplace-consumerid:ea5f5a04-1d10-4f2d-b520-3711c95de70c",
+         "class_of_service" : "P2",
+         "description" : "Webnext"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Innovation",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:0e441f95-93aa-418e-9c69-4033e766f965",
+         "class_of_service" : "P3",
+         "description" : "Invpilot"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Verticals",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:2b4eecfa-caa9-4eeb-8fd1-732e4defeab3",
+         "class_of_service" : "P2",
+         "description" : "bullionw"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "User Facing",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:d7e65e06-b27d-4003-9d1b-ae7e16c7be33",
+         "class_of_service" : "P2",
+         "description" : "Selling Manager Active Listings page"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "User Facing",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:d222cf91-0ee3-4fb5-a944-b38fb7993068",
+         "class_of_service" : "P2",
+         "description" : "storesWeb"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "User Facing",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:e0e12411-0149-4084-9d30-c312f1f3b90f",
+         "class_of_service" : "P2",
+         "description" : "sellerad"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "User Facing",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:20779f0d-7a20-41b9-a7f1-8c1dc7bbd596",
+         "class_of_service" : "P2",
+         "description" : "merbak"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "User Facing",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:496bec84-55d1-49e1-96c7-f3534f474e93",
+         "class_of_service" : "P2",
+         "description" : "Smart Guidance"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "User Facing",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:2d8a5812-e8dc-4495-b259-ae81a3f4d90d",
+         "class_of_service" : "P2",
+         "description" : "emmt"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "User Facing",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:f1788341-f2c9-4e7b-bbfd-f019752098b4",
+         "class_of_service" : "P2",
+         "description" : "Seller Marketing Engine"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Structured Data",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:c048d258-ac70-4bf9-bcc1-8e25f7865a51",
+         "class_of_service" : "P3",
+         "description" : "Hermes Enrichmet"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Structured Data",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:f26e3583-6b4b-4786-abd1-8d2046e34eda",
+         "class_of_service" : "P2",
+         "description" : "InventoryInsightsService"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Structured Data",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:bfe15c8e-68c1-4047-ad0f-f8b199aa5809",
+         "class_of_service" : "P2",
+         "description" : "unisearch"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Verticals",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:92ff8964-2828-4dba-933b-f54c8e3048a5",
+         "class_of_service" : "P2",
+         "description" : "dpfVert"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Verticals",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:13061b74-be15-451f-848f-735d8bb2e527",
+         "class_of_service" : "P2",
+         "description" : "fsalesweb"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Verticals",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:4d4078e1-1646-4235-8989-865df1bb4143",
+         "class_of_service" : "P2",
+         "description" : "clnsvc"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Verticals",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:16660a26-fe9f-4f89-bb0d-f55d24cf850f",
+         "class_of_service" : "P2",
+         "description" : "KwItemGraphBuilder"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Verticals",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:25e9f93d-b157-4cd6-9b08-bea4a73bc11b",
+         "class_of_service" : "P2",
+         "description" : "rps-app"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Structured Data",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:d0e4f4b9-95b7-456d-b9c9-a7cf00d9a6aa",
+         "class_of_service" : "P4",
+         "description" : "invinsights-itemscore-batch"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Structured Data",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:aff55f0a-64e3-482f-a033-22b59102bc26",
+         "class_of_service" : "P4",
+         "description" : "invinsights-salesrank-batch"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Structured Data",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:a6bae65f-3041-4da8-9d72-e7f062b5c0fd",
+         "class_of_service" : "P4",
+         "description" : "invinsights-getdeals-service"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Innovation Center",
+         "timeout" : 2500,
+         "name" : "Ebay464fa-405c-46ef-8d18-631753a21c5",
+         "class_of_service" : "P4",
+         "description" : "ebayx"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Innovation Center",
+         "timeout" : 2500,
+         "name" : "SAPAriba-068c-4872-8d58-24665632269d",
+         "class_of_service" : "P2",
+         "description" : "inventbuy"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Mobile",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:657fa6e6-92a8-4428-88dd-87f553823ac6",
+         "class_of_service" : "P2",
+         "description" : "Visioncjs"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Free Traffic",
+         "timeout" : 2500,
+         "name" : "ebay-marketplace-consumerid:46238cf8-0d8b-4d45-8c77-8f3146a8faa4",
+         "class_of_service" : "P4",
+         "description" : "eBay Site Seo Datascience"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Selling",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:f6d698dc-3b57-486b-893b-ebb622f16a7a",
+         "class_of_service" : "P3",
+         "description" : "File Exchange"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Verticals",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:b2111969-f2a2-4c74-8a89-389cc99fc1a2",
+         "class_of_service" : "P3",
+         "description" : "dcp"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Structured Data",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:8fdae62d-167b-40b4-bb62-cfc75d289494",
+         "class_of_service" : "P4",
+         "description" : "reba"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Merch",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:417e769e-5044-4ad2-bc64-18cb86752857",
+         "class_of_service" : "P2",
+         "description" : "MFE High Priority"
+      },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Structured Data",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:7305c2a6-19a2-443e-9043-db292d41b084",
+         "class_of_service" : "P4",
+         "description" : "invinsights-dealcnsmr"
+       },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Search Science",
+         "timeout" : 7000,
+         "name" : "urn:ebay-marketplace-consumerid:22e8cb89-02b0-47ad-8826-e5980315c2df",
+         "class_of_service" : "P4",
+         "description" : "Human Judgment"
+       },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Verticals",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:6202dda5-bdfa-41fa-a70a-978b8b6a60a4",
+         "class_of_service" : "P4",
+         "description" : "batch"
+       },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "Verticals",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:2f312e98-7b52-4541-9429-f1b0a8d65e16",
+         "class_of_service" : "P3",
+         "description" : "deal2"
+       },
+      {
+         "allow_full_table_scan" : false,
+         "group" : "SRP - search guidance",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:ca1f4f86-eec9-43d7-9a96-ac728a47ee94",
+         "class_of_service" : "P1",
+         "description" : "search guidance"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "Promoted Listings",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:e6a07fd7-e52f-4729-b396-7564bee1f8f4",
+         "class_of_service" : "P3",
+         "description" : "Promoted Listings"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "Search Science",
+         "timeout" : 5000,
+         "name" : "urn:ebay-marketplace-consumerid:73961b2c-1318-40e3-9ff9-ad2d98165e6b",
+         "class_of_service" : "P4",
+         "description" : "Search Science Online Dumper"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "Search Science",
+         "timeout" : 5000,
+         "name" : "urn:ebay-marketplace-consumerid:2c054452-9de2-47d6-b076-d47071a90c15",
+         "class_of_service" : "P4",
+         "description" : "Site Speed Larger Recall"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "Merch",
+         "timeout" : 5000,
+         "name" : "urn:ebay-marketplace-consumerid:25536f29-05e3-414b-93c6-613e6ba9cbec",
+         "class_of_service" : "P4",
+         "description" : "Promoted Listings Algo"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "Shipping",
+         "timeout" : 5000,
+         "name" : "urn:ebay-marketplace-consumerid:c0d9c182-5e17-48e3-8730-d91ccbf3f36b",
+         "class_of_service" : "P2",
+         "description" : "Shipcalc service App"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "Lexington",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:afa79d97-6df8-4353-adba-ce9783374e0d",
+         "class_of_service" : "P2",
+         "description" : "Flex Browse BE"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "Lexington",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:b978bfdd-fb1d-4a2f-80f6-73305736f933",
+         "class_of_service" : "P2",
+         "description" : "r1browservc"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "SRP",
+         "timeout" : 5000,
+         "name" : "urn:ebay-marketplace-consumerid:13051638-8fe9-4380-8d03-c2b176530b4a",
+         "class_of_service" : "P1",
+         "description" : "NuWeb"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "SRP",
+         "timeout" : 5000,
+         "name" : "searchsvc",
+         "class_of_service" : "P1",
+         "description" : "Temp SRP app till Jan 2017"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "Snippet",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:feca53e0-f52c-41c5-9386-cd5848cc2337",
+         "class_of_service" : "P3",
+         "description" : "itsumrizr"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "View Item",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:13ba42d2-643c-4830-85fb-b16d9c4a73c2",
+         "class_of_service" : "P2",
+         "description" : "View Listing Service"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "Structured Data",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:4ceb1117-39ee-4f6d-a891-70b38d5080ea",
+         "class_of_service" : "P3",
+         "description" : "Tag Value Relevance Service"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "User Info",
+         "timeout" : 2500,
+         "name" : "UserInfoBucket",
+         "class_of_service" : "P1",
+         "description" : "findCompactUserVoyagersById"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "Mobile Platform Push Notifications",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:c43b767b-e3ff-4dd9-83a6-4d532d048fbd",
+         "class_of_service" : "P4",
+         "description" : "notifisvc"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "Browse Experience",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:3c850392-9ede-4540-a434-7fa9dc5f6431",
+         "class_of_service" : "P3",
+         "description" : "Decision Engine As A Service"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "Verticals",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:94270c05-af69-4cae-8cbf-82a000c76fe5",
+         "class_of_service" : "P4",
+         "description" : "Deals Dashboard Service - ddashsvc"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "Merch",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:5d97f0bf-cae5-4447-ba3f-212e7cf33f5a",
+         "class_of_service" : "P3",
+         "description" : "Similar Promoted Listings - r1plsim"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "Engagement and Reviews",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:54ec0530-4fb1-4ed3-a5f0-9cae2d0b44bd",
+         "class_of_service" : "P3",
+         "description" : "Engagement and Reviews - engcassini"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "Merch",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:555b8ee9-6a03-4ca6-8fc1-28e47c8f5a3d",
+         "class_of_service" : "P3",
+         "description" : "Merch BackEnd Similar Listings - mbesim"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "Classification",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:c1712404-fb82-40d6-a948-c5ebf550e542",
+         "class_of_service" : "P3",
+         "description" : "Classification - SimCassiniV3"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "Classification",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:ad3b6544-b81e-4618-87c9-e635da13c93b",
+         "class_of_service" : "P3",
+         "description" : "Classification - SimCassiniV2"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "Classification",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:920f8daa-c398-47ac-aa64-ab64b23cd206",
+         "class_of_service" : "P3",
+         "description" : "Classification - ngcspellc"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "DECO",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:39bf2358-9c0e-483b-9dd9-2492da57e435",
+         "class_of_service" : "P3",
+         "description" : "eBay Public API - searchapi"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "eBay Partner Network",
+         "timeout" : 2500,
+         "name" : "EbayInc1d-97bc-41a9-a991-67ecc7d7aca",
+         "class_of_service" : "P3",
+         "description" : "ePN - v3affadscore"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "eBay Partner Network",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:c81d6f26-6600-4e61-ac56-e1987122efc5",
+         "class_of_service" : "P3",
+         "description" : "explorer"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "Merch",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:cb4f6b0a-35b4-4e6b-926a-7986642decc1",
+         "class_of_service" : "P3",
+         "description" : "r1mbedisc"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "View Item",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:af3ffd3b-31ef-4ceb-a3d5-3cf1a509931d",
+         "class_of_service" : "P3",
+         "description" : "prpexpsvc"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "Structured Data",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:6863cded-116a-46f0-88b5-28e68070b350",
+         "class_of_service" : "P3",
+         "description" : "productservice"
+       }, 
+       {
+         "allow_full_table_scan" : false,
+         "group" : "View Item",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:c43daafd-ea3c-45f8-a6e3-b03dbbbd7f2a",
+         "class_of_service" : "P3",
+         "description" : "r1reco"
+       }, 
+       {
+         "allow_full_table_scan" : false,
+         "group" : "Shipping",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:df879881-6259-4352-91f9-ead97c12b58a",
+         "class_of_service" : "P3",
+         "description" : "delivestm - SDES - Shipping Delivery Estimate Service"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "Lexington Browse",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:6e170c04-8d8c-4108-b90c-2d242af2ce16",
+         "class_of_service" : "P3",
+         "description" : "lexexpsvc"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "Merch",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:4522a613-765d-4c9a-af0a-4ea83be5f5a8",
+         "class_of_service" : "P3",
+         "description" : "Merch Complementary Team  - r1mbecomp"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "Cassini SRE",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:ea9a266d-235e-4872-88c1-fff4e0802270",
+         "class_of_service" : "P4",
+         "description" : "cassiniprobe"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "Verticals",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:adf30eba-ea47-45fe-9008-c9239905828e",
+         "class_of_service" : "P4",
+         "description" : "Verticals Inventory Integeration - vipbatch"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "Data Services and Solutions",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:b7caf169-4d5e-47b7-b867-0b09e94fb5d2",
+         "class_of_service" : "P3",
+         "description" : "Retail Signal Platform - eisvc"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "Computer Vision",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:ae571e24-c630-47bc-841c-146d495dcf6a",
+         "class_of_service" : "P3",
+         "description" : "Shop The Look"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "Verticals store team",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:dca7de42-6775-4670-adce-485392ce6ed8",
+         "class_of_service" : "P3",
+         "description" : "bazaar"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "marketing tech - mc3brozsc",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:034ed384-72f2-4d38-823a-e7b9cc2f5b5b",
+         "class_of_service" : "P3",
+         "description" : "mc3brozsc"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "B2C Selling - lqgsvc",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:a84c02df-b001-4227-b91e-44f4e2c83956",
+         "class_of_service" : "P3",
+         "description" : "lqgsvc"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "eBay Partner Network",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:224cb190-4cf1-40fd-94e8-8ff7d8c8a2d0",
+         "class_of_service" : "P3",
+         "description" : "Contextual Targeting service"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "Structure Data passive adoption",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:620b713c-3075-4351-b5bc-6f567240e476",
+         "class_of_service" : "P3",
+         "description" : "Catalog Adoption - r1hydras"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "Structure Data passive adoption",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:110c1eda-afef-445e-9627-86a19deae51b",
+         "class_of_service" : "P3",
+         "description" : "Match Product Service - r1mps"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "Verticals",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:0aa0336c-bd29-4212-9201-1d3eef5ac774",
+         "class_of_service" : "P3",
+         "description" : "apexs"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "View Item",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:b92b90f9-9045-415e-a335-447a1476f534",
+         "class_of_service" : "P3",
+         "description" : "Product Reviews"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "Verticals",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:62750b3e-9e73-439f-bb8d-6743c4803991",
+         "class_of_service" : "P3",
+         "description" : "fit - Fitment"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "Selling",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:12e5b5ba-a56e-4b35-9ecf-199890c692ae",
+         "class_of_service" : "P3",
+         "description" : "denise - new price guidance"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "API Users - apifinding-app",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:36faf49b-9593-48f2-8446-c05aa664712a",
+         "class_of_service" : "P3",
+         "description" : "apifinding-app - Tenant to track Dev API traffic"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "eBay Advertising",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:fe3ddd17-29c6-402d-8679-a557496c672e",
+         "class_of_service" : "P3",
+         "description" : "ganymede - HSA  advertising product"
+       }, 
+       {
+         "allow_full_table_scan" : false,
+         "group" : "C2C selling",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:90ca6ed3-a65c-4314-a8b7-f206724d18bd",
+         "class_of_service" : "P3",
+         "description" : "spguidance - SellerExperience"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "View Item",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:31be3645-70d4-467d-a381-1d97473133f4",
+         "class_of_service" : "P3",
+         "description" : "r1vinode - View Item"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "C2C selling",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:1431c19f-8eb4-4b3d-a54e-4b3e710d711b",
+         "class_of_service" : "P3",
+         "description" : "sgservice"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "Developer Eco System (DECO)",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:fe25c246-2af1-4302-9fc6-11c3415bea7c",
+         "class_of_service" : "P3",
+         "description" : "saleshistoryapi"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "Mobile Platform",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:0b101d4f-18b1-46f2-a3f0-25074b1ea71c",
+         "class_of_service" : "P3",
+         "description" : "svdsrcons - Temporary for Saved Search EmailBatchApp"
+       },
+       {
+         "allow_full_table_scan" : false,
+         "group" : "Mobile Platform",
+         "timeout" : 2500,
+         "name" : "urn:ebay-marketplace-consumerid:88a5de8b-a03e-4585-9de1-b256220b0b62",
+         "class_of_service" : "P3",
+         "description" : "savedsearchemailbatchapp - Saved Search EmailBatchApp"
+       }
+   ]
+}
