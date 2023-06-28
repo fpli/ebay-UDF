@@ -25,7 +25,7 @@ So, if your GenericUDF based UDF does not work with spark-3, please try to use `
 
 1. ADLC application address: https://cloud.ebay.com/object/detail/Application:ebayudf
 2. Pipeline address: https://cloud.ebay.com/object/detail/Application:ebayudf/Pipeline
-3. Hdfs folder for latest udf jars: /apps/b_adlc/b_hadoop_udf/ebayudf/1.0.0-SNAPSHOT/latest
+3. Hdfs folder for latest udf jars: /apps/b_adlc/b_hive_dba/ebayudf/1.0.0-SNAPSHOT/latest
 4. While the developer pr to git, this action will auto trigger the build system to build application.
 
 ## Deploy and Upgrade UDF jar(for administer)
