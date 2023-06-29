@@ -5,9 +5,9 @@
     - hermesrno
     - apollorno
   className: com.ebay.hadoop.udf.shpmt.GetUrl
-  description:Extracts the URL's or websites matching the pattern provided for the case of CPS-5 from seller-buyer msg
+  description: Extracts the URL's or websites matching the pattern provided for the case of CPS-5 from seller-buyer msg
   parameters:
-  emailMsg
+    - emailMsg
   example: shpmt.GetUrl(" www.ebay.com hbjbbjb yahoo gmail__com") or shpmt.GetUrl($string_column)
 
 - GetEmail:
