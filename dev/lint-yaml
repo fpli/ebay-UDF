@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+PWD=$(cd "$(dirname "$0")"/.. || exit; pwd)
+
+for file in $(find ${PWD} -name '*.y*ml*' -type f)
+do
+  echo "Linting $file"
+  yamllint $file
+  if [[ $? != 0 ]]; then
+    echo "Error linting $file"
+    exit 1
+  fi
+done
