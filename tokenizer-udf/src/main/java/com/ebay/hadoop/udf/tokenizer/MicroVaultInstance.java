@@ -8,11 +8,13 @@ import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -196,6 +198,9 @@ public class MicroVaultInstance {
 
   /** message TokenizeResponse { string token = 1; string keyVersion = 2; bool keyEmbedded = 3; } */
   private TokenizeResponse tokenize(String tokenizerRef, String data) {
+    TokenizerRef TOKENIZER_REF = TokenizerRef.apply(tokenizerRef);
+    data = TokenizerUtils.filterData(TOKENIZER_REF, data);
+    if (StringUtils.isBlank(data)) return null;
     try {
       TokenizeRequest request =
           TokenizeRequest.newBuilder().setTokenizerRef(tokenizerRef).setData(data).build();
@@ -208,9 +213,15 @@ public class MicroVaultInstance {
   }
 
   private List<TokenizeResponse> batchTokenize(String tokenizerRef, List<String> dataList) {
+    TokenizerRef TOKENIZER_REF = TokenizerRef.apply(tokenizerRef);
+    dataList = TokenizerUtils.filterData(TOKENIZER_REF, dataList);
+
+    List<String> nonBlankDataList =
+        dataList.stream().filter(data -> StringUtils.isNotBlank(data)).collect(Collectors.toList());
+
     try {
       List<TokenizeRequest> requests =
-          dataList.stream()
+          nonBlankDataList.stream()
               .map(
                   data -> {
                     return TokenizeRequest.newBuilder()
@@ -239,12 +250,26 @@ public class MicroVaultInstance {
                 .collect(Collectors.toList());
         throw new TokenizerException("Error: " + String.join(",", errorList));
       }
-      return batchResponse.getResultsList().stream()
-          .map(
-              res -> {
-                return res.getResponse();
-              })
-          .collect(Collectors.toList());
+      List<TokenizeResponse> nonBlankDataResult =
+          batchResponse.getResultsList().stream()
+              .map(
+                  res -> {
+                    return res.getResponse();
+                  })
+              .collect(Collectors.toList());
+
+      List<TokenizeResponse> allResult = new ArrayList<>(dataList.size());
+      int nonBlankDataResultIndex = 0;
+      for (String data : dataList) {
+        if (StringUtils.isNotBlank(data)) {
+          allResult.add(nonBlankDataResult.get(nonBlankDataResultIndex));
+          nonBlankDataResultIndex++;
+        } else {
+          // add null result on blank data
+          allResult.add(null);
+        }
+      }
+      return allResult;
     } catch (TokenizerException e) {
       throw e;
     } catch (Exception e) {
@@ -258,6 +283,7 @@ public class MicroVaultInstance {
 
   /** message DetokenizeResponse { string data = 1; } */
   private DetokenizeResponse deTokenize(String tokenizerRef, String token) {
+    if (StringUtils.isBlank(token)) return null;
     try {
       DetokenizeRequest request =
           DetokenizeRequest.newBuilder().setTokenizerRef(tokenizerRef).setToken(token).build();
@@ -271,6 +297,11 @@ public class MicroVaultInstance {
   }
 
   private List<DetokenizeResponse> batchDeTokenize(String tokenizerRef, List<String> tokenList) {
+    List<String> nonBlankTokenList =
+        tokenList.stream()
+            .filter(token -> StringUtils.isNotBlank(token))
+            .collect(Collectors.toList());
+
     try {
       List<DetokenizeRequest> requests =
           tokenList.stream()
@@ -302,12 +333,27 @@ public class MicroVaultInstance {
                 .collect(Collectors.toList());
         throw new TokenizerException("Error: " + String.join(",", errorList));
       }
-      return batchResponse.getResultsList().stream()
-          .map(
-              res -> {
-                return res.getResponse();
-              })
-          .collect(Collectors.toList());
+
+      List<DetokenizeResponse> nonBlankTokenResult =
+          batchResponse.getResultsList().stream()
+              .map(
+                  res -> {
+                    return res.getResponse();
+                  })
+              .collect(Collectors.toList());
+
+      List<DetokenizeResponse> allResult = new ArrayList<>(tokenList.size());
+      int nonBlankTokenResultIndex = 0;
+      for (String token : tokenList) {
+        if (StringUtils.isNotBlank(token)) {
+          allResult.add(nonBlankTokenResult.get(nonBlankTokenResultIndex));
+          nonBlankTokenResultIndex++;
+        } else {
+          // add null result on blank token
+          allResult.add(null);
+        }
+      }
+      return allResult;
     } catch (TokenizerException e) {
       throw e;
     } catch (Exception e) {

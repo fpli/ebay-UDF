@@ -17,7 +17,7 @@ public class BatchDeTokenize extends UDF {
         .stream()
         .map(
             response -> {
-              return response.getData();
+              return response == null ? null : response.getData();
             })
         .collect(Collectors.toList());
   }

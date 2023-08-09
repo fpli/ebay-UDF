@@ -10,6 +10,6 @@ public class Tokenize extends UDF {
     }
     TokenizeResponse response =
         MicroVaultInstance.getSingleton().tokenizeWithRetry(tokenizerRef, data);
-    return response.getToken();
+    return response == null ? null : response.getToken();
   }
 }
