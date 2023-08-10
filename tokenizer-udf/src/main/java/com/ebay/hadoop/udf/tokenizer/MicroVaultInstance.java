@@ -199,6 +199,7 @@ public class MicroVaultInstance {
   /** message TokenizeResponse { string token = 1; string keyVersion = 2; bool keyEmbedded = 3; } */
   private TokenizeResponse tokenize(String tokenizerRef, String data) {
     TokenizerRef TOKENIZER_REF = TokenizerRef.apply(tokenizerRef);
+    String originalData = data;
     data = TokenizerUtils.filterData(TOKENIZER_REF, data);
     if (StringUtils.isBlank(data)) return null;
     try {
@@ -207,13 +208,16 @@ public class MicroVaultInstance {
       return tokenizerBlockingStub.tokenize(request);
     } catch (Exception e) {
       throw new TokenizerException(
-          String.format("Error tokenizing the data[%s] with tokenizerRef[%s]", data, tokenizerRef),
+          String.format(
+              "Error tokenizing the data[%s] with tokenizerRef[%s], original data[%s]",
+              data, tokenizerRef, originalData),
           e);
     }
   }
 
   private List<TokenizeResponse> batchTokenize(String tokenizerRef, List<String> dataList) {
     TokenizerRef TOKENIZER_REF = TokenizerRef.apply(tokenizerRef);
+    List<String> originalDataList = dataList;
     dataList = TokenizerUtils.filterData(TOKENIZER_REF, dataList);
 
     List<String> nonBlankDataList =
@@ -275,8 +279,8 @@ public class MicroVaultInstance {
     } catch (Exception e) {
       throw new TokenizerException(
           String.format(
-              "Error batch tokenizing the data list[%s] with tokenizerRef[%s]",
-              dataList, tokenizerRef),
+              "Error batch tokenizing the data list[%s] with tokenizerRef[%s], original data list[%s]",
+              dataList, tokenizerRef, originalDataList),
           e);
     }
   }
