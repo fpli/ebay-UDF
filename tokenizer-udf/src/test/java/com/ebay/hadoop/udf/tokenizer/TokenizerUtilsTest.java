@@ -29,6 +29,8 @@ public class TokenizerUtilsTest {
     dataFilterMap.put("+-86 1234567", "+-861234567");
     dataFilterMap.put("abc+-86 1234567", "+-861234567");
     dataFilterMap.put("abc+-86 1234567abc", "+-861234567");
+    dataFilterMap.put("04264", "004264");
+    dataFilterMap.put("abc", "");
 
     List<String> dataList = new ArrayList<>(dataFilterMap.size());
     List<String> expectedDataList = new ArrayList<>(dataFilterMap.size());
