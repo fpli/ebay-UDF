@@ -1,10 +1,7 @@
 package com.ebay.hadoop.udf.tokenizer;
 
 import com.ebay.hadoop.udf.tokenizer.util.TokenizerUtils;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import org.junit.Test;
 
 public class TokenizerUtilsTest {
@@ -31,6 +28,8 @@ public class TokenizerUtilsTest {
     dataFilterMap.put("abc+-86 1234567abc", "+-861234567");
     dataFilterMap.put("04264", "004264");
     dataFilterMap.put("abc", "");
+    dataFilterMap.put("---", null);
+    dataFilterMap.put("+86123", "+086123");
 
     List<String> dataList = new ArrayList<>(dataFilterMap.size());
     List<String> expectedDataList = new ArrayList<>(dataFilterMap.size());
@@ -42,11 +41,10 @@ public class TokenizerUtilsTest {
       dataList.add(data);
       expectedDataList.add(expectedData);
 
-      assert TokenizerUtils.filterData(phoneRef, data).equals(expectedData);
-      assert TokenizerUtils.filterData(otherRef, data).equals(data);
-
-      assert TokenizerUtils.filterData(phoneRef, expectedData).equals(expectedData);
-      assert TokenizerUtils.filterData(otherRef, expectedData).equals(expectedData);
+      assert Objects.equals(TokenizerUtils.filterData(phoneRef, data), expectedData);
+      assert Objects.equals(TokenizerUtils.filterData(otherRef, data), data);
+      assert Objects.equals(TokenizerUtils.filterData(phoneRef, expectedData), expectedData);
+      assert Objects.equals(TokenizerUtils.filterData(otherRef, expectedData), expectedData);
     }
 
     List<String> filteredPhoneDataList = TokenizerUtils.filterData(phoneRef, dataList);
@@ -54,8 +52,9 @@ public class TokenizerUtilsTest {
 
     int index = 0;
     for (String data : dataList) {
-      assert filteredPhoneDataList.get(index).equals(expectedDataList.get(index));
-      assert filteredOtherDataList.get(index).equals(data);
+      String expectedData = expectedDataList.get(index);
+      assert Objects.equals(filteredPhoneDataList.get(index), expectedData);
+      assert Objects.equals(filteredOtherDataList.get(index), data);
       index++;
     }
   }
