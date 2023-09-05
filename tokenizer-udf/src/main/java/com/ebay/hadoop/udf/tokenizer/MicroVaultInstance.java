@@ -50,6 +50,8 @@ public class MicroVaultInstance {
 
   private static volatile MicroVaultInstance singleton;
 
+  private static final String CONTEXT_DEADLINE_EXCEEDED = "context deadline exceeded";
+
   public static MicroVaultInstance getSingleton() {
     if (singleton == null) {
       synchronized (MicroVaultInstance.class) {
@@ -414,10 +416,14 @@ public class MicroVaultInstance {
               String.format(
                   "Failed to execute %s after %d/%d times, retrying", action, attempt, maxAttempts),
               e);
-          try {
-            TimeUnit.NANOSECONDS.sleep(retryWait.toNanos());
-          } catch (InterruptedException interruptedException) {
-            // do nothing
+          if (TokenizerUtils.stringifyException(e).contains(CONTEXT_DEADLINE_EXCEEDED)) {
+            waitProdTokenizerServiceReachable();
+          } else {
+            try {
+              TimeUnit.NANOSECONDS.sleep(retryWait.toNanos());
+            } catch (InterruptedException interruptedException) {
+              // do nothing
+            }
           }
           shouldRetry = true;
         } else if (e instanceof TokenizerException) {

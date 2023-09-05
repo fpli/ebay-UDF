@@ -1,6 +1,8 @@
 package com.ebay.hadoop.udf.tokenizer.util;
 
 import com.ebay.hadoop.udf.tokenizer.TokenizerRef;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.apache.commons.lang3.StringUtils;
@@ -74,5 +76,13 @@ public class TokenizerUtils {
     return dataList.stream()
         .map(data -> filterData(tokenizerRef, data))
         .collect(Collectors.toList());
+  }
+
+  public static String stringifyException(Throwable e) {
+    StringWriter stm = new StringWriter();
+    PrintWriter wrt = new PrintWriter(stm);
+    e.printStackTrace(wrt);
+    wrt.close();
+    return stm.toString();
   }
 }
