@@ -17,6 +17,8 @@ public class RetryableMicroVaultInstance implements InvocationHandler {
   private static final Logger LOG = LoggerFactory.getLogger(RetryableMicroVaultInstance.class);
 
   public static String POD_ENV_KEY = "POD_ENV";
+  public static String POD_NAME_KEY = "POD_NAME";
+  public static String POD_APP_NAME_KEY = "APP_NAME";
   public static String TOKENIZER_SERVICE_HOST_KEY = "TOKENIZER_SERVICE_HOST";
   public static String TOKENIZER_SERVICE_PORT_KEY = "TOKENIZER_SERVICE_PORT";
   public static String TOKENIZER_SERVICE_TIMEOUT_KEY = "TOKENIZER_SERVICE_TIMEOUT"; // in ms
@@ -34,6 +36,8 @@ public class RetryableMicroVaultInstance implements InvocationHandler {
   private static final String CONTEXT_DEADLINE_EXCEEDED = "context deadline exceeded";
 
   private final String podEnv;
+  private final String podName;
+  private final String podAppName;
   private final String svcHost;
   private final int svcPort;
   private final long svcTimeout;
@@ -46,6 +50,8 @@ public class RetryableMicroVaultInstance implements InvocationHandler {
 
   private RetryableMicroVaultInstance() {
     podEnv = Optional.ofNullable(System.getenv(POD_ENV_KEY)).orElse(DEFAULT_POD_ENV);
+    podName = Optional.ofNullable(System.getenv(POD_NAME_KEY)).orElse("");
+    podAppName = Optional.ofNullable(System.getenv(POD_APP_NAME_KEY)).orElse("");
     svcHost =
         Optional.ofNullable(System.getenv(TOKENIZER_SERVICE_HOST_KEY))
             .orElse(DEFAULT_PROD_TOKENIZER_SERVICE_HOST);
@@ -111,7 +117,9 @@ public class RetryableMicroVaultInstance implements InvocationHandler {
               throw e.getCause();
             } else {
               throw new TokenizerException(
-                  String.format("Tokenizer service %s:%d is not reachable", svcHost, svcPort),
+                  String.format(
+                      "App[%s] Pod[%s] Tokenizer service %s:%d is not reachable",
+                      podAppName, podName, svcHost, svcPort),
                   e.getCause());
             }
           }
