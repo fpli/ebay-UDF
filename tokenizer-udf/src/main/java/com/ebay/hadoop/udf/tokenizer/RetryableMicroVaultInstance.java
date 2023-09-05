@@ -6,8 +6,10 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.Socket;
+import java.net.UnknownHostException;
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 import org.slf4j.Logger;
@@ -36,8 +38,9 @@ public class RetryableMicroVaultInstance implements InvocationHandler {
   private static final String CONTEXT_DEADLINE_EXCEEDED = "context deadline exceeded";
 
   private final String podEnv;
-  private final String podName;
   private final String podAppName;
+  private final String podName;
+  private String podHostName = "";
   private final String svcHost;
   private final int svcPort;
   private final long svcTimeout;
@@ -50,8 +53,12 @@ public class RetryableMicroVaultInstance implements InvocationHandler {
 
   private RetryableMicroVaultInstance() {
     podEnv = Optional.ofNullable(System.getenv(POD_ENV_KEY)).orElse(DEFAULT_POD_ENV);
-    podName = Optional.ofNullable(System.getenv(POD_NAME_KEY)).orElse("");
     podAppName = Optional.ofNullable(System.getenv(POD_APP_NAME_KEY)).orElse("");
+    podName = Optional.ofNullable(System.getenv(POD_NAME_KEY)).orElse("");
+    try {
+      podHostName = InetAddress.getLocalHost().getCanonicalHostName();
+    } catch (UnknownHostException ignore) {
+    }
     svcHost =
         Optional.ofNullable(System.getenv(TOKENIZER_SERVICE_HOST_KEY))
             .orElse(DEFAULT_PROD_TOKENIZER_SERVICE_HOST);
@@ -118,8 +125,8 @@ public class RetryableMicroVaultInstance implements InvocationHandler {
             } else {
               throw new TokenizerException(
                   String.format(
-                      "App[%s] Pod[%s] Tokenizer service %s:%d is not reachable",
-                      podAppName, podName, svcHost, svcPort),
+                      "App[%s] Pod[%s/%s] Tokenizer service %s:%d is not reachable",
+                      podAppName, podName, podHostName, svcHost, svcPort),
                   e.getCause());
             }
           }
