@@ -13,7 +13,7 @@ public class BatchDeTokenize extends UDF {
 
     if (tokenList.isEmpty()) return Collections.emptyList();
 
-    return MicroVaultInstance.getSingleton().batchDeTokenizeWithRetry(tokenizerRef, tokenList)
+    return RetryableMicroVaultInstance.getSingleton().batchDeTokenize(tokenizerRef, tokenList)
         .stream()
         .map(
             response -> {

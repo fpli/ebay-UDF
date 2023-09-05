@@ -4,23 +4,13 @@ import com.ebay.hadoop.udf.tokenizer.util.TokenizerUtils;
 import com.ebay.platform.security.tokenizer.*;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
-import java.io.IOException;
-import java.net.InetSocketAddress;
-import java.net.Socket;
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.Callable;
-import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import org.apache.commons.lang3.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-public class MicroVaultInstance {
-  private static final Logger LOG = LoggerFactory.getLogger(MicroVaultInstance.class);
-
+public class MicroVaultInstance implements IMicroVaultInstance {
   public static String MICRO_VAULT_HOST_KEY = "MICRO_VAULT_HOST";
   public static String MICRO_VAULT_PORT_KEY = "MICRO_VAULT_PORT";
   public static String GRPC_BUFFER_SIZE_KEY = "GRPC_BUFFER_SIZE"; // in MB
@@ -28,102 +18,10 @@ public class MicroVaultInstance {
   public static int DEFAULT_MICRO_VAULT_PORT = 10000;
   public static int DEFAULT_GRPC_BUFFER_SIZE = 16 * 1024 * 1024; // 16MB
 
-  public static String POD_ENV_KEY = "POD_ENV";
-  public static String TOKENIZER_SERVICE_HOST_KEY = "TOKENIZER_SERVICE_HOST";
-  public static String TOKENIZER_SERVICE_PORT_KEY = "TOKENIZER_SERVICE_PORT";
-  public static String TOKENIZER_SERVICE_TIMEOUT_KEY = "TOKENIZER_SERVICE_TIMEOUT"; // in ms
-  public static String PROD_ENV = "production";
-  public static String DEFAULT_POD_ENV = PROD_ENV;
-  public static String DEFAULT_PROD_TOKENIZER_SERVICE_HOST = "tokenizersvc.vip.ebay.com";
-  public static int DEFAULT_PROD_TOKENIZER_SERVICE_PORT = 443;
-  public static int DEFAULT_TOKENIZER_SERVICE_TIMEOUT = 3 * 60 * 1000; // 3 minutes
-
-  public static String TOKENIZER_MAX_ATTEMPTS_KEY = "TOKENIZER_MAX_ATTEMPTS";
-  public static String TOKENIZER_ATTEMPT_WAIT_KEY = "TOKENIZER_ATTEMPT_WAIT";
-  public static int DEFAULT_TOKENIZER_MAX_ATTEMPTS = 1; // only attempt once
-  public static int DEFAULT_TOKENIZER_ATTEMPT_WAIT = 50; // in ms
-
   private final TokenizerGrpc.TokenizerBlockingStub tokenizerBlockingStub;
   private final MetadataGrpc.MetadataBlockingStub metadataBlockingStub;
-  private final int rpcMaxAttempts;
-  private final int rpcAttemptWait;
 
-  private static volatile MicroVaultInstance singleton;
-
-  private static final String CONTEXT_DEADLINE_EXCEEDED = "context deadline exceeded";
-
-  public static MicroVaultInstance getSingleton() {
-    if (singleton == null) {
-      synchronized (MicroVaultInstance.class) {
-        if (singleton == null) {
-          singleton = new MicroVaultInstance();
-        }
-      }
-    }
-    return singleton;
-  }
-
-  private static boolean isHostPortReachable(String host, int port) {
-    try (Socket socket = new Socket()) {
-      InetSocketAddress socketAddress = new InetSocketAddress(host, port);
-      socket.connect(socketAddress, 1000); // connect timeout 1s
-      return true;
-    } catch (IOException e) {
-      LOG.warn("{}:{} is not reachable.", host, port);
-      return false;
-    }
-  }
-
-  /** Wait tokenizer service reachable for production environment. */
-  private static void waitProdTokenizerServiceReachable() {
-    if (!TokenizerUtils.isTesting()) {
-      String podEnv = Optional.ofNullable(System.getenv(POD_ENV_KEY)).orElse(DEFAULT_POD_ENV);
-      if (PROD_ENV.equalsIgnoreCase(podEnv)) {
-        String svcHost =
-            Optional.ofNullable(System.getenv(TOKENIZER_SERVICE_HOST_KEY))
-                .orElse(DEFAULT_PROD_TOKENIZER_SERVICE_HOST);
-        int svcPort =
-            Optional.ofNullable(System.getenv(TOKENIZER_SERVICE_PORT_KEY))
-                .map(i -> Integer.valueOf(i))
-                .orElse(DEFAULT_PROD_TOKENIZER_SERVICE_PORT);
-        int svcTimeout =
-            Optional.ofNullable(System.getenv(TOKENIZER_SERVICE_TIMEOUT_KEY))
-                .map(i -> Integer.valueOf(i))
-                .orElse(DEFAULT_TOKENIZER_SERVICE_TIMEOUT);
-
-        long startTime = System.currentTimeMillis();
-
-        boolean reachable = isHostPortReachable(svcHost, svcPort);
-        while (!reachable && System.currentTimeMillis() - startTime < svcTimeout) {
-          try {
-            LOG.info(
-                "Sleeping 1 second to wait the tokenizer service {}:{} reachable.",
-                svcHost,
-                svcPort);
-            TimeUnit.SECONDS.sleep(1);
-          } catch (InterruptedException e) {
-            // do nothing
-          }
-          reachable = isHostPortReachable(svcHost, svcPort);
-        }
-
-        long elapsedTime = System.currentTimeMillis() - startTime;
-
-        if (reachable) {
-          LOG.info(
-              "Tokenizer service {}:{} is reachable after {} ms.", svcHost, svcPort, elapsedTime);
-        } else {
-          LOG.info(
-              "Tokenizer service {}:{} is still not reachable after {} ms.",
-              svcHost,
-              svcPort,
-              elapsedTime);
-        }
-      }
-    }
-  }
-
-  private MicroVaultInstance() {
+  protected MicroVaultInstance() {
     this(
         Optional.ofNullable(System.getenv(MICRO_VAULT_HOST_KEY)).orElse(DEFAULT_MICRO_VAULT_HOST),
         Optional.ofNullable(System.getenv(MICRO_VAULT_PORT_KEY))
@@ -134,72 +32,21 @@ public class MicroVaultInstance {
             .orElse(DEFAULT_GRPC_BUFFER_SIZE));
   }
 
-  private MicroVaultInstance(String host, int port, int grpcBuffer) {
+  protected MicroVaultInstance(String host, int port, int grpcBuffer) {
     this(
         ManagedChannelBuilder.forAddress(host, port)
             .usePlaintext()
             .maxInboundMessageSize(grpcBuffer));
   }
 
-  private MicroVaultInstance(ManagedChannelBuilder<?> channelBuilder) {
+  protected MicroVaultInstance(ManagedChannelBuilder<?> channelBuilder) {
     ManagedChannel channel = channelBuilder.build();
     tokenizerBlockingStub = TokenizerGrpc.newBlockingStub(channel);
     metadataBlockingStub = MetadataGrpc.newBlockingStub(channel);
-    waitProdTokenizerServiceReachable();
-    rpcMaxAttempts =
-        Optional.ofNullable(System.getenv(TOKENIZER_MAX_ATTEMPTS_KEY))
-            .map(i -> Integer.valueOf(i))
-            .orElse(DEFAULT_TOKENIZER_MAX_ATTEMPTS);
-    rpcAttemptWait =
-        Optional.ofNullable(System.getenv(TOKENIZER_ATTEMPT_WAIT_KEY))
-            .map(i -> Integer.valueOf(i))
-            .orElse(DEFAULT_TOKENIZER_ATTEMPT_WAIT);
   }
 
-  public TokenizeResponse tokenizeWithRetry(String tokenizerRef, String data) {
-    return executeWithAttempts(
-        () -> {
-          return tokenize(tokenizerRef, data);
-        },
-        "tokenize");
-  }
-
-  public List<TokenizeResponse> batchTokenizeWithRetry(String tokenizerRef, List<String> dataList) {
-    return executeWithAttempts(
-        () -> {
-          return batchTokenize(tokenizerRef, dataList);
-        },
-        "batchTokenize");
-  }
-
-  public DetokenizeResponse deTokenizeWithRetry(String tokenizerRef, String token) {
-    return executeWithAttempts(
-        () -> {
-          return deTokenize(tokenizerRef, token);
-        },
-        "deTokenize");
-  }
-
-  public List<DetokenizeResponse> batchDeTokenizeWithRetry(
-      String tokenizerRef, List<String> tokenList) {
-    return executeWithAttempts(
-        () -> {
-          return batchDeTokenize(tokenizerRef, tokenList);
-        },
-        "batchDeTokenize");
-  }
-
-  public List<TokenizerMetadata> findTokenizerMetadataWithRetry(
-      String storeType, String storeName, String tableName, String columnName) {
-    return executeWithAttempts(
-        () -> {
-          return findTokenizerMetadata(storeType, storeName, tableName, columnName);
-        },
-        "findTokenizerMetadata");
-  }
-
-  /** message TokenizeResponse { string token = 1; string keyVersion = 2; bool keyEmbedded = 3; } */
-  private TokenizeResponse tokenize(String tokenizerRef, String data) {
+  @Override
+  public TokenizeResponse tokenize(String tokenizerRef, String data) {
     TokenizerRef TOKENIZER_REF = TokenizerRef.apply(tokenizerRef);
     String originalData = data;
     data = TokenizerUtils.filterData(TOKENIZER_REF, data);
@@ -217,7 +64,8 @@ public class MicroVaultInstance {
     }
   }
 
-  private List<TokenizeResponse> batchTokenize(String tokenizerRef, List<String> dataList) {
+  @Override
+  public List<TokenizeResponse> batchTokenize(String tokenizerRef, List<String> dataList) {
     TokenizerRef TOKENIZER_REF = TokenizerRef.apply(tokenizerRef);
     List<String> originalDataList = dataList;
     dataList = TokenizerUtils.filterData(TOKENIZER_REF, dataList);
@@ -287,8 +135,8 @@ public class MicroVaultInstance {
     }
   }
 
-  /** message DetokenizeResponse { string data = 1; } */
-  private DetokenizeResponse deTokenize(String tokenizerRef, String token) {
+  @Override
+  public DetokenizeResponse deTokenize(String tokenizerRef, String token) {
     if (StringUtils.isBlank(token)) return null;
     try {
       DetokenizeRequest request =
@@ -302,7 +150,8 @@ public class MicroVaultInstance {
     }
   }
 
-  private List<DetokenizeResponse> batchDeTokenize(String tokenizerRef, List<String> tokenList) {
+  @Override
+  public List<DetokenizeResponse> batchDeTokenize(String tokenizerRef, List<String> tokenList) {
     List<String> nonBlankTokenList =
         tokenList.stream()
             .filter(token -> StringUtils.isNotBlank(token))
@@ -310,7 +159,7 @@ public class MicroVaultInstance {
 
     try {
       List<DetokenizeRequest> requests =
-          tokenList.stream()
+          nonBlankTokenList.stream()
               .map(
                   token -> {
                     return DetokenizeRequest.newBuilder()
@@ -371,11 +220,8 @@ public class MicroVaultInstance {
     }
   }
 
-  /**
-   * message TokenizerMetadata { string name = 1; string id = 2; bool reversible = 3; string
-   * description = 4; }
-   */
-  private List<TokenizerMetadata> findTokenizerMetadata(
+  @Override
+  public List<TokenizerMetadata> findTokenizerMetadata(
       String storeType, String storeName, String tableName, String columnName) {
     try {
       FindTokenizerMetadataRequest request =
@@ -394,47 +240,5 @@ public class MicroVaultInstance {
               storeType, storeName, tableName, columnName),
           e);
     }
-  }
-
-  public <T> T executeWithAttempts(Callable<T> callable, String action) {
-    return executeWithAttempts(callable, action, rpcMaxAttempts, Duration.ofMillis(rpcAttemptWait));
-  }
-
-  public static <T> T executeWithAttempts(
-      Callable<T> callable, String action, int maxAttempts, Duration retryWait) {
-    int attempt = 0;
-    boolean shouldRetry = true;
-    T response = null;
-
-    while (attempt <= maxAttempts && shouldRetry) {
-      try {
-        response = callable.call();
-        shouldRetry = false;
-      } catch (Throwable e) {
-        if (attempt < maxAttempts) {
-          LOG.warn(
-              String.format(
-                  "Failed to execute %s after %d/%d times, retrying", action, attempt, maxAttempts),
-              e);
-          if (TokenizerUtils.stringifyException(e).contains(CONTEXT_DEADLINE_EXCEEDED)) {
-            waitProdTokenizerServiceReachable();
-          } else {
-            try {
-              TimeUnit.NANOSECONDS.sleep(retryWait.toNanos());
-            } catch (InterruptedException interruptedException) {
-              // do nothing
-            }
-          }
-          shouldRetry = true;
-        } else if (e instanceof TokenizerException) {
-          throw (TokenizerException) e;
-        } else {
-          throw new TokenizerException(e);
-        }
-      } finally {
-        attempt += 1;
-      }
-    }
-    return response;
   }
 }
